@@ -1,0 +1,2990 @@
+{
+  "vertical": "product",
+  "source": "unit-backend",
+  "timestamp": "2026-03-25T10:09:40Z",
+  "summary": {
+    "total": 425,
+    "passed": 267,
+    "failed": 142,
+    "skipped": 16,
+    "coverage_percent": null,
+    "duration_seconds": 81.1
+  },
+  "entries": [
+    {
+      "name": "test_empty_command_rejected",
+      "module": "ai_agent.tests.test_agent.WorkoutAgentInputValidationTest.test_empty_command_rejected",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_whitespace_only_command_rejected",
+      "module": "ai_agent.tests.test_agent.WorkoutAgentInputValidationTest.test_whitespace_only_command_rejected",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_rejects_missing_view_id",
+      "module": "ai_agent.tests.test_builder_agent.AIBuildStreamViewTest.test_rejects_missing_view_id",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_rejects_other_users_view",
+      "module": "ai_agent.tests.test_builder_agent.AIBuildStreamViewTest.test_rejects_other_users_view",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_multiple_rows",
+      "module": "ai_agent.tests.test_builder_agent.AutoPlacementTest.test_multiple_rows",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_partial_row_with_room",
+      "module": "ai_agent.tests.test_builder_agent.AutoPlacementTest.test_partial_row_with_room",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_builder_agent_has_seven_tools",
+      "module": "ai_agent.tests.test_builder_agent.BuilderAgentCreationTest.test_builder_agent_has_seven_tools",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_accepts_conversation_id_parameter",
+      "module": "ai_agent.tests.test_chat_views.AIChatStreamViewTest.test_accepts_conversation_id_parameter",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_creates_new_conversation_when_id_null",
+      "module": "ai_agent.tests.test_chat_views.AIChatStreamViewTest.test_creates_new_conversation_when_id_null",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_increments_message_count_correctly",
+      "module": "ai_agent.tests.test_chat_views.AIChatStreamViewTest.test_increments_message_count_correctly",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_loads_existing_conversation_when_id_provided",
+      "module": "ai_agent.tests.test_chat_views.AIChatStreamViewTest.test_loads_existing_conversation_when_id_provided",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_passes_message_history_to_agent",
+      "module": "ai_agent.tests.test_chat_views.AIChatStreamViewTest.test_passes_message_history_to_agent",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_error_when_conversation_archived",
+      "module": "ai_agent.tests.test_chat_views.AIChatStreamViewTest.test_returns_error_when_conversation_archived",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_error_when_conversation_not_found",
+      "module": "ai_agent.tests.test_chat_views.AIChatStreamViewTest.test_returns_error_when_conversation_not_found",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_saves_messages_with_raw_message_data",
+      "module": "ai_agent.tests.test_chat_views.AIChatStreamViewTest.test_saves_messages_with_raw_message_data",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_allows_message_below_limit",
+      "module": "ai_agent.tests.test_chat_views.MessageLimitTest.test_allows_message_below_limit",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_error_message_prompts_new_conversation",
+      "module": "ai_agent.tests.test_chat_views.MessageLimitTest.test_error_message_prompts_new_conversation",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_rejects_message_when_limit_reached",
+      "module": "ai_agent.tests.test_chat_views.MessageLimitTest.test_rejects_message_when_limit_reached",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_messages_remain_after_soft_delete",
+      "module": "ai_agent.tests.test_conversation_api.ConversationDeleteViewTest.test_messages_remain_after_soft_delete",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_404_for_nonexistent_conversation",
+      "module": "ai_agent.tests.test_conversation_api.ConversationDeleteViewTest.test_returns_404_for_nonexistent_conversation",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_404_for_other_users_conversation",
+      "module": "ai_agent.tests.test_conversation_api.ConversationDeleteViewTest.test_returns_404_for_other_users_conversation",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_soft_deletes_conversation",
+      "module": "ai_agent.tests.test_conversation_api.ConversationDeleteViewTest.test_soft_deletes_conversation",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_calculates_total_tokens_correctly",
+      "module": "ai_agent.tests.test_conversation_api.ConversationListViewTest.test_calculates_total_tokens_correctly",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_excludes_archived_conversations",
+      "module": "ai_agent.tests.test_conversation_api.ConversationListViewTest.test_excludes_archived_conversations",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_lists_conversations_for_current_user",
+      "module": "ai_agent.tests.test_conversation_api.ConversationListViewTest.test_lists_conversations_for_current_user",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_only_shows_own_conversations",
+      "module": "ai_agent.tests.test_conversation_api.ConversationListViewTest.test_only_shows_own_conversations",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_orders_by_most_recent_first",
+      "module": "ai_agent.tests.test_conversation_api.ConversationListViewTest.test_orders_by_most_recent_first",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_empty_list_for_new_user",
+      "module": "ai_agent.tests.test_conversation_api.ConversationListViewTest.test_returns_empty_list_for_new_user",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_truncates_last_message_preview",
+      "module": "ai_agent.tests.test_conversation_api.ConversationListViewTest.test_truncates_last_message_preview",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_includes_metadata_for_assistant_messages",
+      "module": "ai_agent.tests.test_conversation_api.ConversationMessagesViewTest.test_includes_metadata_for_assistant_messages",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_404_for_nonexistent_conversation",
+      "module": "ai_agent.tests.test_conversation_api.ConversationMessagesViewTest.test_returns_404_for_nonexistent_conversation",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_404_for_other_users_conversation",
+      "module": "ai_agent.tests.test_conversation_api.ConversationMessagesViewTest.test_returns_404_for_other_users_conversation",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_all_messages_for_conversation",
+      "module": "ai_agent.tests.test_conversation_api.ConversationMessagesViewTest.test_returns_all_messages_for_conversation",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_empty_list_for_conversation_with_no_messages",
+      "module": "ai_agent.tests.test_conversation_api.ConversationMessagesViewTest.test_returns_empty_list_for_conversation_with_no_messages",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_message_type_for_tool_calls",
+      "module": "ai_agent.tests.test_conversation_api.ConversationMessagesViewTest.test_returns_message_type_for_tool_calls",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_complete_event_includes_conversation_id",
+      "module": "ai_agent.tests.test_conversation_api.StreamingEnhancementTest.test_complete_event_includes_conversation_id",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_complete_event_includes_conversation_id_for_existing_conversation",
+      "module": "ai_agent.tests.test_conversation_api.StreamingEnhancementTest.test_complete_event_includes_conversation_id_for_existing_conversation",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_extracts_alternate_markers",
+      "module": "ai_agent.tests.test_deterministic_agent.ExtractToolBlockTest.test_extracts_alternate_markers",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_extracts_code_fence_markers",
+      "module": "ai_agent.tests.test_deterministic_agent.ExtractToolBlockTest.test_extracts_code_fence_markers",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_extracts_standard_deepseek_markers",
+      "module": "ai_agent.tests.test_deterministic_agent.ExtractToolBlockTest.test_extracts_standard_deepseek_markers",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_none_no_markers",
+      "module": "ai_agent.tests.test_deterministic_agent.ExtractToolBlockTest.test_returns_none_no_markers",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_strips_surrounding_conversation",
+      "module": "ai_agent.tests.test_deterministic_agent.ExtractToolBlockTest.test_strips_surrounding_conversation",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_handles_markdown_wrapped_json",
+      "module": "ai_agent.tests.test_deterministic_agent.ExtractToolCallWithHaikuTest.test_handles_markdown_wrapped_json",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_none_on_agent_exception",
+      "module": "ai_agent.tests.test_deterministic_agent.ExtractToolCallWithHaikuTest.test_returns_none_on_agent_exception",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_none_on_invalid_json",
+      "module": "ai_agent.tests.test_deterministic_agent.ExtractToolCallWithHaikuTest.test_returns_none_on_invalid_json",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_none_when_no_tool_found",
+      "module": "ai_agent.tests.test_deterministic_agent.ExtractToolCallWithHaikuTest.test_returns_none_when_no_tool_found",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_parsed_tool_call_on_success",
+      "module": "ai_agent.tests.test_deterministic_agent.ExtractToolCallWithHaikuTest.test_returns_parsed_tool_call_on_success",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_contains_athlete_profile_section",
+      "module": "ai_agent.tests.test_deterministic_agent.GetInteractiveContextTest.test_contains_athlete_profile_section",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_contains_available_data_section",
+      "module": "ai_agent.tests.test_deterministic_agent.GetInteractiveContextTest.test_contains_available_data_section",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_contains_format_reminder",
+      "module": "ai_agent.tests.test_deterministic_agent.GetInteractiveContextTest.test_contains_format_reminder",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_contains_user_name",
+      "module": "ai_agent.tests.test_deterministic_agent.GetInteractiveContextTest.test_contains_user_name",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fallback_name_when_missing",
+      "module": "ai_agent.tests.test_deterministic_agent.GetInteractiveContextTest.test_fallback_name_when_missing",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_includes_biometrics_when_present",
+      "module": "ai_agent.tests.test_deterministic_agent.GetInteractiveContextTest.test_includes_biometrics_when_present",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_includes_coaching_memory",
+      "module": "ai_agent.tests.test_deterministic_agent.GetInteractiveContextTest.test_includes_coaching_memory",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_includes_training_thresholds",
+      "module": "ai_agent.tests.test_deterministic_agent.GetInteractiveContextTest.test_includes_training_thresholds",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_no_crash_without_biometrics",
+      "module": "ai_agent.tests.test_deterministic_agent.GetInteractiveContextTest.test_no_crash_without_biometrics",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_no_profile_returns_fallback",
+      "module": "ai_agent.tests.test_deterministic_agent.GetInteractiveContextTest.test_no_profile_returns_fallback",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_re2_pattern_doubles_context",
+      "module": "ai_agent.tests.test_deterministic_agent.GetInteractiveContextTest.test_re2_pattern_doubles_context",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_string",
+      "module": "ai_agent.tests.test_deterministic_agent.GetInteractiveContextTest.test_returns_string",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_date_range_in_response",
+      "module": "ai_agent.tests.test_deterministic_agent.GetScheduleTest.test_date_range_in_response",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_event_fields_populated",
+      "module": "ai_agent.tests.test_deterministic_agent.GetScheduleTest.test_event_fields_populated",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_events_ordered_by_date",
+      "module": "ai_agent.tests.test_deterministic_agent.GetScheduleTest.test_events_ordered_by_date",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_excludes_deleted_events",
+      "module": "ai_agent.tests.test_deterministic_agent.GetScheduleTest.test_excludes_deleted_events",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_excludes_out_of_range_events",
+      "module": "ai_agent.tests.test_deterministic_agent.GetScheduleTest.test_excludes_out_of_range_events",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_includes_past_events_with_days_back",
+      "module": "ai_agent.tests.test_deterministic_agent.GetScheduleTest.test_includes_past_events_with_days_back",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_no_calendar_returns_error",
+      "module": "ai_agent.tests.test_deterministic_agent.GetScheduleTest.test_no_calendar_returns_error",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_scheduled_events",
+      "module": "ai_agent.tests.test_deterministic_agent.GetScheduleTest.test_returns_scheduled_events",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_success_with_empty_schedule",
+      "module": "ai_agent.tests.test_deterministic_agent.GetScheduleTest.test_returns_success_with_empty_schedule",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_replace_content_only_on_first_tool_call",
+      "module": "ai_agent.tests.test_deterministic_agent.MultiToolCallReplaceContentTest.test_replace_content_only_on_first_tool_call",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_case_insensitive_search",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_case_insensitive_search",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_combined_filters",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_combined_filters",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_common_synonym_bench",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_common_synonym_bench",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_common_synonym_pullups",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_common_synonym_pullups",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_common_synonym_squats",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_common_synonym_squats",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_empty_query_with_filters_returns_results",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_empty_query_with_filters_returns_results",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_exact_match_returns_high_confidence",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_exact_match_returns_high_confidence",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_filter_by_exercise_type_barbell",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_filter_by_exercise_type_barbell",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_filter_by_exercise_type_dumbbell",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_filter_by_exercise_type_dumbbell",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_filter_by_muscle_group_chest",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_filter_by_muscle_group_chest",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_filter_by_muscle_group_quads",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_filter_by_muscle_group_quads",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_limit_parameter",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_limit_parameter",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_no_results_returns_empty_list",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_no_results_returns_empty_list",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_partial_match_returns_results",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_partial_match_returns_results",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_result_contains_exercise_definition",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_result_contains_exercise_definition",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_results_sorted_by_confidence",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_results_sorted_by_confidence",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_typo_handling_basic",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_typo_handling_basic",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_whitespace_handling",
+      "module": "ai_agent.tests.test_exercise_search.FuzzySearchExercisesTest.test_whitespace_handling",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_builds_correct_conversation_file",
+      "module": "ai_agent.tests.test_flag_views.FlagCreateViewTest.test_builds_correct_conversation_file",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_creates_linear_ticket_successfully",
+      "module": "ai_agent.tests.test_flag_views.FlagCreateViewTest.test_creates_linear_ticket_successfully",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_requires_admin",
+      "module": "ai_agent.tests.test_flag_views.FlagCreateViewTest.test_requires_admin",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_requires_authentication",
+      "module": "ai_agent.tests.test_flag_views.FlagCreateViewTest.test_requires_authentication",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_400_for_missing_fields",
+      "module": "ai_agent.tests.test_flag_views.FlagCreateViewTest.test_returns_400_for_missing_fields",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_400_for_user_message",
+      "module": "ai_agent.tests.test_flag_views.FlagCreateViewTest.test_returns_400_for_user_message",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_404_for_nonexistent_message",
+      "module": "ai_agent.tests.test_flag_views.FlagCreateViewTest.test_returns_404_for_nonexistent_message",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_502_on_linear_failure",
+      "module": "ai_agent.tests.test_flag_views.FlagCreateViewTest.test_returns_502_on_linear_failure",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_add_exercise_with_sets_and_reps",
+      "module": "ai_agent.tests.test_integration.AnthropicIntegrationTest.test_add_exercise_with_sets_and_reps",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_add_exercise_with_weight",
+      "module": "ai_agent.tests.test_integration.AnthropicIntegrationTest.test_add_exercise_with_weight",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_add_simple_exercise",
+      "module": "ai_agent.tests.test_integration.AnthropicIntegrationTest.test_add_simple_exercise",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_error_handling",
+      "module": "ai_agent.tests.test_integration.AnthropicIntegrationTest.test_error_handling",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_multiple_exercises",
+      "module": "ai_agent.tests.test_integration.AnthropicIntegrationTest.test_multiple_exercises",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_question_without_changes",
+      "module": "ai_agent.tests.test_integration.AnthropicIntegrationTest.test_question_without_changes",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_search_exercises_tool",
+      "module": "ai_agent.tests.test_integration.AnthropicIntegrationTest.test_search_exercises_tool",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_full_conversation",
+      "module": "ai_agent.tests.test_integration.ManualIntegrationTest.test_full_conversation",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_conversation_continues_after_error",
+      "module": "ai_agent.tests.test_interactive_tools.ErrorPathMessageSavingTest.test_conversation_continues_after_error",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_raw_message_data_valid_for_history_reconstruction",
+      "module": "ai_agent.tests.test_interactive_tools.ErrorPathMessageSavingTest.test_raw_message_data_valid_for_history_reconstruction",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_saves_partial_response_on_error",
+      "module": "ai_agent.tests.test_interactive_tools.ErrorPathMessageSavingTest.test_saves_partial_response_on_error",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_saves_user_message_on_error",
+      "module": "ai_agent.tests.test_interactive_tools.ErrorPathMessageSavingTest.test_saves_user_message_on_error",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_skips_empty_partial_text",
+      "module": "ai_agent.tests.test_interactive_tools.ErrorPathMessageSavingTest.test_skips_empty_partial_text",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_stream_emits_tool_call_events",
+      "module": "ai_agent.tests.test_interactive_tools.InteractiveAgentStreamingTest.test_stream_emits_tool_call_events",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_add_peak_moment",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationExecutionTest.test_add_peak_moment",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_error_invalid_field",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationExecutionTest.test_error_invalid_field",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_error_no_active_periodization",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationExecutionTest.test_error_no_active_periodization",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_error_peak_moment_not_found",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationExecutionTest.test_error_peak_moment_not_found",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_manage_periodization_function_exists",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationExecutionTest.test_manage_periodization_function_exists",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_multiple_updates",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationExecutionTest.test_multiple_updates",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_remove_peak_moment",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationExecutionTest.test_remove_peak_moment",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_biometric_targets",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationExecutionTest.test_update_biometric_targets",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_is_active",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationExecutionTest.test_update_is_active",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_peak_moment",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationExecutionTest.test_update_peak_moment",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_phase_targets",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationExecutionTest.test_update_phase_targets",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_phase_type_current_phase",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationExecutionTest.test_update_phase_type_current_phase",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_template_name",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationExecutionTest.test_update_template_name",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_manage_periodization_args_both",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationSchemaTest.test_manage_periodization_args_both",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_manage_periodization_args_peak_moment",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationSchemaTest.test_manage_periodization_args_peak_moment",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_manage_periodization_args_updates",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationSchemaTest.test_manage_periodization_args_updates",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_peak_moment_add_valid",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationSchemaTest.test_peak_moment_add_valid",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_peak_moment_add_with_target_metrics",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationSchemaTest.test_peak_moment_add_with_target_metrics",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_peak_moment_competition_type_values",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationSchemaTest.test_peak_moment_competition_type_values",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_peak_moment_priority_values",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationSchemaTest.test_peak_moment_priority_values",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_peak_moment_remove_valid",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationSchemaTest.test_peak_moment_remove_valid",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_peak_moment_update_valid",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationSchemaTest.test_peak_moment_update_valid",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_periodization_update_valid",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationSchemaTest.test_periodization_update_valid",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_periodization_update_without_reason",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationSchemaTest.test_periodization_update_without_reason",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_schema_module_exists",
+      "module": "ai_agent.tests.test_interactive_tools.ManagePeriodizationSchemaTest.test_schema_module_exists",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_batch_all_failure",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleBatchTest.test_batch_all_failure",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_batch_all_success",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleBatchTest.test_batch_all_success",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_batch_mixed_actions",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleBatchTest.test_batch_mixed_actions",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_batch_partial_success",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleBatchTest.test_batch_partial_success",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_no_calendar_error",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleErrorHandlingTest.test_no_calendar_error",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_not_scheduled_error_for_reschedule",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleErrorHandlingTest.test_not_scheduled_error_for_reschedule",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_not_scheduled_error_for_unschedule",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleErrorHandlingTest.test_not_scheduled_error_for_unschedule",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_permission_denied_other_user_workout",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleErrorHandlingTest.test_permission_denied_other_user_workout",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_workout_not_found_error",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleErrorHandlingTest.test_workout_not_found_error",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_manage_schedule_function_exists",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleExecutionTest.test_manage_schedule_function_exists",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_reschedule_updates_event",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleExecutionTest.test_reschedule_updates_event",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_schedule_afternoon_time",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleExecutionTest.test_schedule_afternoon_time",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_schedule_creates_activity_event",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleExecutionTest.test_schedule_creates_activity_event",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_schedule_evening_time",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleExecutionTest.test_schedule_evening_time",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_schedule_no_time_of_day",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleExecutionTest.test_schedule_no_time_of_day",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_schedule_uses_time_of_day_mapping",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleExecutionTest.test_schedule_uses_time_of_day_mapping",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unschedule_soft_deletes_event",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleExecutionTest.test_unschedule_soft_deletes_event",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_manage_schedule_args_batch",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleSchemaTest.test_manage_schedule_args_batch",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_manage_schedule_args_requires_changes",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleSchemaTest.test_manage_schedule_args_requires_changes",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_reschedule_action_valid",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleSchemaTest.test_reschedule_action_valid",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_reschedule_requires_date",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleSchemaTest.test_reschedule_requires_date",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_schedule_action_valid",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleSchemaTest.test_schedule_action_valid",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_schedule_requires_date",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleSchemaTest.test_schedule_requires_date",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_schema_module_exists",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleSchemaTest.test_schema_module_exists",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_time_of_day_enum_values",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleSchemaTest.test_time_of_day_enum_values",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_time_of_day_optional",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleSchemaTest.test_time_of_day_optional",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unschedule_action_valid",
+      "module": "ai_agent.tests.test_interactive_tools.ManageScheduleSchemaTest.test_unschedule_action_valid",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_folder_case_insensitive_duplicate_check",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutCreateFolderTest.test_create_folder_case_insensitive_duplicate_check",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_folder_duplicate_title_error",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutCreateFolderTest.test_create_folder_duplicate_title_error",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_folder_success",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutCreateFolderTest.test_create_folder_success",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_manage_workout_create_folder_function_exists",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutCreateFolderTest.test_manage_workout_create_folder_function_exists",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_delegates_to_workout_agent",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutCreateTest.test_create_delegates_to_workout_agent",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_enriches_prompt_with_constraints",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutCreateTest.test_create_enriches_prompt_with_constraints",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_returns_error_on_agent_failure",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutCreateTest.test_create_returns_error_on_agent_failure",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_saves_to_structured_workout_model",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutCreateTest.test_create_saves_to_structured_workout_model",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_manage_workout_create_function_exists",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutCreateTest.test_manage_workout_create_function_exists",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_get_workout_by_id",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutGetTest.test_get_workout_by_id",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_get_workout_by_name",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutGetTest.test_get_workout_by_name",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_get_workout_case_insensitive_name",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutGetTest.test_get_workout_case_insensitive_name",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_get_workout_multiple_matches_disambiguation",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutGetTest.test_get_workout_multiple_matches_disambiguation",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_get_workout_not_found",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutGetTest.test_get_workout_not_found",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_get_workout_ownership_verification",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutGetTest.test_get_workout_ownership_verification",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_manage_workout_get_function_exists",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutGetTest.test_manage_workout_get_function_exists",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_list_folders_excludes_system_when_requested",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutListFoldersTest.test_list_folders_excludes_system_when_requested",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_list_folders_includes_system_by_default",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutListFoldersTest.test_list_folders_includes_system_by_default",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_list_folders_includes_workout_counts",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutListFoldersTest.test_list_folders_includes_workout_counts",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_list_folders_ordered_correctly",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutListFoldersTest.test_list_folders_ordered_correctly",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_manage_workout_list_folders_function_exists",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutListFoldersTest.test_manage_workout_list_folders_function_exists",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_manage_workout_move_to_folder_function_exists",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutMoveToFolderTest.test_manage_workout_move_to_folder_function_exists",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_move_workout_by_folder_id",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutMoveToFolderTest.test_move_workout_by_folder_id",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_move_workout_by_folder_name",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutMoveToFolderTest.test_move_workout_by_folder_name",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_move_workout_folder_disambiguation",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutMoveToFolderTest.test_move_workout_folder_disambiguation",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_move_workout_folder_name_case_insensitive",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutMoveToFolderTest.test_move_workout_folder_name_case_insensitive",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_move_workout_folder_not_found",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutMoveToFolderTest.test_move_workout_folder_not_found",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_move_workout_not_found",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutMoveToFolderTest.test_move_workout_not_found",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_action_requires_request",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_create_action_requires_request",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_action_valid",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_create_action_valid",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_action_with_constraints",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_create_action_with_constraints",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_folder_action_valid",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_create_folder_action_valid",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_folder_requires_title",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_create_folder_requires_title",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_folder_with_description",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_create_folder_with_description",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_edit_action_requires_workout_id",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_edit_action_requires_workout_id",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_edit_action_valid",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_edit_action_valid",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_get_action_requires_id_or_name",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_get_action_requires_id_or_name",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_get_action_valid_with_id",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_get_action_valid_with_id",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_get_action_valid_with_name",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_get_action_valid_with_name",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_get_action_with_history_source",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_get_action_with_history_source",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_list_folders_action_valid",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_list_folders_action_valid",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_list_folders_exclude_system",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_list_folders_exclude_system",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_manage_workout_args_discriminated_union",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_manage_workout_args_discriminated_union",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_move_to_folder_action_valid_with_folder_id",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_move_to_folder_action_valid_with_folder_id",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_move_to_folder_action_valid_with_folder_name",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_move_to_folder_action_valid_with_folder_name",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_move_to_folder_requires_folder_id_or_name",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_move_to_folder_requires_folder_id_or_name",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_move_to_folder_requires_workout_id",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_move_to_folder_requires_workout_id",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_schema_module_exists",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_schema_module_exists",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_search_action_valid",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_search_action_valid",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_search_action_with_filters",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_search_action_with_filters",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_search_source_options",
+      "module": "ai_agent.tests.test_interactive_tools.ManageWorkoutSchemaTest.test_search_source_options",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_conversation_can_continue_after_tool_call",
+      "module": "ai_agent.tests.test_interactive_tools.MessageSavingWithToolCallsTest.test_conversation_can_continue_after_tool_call",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_save_messages_handles_tool_call_sequence",
+      "module": "ai_agent.tests.test_interactive_tools.MessageSavingWithToolCallsTest.test_save_messages_handles_tool_call_sequence",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_invalid_field",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_invalid_field",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_multiple_updates",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_multiple_updates",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_biological_gender",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_update_biological_gender",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_biometrics_function_exists",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_update_biometrics_function_exists",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_functional_threshold_hr",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_update_functional_threshold_hr",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_functional_threshold_pace",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_update_functional_threshold_pace",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_functional_threshold_power",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_update_functional_threshold_power",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_height",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_update_height",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_hr_zones",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_update_hr_zones",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_maximum_hr",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_update_maximum_hr",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_pace_unit",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_update_pace_unit",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_power_zones",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_update_power_zones",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_resting_hr_auto_detected",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_update_resting_hr_auto_detected",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_resting_hr_user_input",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_update_resting_hr_user_input",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_use_global_zones",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_update_use_global_zones",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_weight",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsExecutionTest.test_update_weight",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_biological_gender_values",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsSchemaTest.test_biological_gender_values",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_biometric_fields_constant_exists",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsSchemaTest.test_biometric_fields_constant_exists",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_biometric_update_auto_detected_source",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsSchemaTest.test_biometric_update_auto_detected_source",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_biometric_update_default_source",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsSchemaTest.test_biometric_update_default_source",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_biometric_update_valid",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsSchemaTest.test_biometric_update_valid",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_pace_unit_values",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsSchemaTest.test_pace_unit_values",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_schema_module_exists",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsSchemaTest.test_schema_module_exists",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_biometrics_args_multiple_updates",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsSchemaTest.test_update_biometrics_args_multiple_updates",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_biometrics_args_requires_updates",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsSchemaTest.test_update_biometrics_args_requires_updates",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_biometrics_args_single_update",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsSchemaTest.test_update_biometrics_args_single_update",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_zones_accept_array_value",
+      "module": "ai_agent.tests.test_interactive_tools.UpdateBiometricsSchemaTest.test_zones_accept_array_value",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_api_failure_returns_no_kb",
+      "module": "ai_agent.tests.test_kb_tool.ClassifyQueryTest.test_api_failure_returns_no_kb",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_handles_markdown_fenced_json",
+      "module": "ai_agent.tests.test_kb_tool.ClassifyQueryTest.test_handles_markdown_fenced_json",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_malformed_json_returns_no_kb",
+      "module": "ai_agent.tests.test_kb_tool.ClassifyQueryTest.test_malformed_json_returns_no_kb",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_personal_data_question_skips_kb",
+      "module": "ai_agent.tests.test_kb_tool.ClassifyQueryTest.test_personal_data_question_skips_kb",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_sports_science_question_needs_kb",
+      "module": "ai_agent.tests.test_kb_tool.ClassifyQueryTest.test_sports_science_question_needs_kb",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_empty_retrieval_returns_none",
+      "module": "ai_agent.tests.test_kb_tool.GetKbContextPipelineTest.test_empty_retrieval_returns_none",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_full_pipeline_with_kb",
+      "module": "ai_agent.tests.test_kb_tool.GetKbContextPipelineTest.test_full_pipeline_with_kb",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_personal_question_skips_retrieval",
+      "module": "ai_agent.tests.test_kb_tool.GetKbContextPipelineTest.test_personal_question_skips_retrieval",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_uses_original_question_when_no_rewrite",
+      "module": "ai_agent.tests.test_kb_tool.GetKbContextPipelineTest.test_uses_original_question_when_no_rewrite",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_returns_formatted_chunks",
+      "module": "ai_agent.tests.test_kb_tool.RetrieveChunksTest.test_returns_formatted_chunks",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_conversation_cascade_delete",
+      "module": "ai_agent.tests.test_models.ChatMessageModelTest.test_conversation_cascade_delete",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_message_with_conversation_fk",
+      "module": "ai_agent.tests.test_models.ChatMessageModelTest.test_create_message_with_conversation_fk",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_message_chronological_ordering",
+      "module": "ai_agent.tests.test_models.ChatMessageModelTest.test_message_chronological_ordering",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_message_metadata_fields",
+      "module": "ai_agent.tests.test_models.ChatMessageModelTest.test_message_metadata_fields",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_message_related_name_on_conversation",
+      "module": "ai_agent.tests.test_models.ChatMessageModelTest.test_message_related_name_on_conversation",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_message_role_choices",
+      "module": "ai_agent.tests.test_models.ChatMessageModelTest.test_message_role_choices",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_message_saves_touches_conversation_updated_at",
+      "module": "ai_agent.tests.test_models.ChatMessageModelTest.test_message_saves_touches_conversation_updated_at",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_message_string_representation_with_preview",
+      "module": "ai_agent.tests.test_models.ChatMessageModelTest.test_message_string_representation_with_preview",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_conversation_has_required_indexes",
+      "module": "ai_agent.tests.test_models.ConversationIndexesTest.test_conversation_has_required_indexes",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_message_has_required_indexes",
+      "module": "ai_agent.tests.test_models.ConversationIndexesTest.test_message_has_required_indexes",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_conversation_default_values",
+      "module": "ai_agent.tests.test_models.ConversationModelTest.test_conversation_default_values",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_conversation_ordering",
+      "module": "ai_agent.tests.test_models.ConversationModelTest.test_conversation_ordering",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_conversation_session_id_tracking",
+      "module": "ai_agent.tests.test_models.ConversationModelTest.test_conversation_session_id_tracking",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_conversation_soft_delete_with_is_archived",
+      "module": "ai_agent.tests.test_models.ConversationModelTest.test_conversation_soft_delete_with_is_archived",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_conversation_string_representation",
+      "module": "ai_agent.tests.test_models.ConversationModelTest.test_conversation_string_representation",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_conversation_with_profile_fk",
+      "module": "ai_agent.tests.test_models.ConversationModelTest.test_create_conversation_with_profile_fk",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_last_message_at_property_with_messages",
+      "module": "ai_agent.tests.test_models.ConversationModelTest.test_last_message_at_property_with_messages",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_last_message_at_property_with_no_messages",
+      "module": "ai_agent.tests.test_models.ConversationModelTest.test_last_message_at_property_with_no_messages",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_total_tokens_used_property",
+      "module": "ai_agent.tests.test_models.ConversationModelTest.test_total_tokens_used_property",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_total_tokens_used_with_no_messages",
+      "module": "ai_agent.tests.test_models.ConversationModelTest.test_total_tokens_used_with_no_messages",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_empty_think_block",
+      "module": "ai_agent.tests.test_sanitize.SanitizeToolMarkersThinkTagTests.test_empty_think_block",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_no_think_tags_unchanged",
+      "module": "ai_agent.tests.test_sanitize.SanitizeToolMarkersThinkTagTests.test_no_think_tags_unchanged",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_strips_multiple_think_blocks",
+      "module": "ai_agent.tests.test_sanitize.SanitizeToolMarkersThinkTagTests.test_strips_multiple_think_blocks",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_strips_think_nested_with_tool_markers",
+      "module": "ai_agent.tests.test_sanitize.SanitizeToolMarkersThinkTagTests.test_strips_think_nested_with_tool_markers",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_strips_think_tags",
+      "module": "ai_agent.tests.test_sanitize.SanitizeToolMarkersThinkTagTests.test_strips_think_tags",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_strips_think_tags_multiline",
+      "module": "ai_agent.tests.test_sanitize.SanitizeToolMarkersThinkTagTests.test_strips_think_tags_multiline",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_strips_think_with_special_chars",
+      "module": "ai_agent.tests.test_sanitize.SanitizeToolMarkersThinkTagTests.test_strips_think_with_special_chars",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_strips_think_with_surrounding_text",
+      "module": "ai_agent.tests.test_sanitize.SanitizeToolMarkersThinkTagTests.test_strips_think_with_surrounding_text",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_adds_timestamp",
+      "module": "ai_agent.tests.test_update_profile.UpdateProfileExecutionTest.test_adds_timestamp",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_handles_nested_structures",
+      "module": "ai_agent.tests.test_update_profile.UpdateProfileExecutionTest.test_handles_nested_structures",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_overwrites_previous_memory",
+      "module": "ai_agent.tests.test_update_profile.UpdateProfileExecutionTest.test_overwrites_previous_memory",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_replaces_entire_memory",
+      "module": "ai_agent.tests.test_update_profile.UpdateProfileExecutionTest.test_replaces_entire_memory",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_save_full_memory",
+      "module": "ai_agent.tests.test_update_profile.UpdateProfileExecutionTest.test_save_full_memory",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_save_minimal_memory",
+      "module": "ai_agent.tests.test_update_profile.UpdateProfileExecutionTest.test_save_minimal_memory",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_update_coaching_memory_function_exists",
+      "module": "ai_agent.tests.test_update_profile.UpdateProfileExecutionTest.test_update_coaching_memory_function_exists",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_accepts_empty_sections",
+      "module": "ai_agent.tests.test_update_profile.UpdateProfileSchemaTest.test_accepts_empty_sections",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_accepts_full_coaching_memory",
+      "module": "ai_agent.tests.test_update_profile.UpdateProfileSchemaTest.test_accepts_full_coaching_memory",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_accepts_minimal_coaching_memory",
+      "module": "ai_agent.tests.test_update_profile.UpdateProfileSchemaTest.test_accepts_minimal_coaching_memory",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_rejects_non_dict",
+      "module": "ai_agent.tests.test_update_profile.UpdateProfileSchemaTest.test_rejects_non_dict",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_requires_coaching_memory",
+      "module": "ai_agent.tests.test_update_profile.UpdateProfileSchemaTest.test_requires_coaching_memory",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_schema_module_exists",
+      "module": "ai_agent.tests.test_update_profile.UpdateProfileSchemaTest.test_schema_module_exists",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_cancel_consent_invalidates_cache",
+      "module": "consent.tests.test_cache_invalidation.ConsentCacheInvalidationTest.test_cancel_consent_invalidates_cache",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_grant_consent_invalidates_athlete_cache",
+      "module": "consent.tests.test_cache_invalidation.ConsentCacheInvalidationTest.test_grant_consent_invalidates_athlete_cache",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_grant_consent_invalidates_view_cache",
+      "module": "consent.tests.test_cache_invalidation.ConsentCacheInvalidationTest.test_grant_consent_invalidates_view_cache",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_revoke_consent_invalidates_cache",
+      "module": "consent.tests.test_cache_invalidation.ConsentCacheInvalidationTest.test_revoke_consent_invalidates_cache",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_invalidates_cache",
+      "module": "consent.tests.test_cache_invalidation.ConsentCacheInvalidationTest.test_unrevoke_consent_invalidates_cache",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_add_profile_to_group_invalidates_athlete_cache",
+      "module": "consent.tests.test_cache_invalidation.GroupCacheInvalidationTest.test_add_profile_to_group_invalidates_athlete_cache",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_add_profile_to_group_invalidates_monitor_cache",
+      "module": "consent.tests.test_cache_invalidation.GroupCacheInvalidationTest.test_add_profile_to_group_invalidates_monitor_cache",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_adding_profile_twice_only_invalidates_once",
+      "module": "consent.tests.test_cache_invalidation.GroupCacheInvalidationTest.test_adding_profile_twice_only_invalidates_once",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_cache_invalidation_handles_missing_profile_gracefully",
+      "module": "consent.tests.test_cache_invalidation.GroupCacheInvalidationTest.test_cache_invalidation_handles_missing_profile_gracefully",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_cache_invalidation_with_multiple_monitors",
+      "module": "consent.tests.test_cache_invalidation.GroupCacheInvalidationTest.test_cache_invalidation_with_multiple_monitors",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_consent_grant_with_group_invalidates_all_caches",
+      "module": "consent.tests.test_cache_invalidation.GroupCacheInvalidationTest.test_consent_grant_with_group_invalidates_all_caches",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_remove_profile_from_group_invalidates_athlete_cache",
+      "module": "consent.tests.test_cache_invalidation.GroupCacheInvalidationTest.test_remove_profile_from_group_invalidates_athlete_cache",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_remove_profile_from_group_invalidates_monitor_cache",
+      "module": "consent.tests.test_cache_invalidation.GroupCacheInvalidationTest.test_remove_profile_from_group_invalidates_monitor_cache",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_cancel_consent_sends_email",
+      "module": "consent.tests.test_consent_emails.ConsentEmailSendingTest.test_cancel_consent_sends_email",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_email_contains_correct_link",
+      "module": "consent.tests.test_consent_emails.ConsentEmailSendingTest.test_email_contains_correct_link",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_email_handles_missing_profile_gracefully",
+      "module": "consent.tests.test_consent_emails.ConsentEmailSendingTest.test_email_handles_missing_profile_gracefully",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_email_sent_to_correct_recipients_only",
+      "module": "consent.tests.test_consent_emails.ConsentEmailSendingTest.test_email_sent_to_correct_recipients_only",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_email_template_renders_correctly",
+      "module": "consent.tests.test_consent_emails.ConsentEmailSendingTest.test_email_template_renders_correctly",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_grant_consent_sends_email",
+      "module": "consent.tests.test_consent_emails.ConsentEmailSendingTest.test_grant_consent_sends_email",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_multiple_operations_send_separate_emails",
+      "module": "consent.tests.test_consent_emails.ConsentEmailSendingTest.test_multiple_operations_send_separate_emails",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_no_email_sent_if_not_accepted",
+      "module": "consent.tests.test_consent_emails.ConsentEmailSendingTest.test_no_email_sent_if_not_accepted",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_revoke_consent_sends_email",
+      "module": "consent.tests.test_consent_emails.ConsentEmailSendingTest.test_revoke_consent_sends_email",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_send_email_to_user_method",
+      "module": "consent.tests.test_consent_emails.ConsentEmailSendingTest.test_send_email_to_user_method",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_sponsor_sends_email",
+      "module": "consent.tests.test_consent_emails.ConsentEmailSendingTest.test_sponsor_sends_email",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_sends_email",
+      "module": "consent.tests.test_consent_emails.ConsentEmailSendingTest.test_unrevoke_consent_sends_email",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unsponsor_sends_email",
+      "module": "consent.tests.test_consent_emails.ConsentEmailSendingTest.test_unsponsor_sends_email",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_cancel_consent_removes_from_group",
+      "module": "consent.tests.test_consent_group_integration.ConsentGrantIntegrationTest.test_cancel_consent_removes_from_group",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_consent_with_specific_group",
+      "module": "consent.tests.test_consent_group_integration.ConsentGrantIntegrationTest.test_consent_with_specific_group",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_full_consent_flow_with_group_assignment",
+      "module": "consent.tests.test_consent_group_integration.ConsentGrantIntegrationTest.test_full_consent_flow_with_group_assignment",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_revoke_consent_keeps_group_membership",
+      "module": "consent.tests.test_consent_group_integration.ConsentGrantIntegrationTest.test_revoke_consent_keeps_group_membership",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_uncancel_adds_back_to_group",
+      "module": "consent.tests.test_consent_group_integration.ConsentGrantIntegrationTest.test_uncancel_adds_back_to_group",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_viewers_excludes_revoked_consents",
+      "module": "consent.tests.test_consent_group_integration.FetchProfilesWhoCanViewIntegrationTest.test_fetch_viewers_excludes_revoked_consents",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_viewers_with_multiple_active_consents",
+      "module": "consent.tests.test_consent_group_integration.FetchProfilesWhoCanViewIntegrationTest.test_fetch_viewers_with_multiple_active_consents",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_athlete_not_visible_without_consent",
+      "module": "consent.tests.test_consent_group_integration.GroupAccessIntegrationTest.test_athlete_not_visible_without_consent",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_athlete_visible_in_all_groups_with_consent",
+      "module": "consent.tests.test_consent_group_integration.GroupAccessIntegrationTest.test_athlete_visible_in_all_groups_with_consent",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_professional_can_access_multiple_athletes",
+      "module": "consent.tests.test_consent_group_integration.MultipleAthletesIntegrationTest.test_professional_can_access_multiple_athletes",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_revoking_one_consent_doesnt_affect_others",
+      "module": "consent.tests.test_consent_group_integration.MultipleAthletesIntegrationTest.test_revoking_one_consent_doesnt_affect_others",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_revoke_and_unrevoke_cycle",
+      "module": "consent.tests.test_consent_revocation.UnrevokeConsentTest.test_revoke_and_unrevoke_cycle",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_clears_revoked_flag",
+      "module": "consent.tests.test_consent_revocation.UnrevokeConsentTest.test_unrevoke_consent_clears_revoked_flag",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_does_nothing_if_not_accepted",
+      "module": "consent.tests.test_consent_revocation.UnrevokeConsentTest.test_unrevoke_consent_does_nothing_if_not_accepted",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_handles_missing_profile_gracefully",
+      "module": "consent.tests.test_consent_revocation.UnrevokeConsentTest.test_unrevoke_consent_handles_missing_profile_gracefully",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_invalidates_cache",
+      "module": "consent.tests.test_consent_revocation.UnrevokeConsentTest.test_unrevoke_consent_invalidates_cache",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_keeps_owner_has_accepted",
+      "module": "consent.tests.test_consent_revocation.UnrevokeConsentTest.test_unrevoke_consent_keeps_owner_has_accepted",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_sends_email",
+      "module": "consent.tests.test_consent_revocation.UnrevokeConsentTest.test_unrevoke_consent_sends_email",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_full_revoke_unrevoke_cycle",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_full_revoke_unrevoke_cycle",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_approved_by_owner_becomes_true",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_unrevoke_consent_approved_by_owner_becomes_true",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_clears_consent_revoked_at_timestamp",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_unrevoke_consent_clears_consent_revoked_at_timestamp",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_clears_consent_revoked_flag",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_unrevoke_consent_clears_consent_revoked_flag",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_email_contains_correct_content",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_unrevoke_consent_email_contains_correct_content",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_email_sent_to_correct_recipients_only",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_unrevoke_consent_email_sent_to_correct_recipients_only",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_invalidates_athlete_cache",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_unrevoke_consent_invalidates_athlete_cache",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_multiple_times_stays_unrevoked",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_unrevoke_consent_multiple_times_stays_unrevoked",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_no_email_sent_if_not_accepted",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_unrevoke_consent_no_email_sent_if_not_accepted",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_only_works_if_previously_accepted",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_unrevoke_consent_only_works_if_previously_accepted",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_preserves_owner_has_accepted",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_unrevoke_consent_preserves_owner_has_accepted",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_restores_is_active_status",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_unrevoke_consent_restores_is_active_status",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_sends_email_notification",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_unrevoke_consent_sends_email_notification",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_uses_correct_user_id_for_cache_invalidation",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_unrevoke_consent_uses_correct_user_id_for_cache_invalidation",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_with_cancelled_consent",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_unrevoke_consent_with_cancelled_consent",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unrevoke_consent_with_missing_profile_handles_gracefully",
+      "module": "consent.tests.test_consent_unrevoke.ConsentUnrevokeTest.test_unrevoke_consent_with_missing_profile_handles_gracefully",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_check_consent_active_consent",
+      "module": "consent.tests.test_consent_utils.CheckConsentOfAToBTest.test_check_consent_active_consent",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_check_consent_cancelled",
+      "module": "consent.tests.test_consent_utils.CheckConsentOfAToBTest.test_check_consent_cancelled",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_check_consent_mixed_user_and_profile",
+      "module": "consent.tests.test_consent_utils.CheckConsentOfAToBTest.test_check_consent_mixed_user_and_profile",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_check_consent_no_consent_exists",
+      "module": "consent.tests.test_consent_utils.CheckConsentOfAToBTest.test_check_consent_no_consent_exists",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_check_consent_not_accepted",
+      "module": "consent.tests.test_consent_utils.CheckConsentOfAToBTest.test_check_consent_not_accepted",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_check_consent_revoked",
+      "module": "consent.tests.test_consent_utils.CheckConsentOfAToBTest.test_check_consent_revoked",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_check_consent_same_user",
+      "module": "consent.tests.test_consent_utils.CheckConsentOfAToBTest.test_check_consent_same_user",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_check_consent_with_profile_objects",
+      "module": "consent.tests.test_consent_utils.CheckConsentOfAToBTest.test_check_consent_with_profile_objects",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_check_consent_with_user_objects",
+      "module": "consent.tests.test_consent_utils.CheckConsentOfAToBTest.test_check_consent_with_user_objects",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_consent_ignores_cancelled",
+      "module": "consent.tests.test_consent_utils.FetchConsentOfAToBTest.test_fetch_consent_ignores_cancelled",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_consent_ignores_not_accepted",
+      "module": "consent.tests.test_consent_utils.FetchConsentOfAToBTest.test_fetch_consent_ignores_not_accepted",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_consent_ignores_revoked",
+      "module": "consent.tests.test_consent_utils.FetchConsentOfAToBTest.test_fetch_consent_ignores_revoked",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_consent_returns_consent_object",
+      "module": "consent.tests.test_consent_utils.FetchConsentOfAToBTest.test_fetch_consent_returns_consent_object",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_consent_returns_first_match",
+      "module": "consent.tests.test_consent_utils.FetchConsentOfAToBTest.test_fetch_consent_returns_first_match",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_consent_returns_none_when_not_exists",
+      "module": "consent.tests.test_consent_utils.FetchConsentOfAToBTest.test_fetch_consent_returns_none_when_not_exists",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_consent_with_user_objects",
+      "module": "consent.tests.test_consent_utils.FetchConsentOfAToBTest.test_fetch_consent_with_user_objects",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_profiles_empty_when_no_consent",
+      "module": "consent.tests.test_consent_utils.FetchProfilesWhoCanViewTest.test_fetch_profiles_empty_when_no_consent",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_profiles_ignores_cancelled",
+      "module": "consent.tests.test_consent_utils.FetchProfilesWhoCanViewTest.test_fetch_profiles_ignores_cancelled",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_profiles_ignores_not_accepted",
+      "module": "consent.tests.test_consent_utils.FetchProfilesWhoCanViewTest.test_fetch_profiles_ignores_not_accepted",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_profiles_ignores_revoked",
+      "module": "consent.tests.test_consent_utils.FetchProfilesWhoCanViewTest.test_fetch_profiles_ignores_revoked",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_profiles_mixed_consents",
+      "module": "consent.tests.test_consent_utils.FetchProfilesWhoCanViewTest.test_fetch_profiles_mixed_consents",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_profiles_multiple_consents",
+      "module": "consent.tests.test_consent_utils.FetchProfilesWhoCanViewTest.test_fetch_profiles_multiple_consents",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_profiles_returns_profile_objects",
+      "module": "consent.tests.test_consent_utils.FetchProfilesWhoCanViewTest.test_fetch_profiles_returns_profile_objects",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_profiles_returns_set",
+      "module": "consent.tests.test_consent_utils.FetchProfilesWhoCanViewTest.test_fetch_profiles_returns_set",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_fetch_profiles_single_consent",
+      "module": "consent.tests.test_consent_utils.FetchProfilesWhoCanViewTest.test_fetch_profiles_single_consent",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_invalid_uuid_none",
+      "module": "consent.tests.test_consent_utils.IsValidUuidTest.test_invalid_uuid_none",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_invalid_uuid_number",
+      "module": "consent.tests.test_consent_utils.IsValidUuidTest.test_invalid_uuid_number",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_invalid_uuid_string",
+      "module": "consent.tests.test_consent_utils.IsValidUuidTest.test_invalid_uuid_string",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_uuid_with_dashes",
+      "module": "consent.tests.test_consent_utils.IsValidUuidTest.test_uuid_with_dashes",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_uuid_without_dashes",
+      "module": "consent.tests.test_consent_utils.IsValidUuidTest.test_uuid_without_dashes",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_valid_uuid_object",
+      "module": "consent.tests.test_consent_utils.IsValidUuidTest.test_valid_uuid_object",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_valid_uuid_string",
+      "module": "consent.tests.test_consent_utils.IsValidUuidTest.test_valid_uuid_string",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_cancel_removes_from_group",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentCancelTest.test_cancel_removes_from_group",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_cancel_sets_cancelled",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentCancelTest.test_cancel_sets_cancelled",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_uncancel_adds_back_to_group",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentCancelTest.test_uncancel_adds_back_to_group",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_uncancel_clears_cancelled",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentCancelTest.test_uncancel_clears_cancelled",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_grant_consent_calls_add_to_primary_group",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentGrantTest.test_grant_consent_calls_add_to_primary_group",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_grant_consent_calls_add_to_specific_group",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentGrantTest.test_grant_consent_calls_add_to_specific_group",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_grant_consent_does_not_grant_if_already_accepted",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentGrantTest.test_grant_consent_does_not_grant_if_already_accepted",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_grant_consent_does_not_grant_if_cancelled",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentGrantTest.test_grant_consent_does_not_grant_if_cancelled",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_grant_consent_does_not_grant_if_revoked",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentGrantTest.test_grant_consent_does_not_grant_if_revoked",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_grant_consent_sets_accepted",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentGrantTest.test_grant_consent_sets_accepted",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_profile_has_access_false_for_other",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentMethodsTest.test_profile_has_access_false_for_other",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_profile_has_access_received_by",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentMethodsTest.test_profile_has_access_received_by",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_profile_has_access_sent_by",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentMethodsTest.test_profile_has_access_sent_by",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_received_by_false_for_others",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentMethodsTest.test_received_by_false_for_others",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_received_by_true_for_profile",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentMethodsTest.test_received_by_true_for_profile",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_sent_by_false_for_others",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentMethodsTest.test_sent_by_false_for_others",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_sent_by_true_for_requester",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentMethodsTest.test_sent_by_true_for_requester",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_approved_by_owner_false_when_revoked",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentPropertiesTest.test_approved_by_owner_false_when_revoked",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_approved_by_owner_true_when_accepted_not_revoked",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentPropertiesTest.test_approved_by_owner_true_when_accepted_not_revoked",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_is_active_false_when_cancelled",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentPropertiesTest.test_is_active_false_when_cancelled",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_is_active_false_when_not_accepted",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentPropertiesTest.test_is_active_false_when_not_accepted",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_is_active_false_when_revoked",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentPropertiesTest.test_is_active_false_when_revoked",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_is_active_when_accepted_not_cancelled_not_revoked",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentPropertiesTest.test_is_active_when_accepted_not_cancelled_not_revoked",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_is_cancelled_property",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentPropertiesTest.test_is_cancelled_property",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_is_revoked_property",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentPropertiesTest.test_is_revoked_property",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_revoke_consent_does_not_remove_from_group",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentRevokeTest.test_revoke_consent_does_not_remove_from_group",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_revoke_consent_does_nothing_if_not_accepted",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentRevokeTest.test_revoke_consent_does_nothing_if_not_accepted",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_revoke_consent_sets_revoked",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentRevokeTest.test_revoke_consent_sets_revoked",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_sponsor_sets_costs_pro_account_quota",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentSponsorTest.test_sponsor_sets_costs_pro_account_quota",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_unsponsor_sets_costs_pro_account_quota",
+      "module": "consent.tests.test_profile_consent_model.ProfileDataSharingConsentSponsorTest.test_unsponsor_sets_costs_pro_account_quota",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_agent_responds_after_tool_failure",
+      "module": "ai_agent.tests.test_agent_behavior.ErrorRecoveryTest.test_agent_responds_after_tool_failure",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_followup_after_error_retains_context",
+      "module": "ai_agent.tests.test_agent_behavior.ErrorRecoveryTest.test_followup_after_error_retains_context",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_modify_references_previous_workout",
+      "module": "ai_agent.tests.test_agent_behavior.MultiTurnContextTest.test_modify_references_previous_workout",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_create_and_schedule_chains_both_tools",
+      "module": "ai_agent.tests.test_agent_behavior.ProactiveSchedulingTest.test_create_and_schedule_chains_both_tools",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_biodata_query_calls_biodata_tool",
+      "module": "ai_agent.tests.test_agent_behavior.ToolSelectionTest.test_biodata_query_calls_biodata_tool",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_biometrics_query_calls_biometrics_tool",
+      "module": "ai_agent.tests.test_agent_behavior.ToolSelectionTest.test_biometrics_query_calls_biometrics_tool",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_schedule_query_calls_schedule_get",
+      "module": "ai_agent.tests.test_agent_behavior.ToolSelectionTest.test_schedule_query_calls_schedule_get",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_workout_creation_calls_workouts_tool",
+      "module": "ai_agent.tests.test_agent_behavior.ToolSelectionTest.test_workout_creation_calls_workouts_tool",
+      "status": "skipped",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_does_not_regenerate_existing_title",
+      "module": "ai_agent.tests.test_chat_views.TitleGenerationTest.test_does_not_regenerate_existing_title",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_generates_title_after_first_exchange",
+      "module": "ai_agent.tests.test_chat_views.TitleGenerationTest.test_generates_title_after_first_exchange",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_title_is_concise_and_descriptive",
+      "module": "ai_agent.tests.test_chat_views.TitleGenerationTest.test_title_is_concise_and_descriptive",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    }
+  ]
+}
