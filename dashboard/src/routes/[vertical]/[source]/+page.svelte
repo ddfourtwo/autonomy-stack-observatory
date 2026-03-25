@@ -183,8 +183,7 @@
 					<thead>
 						<tr>
 							<th style="width:36px" class="center"></th>
-							<th style="width:30%">Test</th>
-							<th>Description</th>
+							<th>Test</th>
 							<th style="width:80px" class="center">Result</th>
 						</tr>
 					</thead>
@@ -196,7 +195,7 @@
 								class="section-header clickable"
 								onclick={() => expandedSections[className] = !isExpanded}
 							>
-								<td colspan="4">
+								<td colspan="3">
 									<span class="section-chevron">{isExpanded ? '▼' : '▶'}</span>
 									<span class="section-name">{className}</span>
 									<span class="section-stats">
@@ -225,10 +224,8 @@
 										</td>
 										<td>
 											<span class="test-name">{entry.name}</span>
-										</td>
-										<td>
 											{#if entry.description}
-												<span class="test-desc">{entry.description}</span>
+												<div class="test-desc">{entry.description}</div>
 											{/if}
 											{#if entry.error}
 												<div class="error-msg">{entry.error}</div>
@@ -343,8 +340,8 @@
 	.total-col { font-weight: 600; font-size: 13px; }
 
 	/* Test details */
-	.test-name { font-family: 'Source Code Pro', monospace; font-size: 13px; font-weight: 600; }
-	.test-desc { font-size: 13px; color: #555; }
+	.test-name { font-family: 'Source Code Pro', monospace; font-size: 13px; font-weight: 600; display: block; }
+	.test-desc { font-size: 12px; color: #888; margin-top: 2px; padding-left: 12px; }
 	.error-msg {
 		font-family: 'Source Code Pro', monospace; font-size: 12px; color: #f93e3e;
 		margin-top: 6px; padding: 6px 10px; background: rgba(249, 62, 62, 0.05);
