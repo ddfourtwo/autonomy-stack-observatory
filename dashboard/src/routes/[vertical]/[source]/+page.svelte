@@ -23,36 +23,32 @@
 		sensitive: { short: 'Sens.', tip: 'No secrets/tokens/keys in responses' },
 	};
 
-	const STATUS_ICON = { passed: '✓', failed: '✗', skipped: '—' };
-	const STATUS_CLASS = { passed: 'pass', failed: 'fail', skipped: 'skip' };
+	const STATUS_ICON = { passed: '✓', failed: '✗', error: '✗', skipped: '—' };
+	const STATUS_CLASS = { passed: 'pass', failed: 'fail', error: 'err', skipped: 'skip' };
 
-	// Group entries by test file (e.g. ai_agent.tests.test_agent)
-	function groupByFile(entries) {
+	function groupByClass(entries) {
 		const groups = {};
 		for (const entry of entries) {
-			// module: "ai_agent.tests.test_agent.WorkoutAgentTest.test_something"
-			// We want: "ai_agent.tests.test_agent"
-			const parts = (entry.module || '').split('.');
-			let fileKey = entry.module || 'Other';
-
-			// Find the test file level — look for "test_" prefixed segment
-			for (let i = 0; i < parts.length; i++) {
-				if (parts[i].startsWith('test_')) {
-					fileKey = parts.slice(0, i + 1).join('.');
-					break;
-				}
+			const key = entry.suite || entry.module || 'Other';
+			if (!groups[key]) {
+				groups[key] = { module: entry.module, entries: [], passed: 0, failed: 0, errors: 0, skipped: 0 };
 			}
-
-			if (!groups[fileKey]) {
-				groups[fileKey] = { entries: [], passed: 0, failed: 0, skipped: 0 };
-			}
-			groups[fileKey].entries.push(entry);
-			if (entry.status === 'passed') groups[fileKey].passed++;
-			else if (entry.status === 'failed') groups[fileKey].failed++;
-			else groups[fileKey].skipped++;
+			groups[key].entries.push(entry);
+			if (entry.status === 'passed') groups[key].passed++;
+			else if (entry.status === 'error') groups[key].errors++;
+			else if (entry.status === 'failed') groups[key].failed++;
+			else groups[key].skipped++;
 		}
-		return Object.entries(groups).sort((a, b) => a[0].localeCompare(b[0]));
+		return Object.entries(groups).sort((a, b) => {
+			const aFail = a[1].failed + a[1].errors;
+			const bFail = b[1].failed + b[1].errors;
+			if (aFail > 0 && bFail === 0) return -1;
+			if (bFail > 0 && aFail === 0) return 1;
+			return a[0].localeCompare(b[0]);
+		});
 	}
+
+	let expandedSections = $state({});
 </script>
 
 <main>
@@ -70,7 +66,6 @@
 			<p class="empty">No data available.</p>
 
 		{:else if isSecurityCoverage}
-			<!-- Security Coverage Matrix -->
 			<div class="summary">
 				<div class="stat primary">
 					<div class="stat-value">{sourceData.summary.overall_coverage}%</div>
@@ -114,9 +109,7 @@
 							{@const partiallyCovered = covered > 0 && !allCovered}
 							<tr class:row-green={allCovered} class:row-amber={partiallyCovered}>
 								<td>
-									<span class="method" style="background:{METHOD_COLORS[ep.method] || '#888'}">
-										{ep.method}
-									</span>
+									<span class="method" style="background:{METHOD_COLORS[ep.method] || '#888'}">{ep.method}</span>
 								</td>
 								<td class="path">{ep.path}</td>
 								{#each sourceData.test_types as tt}
@@ -138,7 +131,6 @@
 			</table>
 
 		{:else}
-			<!-- Standard test results — Swagger-style table -->
 			{@const s = sourceData.summary}
 			<div class="summary">
 				<div class="stat" class:primary={s.failed === 0} class:danger={s.failed > 0}>
@@ -155,10 +147,10 @@
 						<div class="stat-label">Failed</div>
 					</div>
 				{/if}
-				{#if s.skipped > 0}
+				{#if s.errors > 0}
 					<div class="stat">
-						<div class="stat-value">{s.skipped}</div>
-						<div class="stat-label">Skipped</div>
+						<div class="stat-value stat-error">{s.errors}</div>
+						<div class="stat-label">Errors</div>
 					</div>
 				{/if}
 				<div class="stat">
@@ -171,62 +163,85 @@
 						<div class="stat-label">Duration</div>
 					</div>
 				{/if}
-				{#if s.coverage_percent != null}
-					<div class="stat">
-						<div class="stat-value">{s.coverage_percent}%</div>
-						<div class="stat-label">Coverage</div>
-					</div>
-				{/if}
 			</div>
 
+			<!-- Stacked pass/fail bar -->
+			{#if s.total > 0}
+				<div class="bar-container">
+					<div class="bar-segment bar-pass" style="width:{(s.passed / s.total) * 100}%"></div>
+					<div class="bar-segment bar-fail" style="width:{(s.failed / s.total) * 100}%"></div>
+					{#if s.errors > 0}
+						<div class="bar-segment bar-err" style="width:{(s.errors / s.total) * 100}%"></div>
+					{/if}
+				</div>
+			{/if}
+
 			{#if sourceData.entries && sourceData.entries.length > 0}
-				{@const grouped = groupByFile(sourceData.entries)}
+				{@const grouped = groupByClass(sourceData.entries)}
 
 				<table>
 					<thead>
 						<tr>
-							<th style="width:40px" class="center">Status</th>
-							<th>Test</th>
-							<th style="width:100px" class="center">Result</th>
+							<th style="width:36px" class="center"></th>
+							<th style="width:30%">Test</th>
+							<th>Description</th>
+							<th style="width:80px" class="center">Result</th>
 						</tr>
 					</thead>
 					<tbody>
-						{#each grouped as [file, group]}
-							{@const allPass = group.failed === 0}
-							<tr class="section-header">
-								<td colspan="3">
-									<span class="section-name">{file}</span>
+						{#each grouped as [className, group]}
+							{@const hasFails = group.failed + group.errors > 0}
+							{@const isExpanded = expandedSections[className] ?? hasFails}
+							<tr
+								class="section-header clickable"
+								onclick={() => expandedSections[className] = !isExpanded}
+							>
+								<td colspan="4">
+									<span class="section-chevron">{isExpanded ? '▼' : '▶'}</span>
+									<span class="section-name">{className}</span>
 									<span class="section-stats">
 										{group.entries.length} tests
-										&middot;
 										{#if group.failed > 0}
-											<span class="stat-fail">{group.failed} failed</span> &middot;
+											&middot; <span class="stat-fail">{group.failed} failed</span>
 										{/if}
-										{group.passed} passed
+										{#if group.errors > 0}
+											&middot; <span class="stat-error">{group.errors} errors</span>
+										{/if}
+										&middot; {group.passed} passed
 									</span>
+									{#if group.module}
+										<span class="section-module">{group.module}</span>
+									{/if}
 								</td>
 							</tr>
-							{#each group.entries as entry}
-								<tr
-									class:row-green={entry.status === 'passed'}
-									class:row-red={entry.status === 'failed'}
-								>
-									<td class="center">
-										<span class={STATUS_CLASS[entry.status]}>{STATUS_ICON[entry.status]}</span>
-									</td>
-									<td>
-										<span class="test-name">{entry.name}</span>
-										{#if entry.error}
-											<div class="error-msg">{entry.error}</div>
-										{/if}
-									</td>
-									<td class="center">
-										<span class="result-badge {STATUS_CLASS[entry.status]}">
-											{entry.status}
-										</span>
-									</td>
-								</tr>
-							{/each}
+							{#if isExpanded}
+								{#each group.entries as entry}
+									<tr
+										class:row-green={entry.status === 'passed'}
+										class:row-red={entry.status === 'failed' || entry.status === 'error'}
+									>
+										<td class="center">
+											<span class={STATUS_CLASS[entry.status] || 'skip'}>{STATUS_ICON[entry.status] || '?'}</span>
+										</td>
+										<td>
+											<span class="test-name">{entry.name}</span>
+										</td>
+										<td>
+											{#if entry.description}
+												<span class="test-desc">{entry.description}</span>
+											{/if}
+											{#if entry.error}
+												<div class="error-msg">{entry.error}</div>
+											{/if}
+										</td>
+										<td class="center">
+											<span class="result-badge {STATUS_CLASS[entry.status] || 'skip'}">
+												{entry.status === 'error' ? 'ERROR' : (entry.status || '?').toUpperCase()}
+											</span>
+										</td>
+									</tr>
+								{/each}
+							{/if}
 						{/each}
 					</tbody>
 				</table>
@@ -261,18 +276,12 @@
 	.info h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
 	.info p { color: #666; font-size: 14px; }
 
-	/* Summary stats */
-	.summary { display: flex; gap: 15px; margin-bottom: 24px; flex-wrap: wrap; }
+	.summary { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
 
 	.stat {
-		background: #fff;
-		border: 1px solid #d9d9d9;
-		border-radius: 4px;
-		padding: 15px 25px;
-		text-align: center;
-		min-width: 100px;
+		background: #fff; border: 1px solid #d9d9d9; border-radius: 4px;
+		padding: 15px 25px; text-align: center; min-width: 100px;
 	}
-
 	.stat.primary { background: #49cc90; border-color: #49cc90; color: #fff; }
 	.stat.danger { background: #f93e3e; border-color: #f93e3e; color: #fff; }
 	.stat.primary .stat-label, .stat.danger .stat-label { color: rgba(255,255,255,0.9); }
@@ -280,127 +289,87 @@
 
 	.stat-value { font-size: 24px; font-weight: 700; }
 	.stat-fail { color: #f93e3e; }
+	.stat-error { color: #e67e22; }
 	.stat-label { font-size: 11px; text-transform: uppercase; color: #666; margin-top: 4px; }
 	.stat-detail { font-size: 11px; color: #999; margin-top: 2px; }
 
+	/* Stacked bar */
+	.bar-container {
+		display: flex; height: 8px; border-radius: 4px; overflow: hidden;
+		margin-bottom: 24px; background: #e0e0e0;
+	}
+	.bar-segment { height: 100%; }
+	.bar-pass { background: #49cc90; }
+	.bar-fail { background: #f93e3e; }
+	.bar-err { background: #e67e22; }
+
 	/* Table */
 	table {
-		width: 100%;
-		border-collapse: collapse;
-		background: #fff;
-		border: 1px solid #d9d9d9;
-		border-radius: 4px;
+		width: 100%; border-collapse: collapse; background: #fff;
+		border: 1px solid #d9d9d9; border-radius: 4px;
 	}
-
 	th {
-		background: #fafafa;
-		border-bottom: 1px solid #d9d9d9;
-		padding: 12px 15px;
-		text-align: left;
-		font-size: 12px;
-		text-transform: uppercase;
-		font-weight: 600;
-		color: #3b4151;
+		background: #fafafa; border-bottom: 1px solid #d9d9d9;
+		padding: 12px 15px; text-align: left; font-size: 12px;
+		text-transform: uppercase; font-weight: 600; color: #3b4151;
 	}
-
-	td {
-		padding: 10px 15px;
-		border-bottom: 1px solid #ebebeb;
-		font-size: 14px;
-	}
-
+	td { padding: 10px 15px; border-bottom: 1px solid #ebebeb; font-size: 14px; }
 	tr:last-child td { border-bottom: none; }
 	.center { text-align: center; }
 
-	/* Section headers */
+	/* Sections */
 	.section-header { background: #f5f5f5 !important; }
 	.section-header td { padding: 12px 15px; border-bottom: 2px solid #d9d9d9; }
+	.section-header.clickable { cursor: pointer; user-select: none; }
+	.section-header.clickable:hover { background: #eee !important; }
+	.section-chevron { font-size: 10px; margin-right: 8px; color: #888; }
 	.section-name { font-weight: 700; font-size: 14px; color: #3b4151; }
 	.section-stats { margin-left: 12px; font-size: 12px; color: #888; font-weight: 400; }
+	.section-module { float: right; font-size: 11px; color: #aaa; font-family: 'Source Code Pro', monospace; }
 
 	/* Row highlighting */
 	.row-green { background: rgba(73, 204, 144, 0.05); }
 	.row-red { background: rgba(249, 62, 62, 0.05); }
 	.row-amber { background: rgba(252, 161, 48, 0.1); }
 
-	/* Status indicators */
+	/* Status */
 	.pass { color: #49cc90; font-weight: 700; font-size: 16px; }
 	.fail { color: #f93e3e; font-weight: 700; font-size: 16px; }
+	.err { color: #e67e22; font-weight: 700; font-size: 16px; }
 	.skip { color: #888; font-size: 14px; }
-
 	.check { color: #49cc90; font-weight: 700; }
 	.cross { color: #cc4949; }
 	.na { color: #888; font-size: 11px; font-weight: 600; cursor: help; text-decoration: underline dotted #ccc; }
-	.na:hover { color: #555; }
-
 	.total-col { font-weight: 600; font-size: 13px; }
 
-	/* Test name + error */
-	.test-name {
-		font-family: 'Source Code Pro', monospace;
-		font-size: 13px;
-		font-weight: 600;
-	}
-
+	/* Test details */
+	.test-name { font-family: 'Source Code Pro', monospace; font-size: 13px; font-weight: 600; }
+	.test-desc { font-size: 13px; color: #555; }
 	.error-msg {
-		font-family: 'Source Code Pro', monospace;
-		font-size: 12px;
-		color: #f93e3e;
-		margin-top: 4px;
-		padding: 6px 8px;
-		background: rgba(249, 62, 62, 0.05);
-		border-radius: 3px;
-		border-left: 3px solid #f93e3e;
+		font-family: 'Source Code Pro', monospace; font-size: 12px; color: #f93e3e;
+		margin-top: 6px; padding: 6px 10px; background: rgba(249, 62, 62, 0.05);
+		border-radius: 3px; border-left: 3px solid #f93e3e; word-break: break-word;
 	}
 
 	/* Result badge */
 	.result-badge {
-		display: inline-block;
-		padding: 3px 10px;
-		border-radius: 3px;
-		font-size: 11px;
-		font-weight: 700;
-		text-transform: uppercase;
+		display: inline-block; padding: 3px 10px; border-radius: 3px;
+		font-size: 11px; font-weight: 700; text-transform: uppercase;
 	}
-
 	.result-badge.pass { background: rgba(73, 204, 144, 0.15); color: #2d8a5e; }
 	.result-badge.fail { background: rgba(249, 62, 62, 0.15); color: #c0392b; }
+	.result-badge.err { background: rgba(230, 126, 34, 0.15); color: #a0522d; }
 	.result-badge.skip { background: rgba(136, 136, 136, 0.15); color: #666; }
 
-	/* Method badges (security coverage) */
+	/* Method badges (security) */
 	.method {
-		display: inline-block;
-		padding: 4px 8px;
-		border-radius: 3px;
-		font-size: 11px;
-		font-weight: 700;
-		color: #fff;
-		min-width: 60px;
-		text-align: center;
-		text-transform: uppercase;
+		display: inline-block; padding: 4px 8px; border-radius: 3px;
+		font-size: 11px; font-weight: 700; color: #fff; min-width: 60px;
+		text-align: center; text-transform: uppercase;
 	}
+	.path { font-family: 'Source Code Pro', monospace; font-size: 13px; font-weight: 600; }
 
-	.path {
-		font-family: 'Source Code Pro', monospace;
-		font-size: 13px;
-		font-weight: 600;
-	}
-
-	/* Footer */
-	.footer {
-		margin-top: 30px;
-		padding-top: 20px;
-		border-top: 1px solid #d9d9d9;
-		color: #666;
-		font-size: 13px;
-	}
-
-	.footer code {
-		background: #f0f0f0;
-		padding: 3px 8px;
-		border-radius: 3px;
-		font-family: 'Source Code Pro', monospace;
-	}
-
+	.footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #d9d9d9; color: #666; font-size: 13px; }
+	.footer code { background: #f0f0f0; padding: 3px 8px; border-radius: 3px; font-family: 'Source Code Pro', monospace; }
 	.empty { color: #999; font-style: italic; }
 </style>
