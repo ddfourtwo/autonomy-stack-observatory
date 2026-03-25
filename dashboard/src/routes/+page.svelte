@@ -10,11 +10,21 @@
 		infrastructure: 'Infrastructure',
 	};
 
-	function getStatus(summary) {
+	function getStatus(summary, source) {
 		if (!summary) return 'empty';
+		// Security coverage uses overall_coverage
+		if (summary.overall_coverage != null) {
+			if (summary.overall_coverage >= 80) return 'green';
+			if (summary.overall_coverage >= 30) return 'amber';
+			return 'red';
+		}
 		if (summary.failed > 0) return 'red';
 		if (summary.total === 0) return 'empty';
 		return 'green';
+	}
+
+	function isCoverage(sourceData) {
+		return sourceData.summary?.overall_coverage != null;
 	}
 
 	function formatSource(source) {
@@ -32,23 +42,30 @@
 				<h2>{verticalLabels[vertical] || vertical}</h2>
 				<div class="sources">
 					{#each Object.entries(sources) as [source, { file, data: sourceData }]}
-						{@const status = getStatus(sourceData.summary)}
+						{@const status = getStatus(sourceData.summary, source)}
 						<a class="card {status}" href="/{vertical}/{source}">
 							<div class="card-header">
 								<span class="indicator"></span>
 								<h3>{formatSource(source)}</h3>
 							</div>
 
-							<div class="summary">
-								<span class="passed">{sourceData.summary.passed} passed</span>
-								{#if sourceData.summary.failed > 0}
-									<span class="failed">{sourceData.summary.failed} failed</span>
-								{/if}
-								<span class="total">/ {sourceData.summary.total} total</span>
-							</div>
+							{#if isCoverage(sourceData)}
+								<div class="summary">
+									<span class="coverage-pct">{sourceData.summary.overall_coverage}%</span>
+									<span class="total">coverage across {sourceData.summary.total_endpoints} endpoints</span>
+								</div>
+							{:else}
+								<div class="summary">
+									<span class="passed">{sourceData.summary.passed} passed</span>
+									{#if sourceData.summary.failed > 0}
+										<span class="failed">{sourceData.summary.failed} failed</span>
+									{/if}
+									<span class="total">/ {sourceData.summary.total} total</span>
+								</div>
 
-							{#if sourceData.summary.duration_seconds}
-								<div class="meta">{sourceData.summary.duration_seconds}s</div>
+								{#if sourceData.summary.duration_seconds}
+									<div class="meta">{sourceData.summary.duration_seconds}s</div>
+								{/if}
 							{/if}
 
 							<div class="meta">{file.replace('.json', '')}</div>
@@ -114,6 +131,7 @@
 
 	.card.green { border-left-color: #22c55e; }
 	.card.red { border-left-color: #ef4444; }
+	.card.amber { border-left-color: #f59e0b; }
 	.card.empty { border-left-color: #d1d5db; }
 
 	.card-header {
@@ -133,6 +151,7 @@
 
 	.green .indicator { background: #22c55e; }
 	.red .indicator { background: #ef4444; }
+	.amber .indicator { background: #f59e0b; }
 
 	.card-header h3 { margin: 0; font-size: 0.95rem; }
 
@@ -147,6 +166,7 @@
 	.failed { color: #ef4444; font-weight: 600; font-size: 0.9rem; }
 	.total { color: #999; font-size: 0.85rem; }
 	.meta { color: #999; font-size: 0.8rem; }
+	.coverage-pct { color: #f59e0b; font-weight: 600; font-size: 0.9rem; }
 
 	.empty { color: #999; font-style: italic; }
 </style>
