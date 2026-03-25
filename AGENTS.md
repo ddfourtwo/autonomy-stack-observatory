@@ -126,15 +126,21 @@ Observatory repo access (for git push) requires a GitHub token with write access
 
 ## Available Verticals and Sources
 
-| Vertical | Source | Schema |
-|----------|--------|--------|
-| `product` | `e2e-ios` | `schemas/e2e-results.schema.json` |
-| `product` | `e2e-web` | `schemas/e2e-results.schema.json` |
-| `product` | `unit-backend` | `schemas/unit-test-results.schema.json` |
-| `product` | `sentry` | `schemas/sentry-stats.schema.json` |
-| `sales` | `usage` | `schemas/usage-metrics.schema.json` |
-| `growth` | `facebook-ads` | `schemas/marketing-stats.schema.json` |
-| `growth` | `google-ads` | `schemas/marketing-stats.schema.json` |
-| `website` | `analytics` | `schemas/website-stats.schema.json` |
+Each source maps to one nightly playbook in its repo.
+
+| Vertical | Source | Schema | Repo | Playbook |
+|----------|--------|--------|------|----------|
+| `product` | `unit-backend` | `unit-test-results.schema.json` | `beoflow` | `backend-unit-tests` |
+| `product` | `security-backend` | `unit-test-results.schema.json` | `beoflow` | `backend-unit-tests` |
+| `product` | `agent-tests` | `unit-test-results.schema.json` | `beoflow` | `backend-agent-tests` |
+| `product` | `unit-ios` | `unit-test-results.schema.json` | `beoflow-ios` | `ios-unit-tests` |
+| `product` | `e2e-ios` | `e2e-results.schema.json` | `beoflow-ios` | `ios-e2e-tests` |
+| `product` | `unit-web` | `unit-test-results.schema.json` | `beoflow-webapp` | `web-unit-tests` |
+| `product` | `e2e-web` | `e2e-results.schema.json` | `beoflow-webapp` | `web-e2e-tests` |
+| `product` | `sentry` | `sentry-stats.schema.json` | — | collector cron |
+| `sales` | `usage` | `usage-metrics.schema.json` | — | collector cron |
+| `growth` | `facebook-ads` | `marketing-stats.schema.json` | — | collector cron |
+| `growth` | `google-ads` | `marketing-stats.schema.json` | — | collector cron |
+| `website` | `analytics` | `website-stats.schema.json` | — | collector cron |
 
 To add a new source, create the schema and data directory first. See `README.md` for the procedure.
