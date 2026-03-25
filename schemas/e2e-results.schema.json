@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "E2E Test Results",
+  "description": "End-to-end test results with optional screenshot/video proof",
+  "type": "object",
+  "required": ["vertical", "source", "timestamp", "summary", "entries"],
+  "properties": {
+    "vertical": { "type": "string", "enum": ["product"] },
+    "source": { "type": "string", "enum": ["e2e-ios", "e2e-web"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "summary": {
+      "type": "object",
+      "required": ["total", "passed", "failed"],
+      "properties": {
+        "total": { "type": "integer" },
+        "passed": { "type": "integer" },
+        "failed": { "type": "integer" },
+        "skipped": { "type": "integer", "default": 0 },
+        "duration_seconds": { "type": "number" }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "suite", "status"],
+        "properties": {
+          "name": { "type": "string" },
+          "suite": { "type": "string" },
+          "status": { "type": "string", "enum": ["passed", "failed", "skipped"] },
+          "duration_seconds": { "type": "number" },
+          "screenshot_url": { "type": ["string", "null"] },
+          "video_url": { "type": ["string", "null"] },
+          "error": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

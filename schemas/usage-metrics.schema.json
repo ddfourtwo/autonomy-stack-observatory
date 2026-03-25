@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Usage Metrics",
+  "description": "Product usage metrics from PostHog or similar",
+  "type": "object",
+  "required": ["vertical", "source", "timestamp", "summary", "entries"],
+  "properties": {
+    "vertical": { "type": "string" },
+    "source": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "summary": {
+      "type": "object",
+      "required": ["dau"],
+      "properties": {
+        "dau": { "type": "integer" },
+        "wau": { "type": "integer" },
+        "mau": { "type": "integer" },
+        "new_signups_24h": { "type": "integer" },
+        "sessions_24h": { "type": "integer" }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["event", "count_24h"],
+        "properties": {
+          "event": { "type": "string" },
+          "count_24h": { "type": "integer" },
+          "unique_users_24h": { "type": "integer" },
+          "trend_vs_prev_day": { "type": "number" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sentry Stats",
+  "description": "Error tracking statistics from Sentry",
+  "type": "object",
+  "required": ["vertical", "source", "timestamp", "summary", "entries"],
+  "properties": {
+    "vertical": { "type": "string", "enum": ["product"] },
+    "source": { "type": "string", "enum": ["sentry"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "summary": {
+      "type": "object",
+      "required": ["total_events_24h", "unique_issues"],
+      "properties": {
+        "total_events_24h": { "type": "integer" },
+        "unique_issues": { "type": "integer" },
+        "new_issues": { "type": "integer" },
+        "crash_free_sessions_percent": { "type": "number" }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["issue_id", "title", "level", "count_24h"],
+        "properties": {
+          "issue_id": { "type": "string" },
+          "title": { "type": "string" },
+          "level": { "type": "string", "enum": ["error", "warning", "info"] },
+          "count_24h": { "type": "integer" },
+          "first_seen": { "type": "string", "format": "date-time" },
+          "is_new": { "type": "boolean" },
+          "url": { "type": "string" }
+        }
+      }
+    }
+  }
+}

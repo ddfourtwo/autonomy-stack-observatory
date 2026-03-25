@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Marketing Stats",
+  "description": "Paid acquisition metrics from ad platforms",
+  "type": "object",
+  "required": ["vertical", "source", "timestamp", "summary", "entries"],
+  "properties": {
+    "vertical": { "type": "string", "enum": ["growth"] },
+    "source": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "summary": {
+      "type": "object",
+      "required": ["spend_24h"],
+      "properties": {
+        "spend_24h": { "type": "number" },
+        "impressions_24h": { "type": "integer" },
+        "clicks_24h": { "type": "integer" },
+        "conversions_24h": { "type": "integer" },
+        "cpa": { "type": "number" },
+        "roas": { "type": "number" }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["campaign", "spend"],
+        "properties": {
+          "campaign": { "type": "string" },
+          "spend": { "type": "number" },
+          "impressions": { "type": "integer" },
+          "clicks": { "type": "integer" },
+          "conversions": { "type": "integer" },
+          "cpa": { "type": "number" }
+        }
+      }
+    }
+  }
+}
