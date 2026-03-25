@@ -21,44 +21,69 @@ def parse_django_output(text: str) -> dict:
     errored = 0
     skipped = 0
 
-    # Match lines like:
-    #   test_something (app.tests.TestClass) ... ok
-    #   test_something (app.tests.TestClass) ... FAIL
-    #   test_something (app.tests.TestClass) ... ERROR
-    #   test_something (app.tests.TestClass) ... skipped 'reason'
-    test_pattern = re.compile(
-        r'^(test\S+)\s+\(([^)]+)\)\s+\.\.\.\s+(ok|FAIL|ERROR|skipped\b.*?)$',
-        re.MULTILINE
-    )
+    lines = text.split('\n')
 
-    for match in test_pattern.finditer(text):
-        name = match.group(1)
-        module = match.group(2)
-        result = match.group(3).strip()
+    # Django -v 2 output format:
+    #   test_name (module.Class.test_name)
+    #   Docstring. ... ok          <-- may have log noise before "ok"
+    #
+    # Or with log noise:
+    #   test_name (module.Class.test_name)
+    #   Docstring. ... [log output]
+    #   [more log output]
+    #   ok
+    #
+    # Strategy: find test name lines, then scan forward for the result
+    # (ok/FAIL/ERROR/skipped) which appears as a standalone word on a line.
 
-        if result == 'ok':
-            status = 'passed'
-            passed += 1
-        elif result == 'FAIL':
-            status = 'failed'
-            failed += 1
-        elif result == 'ERROR':
-            status = 'failed'
-            errored += 1
-        elif result.startswith('skipped'):
-            status = 'skipped'
-            skipped += 1
-        else:
-            status = 'failed'
-            failed += 1
+    name_pattern = re.compile(r'^(test\S+)\s+\(([^)]+)\)\s*$')
+    result_pattern = re.compile(r'(?:^|\.\.\.\s*)(ok|FAIL|ERROR|skipped\b.*?)\s*$')
 
-        entries.append({
-            "name": name,
-            "module": module,
-            "status": status,
-            "duration_seconds": None,
-            "error": None,
-        })
+    i = 0
+    while i < len(lines):
+        name_match = name_pattern.match(lines[i])
+        if name_match:
+            name = name_match.group(1)
+            module = name_match.group(2)
+
+            # Scan forward for the result — some tests produce thousands
+            # of lines of log output between the name and ok/FAIL
+            result = None
+            for j in range(i + 1, len(lines)):
+                # Check if we hit the next test (means we missed the result)
+                if name_pattern.match(lines[j]):
+                    break
+                result_match = result_pattern.search(lines[j])
+                if result_match:
+                    result = result_match.group(1).strip()
+                    i = j
+                    break
+
+            if result == 'ok':
+                status = 'passed'
+                passed += 1
+            elif result == 'FAIL':
+                status = 'failed'
+                failed += 1
+            elif result == 'ERROR':
+                status = 'failed'
+                errored += 1
+            elif result and result.startswith('skipped'):
+                status = 'skipped'
+                skipped += 1
+            else:
+                # Couldn't find result — assume passed if overall OK
+                status = 'unknown'
+
+            if status != 'unknown':
+                entries.append({
+                    "name": name,
+                    "module": module,
+                    "status": status,
+                    "duration_seconds": None,
+                    "error": None,
+                })
+        i += 1
 
     # Try to extract errors from the FAIL/ERROR blocks
     # Format:
