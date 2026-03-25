@@ -33,7 +33,7 @@
 				<div class="sources">
 					{#each Object.entries(sources) as [source, { file, data: sourceData }]}
 						{@const status = getStatus(sourceData.summary)}
-						<div class="card {status}">
+						<a class="card {status}" href="/{vertical}/{source}">
 							<div class="card-header">
 								<span class="indicator"></span>
 								<h3>{formatSource(source)}</h3>
@@ -52,24 +52,7 @@
 							{/if}
 
 							<div class="meta">{file.replace('.json', '')}</div>
-
-							{#if sourceData.entries && sourceData.entries.length > 0}
-								{@const failures = sourceData.entries.filter(e => e.status === 'failed')}
-								{#if failures.length > 0}
-									<div class="failures">
-										<h4>Failures</h4>
-										{#each failures as entry}
-											<div class="failure">
-												<span class="name">{entry.name}</span>
-												{#if entry.error}
-													<span class="error">{entry.error}</span>
-												{/if}
-											</div>
-										{/each}
-									</div>
-								{/if}
-							{/if}
-						</div>
+						</a>
 					{/each}
 				</div>
 			</section>
@@ -90,10 +73,7 @@
 		color: #1a1a1a;
 	}
 
-	h1 {
-		font-size: 1.5rem;
-		margin: 0;
-	}
+	h1 { font-size: 1.5rem; margin: 0; }
 
 	.subtitle {
 		color: #666;
@@ -101,9 +81,7 @@
 		font-size: 0.9rem;
 	}
 
-	.vertical {
-		margin-bottom: 2rem;
-	}
+	.vertical { margin-bottom: 2rem; }
 
 	.vertical h2 {
 		font-size: 1.1rem;
@@ -120,12 +98,19 @@
 		gap: 1rem;
 	}
 
-	.card {
+	a.card {
+		display: block;
 		border: 1px solid #e0e0e0;
 		border-radius: 8px;
 		padding: 1.25rem;
 		border-left: 4px solid #e0e0e0;
+		text-decoration: none;
+		color: inherit;
+		transition: box-shadow 0.15s;
+		cursor: pointer;
 	}
+
+	a.card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
 
 	.card.green { border-left-color: #22c55e; }
 	.card.red { border-left-color: #ef4444; }
@@ -149,10 +134,7 @@
 	.green .indicator { background: #22c55e; }
 	.red .indicator { background: #ef4444; }
 
-	.card-header h3 {
-		margin: 0;
-		font-size: 0.95rem;
-	}
+	.card-header h3 { margin: 0; font-size: 0.95rem; }
 
 	.summary {
 		display: flex;
@@ -161,61 +143,10 @@
 		margin-bottom: 0.25rem;
 	}
 
-	.passed {
-		color: #22c55e;
-		font-weight: 600;
-		font-size: 0.9rem;
-	}
+	.passed { color: #22c55e; font-weight: 600; font-size: 0.9rem; }
+	.failed { color: #ef4444; font-weight: 600; font-size: 0.9rem; }
+	.total { color: #999; font-size: 0.85rem; }
+	.meta { color: #999; font-size: 0.8rem; }
 
-	.failed {
-		color: #ef4444;
-		font-weight: 600;
-		font-size: 0.9rem;
-	}
-
-	.total {
-		color: #999;
-		font-size: 0.85rem;
-	}
-
-	.meta {
-		color: #999;
-		font-size: 0.8rem;
-	}
-
-	.failures {
-		margin-top: 0.75rem;
-		padding-top: 0.75rem;
-		border-top: 1px solid #f0f0f0;
-	}
-
-	.failures h4 {
-		margin: 0 0 0.5rem;
-		font-size: 0.8rem;
-		color: #ef4444;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-	}
-
-	.failure {
-		margin-bottom: 0.5rem;
-	}
-
-	.failure .name {
-		display: block;
-		font-size: 0.85rem;
-		font-family: monospace;
-	}
-
-	.failure .error {
-		display: block;
-		font-size: 0.8rem;
-		color: #999;
-		margin-top: 0.125rem;
-	}
-
-	.empty {
-		color: #999;
-		font-style: italic;
-	}
+	.empty { color: #999; font-style: italic; }
 </style>
