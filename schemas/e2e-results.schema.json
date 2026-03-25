@@ -15,6 +15,7 @@
         "total": { "type": "integer" },
         "passed": { "type": "integer" },
         "failed": { "type": "integer" },
+        "errors": { "type": "integer", "default": 0 },
         "skipped": { "type": "integer", "default": 0 },
         "duration_seconds": { "type": "number" }
       }
@@ -26,11 +27,12 @@
         "required": ["name", "suite", "status"],
         "properties": {
           "name": { "type": "string" },
-          "suite": { "type": "string" },
-          "status": { "type": "string", "enum": ["passed", "failed", "skipped"] },
+          "suite": { "type": "string", "description": "Test group/screen (e.g. 'Authentication', 'Workouts')" },
+          "description": { "type": ["string", "null"], "description": "Human-readable description of what the test verifies" },
+          "status": { "type": "string", "enum": ["passed", "failed", "error", "skipped"] },
           "duration_seconds": { "type": "number" },
-          "screenshot_url": { "type": ["string", "null"] },
-          "video_url": { "type": ["string", "null"] },
+          "screenshot_url": { "type": ["string", "null"], "description": "/media/ path to screenshot in R2" },
+          "video_url": { "type": ["string", "null"], "description": "/media/ path to video in R2" },
           "error": { "type": ["string", "null"] }
         }
       }

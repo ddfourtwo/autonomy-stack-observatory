@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Unit Test Results",
-  "description": "Unit/integration test results with optional coverage",
+  "description": "Unit/integration/agent test results with descriptions and error categorization",
   "type": "object",
   "required": ["vertical", "source", "timestamp", "summary", "entries"],
   "properties": {
@@ -14,7 +14,8 @@
       "properties": {
         "total": { "type": "integer" },
         "passed": { "type": "integer" },
-        "failed": { "type": "integer" },
+        "failed": { "type": "integer", "description": "Assertion failures" },
+        "errors": { "type": "integer", "default": 0, "description": "Infrastructure errors (imports, timeouts, etc.)" },
         "skipped": { "type": "integer", "default": 0 },
         "coverage_percent": { "type": ["number", "null"] },
         "duration_seconds": { "type": "number" }
@@ -26,11 +27,13 @@
         "type": "object",
         "required": ["name", "module", "status"],
         "properties": {
-          "name": { "type": "string" },
-          "module": { "type": "string" },
-          "status": { "type": "string", "enum": ["passed", "failed", "skipped"] },
-          "duration_seconds": { "type": "number" },
-          "error": { "type": ["string", "null"] }
+          "name": { "type": "string", "description": "Test method name (e.g. test_rejects_expired_token)" },
+          "module": { "type": "string", "description": "Django app module path (e.g. ai_agent.tests.test_agent)" },
+          "suite": { "type": ["string", "null"], "description": "Test class name (e.g. WorkoutAgentInputValidationTest). Used for sub-grouping in the dashboard." },
+          "description": { "type": ["string", "null"], "description": "Human-readable test description from docstring (e.g. 'Expired JWT tokens should be rejected')" },
+          "status": { "type": "string", "enum": ["passed", "failed", "error", "skipped"] },
+          "duration_seconds": { "type": ["number", "null"] },
+          "error": { "type": ["string", "null"], "description": "Error message from traceback (last line). Only present for failed/error tests." }
         }
       }
     }

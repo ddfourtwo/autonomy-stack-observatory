@@ -1,146 +1,166 @@
 # Agent Integration Guide
 
-How to push data and media to the observatory from other repos.
+How to push test results, metrics, and media to the observatory from other repos.
 
 ## Overview
 
-Your repo produces test results, metrics, or other data. You push structured JSON to this observatory repo, and optionally upload screenshots/videos to R2. The observatory dashboard and morning report consume it.
+Your repo produces test results or metrics. A nightly playbook runs the tests, transforms results to observatory JSON, and pushes to this repo. The dashboard and morning report consume it.
+
+## Data Entry Standards
+
+Every test entry pushed to the observatory **must** include these fields for the dashboard to render correctly. Missing fields degrade the experience — descriptions show as blank, grouping falls flat, errors aren't visible.
+
+### Required Fields
+
+| Field | Type | Example | Why |
+|-------|------|---------|-----|
+| `name` | string | `test_rejects_expired_token` | Test method name — shown in monospace in the dashboard |
+| `module` | string | `ai_agent.tests.test_agent` | Module path — used to group tests by app (first segment becomes the section header) |
+| `status` | enum | `passed`, `failed`, `error`, `skipped` | `failed` = assertion failure, `error` = infrastructure issue. Dashboard uses different colors for each. |
+
+### Strongly Recommended Fields
+
+| Field | Type | Example | Why |
+|-------|------|---------|-----|
+| `suite` | string\|null | `WorkoutAgentInputValidationTest` | Test class name — creates sub-headers within app sections |
+| `description` | string\|null | `"Expired JWT tokens should be rejected"` | Human-readable docstring — shows indented below test name. **This is what makes the report readable to non-developers.** |
+| `error` | string\|null | `"AssertionError: expected 'active' but got 'expired'"` | Last line of traceback — shown in red callout for failed/error tests |
+
+### Optional Fields
+
+| Field | Type | When |
+|-------|------|------|
+| `duration_seconds` | number\|null | When per-test timing is available |
+| `screenshot_url` | string\|null | E2E tests — `/media/` path to screenshot in R2 |
+| `video_url` | string\|null | E2E tests — `/media/` path to video in R2 |
+
+### Summary Fields
+
+```json
+{
+  "total": 410,
+  "passed": 271,
+  "failed": 117,
+  "errors": 22,
+  "skipped": 0,
+  "coverage_percent": null,
+  "duration_seconds": 145.1
+}
+```
+
+**Important:** Separate `failed` (assertion failures) from `errors` (infrastructure issues like import errors, timeouts, connection failures). The dashboard shows these as different colors (red vs orange) and they're independently filterable.
+
+## Dashboard Behavior
+
+Understanding how the dashboard renders your data helps you push better data.
+
+### Home Page
+
+Each source gets a card. Cards show pass/fail counts or coverage %. Green/red/amber indicator. Clickable → detail page.
+
+### Detail Page — Test Results
+
+The dashboard groups your entries into a **two-level hierarchy**:
+
+1. **App section** — derived from `module` field (first segment: `ai_agent` → "Ai Agent")
+2. **Test class** — from `suite` field (e.g. "WorkoutAgentInputValidationTest")
+
+Within each class, tests are shown as rows with:
+- Status icon (✓/✗)
+- Test name (monospace) + description (grey, indented below)
+- Error message (red callout with left border, if present)
+- Result badge (PASSED/FAILED/ERROR)
+
+**Collapsible sections**: Failing app sections auto-expand and sort to the top. Passing sections are collapsed by default.
+
+**Clickable stat cards**: Clicking Passed/Failed/Errors filters the entire table to just that status. All sections auto-expand when filtering.
+
+### Detail Page — Security Coverage
+
+Endpoint × test type matrix (Auth, IDOR, Input, Rate, JWT, CORS, Sensitive). Clickable Covered/Partial/Uncovered filters.
+
+## Transform Scripts
+
+Use the provided scripts to convert test runner output to observatory format. They handle all the field extraction.
+
+| Script | Input | Usage |
+|--------|-------|-------|
+| `transform-django-tests.py` | Django `manage.py test -v 2` stdout | `python3 scripts/transform-django-tests.py output.txt result.json --source unit-backend` |
+| `transform-pytest.py` | pytest-json-report JSON | `python3 scripts/transform-pytest.py output.json result.json` |
+| `transform-security-report.py` | Django security `report.json` | `python3 scripts/transform-security-report.py report.json result.json` |
+
+The Django transformer automatically extracts:
+- Test docstrings → `description`
+- Test class names → `suite`
+- Error messages from FAIL/ERROR traceback blocks → `error`
+- `failed` vs `error` status distinction
+
+### Writing a New Transform Script
+
+When adding a new test framework, your transform script must:
+1. Output the standard envelope format
+2. Populate `suite` and `description` — don't leave them null if the data is available
+3. Distinguish `failed` (assertion) from `error` (infrastructure) in both entries and summary
+4. Extract error messages — at minimum the last line of the traceback
+5. Be fully deterministic — no LLM calls, no network, no judgment
+
+## Playbook Structure
+
+Every test playbook follows these standard phases:
+
+```
+Phase 1 (optional): Check for relevant changes — skip if nothing changed
+Phase 2: Run tests (deterministic command)
+Phase 3: Transform results (deterministic script)
+Phase 4: Push to observatory (git add, commit, push)
+```
+
+See the `beoflow/.playbooks/` directory for examples:
+- `backend-unit-tests/` — fully deterministic, 3 phases
+- `backend-security-tests/` — fully deterministic, 4 phases
+- `backend-agent-tests/` — gated on code changes, 5 phases
 
 ## Pushing Data
 
-Use the `push-data.sh` script or replicate its logic:
-
 ```bash
-# From your CI or cron job:
-./scripts/push-data.sh <vertical> <source> /path/to/results.json
-
-# Example: push iOS E2E results
-./scripts/push-data.sh product e2e-ios /tmp/e2e-results.json
+# From the playbook's final phase:
+cd /path/to/autonomy-stack-observatory
+DATE=$(date -u +%Y-%m-%d)
+git pull origin main --ff-only
+cp /tmp/results.json data/<vertical>/<source>/$DATE.json
+git add data/<vertical>/<source>/$DATE.json
+git commit -m "data(<source>): $DATE"
+git push origin main
 ```
-
-This clones the observatory repo (shallow), copies your JSON into `data/<vertical>/<source>/<date>.json`, commits, and pushes.
-
-**Environment variables:**
-- `OBSERVATORY_REPO_URL` — the repo URL (for shallow clone + push)
-- OR `OBSERVATORY_REPO_PATH` — path to a local checkout
-
-### Data Format
-
-Every file must follow the envelope format:
-
-```json
-{
-  "vertical": "product",
-  "source": "e2e-ios",
-  "timestamp": "2026-03-25T09:00:00Z",
-  "summary": { ... },
-  "entries": [ ... ]
-}
-```
-
-See `schemas/` for the full schema for each data type. Your `vertical` and `source` must match the directory you're pushing to.
-
-### Doing It Without the Script
-
-If you can't run the shell script (e.g. from a Swift/Python context), the logic is:
-
-1. Clone: `git clone --depth 1 <observatory-repo-url> /tmp/observatory`
-2. Write your JSON to `data/<vertical>/<source>/<YYYY-MM-DD>.json`
-3. Commit: `git add data/ && git commit -m "data(<vertical>/<source>): <date>"`
-4. Push: `git push origin main`
 
 ## Uploading Media (Screenshots, Videos)
 
-Media goes to the private R2 bucket. The dashboard serves it through `/media/*`, gated by Cloudflare Access. No public URLs.
+Media goes to the private R2 bucket (`observatory-media`). The dashboard serves it through `/media/*`, gated by Cloudflare Access.
 
 ```bash
-# Upload a single file
-./scripts/upload-media.sh e2e-ios /path/to/screenshot.png
-# Output: /media/e2e-ios/2026-03-25/screenshot.png
-
-# Upload a directory of files
-./scripts/upload-media.sh e2e-ios ./screenshots/
-# Output: one /media/ path per line
+./scripts/upload-media.sh <source> /path/to/file-or-directory
+# Output: /media/<source>/2026-03-25/filename.png
 ```
 
-**Environment variables:**
-- `R2_ENDPOINT` — your Cloudflare R2 S3-compatible endpoint
-- `AWS_ACCESS_KEY_ID` — R2 API token access key
-- `AWS_SECRET_ACCESS_KEY` — R2 API token secret key
-- `R2_BUCKET` — bucket name (default: `observatory-media`)
+Reference `/media/` paths in your JSON entries — never direct R2 URLs.
 
-### R2 Key Convention
+## Available Sources
 
-Files are stored as `<source>/<date>/<filename>`:
-```
-e2e-ios/2026-03-25/login-screen.png
-e2e-web/2026-03-25/dashboard.png
-```
-
-The returned `/media/` paths map directly to these keys.
-
-### Using Media URLs in Data
-
-Reference the `/media/` paths in your JSON entries:
-
-```json
-{
-  "name": "Login - Email and Password",
-  "suite": "Authentication",
-  "status": "passed",
-  "screenshot_url": "/media/e2e-ios/2026-03-25/login-email.png",
-  "video_url": null
-}
-```
-
-### Uploading Without the Script
-
-Use any S3-compatible client. The key format is `<source>/<date>/<filename>`:
-
-```python
-import boto3
-
-s3 = boto3.client('s3',
-    endpoint_url=os.environ['R2_ENDPOINT'],
-    aws_access_key_id=os.environ['AWS_ACCESS_KEY_ID'],
-    aws_secret_access_key=os.environ['AWS_SECRET_ACCESS_KEY']
-)
-
-key = f"e2e-ios/2026-03-25/screenshot.png"
-s3.upload_file('/tmp/screenshot.png', 'observatory-media', key)
-media_path = f"/media/{key}"
-```
-
-```swift
-// Use AWS SDK for Swift or a simple S3 PUT request
-let key = "e2e-ios/\(dateString)/\(filename)"
-// Upload to observatory-media bucket
-let mediaPath = "/media/\(key)"
-```
+| Vertical | Source | Schema | Playbook |
+|----------|--------|--------|----------|
+| `product` | `unit-backend` | `unit-test-results.schema.json` | `backend-unit-tests` |
+| `product` | `security-coverage` | `security-coverage.schema.json` | `backend-security-tests` |
+| `product` | `agent-tests` | `unit-test-results.schema.json` | `backend-agent-tests` |
+| `product` | `unit-ios` | `unit-test-results.schema.json` | `ios-unit-tests` |
+| `product` | `e2e-ios` | `e2e-results.schema.json` | `ios-e2e-tests` |
+| `product` | `unit-web` | `unit-test-results.schema.json` | `web-unit-tests` |
+| `product` | `e2e-web` | `e2e-results.schema.json` | `web-e2e-tests` |
+| `product` | `sentry` | `sentry-stats.schema.json` | collector cron |
+| `sales` | `usage` | `usage-metrics.schema.json` | collector cron |
+| `growth` | `facebook-ads` | `marketing-stats.schema.json` | collector cron |
+| `growth` | `google-ads` | `marketing-stats.schema.json` | collector cron |
+| `website` | `analytics` | `website-stats.schema.json` | collector cron |
 
 ## Credential Access
 
-Agents running in causeway sessions should access R2 credentials via the credential proxy — never hardcode or read secrets directly.
-
-Observatory repo access (for git push) requires a GitHub token with write access to `ddfourtwo/autonomy-stack-observatory`.
-
-## Available Verticals and Sources
-
-Each source maps to one nightly playbook in its repo.
-
-| Vertical | Source | Schema | Repo | Playbook |
-|----------|--------|--------|------|----------|
-| `product` | `unit-backend` | `unit-test-results.schema.json` | `beoflow` | `backend-unit-tests` |
-| `product` | `security-backend` | `unit-test-results.schema.json` | `beoflow` | `backend-unit-tests` |
-| `product` | `agent-tests` | `unit-test-results.schema.json` | `beoflow` | `backend-agent-tests` |
-| `product` | `unit-ios` | `unit-test-results.schema.json` | `beoflow-ios` | `ios-unit-tests` |
-| `product` | `e2e-ios` | `e2e-results.schema.json` | `beoflow-ios` | `ios-e2e-tests` |
-| `product` | `unit-web` | `unit-test-results.schema.json` | `beoflow-webapp` | `web-unit-tests` |
-| `product` | `e2e-web` | `e2e-results.schema.json` | `beoflow-webapp` | `web-e2e-tests` |
-| `product` | `sentry` | `sentry-stats.schema.json` | — | collector cron |
-| `sales` | `usage` | `usage-metrics.schema.json` | — | collector cron |
-| `growth` | `facebook-ads` | `marketing-stats.schema.json` | — | collector cron |
-| `growth` | `google-ads` | `marketing-stats.schema.json` | — | collector cron |
-| `website` | `analytics` | `website-stats.schema.json` | — | collector cron |
-
-To add a new source, create the schema and data directory first. See `README.md` for the procedure.
+Agents running in causeway sessions should access R2 and GitHub credentials via the credential proxy — never hardcode or read secrets directly.

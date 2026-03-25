@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Security Coverage Report",
+  "description": "API endpoint security test coverage matrix. Each endpoint is tested across multiple security dimensions.",
+  "type": "object",
+  "required": ["vertical", "source", "timestamp", "summary", "test_types", "sections"],
+  "properties": {
+    "vertical": { "type": "string", "enum": ["product"] },
+    "source": { "type": "string", "enum": ["security-coverage"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "summary": {
+      "type": "object",
+      "required": ["total_endpoints", "overall_coverage"],
+      "properties": {
+        "total_endpoints": { "type": "integer" },
+        "overall_coverage": { "type": "number", "description": "Percentage of applicable tests that pass" },
+        "coverage": {
+          "type": "object",
+          "description": "Coverage percentage per test type",
+          "additionalProperties": { "type": "number" }
+        },
+        "tests_by_type": {
+          "type": "object",
+          "description": "Detailed counts per test type",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "covered": { "type": "integer" },
+              "total": { "type": "integer" },
+              "na": { "type": "integer" },
+              "applicable": { "type": "integer" }
+            }
+          }
+        }
+      }
+    },
+    "test_types": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Ordered list of test type keys (auth, idor, input, rate, jwt, cors, sensitive)"
+    },
+    "sections": {
+      "type": "object",
+      "description": "Endpoints grouped by API section",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "endpoints": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["method", "path"],
+              "properties": {
+                "method": { "type": "string" },
+                "path": { "type": "string" },
+                "name": { "type": "string" }
+              },
+              "description": "Each endpoint also has {type}_tested, {type}_na, {type}_na_reason boolean/string fields per test type"
+            }
+          },
+          "stats": {
+            "type": "object",
+            "properties": {
+              "total": { "type": "integer" },
+              "fully_covered": { "type": "integer" },
+              "coverage_pct": { "type": "integer" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
