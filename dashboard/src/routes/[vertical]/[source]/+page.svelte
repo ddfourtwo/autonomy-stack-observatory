@@ -49,14 +49,30 @@
 
 	let expandedApps = $state({});
 	let statusFilter = $state(null);
+	let coverageFilter = $state(null); // null, 'covered', 'partial', 'uncovered'
 
 	function toggleFilter(status) {
 		statusFilter = statusFilter === status ? null : status;
+	}
+	function toggleCoverageFilter(status) {
+		coverageFilter = coverageFilter === status ? null : status;
 	}
 	function filterEntries(entries) {
 		if (!statusFilter) return entries;
 		if (statusFilter === 'failed') return entries.filter(e => e.status === 'failed' || e.status === 'error');
 		return entries.filter(e => e.status === statusFilter);
+	}
+	function epCoverageStatus(ep, testTypes) {
+		const covered = testTypes.filter(tt => ep[`${tt}_tested`]).length;
+		const applicable = testTypes.filter(tt => !ep[`${tt}_na`]).length;
+		if (applicable === 0) return 'na';
+		if (covered === applicable) return 'covered';
+		if (covered > 0) return 'partial';
+		return 'uncovered';
+	}
+	function filterEndpoints(endpoints, testTypes) {
+		if (!coverageFilter) return endpoints;
+		return endpoints.filter(ep => epCoverageStatus(ep, testTypes) === coverageFilter);
 	}
 </script>
 
@@ -73,9 +89,21 @@
 
 		{:else if isSecurityCoverage}
 			<div class="summary">
-				<div class="stat primary">
+				<div class="stat filterable primary" class:active={!coverageFilter} onclick={() => toggleCoverageFilter(null)}>
 					<div class="stat-value">{sourceData.summary.overall_coverage}%</div>
 					<div class="stat-label">Overall</div>
+				</div>
+				<div class="stat filterable" class:active={coverageFilter === 'covered'} onclick={() => toggleCoverageFilter('covered')}>
+					<div class="stat-value" style="color:#49cc90">{Object.values(sourceData.sections).reduce((a, s) => a + s.stats.fully_covered, 0)}</div>
+					<div class="stat-label">Covered</div>
+				</div>
+				<div class="stat filterable" class:active={coverageFilter === 'partial'} onclick={() => toggleCoverageFilter('partial')}>
+					<div class="stat-value" style="color:#fca130">{sourceData.summary.total_endpoints - Object.values(sourceData.sections).reduce((a, s) => a + s.stats.fully_covered, 0) - Object.values(sourceData.sections).reduce((a, s) => a + s.endpoints.filter(ep => epCoverageStatus(ep, sourceData.test_types) === 'uncovered').length, 0)}</div>
+					<div class="stat-label">Partial</div>
+				</div>
+				<div class="stat filterable" class:active={coverageFilter === 'uncovered'} onclick={() => toggleCoverageFilter('uncovered')}>
+					<div class="stat-value stat-fail">{Object.values(sourceData.sections).reduce((a, s) => a + s.endpoints.filter(ep => epCoverageStatus(ep, sourceData.test_types) === 'uncovered').length, 0)}</div>
+					<div class="stat-label">Uncovered</div>
 				</div>
 				{#each Object.entries(sourceData.summary.coverage) as [type, pct]}
 					{@const info = sourceData.summary.tests_by_type[type]}
@@ -86,6 +114,12 @@
 					</div>
 				{/each}
 			</div>
+			{#if coverageFilter}
+				<div class="filter-indicator">
+					Showing: <strong>{coverageFilter}</strong> endpoints
+					<button onclick={() => coverageFilter = null}>Clear filter</button>
+				</div>
+			{/if}
 			<table>
 				<thead><tr>
 					<th style="width:80px">Method</th><th>Endpoint</th>
@@ -94,8 +128,10 @@
 				</tr></thead>
 				<tbody>
 					{#each Object.entries(sourceData.sections) as [section, { endpoints, stats }]}
+						{@const filteredEps = filterEndpoints(endpoints, sourceData.test_types)}
+						{#if filteredEps.length > 0}
 						<tr class="section-header"><td colspan={sourceData.test_types.length + 3}><span class="section-name">{section}</span><span class="section-stats">{stats.total} endpoints &middot; {stats.coverage_pct}% covered</span></td></tr>
-						{#each endpoints as ep}
+						{#each filteredEps as ep}
 							{@const covered = sourceData.test_types.filter(tt => ep[`${tt}_tested`]).length}
 							{@const applicable = sourceData.test_types.filter(tt => !ep[`${tt}_na`]).length}
 							<tr class:row-green={applicable > 0 && covered === applicable} class:row-amber={covered > 0 && covered < applicable}>
@@ -111,6 +147,7 @@
 								<td class="center total-col">{covered}/{applicable}</td>
 							</tr>
 						{/each}
+						{/if}
 					{/each}
 				</tbody>
 			</table>
