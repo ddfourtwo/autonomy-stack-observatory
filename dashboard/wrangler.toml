@@ -1,0 +1,7 @@
+name = "observatory"
+compatibility_date = "2024-12-01"
+pages_build_output_dir = "build"
+
+[[r2_buckets]]
+binding = "OBSERVATORY_MEDIA"
+bucket_name = "observatory-media"
