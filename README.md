@@ -85,6 +85,10 @@ A causeway agent runs daily at 09:00. It reads `git log --since="24 hours ago"`,
 
 Minimal Svelte static site. No backend. Reads JSON at build time. Shows health cards per vertical, test matrix with screenshots, trend sparklines, and a 24h diff view.
 
+### Hosting
+
+Deployed via Cloudflare Pages (auto-builds on push). Access restricted to `@beoflow.com` emails via Cloudflare Access — colleagues visit the URL, verify their email once, done. No VPN or passwords required.
+
 ## Adding a New Data Source
 
 1. Create a schema in `schemas/`
@@ -99,4 +103,5 @@ Minimal Svelte static site. No backend. Reads JSON at build time. Shows health c
 - **Push, don't pull.** Source repos push data in. The observatory never reaches into other systems at read time.
 - **Schemas enforce consistency.** Every source conforms to the envelope format.
 - **Media lives in R2.** Binary assets in object storage. JSON references URLs.
-- **Minimal code.** Static site, shell scripts, Python collectors. No frameworks, no backend, no auth.
+- **Minimal code.** Static site, shell scripts, Python collectors. No frameworks, no backend.
+- **Staff-only access.** Cloudflare Access gates the dashboard to `@beoflow.com` emails.
