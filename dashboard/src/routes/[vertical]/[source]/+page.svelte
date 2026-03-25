@@ -26,20 +26,29 @@
 	const STATUS_ICON = { passed: '✓', failed: '✗', error: '✗', skipped: '—' };
 	const STATUS_CLASS = { passed: 'pass', failed: 'fail', error: 'err', skipped: 'skip' };
 
-	function groupByClass(entries) {
-		const groups = {};
+	// Two-level grouping: app (section) → test class (subsection)
+	function groupByAppAndClass(entries) {
+		const apps = {};
 		for (const entry of entries) {
-			const key = entry.suite || entry.module || 'Other';
-			if (!groups[key]) {
-				groups[key] = { module: entry.module, entries: [], passed: 0, failed: 0, errors: 0, skipped: 0 };
+			const moduleParts = (entry.module || 'other').split('.');
+			const appKey = moduleParts[0];
+			const appLabel = appKey.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+			const classKey = entry.suite || entry.module || 'Other';
+
+			if (!apps[appLabel]) {
+				apps[appLabel] = { classes: {}, passed: 0, failed: 0, errors: 0, total: 0 };
 			}
-			groups[key].entries.push(entry);
-			if (entry.status === 'passed') groups[key].passed++;
-			else if (entry.status === 'error') groups[key].errors++;
-			else if (entry.status === 'failed') groups[key].failed++;
-			else groups[key].skipped++;
+			if (!apps[appLabel].classes[classKey]) {
+				apps[appLabel].classes[classKey] = { module: entry.module, entries: [] };
+			}
+			apps[appLabel].classes[classKey].entries.push(entry);
+			apps[appLabel].total++;
+			if (entry.status === 'passed') apps[appLabel].passed++;
+			else if (entry.status === 'error') apps[appLabel].errors++;
+			else if (entry.status === 'failed') apps[appLabel].failed++;
 		}
-		return Object.entries(groups).sort((a, b) => {
+
+		return Object.entries(apps).sort((a, b) => {
 			const aFail = a[1].failed + a[1].errors;
 			const bFail = b[1].failed + b[1].errors;
 			if (aFail > 0 && bFail === 0) return -1;
@@ -48,7 +57,7 @@
 		});
 	}
 
-	let expandedSections = $state({});
+	let expandedApps = $state({});
 </script>
 
 <main>
@@ -165,7 +174,6 @@
 				{/if}
 			</div>
 
-			<!-- Stacked pass/fail bar -->
 			{#if s.total > 0}
 				<div class="bar-container">
 					<div class="bar-segment bar-pass" style="width:{(s.passed / s.total) * 100}%"></div>
@@ -177,7 +185,7 @@
 			{/if}
 
 			{#if sourceData.entries && sourceData.entries.length > 0}
-				{@const grouped = groupByClass(sourceData.entries)}
+				{@const grouped = groupByAppAndClass(sourceData.entries)}
 
 				<table>
 					<thead>
@@ -188,55 +196,60 @@
 						</tr>
 					</thead>
 					<tbody>
-						{#each grouped as [className, group]}
-							{@const hasFails = group.failed + group.errors > 0}
-							{@const isExpanded = expandedSections[className] ?? hasFails}
+						{#each grouped as [appName, app]}
+							{@const appHasFails = app.failed + app.errors > 0}
+							{@const appExpanded = expandedApps[appName] ?? appHasFails}
 							<tr
 								class="section-header clickable"
-								onclick={() => expandedSections[className] = !isExpanded}
+								onclick={() => expandedApps[appName] = !appExpanded}
 							>
 								<td colspan="3">
-									<span class="section-chevron">{isExpanded ? '▼' : '▶'}</span>
-									<span class="section-name">{className}</span>
+									<span class="section-chevron">{appExpanded ? '▼' : '▶'}</span>
+									<span class="section-name">{appName}</span>
 									<span class="section-stats">
-										{group.entries.length} tests
-										{#if group.failed > 0}
-											&middot; <span class="stat-fail">{group.failed} failed</span>
+										{app.total} tests
+										{#if app.failed > 0}
+											&middot; <span class="stat-fail">{app.failed} failed</span>
 										{/if}
-										{#if group.errors > 0}
-											&middot; <span class="stat-error">{group.errors} errors</span>
+										{#if app.errors > 0}
+											&middot; <span class="stat-error">{app.errors} errors</span>
 										{/if}
-										&middot; {group.passed} passed
+										&middot; {app.passed} passed
 									</span>
-									{#if group.module}
-										<span class="section-module">{group.module}</span>
-									{/if}
 								</td>
 							</tr>
-							{#if isExpanded}
-								{#each group.entries as entry}
-									<tr
-										class:row-green={entry.status === 'passed'}
-										class:row-red={entry.status === 'failed' || entry.status === 'error'}
-									>
-										<td class="center">
-											<span class={STATUS_CLASS[entry.status] || 'skip'}>{STATUS_ICON[entry.status] || '?'}</span>
-										</td>
-										<td>
-											<span class="test-name">{entry.name}</span>
-											{#if entry.description}
-												<div class="test-desc">{entry.description}</div>
-											{/if}
-											{#if entry.error}
-												<div class="error-msg">{entry.error}</div>
-											{/if}
-										</td>
-										<td class="center">
-											<span class="result-badge {STATUS_CLASS[entry.status] || 'skip'}">
-												{entry.status === 'error' ? 'ERROR' : (entry.status || '?').toUpperCase()}
-											</span>
+							{#if appExpanded}
+								{#each Object.entries(app.classes) as [className, cls]}
+									<tr class="class-header">
+										<td colspan="3">
+											<span class="class-name">{className}</span>
+											<span class="class-module">{cls.module}</span>
 										</td>
 									</tr>
+									{#each cls.entries as entry}
+										<tr
+											class:row-green={entry.status === 'passed'}
+											class:row-red={entry.status === 'failed' || entry.status === 'error'}
+										>
+											<td class="center">
+												<span class={STATUS_CLASS[entry.status] || 'skip'}>{STATUS_ICON[entry.status] || '?'}</span>
+											</td>
+											<td>
+												<span class="test-name">{entry.name}</span>
+												{#if entry.description}
+													<div class="test-desc">{entry.description}</div>
+												{/if}
+												{#if entry.error}
+													<div class="error-msg">{entry.error}</div>
+												{/if}
+											</td>
+											<td class="center">
+												<span class="result-badge {STATUS_CLASS[entry.status] || 'skip'}">
+													{entry.status === 'error' ? 'ERROR' : (entry.status || '?').toUpperCase()}
+												</span>
+											</td>
+										</tr>
+									{/each}
 								{/each}
 							{/if}
 						{/each}
@@ -282,7 +295,6 @@
 	.stat.primary { background: #49cc90; border-color: #49cc90; color: #fff; }
 	.stat.danger { background: #f93e3e; border-color: #f93e3e; color: #fff; }
 	.stat.primary .stat-label, .stat.danger .stat-label { color: rgba(255,255,255,0.9); }
-	.stat.primary .stat-detail, .stat.danger .stat-detail { color: rgba(255,255,255,0.7); }
 
 	.stat-value { font-size: 24px; font-weight: 700; }
 	.stat-fail { color: #f93e3e; }
@@ -290,7 +302,6 @@
 	.stat-label { font-size: 11px; text-transform: uppercase; color: #666; margin-top: 4px; }
 	.stat-detail { font-size: 11px; color: #999; margin-top: 2px; }
 
-	/* Stacked bar */
 	.bar-container {
 		display: flex; height: 8px; border-radius: 4px; overflow: hidden;
 		margin-bottom: 24px; background: #e0e0e0;
@@ -300,7 +311,6 @@
 	.bar-fail { background: #f93e3e; }
 	.bar-err { background: #e67e22; }
 
-	/* Table */
 	table {
 		width: 100%; border-collapse: collapse; background: #fff;
 		border: 1px solid #d9d9d9; border-radius: 4px;
@@ -314,7 +324,7 @@
 	tr:last-child td { border-bottom: none; }
 	.center { text-align: center; }
 
-	/* Sections */
+	/* App-level section headers (like API sections in security) */
 	.section-header { background: #f5f5f5 !important; }
 	.section-header td { padding: 12px 15px; border-bottom: 2px solid #d9d9d9; }
 	.section-header.clickable { cursor: pointer; user-select: none; }
@@ -322,14 +332,20 @@
 	.section-chevron { font-size: 10px; margin-right: 8px; color: #888; }
 	.section-name { font-weight: 700; font-size: 14px; color: #3b4151; }
 	.section-stats { margin-left: 12px; font-size: 12px; color: #888; font-weight: 400; }
-	.section-module { float: right; font-size: 11px; color: #aaa; font-family: 'Source Code Pro', monospace; }
 
-	/* Row highlighting */
+	/* Test class sub-headers */
+	.class-header { background: #fafafa !important; }
+	.class-header td { padding: 8px 15px 8px 30px; border-bottom: 1px solid #e0e0e0; }
+	.class-name { font-weight: 600; font-size: 13px; color: #555; }
+	.class-module {
+		margin-left: 10px; font-size: 11px; color: #aaa;
+		font-family: 'Source Code Pro', monospace;
+	}
+
 	.row-green { background: rgba(73, 204, 144, 0.05); }
 	.row-red { background: rgba(249, 62, 62, 0.05); }
 	.row-amber { background: rgba(252, 161, 48, 0.1); }
 
-	/* Status */
 	.pass { color: #49cc90; font-weight: 700; font-size: 16px; }
 	.fail { color: #f93e3e; font-weight: 700; font-size: 16px; }
 	.err { color: #e67e22; font-weight: 700; font-size: 16px; }
@@ -339,8 +355,10 @@
 	.na { color: #888; font-size: 11px; font-weight: 600; cursor: help; text-decoration: underline dotted #ccc; }
 	.total-col { font-weight: 600; font-size: 13px; }
 
-	/* Test details */
-	.test-name { font-family: 'Source Code Pro', monospace; font-size: 13px; font-weight: 600; display: block; }
+	.test-name {
+		font-family: 'Source Code Pro', monospace; font-size: 13px;
+		font-weight: 600; display: block;
+	}
 	.test-desc { font-size: 12px; color: #888; margin-top: 2px; padding-left: 12px; }
 	.error-msg {
 		font-family: 'Source Code Pro', monospace; font-size: 12px; color: #f93e3e;
@@ -348,7 +366,6 @@
 		border-radius: 3px; border-left: 3px solid #f93e3e; word-break: break-word;
 	}
 
-	/* Result badge */
 	.result-badge {
 		display: inline-block; padding: 3px 10px; border-radius: 3px;
 		font-size: 11px; font-weight: 700; text-transform: uppercase;
@@ -358,7 +375,6 @@
 	.result-badge.err { background: rgba(230, 126, 34, 0.15); color: #a0522d; }
 	.result-badge.skip { background: rgba(136, 136, 136, 0.15); color: #666; }
 
-	/* Method badges (security) */
 	.method {
 		display: inline-block; padding: 4px 8px; border-radius: 3px;
 		font-size: 11px; font-weight: 700; color: #fff; min-width: 60px;
