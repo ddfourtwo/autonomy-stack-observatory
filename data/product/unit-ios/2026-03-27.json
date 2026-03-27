@@ -1,0 +1,1618 @@
+{
+  "vertical": "product",
+  "source": "unit-ios",
+  "timestamp": "2026-03-27T22:38:37Z",
+  "summary": {
+    "total": 178,
+    "passed": 165,
+    "failed": 13,
+    "errors": 0,
+    "skipped": 0,
+    "coverage_percent": null,
+    "duration_seconds": 8.5
+  },
+  "entries": [
+    {
+      "name": "testCalculateSetLoad_BasicSet",
+      "module": "BeoflowTests",
+      "suite": "StrengthStrainCalculatorTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.005,
+      "error": null
+    },
+    {
+      "name": "testCalculateSetLoad_NoWeightTarget",
+      "module": "BeoflowTests",
+      "suite": "StrengthStrainCalculatorTests",
+      "description": null,
+      "status": "failed",
+      "duration_seconds": 0.51,
+      "error": null
+    },
+    {
+      "name": "testCalculateSetLoad_With1RM",
+      "module": "BeoflowTests",
+      "suite": "StrengthStrainCalculatorTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "testCalculateSetLoad_WithRPE",
+      "module": "BeoflowTests",
+      "suite": "StrengthStrainCalculatorTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testCalculateSetLoad_WrongDurationType",
+      "module": "BeoflowTests",
+      "suite": "StrengthStrainCalculatorTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testCalculateSetLoad_ZeroWeight",
+      "module": "BeoflowTests",
+      "suite": "StrengthStrainCalculatorTests",
+      "description": null,
+      "status": "failed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "testCalculateStrengthTSS_EmptyWorkout",
+      "module": "BeoflowTests",
+      "suite": "StrengthStrainCalculatorTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testCalculateStrengthTSS_HeavyWorkout",
+      "module": "BeoflowTests",
+      "suite": "StrengthStrainCalculatorTests",
+      "description": null,
+      "status": "failed",
+      "duration_seconds": 2.323,
+      "error": null
+    },
+    {
+      "name": "testCalculateStrengthTSS_SimpleWorkout",
+      "module": "BeoflowTests",
+      "suite": "StrengthStrainCalculatorTests",
+      "description": null,
+      "status": "failed",
+      "duration_seconds": 0.381,
+      "error": null
+    },
+    {
+      "name": "testCalculateStrengthTSS_WithRepeatGroup",
+      "module": "BeoflowTests",
+      "suite": "StrengthStrainCalculatorTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "testPerformance_LargeWorkout",
+      "module": "BeoflowTests",
+      "suite": "StrengthStrainCalculatorTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 2.839,
+      "error": null
+    },
+    {
+      "name": "testRealWorldWorkout",
+      "module": "BeoflowTests",
+      "suite": "StrengthStrainCalculatorTests",
+      "description": null,
+      "status": "failed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "testRelativeIntensity_Above1RM",
+      "module": "BeoflowTests",
+      "suite": "StrengthStrainCalculatorTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testRelativeIntensity_HighRPE",
+      "module": "BeoflowTests",
+      "suite": "StrengthStrainCalculatorTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testExerciseConversion",
+      "module": "BeoflowTests",
+      "suite": "ExerciseSystemTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.026,
+      "error": null
+    },
+    {
+      "name": "testSystemExerciseService",
+      "module": "BeoflowTests",
+      "suite": "ExerciseSystemTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.009,
+      "error": null
+    },
+    {
+      "name": "testSystemExercisesLoaded",
+      "module": "BeoflowTests",
+      "suite": "ExerciseSystemTests",
+      "description": null,
+      "status": "failed",
+      "duration_seconds": 0.029,
+      "error": null
+    },
+    {
+      "name": "testAPIMessage_Decoding",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "failed",
+      "duration_seconds": 0.019,
+      "error": null
+    },
+    {
+      "name": "testAPIMessage_Decoding_WithFractionalSeconds",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "failed",
+      "duration_seconds": 0.008,
+      "error": null
+    },
+    {
+      "name": "testAPIMessage_ShouldDisplay_HidesToolCall",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAPIMessage_ShouldDisplay_ShowsTextMessages",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAPIMessage_ShouldDisplay_ShowsToolResult",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAPIMessage_ToChatMessage_AssistantRole",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "testAPIMessage_ToChatMessage_UserRole",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testChatStreamEvent_CompleteWithConversationId",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testChatStreamEvent_CompleteWithoutConversationId",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testConversationError_LocalizedDescription",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testConversationModel_Decoding",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "testConversationModel_DisplayTitle_Fallback",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testConversationModel_DisplayTitle_WithoutTitle",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testConversationModel_DisplayTitle_WithTitle",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testConversationService_Singleton",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testDeleteConversation_RequiresAuth",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.004,
+      "error": null
+    },
+    {
+      "name": "testFetchConversations_RequiresAuth",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testFetchMessages_RequiresAuth",
+      "module": "BeoflowTests",
+      "suite": "ConversationServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testGetWorkoutProgress_AllSetsCompleted_ReturnsCorrectCounts",
+      "module": "BeoflowTests",
+      "suite": "WorkoutViewModelProgressTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.004,
+      "error": null
+    },
+    {
+      "name": "testGetWorkoutProgress_EmptyWorkout_ReturnsZeroForBoth",
+      "module": "BeoflowTests",
+      "suite": "WorkoutViewModelProgressTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testGetWorkoutProgress_MultipleExercises_CountsAllSets",
+      "module": "BeoflowTests",
+      "suite": "WorkoutViewModelProgressTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testGetWorkoutProgress_NoSetsCompleted_ReturnsZeroCompleted",
+      "module": "BeoflowTests",
+      "suite": "WorkoutViewModelProgressTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testGetWorkoutProgress_PartiallyCompleted_ReturnsCorrectCounts",
+      "module": "BeoflowTests",
+      "suite": "WorkoutViewModelProgressTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testCompletedMode",
+      "module": "BeoflowTests",
+      "suite": "WorkoutFlowModeTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "testEditingScheduledMode",
+      "module": "BeoflowTests",
+      "suite": "WorkoutFlowModeTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.084,
+      "error": null
+    },
+    {
+      "name": "testEditingTemplateMode",
+      "module": "BeoflowTests",
+      "suite": "WorkoutFlowModeTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.004,
+      "error": null
+    },
+    {
+      "name": "testExecutingMode",
+      "module": "BeoflowTests",
+      "suite": "WorkoutFlowModeTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testNewWorkoutMode",
+      "module": "BeoflowTests",
+      "suite": "WorkoutFlowModeTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testSessionStorePersistsAcrossNavigation",
+      "module": "BeoflowTests",
+      "suite": "WorkoutFlowModeTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testSessionStoreResetsOnComplete",
+      "module": "BeoflowTests",
+      "suite": "WorkoutFlowModeTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testStoresDoNotInterfere",
+      "module": "BeoflowTests",
+      "suite": "WorkoutFlowModeTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "testViewingScheduledMode",
+      "module": "BeoflowTests",
+      "suite": "WorkoutFlowModeTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testViewingStoreClearsOnDismiss",
+      "module": "BeoflowTests",
+      "suite": "WorkoutFlowModeTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testViewingTemplateMode",
+      "module": "BeoflowTests",
+      "suite": "WorkoutFlowModeTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testActiveStaffUserCanSeeDeveloperTools",
+      "module": "BeoflowTests",
+      "suite": "DeveloperToolsVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testInactiveStaffUserStillSeesStaffFlag",
+      "module": "BeoflowTests",
+      "suite": "DeveloperToolsVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testNilUserCannotSeeDeveloperTools",
+      "module": "BeoflowTests",
+      "suite": "DeveloperToolsVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testNonStaffUserCannotSeeDeveloperTools",
+      "module": "BeoflowTests",
+      "suite": "DeveloperToolsVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testStaffUserCanSeeDeveloperTools",
+      "module": "BeoflowTests",
+      "suite": "DeveloperToolsVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testViewExists",
+      "module": "BeoflowTests",
+      "suite": "KeyMetricsExplanationViewTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.004,
+      "error": null
+    },
+    {
+      "name": "testUpdateActivityEventWithActivityType",
+      "module": "BeoflowTests",
+      "suite": "GoalsAPIServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.129,
+      "error": null
+    },
+    {
+      "name": "testUpdateActivityEventWithAllEditableFields",
+      "module": "BeoflowTests",
+      "suite": "GoalsAPIServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.071,
+      "error": null
+    },
+    {
+      "name": "testUpdateActivityEventWithDate",
+      "module": "BeoflowTests",
+      "suite": "GoalsAPIServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.082,
+      "error": null
+    },
+    {
+      "name": "testUpdatePeakMomentWithAllEditableFields",
+      "module": "BeoflowTests",
+      "suite": "GoalsAPIServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.011,
+      "error": null
+    },
+    {
+      "name": "testUpdatePeakMomentWithCompetitionType",
+      "module": "BeoflowTests",
+      "suite": "GoalsAPIServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.012,
+      "error": null
+    },
+    {
+      "name": "testWorkoutActionButtonsResponsiveLayout",
+      "module": "BeoflowTests",
+      "suite": "WorkoutActionButtonsTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.022,
+      "error": null
+    },
+    {
+      "name": "testWorkoutTemplateActionButtonsResponsiveLayout",
+      "module": "BeoflowTests",
+      "suite": "WorkoutActionButtonsTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.026,
+      "error": null
+    },
+    {
+      "name": "testDeleteTokens_ReturnsTrue_WhenSuccessful",
+      "module": "BeoflowTests",
+      "suite": "TokenStoreTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.006,
+      "error": null
+    },
+    {
+      "name": "testDeleteTokens_WhenNoTokensExist_ReturnsTrue",
+      "module": "BeoflowTests",
+      "suite": "TokenStoreTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.006,
+      "error": null
+    },
+    {
+      "name": "testGetAccessToken_WhenNotExists_ThrowsNotFound",
+      "module": "BeoflowTests",
+      "suite": "TokenStoreTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testGetRefreshToken_WhenNotExists_ThrowsNotFound",
+      "module": "BeoflowTests",
+      "suite": "TokenStoreTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testHasTokens_WhenNoTokens_ReturnsFalse",
+      "module": "BeoflowTests",
+      "suite": "TokenStoreTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testSaveAndRetrieveTokens",
+      "module": "BeoflowTests",
+      "suite": "TokenStoreTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.009,
+      "error": null
+    },
+    {
+      "name": "testTokenError_LocalizedDescriptions",
+      "module": "BeoflowTests",
+      "suite": "TokenStoreTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testVerificationToken_Delete",
+      "module": "BeoflowTests",
+      "suite": "TokenStoreTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "testVerificationToken_SaveAndRetrieve",
+      "module": "BeoflowTests",
+      "suite": "TokenStoreTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "testCompleteAuthWorkflow",
+      "module": "BeoflowTests",
+      "suite": "AuthServiceIntegrationTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.015,
+      "error": null
+    },
+    {
+      "name": "testLogoutWorkflow_DeletesTokensBeforeChangingState",
+      "module": "BeoflowTests",
+      "suite": "AuthServiceIntegrationTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.009,
+      "error": null
+    },
+    {
+      "name": "testAddSentryBaggageAppendsToExistingHeader",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testAddSentryBaggageWithoutSessionId",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAddSentryBaggageWithSessionId",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAuthenticationHeaders",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testBaseURLConstruction",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testCertificatePinning",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testEndpointURLConstruction",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testErrorResponseParsing",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testFormURLEncodedBody",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testHTTPErrorHandling",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testHTTPMethods",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testHTTPResponseCodes",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testJSONRequestBody",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.01,
+      "error": null
+    },
+    {
+      "name": "testJSONSerializationPerformance",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.256,
+      "error": null
+    },
+    {
+      "name": "testMockAPIResponses",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testNetworkErrorTypes",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "testRequestHeaders",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testRequestLogging",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testRequestTimeouts",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testResponseDataParsing",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testURLConstructionPerformance",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.259,
+      "error": null
+    },
+    {
+      "name": "testURLSessionConfiguration",
+      "module": "BeoflowTests",
+      "suite": "NetworkManagerTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "test_component_exists",
+      "module": "BeoflowTests",
+      "suite": "BeoflowExpandableDescriptionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.033,
+      "error": null
+    },
+    {
+      "name": "test_emptyContent_doesNotRender",
+      "module": "BeoflowTests",
+      "suite": "BeoflowExpandableDescriptionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "test_nilContent_doesNotRender",
+      "module": "BeoflowTests",
+      "suite": "BeoflowExpandableDescriptionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "test_convert_emptyWorkout_returnsNoStructureDefined",
+      "module": "BeoflowTests",
+      "suite": "WorkoutTextConverterTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "test_convert_powerZoneTarget_formatsCorrectly",
+      "module": "BeoflowTests",
+      "suite": "WorkoutTextConverterTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "test_convert_repeatGroup_showsRepeatCountPrefix",
+      "module": "BeoflowTests",
+      "suite": "WorkoutTextConverterTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "test_convert_repsWithWeight_showsRepsAndWeight",
+      "module": "BeoflowTests",
+      "suite": "WorkoutTextConverterTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "test_convert_rpeTarget_formatsCorrectly",
+      "module": "BeoflowTests",
+      "suite": "WorkoutTextConverterTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.007,
+      "error": null
+    },
+    {
+      "name": "test_convert_simpleStep_showsExerciseNameAndDuration",
+      "module": "BeoflowTests",
+      "suite": "WorkoutTextConverterTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "test_convert_stepWithTarget_showsTargetAfterDuration",
+      "module": "BeoflowTests",
+      "suite": "WorkoutTextConverterTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "test_convert_superset_showsBracketedSteps",
+      "module": "BeoflowTests",
+      "suite": "WorkoutTextConverterTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "test_convert_supersetWithSingleExercise_noWrapper",
+      "module": "BeoflowTests",
+      "suite": "WorkoutTextConverterTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "test_convert_timeInSeconds_formatsAsMinutesAndSeconds",
+      "module": "BeoflowTests",
+      "suite": "WorkoutTextConverterTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "test_convert_workoutWithDescription_includesDescriptionFirst",
+      "module": "BeoflowTests",
+      "suite": "WorkoutTextConverterTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "test_structuredWorkout_toFormattedText_usesConverter",
+      "module": "BeoflowTests",
+      "suite": "WorkoutTextConverterTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testDeleteConversation_removesConversationFromList",
+      "module": "BeoflowTests",
+      "suite": "ConversationListViewModelTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.059,
+      "error": null
+    },
+    {
+      "name": "testDeleteConversation_setsErrorMessageOnFailure",
+      "module": "BeoflowTests",
+      "suite": "ConversationListViewModelTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.02,
+      "error": null
+    },
+    {
+      "name": "testErrorMessageCanBeCleared",
+      "module": "BeoflowTests",
+      "suite": "ConversationListViewModelTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testInitialState",
+      "module": "BeoflowTests",
+      "suite": "ConversationListViewModelTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testLoadConversations_populatesConversationsOnSuccess",
+      "module": "BeoflowTests",
+      "suite": "ConversationListViewModelTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.025,
+      "error": null
+    },
+    {
+      "name": "testLoadConversations_setsErrorMessageOnFailure",
+      "module": "BeoflowTests",
+      "suite": "ConversationListViewModelTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.16,
+      "error": null
+    },
+    {
+      "name": "testLoadConversations_setsLoadingState",
+      "module": "BeoflowTests",
+      "suite": "ConversationListViewModelTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.023,
+      "error": null
+    },
+    {
+      "name": "testContentViewSnapshot",
+      "module": "BeoflowTests",
+      "suite": "PreviewSnapshotTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.019,
+      "error": null
+    },
+    {
+      "name": "testEmptyArrayDecoding",
+      "module": "BeoflowTests",
+      "suite": "TemplateDecodingTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "testSingleTemplateDecoding",
+      "module": "BeoflowTests",
+      "suite": "TemplateDecodingTests",
+      "description": null,
+      "status": "failed",
+      "duration_seconds": 0.014,
+      "error": null
+    },
+    {
+      "name": "testModePreservesScheduleInfo",
+      "module": "BeoflowTests",
+      "suite": "WorkoutStoreTransitionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.113,
+      "error": null
+    },
+    {
+      "name": "testModePreservesTemplateReference",
+      "module": "BeoflowTests",
+      "suite": "WorkoutStoreTransitionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testPersistentTabMaintainsSessionStore",
+      "module": "BeoflowTests",
+      "suite": "WorkoutStoreTransitionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testSheetDismissalClearsViewingStore",
+      "module": "BeoflowTests",
+      "suite": "WorkoutStoreTransitionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testTransition_EditingScheduledToExecuting",
+      "module": "BeoflowTests",
+      "suite": "WorkoutStoreTransitionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testTransition_EditingTemplateToExecuting",
+      "module": "BeoflowTests",
+      "suite": "WorkoutStoreTransitionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testTransition_ExecutingToCompleted",
+      "module": "BeoflowTests",
+      "suite": "WorkoutStoreTransitionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.006,
+      "error": null
+    },
+    {
+      "name": "testTransition_ViewingScheduledToEditingScheduled",
+      "module": "BeoflowTests",
+      "suite": "WorkoutStoreTransitionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testTransition_ViewingScheduledToExecuting",
+      "module": "BeoflowTests",
+      "suite": "WorkoutStoreTransitionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testTransition_ViewingTemplateToEditingTemplate",
+      "module": "BeoflowTests",
+      "suite": "WorkoutStoreTransitionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testTransition_ViewingTemplateToExecuting",
+      "module": "BeoflowTests",
+      "suite": "WorkoutStoreTransitionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testTransitionFromSheetToPersistentTab",
+      "module": "BeoflowTests",
+      "suite": "WorkoutStoreTransitionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testWorkoutDataIntegrityThroughTransitions",
+      "module": "BeoflowTests",
+      "suite": "WorkoutStoreTransitionTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testSaveAsTemplateButton_AlwaysDisabled",
+      "module": "BeoflowTests",
+      "suite": "WorkoutUIVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testSaveAsTemplateButton_PreviouslyEnabledModes_NowDisabled",
+      "module": "BeoflowTests",
+      "suite": "WorkoutUIVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testUIVisibility_CalendarCreation",
+      "module": "BeoflowTests",
+      "suite": "WorkoutUIVisibilityTests",
+      "description": null,
+      "status": "failed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testUIVisibility_Completed",
+      "module": "BeoflowTests",
+      "suite": "WorkoutUIVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testUIVisibility_EditingScheduled",
+      "module": "BeoflowTests",
+      "suite": "WorkoutUIVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.004,
+      "error": null
+    },
+    {
+      "name": "testUIVisibility_EditingTemplate",
+      "module": "BeoflowTests",
+      "suite": "WorkoutUIVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testUIVisibility_Executing",
+      "module": "BeoflowTests",
+      "suite": "WorkoutUIVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testUIVisibility_NewWorkout",
+      "module": "BeoflowTests",
+      "suite": "WorkoutUIVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testUIVisibility_NoExercises",
+      "module": "BeoflowTests",
+      "suite": "WorkoutUIVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.161,
+      "error": null
+    },
+    {
+      "name": "testUIVisibility_NoTemplate",
+      "module": "BeoflowTests",
+      "suite": "WorkoutUIVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testUIVisibility_ViewingScheduled",
+      "module": "BeoflowTests",
+      "suite": "WorkoutUIVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testUIVisibility_ViewingTemplate",
+      "module": "BeoflowTests",
+      "suite": "WorkoutUIVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testUIVisibility_WorkoutCompleted",
+      "module": "BeoflowTests",
+      "suite": "WorkoutUIVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testUIVisibility_WorkoutInProgress",
+      "module": "BeoflowTests",
+      "suite": "WorkoutUIVisibilityTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAppConfiguration",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAuthenticationState_InitialState",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAuthTokenModelStructure",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testEmailValidation_InvalidEmails",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "failed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testEmailValidation_ValidEmails",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testEmailValidationPerformance",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.334,
+      "error": null
+    },
+    {
+      "name": "testEnvironmentConfiguration",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testErrorHandling_AuthenticationErrors",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.013,
+      "error": null
+    },
+    {
+      "name": "testErrorHandling_NetworkErrors",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testJSONSerializationPerformance",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.254,
+      "error": null
+    },
+    {
+      "name": "testLoginDataModel_Initialization",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testLoginDataModel_JSONSerialization",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "testLoginRequestConstruction",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testNetworkRequestHeaders",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testPasswordValidation_InvalidPasswords",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "failed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testPasswordValidation_ValidPasswords",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testTokenStorage_KeychainCompatibility",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "failed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "testUserModelStructure",
+      "module": "BeoflowTests",
+      "suite": "LoginServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAuthService_InitialState_IsUnknown",
+      "module": "BeoflowTests",
+      "suite": "AuthServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAuthState_Authenticated_IsAuthenticated",
+      "module": "BeoflowTests",
+      "suite": "AuthServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.004,
+      "error": null
+    },
+    {
+      "name": "testAuthState_Equality_Authenticated",
+      "module": "BeoflowTests",
+      "suite": "AuthServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAuthState_Equality_PendingVerification",
+      "module": "BeoflowTests",
+      "suite": "AuthServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAuthState_Equality_Unknown",
+      "module": "BeoflowTests",
+      "suite": "AuthServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAuthState_PendingVerification_IsNotAuthenticated",
+      "module": "BeoflowTests",
+      "suite": "AuthServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAuthState_SessionExpired_IsNotAuthenticated",
+      "module": "BeoflowTests",
+      "suite": "AuthServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAuthState_Unauthenticated_IsNotAuthenticated",
+      "module": "BeoflowTests",
+      "suite": "AuthServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testAuthState_Unknown_IsNotAuthenticated",
+      "module": "BeoflowTests",
+      "suite": "AuthServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testRefreshCoordinator_IsRefreshing_InitiallyFalse",
+      "module": "BeoflowTests",
+      "suite": "AuthServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "testRefreshCoordinator_Reset_ClearsState",
+      "module": "BeoflowTests",
+      "suite": "AuthServiceTests",
+      "description": null,
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    }
+  ]
+}
