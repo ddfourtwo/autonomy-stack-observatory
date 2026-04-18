@@ -1,15 +1,15 @@
 {
   "vertical": "product",
   "source": "unit-backend",
-  "timestamp": "2026-04-18T04:44:35Z",
+  "timestamp": "2026-04-18T04:52:20Z",
   "summary": {
-    "total": 545,
+    "total": 544,
     "passed": 528,
-    "failed": 1,
+    "failed": 0,
     "errors": 0,
     "skipped": 16,
     "coverage_percent": null,
-    "duration_seconds": 76.6
+    "duration_seconds": 74.5
   },
   "entries": [
     {
@@ -67,13 +67,13 @@
       "error": null
     },
     {
-      "name": "test_builder_agent_has_seven_tools",
+      "name": "test_builder_agent_has_six_tools",
       "module": "ai_agent.tests.test_builder_agent",
       "suite": "BuilderAgentCreationTest",
-      "description": "Builder agent should have exactly 7 tools.",
-      "status": "failed",
+      "description": "Builder agent should have exactly 6 tools (data_schema removed - schema is in system prompt).",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "AssertionError: 6 != 7"
+      "error": null
     },
     {
       "name": "test_accepts_conversation_id_parameter",
@@ -350,15 +350,6 @@
       "module": "ai_agent.tests.test_conversation_api",
       "suite": "StreamingEnhancementTest",
       "description": "SSE complete event should include conversation_id.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_complete_event_includes_conversation_id_for_existing_conversation",
-      "module": "ai_agent.tests.test_conversation_api",
-      "suite": "StreamingEnhancementTest",
-      "description": "SSE complete event includes conversation_id for existing conversations.",
       "status": "passed",
       "duration_seconds": null,
       "error": null
