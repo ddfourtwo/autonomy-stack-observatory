@@ -1,0 +1,166 @@
+{
+  "vertical": "product",
+  "source": "agent-tests",
+  "timestamp": "2026-04-18T10:53:07Z",
+  "summary": {
+    "total": 18,
+    "passed": 9,
+    "failed": 9,
+    "skipped": 0,
+    "coverage_percent": null,
+    "duration_seconds": 177.9
+  },
+  "entries": [
+    {
+      "name": "test_add_exercise_with_sets_and_reps",
+      "module": "ai_agent.tests.test_integration",
+      "suite": "AnthropicIntegrationTest",
+      "description": "Test adding exercise with specific sets and reps.",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_add_exercise_with_weight",
+      "module": "ai_agent.tests.test_integration",
+      "suite": "AnthropicIntegrationTest",
+      "description": "Test adding exercise with weight specification.",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_add_simple_exercise",
+      "module": "ai_agent.tests.test_integration",
+      "suite": "AnthropicIntegrationTest",
+      "description": "Test adding a simple exercise with real LLM.",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_error_handling",
+      "module": "ai_agent.tests.test_integration",
+      "suite": "AnthropicIntegrationTest",
+      "description": "Test that errors are handled gracefully.",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": "Preserving test database for alias 'nosql_db' ('test_postgres')..."
+    },
+    {
+      "name": "test_multiple_exercises",
+      "module": "ai_agent.tests.test_integration",
+      "suite": "AnthropicIntegrationTest",
+      "description": "Test adding multiple exercises in one command.",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_question_without_changes",
+      "module": "ai_agent.tests.test_integration",
+      "suite": "AnthropicIntegrationTest",
+      "description": "Test asking a question that doesn't modify the workout.",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_search_exercises_tool",
+      "module": "ai_agent.tests.test_integration",
+      "suite": "AnthropicIntegrationTest",
+      "description": "Test that the search_exercises tool works.",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_full_conversation",
+      "module": "ai_agent.tests.test_integration",
+      "suite": "ManualIntegrationTest",
+      "description": "Manual test showing full AI conversation.",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_agent_responds_after_tool_failure",
+      "module": "ai_agent.tests.test_agent_behavior",
+      "suite": "ErrorRecoveryTest",
+      "description": "Agent should produce a text response even if a tool returns an error.",
+      "status": "error",
+      "duration_seconds": null,
+      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
+    },
+    {
+      "name": "test_followup_after_error_retains_context",
+      "module": "ai_agent.tests.test_agent_behavior",
+      "suite": "ErrorRecoveryTest",
+      "description": "After a failed turn, a follow-up should still work correctly.",
+      "status": "error",
+      "duration_seconds": null,
+      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
+    },
+    {
+      "name": "test_modify_references_previous_workout",
+      "module": "ai_agent.tests.test_agent_behavior",
+      "suite": "MultiTurnContextTest",
+      "description": "Second message should modify the same workout, not create a new one.",
+      "status": "error",
+      "duration_seconds": null,
+      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
+    },
+    {
+      "name": "test_create_and_schedule_chains_both_tools",
+      "module": "ai_agent.tests.test_agent_behavior",
+      "suite": "ProactiveSchedulingTest",
+      "description": "'Create a workout for tomorrow morning' should call both workouts AND schedule.",
+      "status": "error",
+      "duration_seconds": null,
+      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
+    },
+    {
+      "name": "test_biodata_query_calls_biodata_tool",
+      "module": "ai_agent.tests.test_agent_behavior",
+      "suite": "ToolSelectionTest",
+      "description": "'How did I sleep?' should call the biodata tool.",
+      "status": "error",
+      "duration_seconds": null,
+      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
+    },
+    {
+      "name": "test_biometrics_query_calls_biometrics_tool",
+      "module": "ai_agent.tests.test_agent_behavior",
+      "suite": "ToolSelectionTest",
+      "description": "'What are my HR zones?' should call biometrics tool.",
+      "status": "error",
+      "duration_seconds": null,
+      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
+    },
+    {
+      "name": "test_schedule_query_calls_schedule_get",
+      "module": "ai_agent.tests.test_agent_behavior",
+      "suite": "ToolSelectionTest",
+      "description": "'What's on my schedule?' should call schedule_get.",
+      "status": "error",
+      "duration_seconds": null,
+      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
+    },
+    {
+      "name": "test_workout_creation_calls_workouts_tool",
+      "module": "ai_agent.tests.test_agent_behavior",
+      "suite": "ToolSelectionTest",
+      "description": "'Create a workout' should call the workouts tool with action=create.",
+      "status": "error",
+      "duration_seconds": null,
+      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
+    },
+    {
+      "name": "test_final_verification",
+      "module": "ai_agent.test_scripts",
+      "status": "failed",
+      "duration_seconds": null,
+      "error": "Verification script failed (timeout/non-zero exit)"
+    }
+  ]
+}
