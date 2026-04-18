@@ -1,15 +1,15 @@
 {
   "vertical": "product",
   "source": "unit-backend",
-  "timestamp": "2026-04-18T02:04:53Z",
+  "timestamp": "2026-04-18T02:19:03Z",
   "summary": {
     "total": 544,
-    "passed": 488,
-    "failed": 40,
-    "errors": 27,
+    "passed": 510,
+    "failed": 18,
+    "errors": 6,
     "skipped": 16,
     "coverage_percent": null,
-    "duration_seconds": 76.6
+    "duration_seconds": 67.5
   },
   "entries": [
     {
@@ -1009,7 +1009,7 @@
       "description": "Should apply multiple updates in one call.",
       "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7259) already exists."
+      "error": null
     },
     {
       "name": "test_remove_peak_moment",
@@ -1466,18 +1466,18 @@
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "ManageWorkoutCreateTest",
       "description": "Create action should delegate to EfficientWorkoutAgent.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Failing row contains (336, Test HIIT Workout, STRENGTH, null, {\"name\": \"Test HIIT Workout\", \"sport\": \"STRENGTH\", \"steps\": [{\"i..., null, null, 2026-04-18 02:03:22.282826+00, 2026-04-18 02:03:22.282829+00, 7232, 467, null, null, private, f, null)."
+      "error": null
     },
     {
       "name": "test_create_enriches_prompt_with_constraints",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "ManageWorkoutCreateTest",
       "description": "Create should enrich prompt with constraints.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Failing row contains (337, Test Workout, STRENGTH, null, {\"name\": \"Test Workout\", \"sport\": \"STRENGTH\", \"steps\": [], \"sour..., null, null, 2026-04-18 02:03:22.350753+00, 2026-04-18 02:03:22.350755+00, 7233, 468, null, null, private, f, null)."
+      "error": null
     },
     {
       "name": "test_create_returns_error_on_agent_failure",
@@ -1495,7 +1495,7 @@
       "description": "Create should save result to StructuredWorkout Django model.",
       "status": "error",
       "duration_seconds": null,
-      "error": "DETAIL:  Failing row contains (338, Saved Workout, STRENGTH, null, {\"name\": \"Saved Workout\", \"sport\": \"STRENGTH\", \"steps\": [{\"id\": ..., null, null, 2026-04-18 02:03:22.522911+00, 2026-04-18 02:03:22.522913+00, 7235, 469, null, null, private, f, null)."
+      "error": "calendar_planning.models.StructuredWorkout.DoesNotExist: StructuredWorkout matching query does not exist."
     },
     {
       "name": "test_manage_workout_create_function_exists",
@@ -1556,9 +1556,9 @@
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "ManageWorkoutGetTest",
       "description": "Get action should verify ownership.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (unique_code)=() already exists."
+      "error": null
     },
     {
       "name": "test_manage_workout_get_function_exists",
@@ -1907,16 +1907,16 @@
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "Should return error for invalid field name.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7258) already exists."
+      "error": null
     },
     {
       "name": "test_multiple_updates",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "Should handle multiple updates in a single call.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
       "error": null
     },
@@ -1925,126 +1925,126 @@
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "Should update biological_gender in Biometrics model.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7260) already exists."
+      "error": null
     },
     {
       "name": "test_update_biometrics_function_exists",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "update_biometrics function should exist.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7261) already exists."
+      "error": null
     },
     {
       "name": "test_update_functional_threshold_hr",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "Should update functional_threshold_hr and set manual flag.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7262) already exists."
+      "error": null
     },
     {
       "name": "test_update_functional_threshold_pace",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "Should update functional_threshold_pace and set manual flag.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7263) already exists."
+      "error": null
     },
     {
       "name": "test_update_functional_threshold_power",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "Should update functional_threshold_power and set manual flag.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7264) already exists."
+      "error": null
     },
     {
       "name": "test_update_height",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "Should update height_cm in Biometrics model.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7265) already exists."
+      "error": null
     },
     {
       "name": "test_update_hr_zones",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "Should update hr_zones and set manual flag.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7266) already exists."
+      "error": null
     },
     {
       "name": "test_update_maximum_hr",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "Should update maximum_hr and set manual flag.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7267) already exists."
+      "error": null
     },
     {
       "name": "test_update_pace_unit",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "Should update pace_unit setting.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7268) already exists."
+      "error": null
     },
     {
       "name": "test_update_power_zones",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "Should update power_zones and set manual flag.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7269) already exists."
+      "error": null
     },
     {
       "name": "test_update_resting_hr_auto_detected",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "Should update detected_resting_hr when source=auto_detected.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7270) already exists."
+      "error": null
     },
     {
       "name": "test_update_resting_hr_user_input",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "Should update resting_hr and set manual flag when source=user_input.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7271) already exists."
+      "error": null
     },
     {
       "name": "test_update_use_global_zones",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "Should update use_global_zones setting.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7272) already exists."
+      "error": null
     },
     {
       "name": "test_update_weight",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsExecutionTest",
       "description": "Should update weight_kg in Biometrics model.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id)=(7273) already exists."
+      "error": null
     },
     {
       "name": "test_biological_gender_values",
@@ -2114,27 +2114,27 @@
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsSchemaTest",
       "description": "UpdateBiometricsArgs should accept multiple updates.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "For further information visit https://errors.pydantic.dev/2.12/v/value_error"
+      "error": null
     },
     {
       "name": "test_update_biometrics_args_requires_updates",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsSchemaTest",
       "description": "UpdateBiometricsArgs must have at least one update.",
-      "status": "failed",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "AssertionError: ValidationError not raised"
+      "error": null
     },
     {
       "name": "test_update_biometrics_args_single_update",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "UpdateBiometricsSchemaTest",
       "description": "UpdateBiometricsArgs should accept a single update.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "For further information visit https://errors.pydantic.dev/2.12/v/value_error"
+      "error": null
     },
     {
       "name": "test_zones_accept_array_value",
@@ -2656,7 +2656,7 @@
       "description": "Unlinked wearable activities should keep using the wearable name.",
       "status": "error",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id, reference_datetime)=(7308, 2026-04-18 02:03:29.032523+00) already exists."
+      "error": "DETAIL:  Key (profile_id, reference_datetime)=(8297, 2026-04-18 02:18:03.09977+00) already exists."
     },
     {
       "name": "test_feed_prefers_completed_activity_title_over_wearable_name",
@@ -2665,7 +2665,7 @@
       "description": "A linked Beoflow workout title should override the wearable's generic label.",
       "status": "error",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id, reference_datetime)=(7309, 2026-04-18 02:03:29.19118+00) already exists."
+      "error": "DETAIL:  Key (profile_id, reference_datetime)=(8298, 2026-04-18 02:18:03.210422+00) already exists."
     },
     {
       "name": "test_feed_excludes_hr_zone_aggregation_when_no_data",
@@ -2854,7 +2854,7 @@
       "description": "Test exercise stats with one workout",
       "status": "failed",
       "duration_seconds": null,
-      "error": "Exit: 1"
+      "error": "Preserving test database for alias 'nosql_db' ('test_postgres')..."
     },
     {
       "name": "test_muscle_heatmap_date_filter_uses_profile_timezone",
