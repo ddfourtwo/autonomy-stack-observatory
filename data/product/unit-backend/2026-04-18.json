@@ -1,15 +1,15 @@
 {
   "vertical": "product",
   "source": "unit-backend",
-  "timestamp": "2026-04-18T02:19:03Z",
+  "timestamp": "2026-04-18T04:44:35Z",
   "summary": {
-    "total": 544,
-    "passed": 510,
-    "failed": 18,
-    "errors": 6,
+    "total": 545,
+    "passed": 528,
+    "failed": 1,
+    "errors": 0,
     "skipped": 16,
     "coverage_percent": null,
-    "duration_seconds": 67.5
+    "duration_seconds": 76.6
   },
   "entries": [
     {
@@ -355,6 +355,15 @@
       "error": null
     },
     {
+      "name": "test_complete_event_includes_conversation_id_for_existing_conversation",
+      "module": "ai_agent.tests.test_conversation_api",
+      "suite": "StreamingEnhancementTest",
+      "description": "SSE complete event includes conversation_id for existing conversations.",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
       "name": "test_extracts_alternate_markers",
       "module": "ai_agent.tests.test_deterministic_agent",
       "suite": "ExtractToolBlockTest",
@@ -521,27 +530,27 @@
       "module": "ai_agent.tests.test_deterministic_agent",
       "suite": "GetScheduleTest",
       "description": "Each event dict has expected keys.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "IndexError: list index out of range"
+      "error": null
     },
     {
       "name": "test_events_ordered_by_date",
       "module": "ai_agent.tests.test_deterministic_agent",
       "suite": "GetScheduleTest",
       "description": "Events are returned in chronological order.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "IndexError: list index out of range"
+      "error": null
     },
     {
       "name": "test_excludes_deleted_events",
       "module": "ai_agent.tests.test_deterministic_agent",
       "suite": "GetScheduleTest",
       "description": "Deleted events are not returned.",
-      "status": "failed",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "AssertionError: 0 != 1"
+      "error": null
     },
     {
       "name": "test_excludes_out_of_range_events",
@@ -557,27 +566,27 @@
       "module": "ai_agent.tests.test_deterministic_agent",
       "suite": "GetScheduleTest",
       "description": "Events in the past are included when days_back > 0.",
-      "status": "failed",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "AssertionError: 0 != 1"
+      "error": null
     },
     {
       "name": "test_no_calendar_returns_error",
       "module": "ai_agent.tests.test_deterministic_agent",
       "suite": "GetScheduleTest",
       "description": "Returns NO_CALENDAR error when user has no activity plan.",
-      "status": "failed",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "AssertionError: True is not false"
+      "error": null
     },
     {
       "name": "test_returns_scheduled_events",
       "module": "ai_agent.tests.test_deterministic_agent",
       "suite": "GetScheduleTest",
       "description": "Returns events that exist within the date range.",
-      "status": "failed",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "AssertionError: 0 != 2"
+      "error": null
     },
     {
       "name": "test_returns_success_with_empty_schedule",
@@ -746,9 +755,9 @@
       "module": "ai_agent.tests.test_exercise_search",
       "suite": "FuzzySearchExercisesTest",
       "description": "Basic typos should still return relevant results.",
-      "status": "failed",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "AssertionError: 0 not greater than 0"
+      "error": null
     },
     {
       "name": "test_whitespace_handling",
@@ -953,9 +962,9 @@
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "InteractiveAgentStreamingTest",
       "description": "Interactive agent stream should emit tool_call and tool_result events.",
-      "status": "failed",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "AssertionError: 'tool_call' not found in ['error'] : Should have tool_call event"
+      "error": null
     },
     {
       "name": "test_add_peak_moment",
@@ -1223,9 +1232,9 @@
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "ManageScheduleErrorHandlingTest",
       "description": "Should return NO_CALENDAR if user has no ActivityPlan.",
-      "status": "failed",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "AssertionError: True is not false"
+      "error": null
     },
     {
       "name": "test_not_scheduled_error_for_reschedule",
@@ -1295,9 +1304,9 @@
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "ManageScheduleExecutionTest",
       "description": "Schedule action should create ActivityEvent.",
-      "status": "failed",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "AssertionError: <ActivityPlan:  > != <ActivityPlan: My Calendar>"
+      "error": null
     },
     {
       "name": "test_schedule_evening_time",
@@ -1492,10 +1501,10 @@
       "name": "test_create_saves_to_structured_workout_model",
       "module": "ai_agent.tests.test_interactive_tools",
       "suite": "ManageWorkoutCreateTest",
-      "description": "Create should save result to StructuredWorkout Django model.",
-      "status": "error",
+      "description": "Create should save result to StructuredWorkoutTemplate Django model.",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "calendar_planning.models.StructuredWorkout.DoesNotExist: StructuredWorkout matching query does not exist."
+      "error": null
     },
     {
       "name": "test_manage_workout_create_function_exists",
@@ -2159,9 +2168,9 @@
       "module": "ai_agent.tests.test_kb_tool",
       "suite": "GetKbContextPipelineTest",
       "description": "Question goes through retrieval and formatting.",
-      "status": "failed",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "Actual: retrieve_chunks('How should I periodize for a marathon?', k=None)"
+      "error": null
     },
     {
       "name": "test_connection_refused_returns_empty",
@@ -2654,18 +2663,18 @@
       "module": "apis.app_data.tests",
       "suite": "FeedActivityTitleResolutionTestCase",
       "description": "Unlinked wearable activities should keep using the wearable name.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id, reference_datetime)=(8297, 2026-04-18 02:18:03.09977+00) already exists."
+      "error": null
     },
     {
       "name": "test_feed_prefers_completed_activity_title_over_wearable_name",
       "module": "apis.app_data.tests",
       "suite": "FeedActivityTitleResolutionTestCase",
       "description": "A linked Beoflow workout title should override the wearable's generic label.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id, reference_datetime)=(8298, 2026-04-18 02:18:03.210422+00) already exists."
+      "error": null
     },
     {
       "name": "test_feed_excludes_hr_zone_aggregation_when_no_data",
@@ -2807,9 +2816,9 @@
       "module": "apis.dashboard.tests",
       "suite": "ExerciseStatsAPIViewTests",
       "description": "Test that estimated 1RM is calculated using modified Epley with regression",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "IndexError: list index out of range"
+      "error": null
     },
     {
       "name": "test_exercise_stats_date_range_filter",
@@ -2843,18 +2852,18 @@
       "module": "apis.dashboard.tests",
       "suite": "ExerciseStatsAPIViewTests",
       "description": "Test exercise stats with multiple exercises",
-      "status": "failed",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "AssertionError: 0.0 != 4920.0"
+      "error": null
     },
     {
       "name": "test_exercise_stats_single_workout",
       "module": "apis.dashboard.tests",
       "suite": "ExerciseStatsAPIViewTests",
       "description": "Test exercise stats with one workout",
-      "status": "failed",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "Preserving test database for alias 'nosql_db' ('test_postgres')..."
+      "error": null
     },
     {
       "name": "test_muscle_heatmap_date_filter_uses_profile_timezone",
