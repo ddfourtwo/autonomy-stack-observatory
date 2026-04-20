@@ -1,15 +1,15 @@
 {
   "vertical": "product",
   "source": "unit-backend",
-  "timestamp": "2026-04-20T02:42:48Z",
+  "timestamp": "2026-04-20T04:22:42Z",
   "summary": {
     "total": 1087,
     "passed": 983,
     "failed": 98,
-    "errors": 78,
+    "errors": 79,
     "skipped": 6,
     "coverage_percent": null,
-    "duration_seconds": 157.0
+    "duration_seconds": 153.9
   },
   "entries": [
     {
@@ -3356,9 +3356,9 @@
       "module": "app_data.tests.test_data_generator_integration_test",
       "suite": "TestDataGeneratorWithEnhancements",
       "description": "Test that running activities have cadence samples generated.",
-      "status": "passed",
+      "status": "error",
       "duration_seconds": null,
-      "error": null
+      "error": "DETAIL:  Key (profile_id, source, reference_datetime)=(25119, garmin_connect, 2026-04-14 07:54:00+00) already exists."
     },
     {
       "name": "test_running_activity_has_lap_data",
@@ -9586,16 +9586,16 @@
       "description": "Test that a strength workout is generated with multiple exercises.",
       "status": "failed",
       "duration_seconds": null,
-      "error": "AssertionError: 4 != 6"
+      "error": "Preserving test database for alias 'nosql_db' ('test_postgres')..."
     },
     {
       "name": "test_tonnage_calculation_realistic",
       "module": "app_data.tests.test_structured_workout_generator",
       "suite": "TestStructuredWorkoutGeneration",
       "description": "Test that total tonnage is within realistic range (5000-10000kg).",
-      "status": "failed",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "Preserving test database for alias 'nosql_db' ('test_postgres')..."
+      "error": null
     },
     {
       "name": "test_weight_progression_in_sets",

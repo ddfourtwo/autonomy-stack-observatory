@@ -1,14 +1,15 @@
 {
   "vertical": "product",
   "source": "agent-tests",
-  "timestamp": "2026-04-19T05:30:23Z",
+  "timestamp": "2026-04-20T04:11:25Z",
   "summary": {
-    "total": 23,
-    "passed": 14,
-    "failed": 9,
+    "total": 16,
+    "passed": 12,
+    "failed": 4,
+    "errors": 0,
     "skipped": 0,
     "coverage_percent": null,
-    "duration_seconds": 183.2
+    "duration_seconds": 501.3
   },
   "entries": [
     {
@@ -45,7 +46,7 @@
       "description": "Test that errors are handled gracefully.",
       "status": "failed",
       "duration_seconds": null,
-      "error": "Preserving test database for alias 'nosql_db' ('test_postgres')..."
+      "error": "AssertionError: 'empty' not found in 'command or image required'"
     },
     {
       "name": "test_multiple_exercises",
@@ -88,76 +89,69 @@
       "module": "ai_agent.tests.test_agent_behavior",
       "suite": "ErrorRecoveryTest",
       "description": "Agent should produce a text response even if a tool returns an error.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
+      "error": null
     },
     {
       "name": "test_followup_after_error_retains_context",
       "module": "ai_agent.tests.test_agent_behavior",
       "suite": "ErrorRecoveryTest",
       "description": "After a failed turn, a follow-up should still work correctly.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
+      "error": null
     },
     {
       "name": "test_modify_references_previous_workout",
       "module": "ai_agent.tests.test_agent_behavior",
       "suite": "MultiTurnContextTest",
       "description": "Second message should modify the same workout, not create a new one.",
-      "status": "error",
+      "status": "failed",
       "duration_seconds": null,
-      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
+      "error": ": Turn 2 should edit (not create). Got action='get'"
     },
     {
       "name": "test_create_and_schedule_chains_both_tools",
       "module": "ai_agent.tests.test_agent_behavior",
       "suite": "ProactiveSchedulingTest",
       "description": "'Create a workout for tomorrow morning' should call both workouts AND schedule.",
-      "status": "error",
+      "status": "failed",
       "duration_seconds": null,
-      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
+      "error": "AssertionError: 'schedule_update' not found in ['think', 'biodata', 'periodization', 'coaching_memory', 'think', 'exercises', 'workouts', 'schedule'] : Should proactively call schedule_update. Got: ['think', 'biodata', 'periodization', 'coaching_memory', 'think', 'exercises', 'workouts', 'schedule']"
     },
     {
       "name": "test_biodata_query_calls_biodata_tool",
       "module": "ai_agent.tests.test_agent_behavior",
       "suite": "ToolSelectionTest",
       "description": "'How did I sleep?' should call the biodata tool.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
+      "error": null
     },
     {
       "name": "test_biometrics_query_calls_biometrics_tool",
       "module": "ai_agent.tests.test_agent_behavior",
       "suite": "ToolSelectionTest",
       "description": "'What are my HR zones?' should call biometrics tool.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
+      "error": null
     },
     {
       "name": "test_schedule_query_calls_schedule_get",
       "module": "ai_agent.tests.test_agent_behavior",
       "suite": "ToolSelectionTest",
       "description": "'What's on my schedule?' should call schedule_get.",
-      "status": "error",
+      "status": "failed",
       "duration_seconds": null,
-      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
+      "error": "DONE:1"
     },
     {
       "name": "test_workout_creation_calls_workouts_tool",
       "module": "ai_agent.tests.test_agent_behavior",
       "suite": "ToolSelectionTest",
       "description": "'Create a workout' should call the workouts tool with action=create.",
-      "status": "error",
-      "duration_seconds": null,
-      "error": "pydantic_ai.exceptions.ModelHTTPError: status_code: 404, model_name: , body: {'message': 'The model does not exist.', 'type': 'invalid_request_error'}"
-    },
-    {
-      "name": "test_final_verification",
-      "module": "ai_agent.test_scripts",
       "status": "passed",
       "duration_seconds": null,
       "error": null
