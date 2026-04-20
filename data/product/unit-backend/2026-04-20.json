@@ -1,15 +1,15 @@
 {
   "vertical": "product",
   "source": "unit-backend",
-  "timestamp": "2026-04-20T04:22:42Z",
+  "timestamp": "2026-04-20T10:50:39Z",
   "summary": {
-    "total": 1087,
-    "passed": 983,
-    "failed": 98,
-    "errors": 79,
+    "total": 959,
+    "passed": 861,
+    "failed": 92,
+    "errors": 74,
     "skipped": 6,
     "coverage_percent": null,
-    "duration_seconds": 153.9
+    "duration_seconds": 152.1
   },
   "entries": [
     {
@@ -62,6 +62,42 @@
       "module": "ai_agent.tests.test_agent",
       "suite": "WorkoutAgentInputValidationTest",
       "description": "Whitespace-only commands should be rejected.",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_efficient_agent_source_has_no_asyncio_run",
+      "module": "ai_agent.tests.test_async_tool_path",
+      "suite": "AsyncSignatureTests",
+      "description": "process_command_async must use `await` on inner coroutines, not",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_run_async_helper_is_removed",
+      "module": "ai_agent.tests.test_async_tool_path",
+      "suite": "AsyncSignatureTests",
+      "description": "_run_async was the ephemeral-loop bridge that leaked httpx clients.",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_bg_thread_rebinds_sentry_scope",
+      "module": "ai_agent.tests.test_async_tool_path",
+      "suite": "StreamObservabilityContractTests",
+      "description": "Sentry scope is thread-local. The run_async bg thread must",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_stream_response_covers_completion_reasons",
+      "module": "ai_agent.tests.test_async_tool_path",
+      "suite": "StreamObservabilityContractTests",
+      "description": "Every known exit path must set a distinct completion_reason.",
       "status": "passed",
       "duration_seconds": null,
       "error": null
@@ -629,1248 +665,6 @@
       "module": "ai_agent.tests.test_flag_views",
       "suite": "FlagCreateViewTest",
       "description": "Should return 502 when Linear API fails.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_conversation_continues_after_error",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ErrorPathMessageSavingTest",
-      "description": "After error-saved messages, _build_message_history should include them.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_raw_message_data_valid_for_history_reconstruction",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ErrorPathMessageSavingTest",
-      "description": "raw_message_data from error saves must be parseable by _build_message_history.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_saves_partial_response_on_error",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ErrorPathMessageSavingTest",
-      "description": "Partial assistant text should be saved with [Response interrupted] marker.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_saves_user_message_on_error",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ErrorPathMessageSavingTest",
-      "description": "User message must be persisted even when agent errors.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_skips_empty_partial_text",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ErrorPathMessageSavingTest",
-      "description": "No assistant message saved when partial_text is empty/whitespace.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_stream_emits_tool_call_events",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "InteractiveAgentStreamingTest",
-      "description": "Interactive agent stream should emit tool_call and tool_result events.",
-      "status": "failed",
-      "duration_seconds": null,
-      "error": "+ workouts"
-    },
-    {
-      "name": "test_add_peak_moment",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationExecutionTest",
-      "description": "Should add a peak moment (creates ActivityEvent + PeakMoment).",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_error_invalid_field",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationExecutionTest",
-      "description": "Should return error for invalid field name.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_error_no_active_periodization",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationExecutionTest",
-      "description": "Should return error if no active periodization exists.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_error_peak_moment_not_found",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationExecutionTest",
-      "description": "Should return error if peak moment event not found.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_manage_periodization_function_exists",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationExecutionTest",
-      "description": "manage_periodization function should exist.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_multiple_updates",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationExecutionTest",
-      "description": "Should apply multiple updates in one call.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_remove_peak_moment",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationExecutionTest",
-      "description": "Should remove a peak moment.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_biometric_targets",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationExecutionTest",
-      "description": "Should update biometric_targets on current training phase.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_is_active",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationExecutionTest",
-      "description": "Should update is_active field on periodization.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_peak_moment",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationExecutionTest",
-      "description": "Should update an existing peak moment.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_phase_targets",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationExecutionTest",
-      "description": "Should update phase_targets on current training phase.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_phase_type_current_phase",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationExecutionTest",
-      "description": "Should update phase_type on current training phase.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_template_name",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationExecutionTest",
-      "description": "Should update template_name field on periodization.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_manage_periodization_args_both",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationSchemaTest",
-      "description": "ManagePeriodizationArgs should accept both updates and peak_moment.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_manage_periodization_args_peak_moment",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationSchemaTest",
-      "description": "ManagePeriodizationArgs should accept peak_moment.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_manage_periodization_args_updates",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationSchemaTest",
-      "description": "ManagePeriodizationArgs should accept updates list.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_peak_moment_add_valid",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationSchemaTest",
-      "description": "PeakMomentChange add action should accept all required fields.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_peak_moment_add_with_target_metrics",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationSchemaTest",
-      "description": "PeakMomentChange add action should accept target_metrics.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_peak_moment_competition_type_values",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationSchemaTest",
-      "description": "Competition type should accept only valid values.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_peak_moment_priority_values",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationSchemaTest",
-      "description": "Priority should accept only A, B, or C.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_peak_moment_remove_valid",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationSchemaTest",
-      "description": "PeakMomentChange remove action should only require event_id.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_peak_moment_update_valid",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationSchemaTest",
-      "description": "PeakMomentChange update action should accept event_id.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_periodization_update_valid",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationSchemaTest",
-      "description": "PeriodizationUpdate should accept field, value, and optional reason.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_periodization_update_without_reason",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationSchemaTest",
-      "description": "PeriodizationUpdate should work without reason.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_schema_module_exists",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManagePeriodizationSchemaTest",
-      "description": "interactive_tools module should have manage_periodization schemas.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_batch_all_failure",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleBatchTest",
-      "description": "Batch with all failures should report all failed.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_batch_all_success",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleBatchTest",
-      "description": "Batch with all valid operations should succeed.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_batch_mixed_actions",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleBatchTest",
-      "description": "Batch with different actions should execute correctly.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_batch_partial_success",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleBatchTest",
-      "description": "Batch with some failures should report partial success.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_no_calendar_error",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleErrorHandlingTest",
-      "description": "Should return NO_CALENDAR if user has no ActivityPlan.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_not_scheduled_error_for_reschedule",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleErrorHandlingTest",
-      "description": "Reschedule should fail if workout not scheduled.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_not_scheduled_error_for_unschedule",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleErrorHandlingTest",
-      "description": "Unschedule should fail if workout not scheduled.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_permission_denied_other_user_workout",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleErrorHandlingTest",
-      "description": "Should not allow scheduling another user's workout.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_workout_not_found_error",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleErrorHandlingTest",
-      "description": "Should return NOT_FOUND for invalid workout_id.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_manage_schedule_function_exists",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleExecutionTest",
-      "description": "manage_schedule function should exist.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_reschedule_updates_event",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleExecutionTest",
-      "description": "Reschedule should update existing event's date.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_schedule_afternoon_time",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleExecutionTest",
-      "description": "Afternoon should map to 14:00.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_schedule_creates_activity_event",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleExecutionTest",
-      "description": "Schedule action should create ActivityEvent.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_schedule_evening_time",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleExecutionTest",
-      "description": "Evening should map to 18:00.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_schedule_no_time_of_day",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleExecutionTest",
-      "description": "Schedule without time_of_day should set start_time to None.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_schedule_uses_time_of_day_mapping",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleExecutionTest",
-      "description": "Schedule should map time_of_day to correct start_time.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_unschedule_soft_deletes_event",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleExecutionTest",
-      "description": "Unschedule should soft delete the event.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_manage_schedule_args_batch",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleSchemaTest",
-      "description": "ManageScheduleArgs should accept list of changes.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_manage_schedule_args_requires_changes",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleSchemaTest",
-      "description": "ManageScheduleArgs must have at least one change.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_reschedule_action_valid",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleSchemaTest",
-      "description": "Reschedule action should accept workout_id and new date.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_reschedule_requires_date",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleSchemaTest",
-      "description": "Reschedule action must have date.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_schedule_action_valid",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleSchemaTest",
-      "description": "Schedule action should accept workout_id, date, and time_of_day.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_schedule_requires_date",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleSchemaTest",
-      "description": "Schedule action must have date.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_schema_module_exists",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleSchemaTest",
-      "description": "interactive_tools module should have manage_schedule schemas.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_time_of_day_enum_values",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleSchemaTest",
-      "description": "time_of_day should accept only valid values.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_time_of_day_optional",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleSchemaTest",
-      "description": "time_of_day should be optional.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_unschedule_action_valid",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageScheduleSchemaTest",
-      "description": "Unschedule action should only require workout_id.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_create_folder_case_insensitive_duplicate_check",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutCreateFolderTest",
-      "description": "Create folder should do case-insensitive duplicate check.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_create_folder_duplicate_title_error",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutCreateFolderTest",
-      "description": "Create folder should return error if title already exists.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_create_folder_success",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutCreateFolderTest",
-      "description": "Create folder should create new folder.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_manage_workout_create_folder_function_exists",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutCreateFolderTest",
-      "description": "manage_workout_create_folder function should exist.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_create_delegates_to_workout_agent",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutCreateTest",
-      "description": "Create action should delegate to EfficientWorkoutAgent.",
-      "status": "error",
-      "duration_seconds": null,
-      "error": "TypeError: object of type 'ManageWorkoutCreate' has no len()"
-    },
-    {
-      "name": "test_create_enriches_prompt_with_constraints",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutCreateTest",
-      "description": "Create should enrich prompt with constraints.",
-      "status": "error",
-      "duration_seconds": null,
-      "error": "TypeError: object of type 'ManageWorkoutCreate' has no len()"
-    },
-    {
-      "name": "test_create_returns_error_on_agent_failure",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutCreateTest",
-      "description": "Create should return structured error if agent fails.",
-      "status": "error",
-      "duration_seconds": null,
-      "error": "TypeError: object of type 'ManageWorkoutCreate' has no len()"
-    },
-    {
-      "name": "test_create_saves_to_structured_workout_model",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutCreateTest",
-      "description": "Create should save result to StructuredWorkoutTemplate Django model.",
-      "status": "error",
-      "duration_seconds": null,
-      "error": "TypeError: object of type 'ManageWorkoutCreate' has no len()"
-    },
-    {
-      "name": "test_manage_workout_create_function_exists",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutCreateTest",
-      "description": "manage_workout_create function should exist.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_get_workout_by_id",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutGetTest",
-      "description": "Get action should fetch workout by ID.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_get_workout_by_name",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutGetTest",
-      "description": "Get action should fetch workout by name.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_get_workout_case_insensitive_name",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutGetTest",
-      "description": "Get action should do case-insensitive name search.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_get_workout_multiple_matches_disambiguation",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutGetTest",
-      "description": "Get action should return disambiguation error if multiple matches.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_get_workout_not_found",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutGetTest",
-      "description": "Get action should return error if workout not found.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_get_workout_ownership_verification",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutGetTest",
-      "description": "Get action should verify ownership.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_manage_workout_get_function_exists",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutGetTest",
-      "description": "manage_workout_get function should exist.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_list_folders_excludes_system_when_requested",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutListFoldersTest",
-      "description": "List folders should exclude system folders when include_system=False.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_list_folders_includes_system_by_default",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutListFoldersTest",
-      "description": "List folders should include system folders by default.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_list_folders_includes_workout_counts",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutListFoldersTest",
-      "description": "List folders should include workout counts.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_list_folders_ordered_correctly",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutListFoldersTest",
-      "description": "List folders should be ordered by sort_order, then date_modified.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_manage_workout_list_folders_function_exists",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutListFoldersTest",
-      "description": "manage_workout_list_folders function should exist.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_manage_workout_move_to_folder_function_exists",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutMoveToFolderTest",
-      "description": "manage_workout_move_to_folder function should exist.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_move_workout_by_folder_id",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutMoveToFolderTest",
-      "description": "Move to folder should move workout by folder_id.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_move_workout_by_folder_name",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutMoveToFolderTest",
-      "description": "Move to folder should move workout by folder_name.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_move_workout_folder_disambiguation",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutMoveToFolderTest",
-      "description": "Move to folder should return disambiguation error if multiple folder matches.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_move_workout_folder_name_case_insensitive",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutMoveToFolderTest",
-      "description": "Move to folder should do case-insensitive folder name search.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_move_workout_folder_not_found",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutMoveToFolderTest",
-      "description": "Move to folder should return error if folder not found.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_move_workout_not_found",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutMoveToFolderTest",
-      "description": "Move to folder should return error if workout not found.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_create_action_requires_request",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Create action must have request field.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_create_action_valid",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Create action should accept request and optional constraints.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_create_action_with_constraints",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Create action should accept full constraints object.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_create_folder_action_valid",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Create folder action should accept title.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_create_folder_requires_title",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Create folder action must have title.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_create_folder_with_description",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Create folder action should accept optional description.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_edit_action_requires_workout_id",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Edit action must have workout_id.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_edit_action_valid",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Edit action should accept workout_id and request.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_get_action_requires_id_or_name",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Get action must have either workout_id or workout_name.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_get_action_valid_with_id",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Get action should accept workout_id.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_get_action_valid_with_name",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Get action should accept workout_name.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_get_action_with_history_source",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Get action should accept source='history'.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_list_folders_action_valid",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "List folders action should be valid.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_list_folders_exclude_system",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "List folders action should accept include_system=False.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_manage_workout_args_discriminated_union",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "ManageWorkoutArgs should discriminate by action field.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_move_to_folder_action_valid_with_folder_id",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Move to folder action should accept folder_id.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_move_to_folder_action_valid_with_folder_name",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Move to folder action should accept folder_name.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_move_to_folder_requires_folder_id_or_name",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Move to folder action must have either folder_id or folder_name.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_move_to_folder_requires_workout_id",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Move to folder action must have workout_id.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_schema_module_exists",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "interactive_tools module should exist with manage_workout schemas.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_search_action_valid",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Search action should accept query and optional filters.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_search_action_with_filters",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Search action should accept filters.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_search_source_options",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "ManageWorkoutSchemaTest",
-      "description": "Search source should be 'templates', 'history', or 'all'.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_conversation_can_continue_after_tool_call",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "MessageSavingWithToolCallsTest",
-      "description": "Conversation with tool call messages can be rebuilt for continuation.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_save_messages_handles_tool_call_sequence",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "MessageSavingWithToolCallsTest",
-      "description": "_save_messages should save all messages including tool returns.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_invalid_field",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "Should return error for invalid field name.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_multiple_updates",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "Should handle multiple updates in a single call.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_biological_gender",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "Should update biological_gender in Biometrics model.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_biometrics_function_exists",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "update_biometrics function should exist.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_functional_threshold_hr",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "Should update functional_threshold_hr and set manual flag.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_functional_threshold_pace",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "Should update functional_threshold_pace and set manual flag.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_functional_threshold_power",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "Should update functional_threshold_power and set manual flag.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_height",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "Should update height_cm in Biometrics model.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_hr_zones",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "Should update hr_zones and set manual flag.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_maximum_hr",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "Should update maximum_hr and set manual flag.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_pace_unit",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "Should update pace_unit setting.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_power_zones",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "Should update power_zones and set manual flag.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_resting_hr_auto_detected",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "Should update detected_resting_hr when source=auto_detected.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_resting_hr_user_input",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "Should update resting_hr and set manual flag when source=user_input.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_use_global_zones",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "Should update use_global_zones setting.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_weight",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsExecutionTest",
-      "description": "Should update weight_kg in Biometrics model.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_biological_gender_values",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsSchemaTest",
-      "description": "Biological gender update should accept valid enum values.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_biometric_fields_constant_exists",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsSchemaTest",
-      "description": "Field sets should be defined for validation.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_biometric_update_auto_detected_source",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsSchemaTest",
-      "description": "BiometricUpdate should accept source='auto_detected'.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_biometric_update_default_source",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsSchemaTest",
-      "description": "BiometricUpdate should default source to 'user_input'.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_biometric_update_valid",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsSchemaTest",
-      "description": "BiometricUpdate should accept field, value, and source.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_pace_unit_values",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsSchemaTest",
-      "description": "Pace unit should accept valid enum values.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_schema_module_exists",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsSchemaTest",
-      "description": "interactive_tools module should have update_biometrics schemas.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_biometrics_args_multiple_updates",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsSchemaTest",
-      "description": "UpdateBiometricsArgs should accept multiple updates.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_update_biometrics_args_requires_updates",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsSchemaTest",
-      "description": "UpdateBiometricsArgs must have at least one update.",
-      "status": "failed",
-      "duration_seconds": null,
-      "error": "AssertionError: ValidationError not raised"
-    },
-    {
-      "name": "test_update_biometrics_args_single_update",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsSchemaTest",
-      "description": "UpdateBiometricsArgs should accept a single update.",
-      "status": "passed",
-      "duration_seconds": null,
-      "error": null
-    },
-    {
-      "name": "test_zones_accept_array_value",
-      "module": "ai_agent.tests.test_interactive_tools",
-      "suite": "UpdateBiometricsSchemaTest",
-      "description": "Zone updates should accept array values.",
       "status": "passed",
       "duration_seconds": null,
       "error": null
@@ -3356,9 +2150,9 @@
       "module": "app_data.tests.test_data_generator_integration_test",
       "suite": "TestDataGeneratorWithEnhancements",
       "description": "Test that running activities have cadence samples generated.",
-      "status": "error",
+      "status": "passed",
       "duration_seconds": null,
-      "error": "DETAIL:  Key (profile_id, source, reference_datetime)=(25119, garmin_connect, 2026-04-14 07:54:00+00) already exists."
+      "error": null
     },
     {
       "name": "test_running_activity_has_lap_data",
@@ -3374,6 +2168,24 @@
       "module": "app_data.tests.test_data_generator_integration_test",
       "suite": "TestDataGeneratorWithEnhancements",
       "description": "Test that running activities have max cadence field populated.",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_daily_then_sleep_coalesces_to_one_row",
+      "module": "app_data.tests.test_upsert_mapped_sleep",
+      "suite": "UpsertMappedSleepTests",
+      "description": "RHR backfill first (stub), then sleep payload fills the rest.",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_sleep_then_daily_coalesces_to_one_row",
+      "module": "app_data.tests.test_upsert_mapped_sleep",
+      "suite": "UpsertMappedSleepTests",
+      "description": "Terra sleep first (full fields, null RHR), then daily RHR backfill.",
       "status": "passed",
       "duration_seconds": null,
       "error": null
@@ -8761,6 +7573,42 @@
       "error": null
     },
     {
+      "name": "test_manage_workout_create_awaits_process_command_async",
+      "module": "ai_agent.tests.test_async_tool_path",
+      "suite": "AsyncInvocationTests",
+      "description": "manage_workout_create must invoke process_command_async, not",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_emits_agent_stalled_when_agent_never_produces_events",
+      "module": "ai_agent.tests.test_chat_views",
+      "suite": "StreamHeartbeatUnitTest",
+      "description": "Past the progress deadline, the stream surfaces AGENT_STALLED.",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_emits_heartbeats_while_agent_is_silent",
+      "module": "ai_agent.tests.test_chat_views",
+      "suite": "StreamHeartbeatUnitTest",
+      "description": "Silent windows between real events produce heartbeats, not silence.",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
+      "name": "test_emits_initial_heartbeat_before_first_real_event",
+      "module": "ai_agent.tests.test_chat_views",
+      "suite": "StreamHeartbeatUnitTest",
+      "description": "An initial heartbeat is yielded before any agent output.",
+      "status": "passed",
+      "duration_seconds": null,
+      "error": null
+    },
+    {
       "name": "test_does_not_regenerate_existing_title",
       "module": "ai_agent.tests.test_chat_views",
       "suite": "TitleGenerationTest",
@@ -9586,16 +8434,16 @@
       "description": "Test that a strength workout is generated with multiple exercises.",
       "status": "failed",
       "duration_seconds": null,
-      "error": "Preserving test database for alias 'nosql_db' ('test_postgres')..."
+      "error": "AssertionError: 5 != 6"
     },
     {
       "name": "test_tonnage_calculation_realistic",
       "module": "app_data.tests.test_structured_workout_generator",
       "suite": "TestStructuredWorkoutGeneration",
       "description": "Test that total tonnage is within realistic range (5000-10000kg).",
-      "status": "passed",
+      "status": "failed",
       "duration_seconds": null,
-      "error": null
+      "error": "Preserving test database for alias 'nosql_db' ('test_postgres')..."
     },
     {
       "name": "test_weight_progression_in_sets",
