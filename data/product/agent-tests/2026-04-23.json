@@ -1,0 +1,15 @@
+{
+  "vertical": "product",
+  "source": "agent-tests",
+  "timestamp": "2026-04-23T10:39:41Z",
+  "summary": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "skipped": 0,
+    "coverage_percent": null,
+    "duration_seconds": 0
+  },
+  "entries": [],
+  "note": "skipped -- no agent code changes in last 24h"
+}
