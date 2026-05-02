@@ -48,6 +48,7 @@
 	}
 
 	let expandedApps = $state({});
+	let expandedTranscripts = $state({});
 	let statusFilter = $state(null);
 	let coverageFilter = $state(null); // null, 'covered', 'partial', 'uncovered'
 
@@ -239,15 +240,47 @@
 												</td>
 											</tr>
 											{#each filtered as entry}
-												<tr class:row-green={entry.status === 'passed'} class:row-red={entry.status === 'failed' || entry.status === 'error'}>
+												{@const transcriptKey = `${appName}::${entry.name}`}
+												{@const hasTranscript = (entry.tool_calls && entry.tool_calls.length > 0) || entry.response_text}
+												<tr
+													class:row-green={entry.status === 'passed'}
+													class:row-red={entry.status === 'failed' || entry.status === 'error'}
+													class:clickable={hasTranscript}
+													onclick={() => { if (hasTranscript) expandedTranscripts[transcriptKey] = !expandedTranscripts[transcriptKey]; }}
+												>
 													<td class="center"><span class={STATUS_CLASS[entry.status] || 'skip'}>{STATUS_ICON[entry.status] || '?'}</span></td>
 													<td>
 														<span class="test-name">{entry.name}</span>
+														{#if hasTranscript}<span class="transcript-toggle">{expandedTranscripts[transcriptKey] ? '▲ hide' : '▼ transcript'}</span>{/if}
 														{#if entry.description}<div class="test-desc">{entry.description}</div>{/if}
 														{#if entry.error}<div class="error-msg">{entry.error}</div>{/if}
 													</td>
 													<td class="center"><span class="result-badge {STATUS_CLASS[entry.status] || 'skip'}">{entry.status === 'error' ? 'ERROR' : (entry.status || '?').toUpperCase()}</span></td>
 												</tr>
+												{#if expandedTranscripts[transcriptKey] && hasTranscript}
+													<tr class="transcript-row">
+														<td></td>
+														<td colspan="2">
+															<div class="transcript-block">
+																{#if entry.tool_calls && entry.tool_calls.length > 0}
+																	<div class="transcript-section-label">Tool calls</div>
+																	{#each entry.tool_calls as tc}
+																		<div class="transcript-tool">
+																			<span class="tool-name">{tc.tool}</span>
+																			{#if tc.args}
+																				<pre class="tool-args">{JSON.stringify(tc.args, null, 2)}</pre>
+																			{/if}
+																		</div>
+																	{/each}
+																{/if}
+																{#if entry.response_text}
+																	<div class="transcript-section-label">Response</div>
+																	<pre class="transcript-response">{entry.response_text}</pre>
+																{/if}
+															</div>
+														</td>
+													</tr>
+												{/if}
 											{/each}
 										{/if}
 									{/each}
@@ -337,4 +370,13 @@
 	.footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #d9d9d9; color: #666; font-size: 13px; }
 	.footer code { background: #f0f0f0; padding: 3px 8px; border-radius: 3px; font-family: 'Source Code Pro', monospace; }
 	.empty { color: #999; font-style: italic; }
+	.transcript-toggle { font-size: 10px; color: #aaa; margin-left: 8px; font-family: system-ui, sans-serif; font-weight: 400; vertical-align: middle; cursor: pointer; user-select: none; }
+	.transcript-row td { padding: 0; }
+	.transcript-block { padding: 12px 16px 16px 16px; background: #1e1e2e; border-top: 1px solid #333; border-bottom: 2px solid #444; }
+	.transcript-section-label { font-size: 10px; text-transform: uppercase; color: #888; font-weight: 700; letter-spacing: 0.08em; margin-top: 12px; margin-bottom: 4px; }
+	.transcript-section-label:first-child { margin-top: 0; }
+	.transcript-tool { margin-bottom: 8px; }
+	.tool-name { font-family: 'Source Code Pro', monospace; font-size: 12px; color: #7ec8e3; font-weight: 700; }
+	.tool-args { font-family: 'Source Code Pro', monospace; font-size: 11px; color: #c9d1d9; background: #161622; border: 1px solid #333; border-radius: 3px; padding: 6px 10px; margin-top: 4px; overflow-x: auto; white-space: pre; }
+	.transcript-response { font-family: 'Source Code Pro', monospace; font-size: 12px; color: #e2e8f0; background: #161622; border: 1px solid #333; border-radius: 3px; padding: 8px 12px; white-space: pre-wrap; word-break: break-word; }
 </style>
