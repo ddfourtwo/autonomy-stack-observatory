@@ -1,0 +1,52 @@
+{
+  "vertical": "product",
+  "source": "agent-tests",
+  "timestamp": "2026-05-04T21:32:30Z",
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "coverage_percent": null,
+    "duration_seconds": 286.1
+  },
+  "entries": [
+    {
+      "name": "chat_api_biometrics_query",
+      "module": "ai_agent.behavior_suite",
+      "suite": "UnifiedAgentBehaviorSuite",
+      "description": "Query heart rate zones through the real chat streaming endpoint and verify the biometrics tool fires. Pass threshold: 2/2.",
+      "status": "passed",
+      "duration_seconds": 41.37,
+      "error": null
+    },
+    {
+      "name": "interactive_workout_edit_retains_context",
+      "module": "ai_agent.behavior_suite",
+      "suite": "UnifiedAgentBehaviorSuite",
+      "description": "The interactive agent should edit the same workout created in the previous turn rather than creating a new one. Pass threshold: 1/1.",
+      "status": "passed",
+      "duration_seconds": 143.33,
+      "error": null
+    },
+    {
+      "name": "interactive_error_recovery_after_invalid_edit",
+      "module": "ai_agent.behavior_suite",
+      "suite": "UnifiedAgentBehaviorSuite",
+      "description": "After a bad edit request, the next turn should still recover and create a new workout. Pass threshold: 1/1.",
+      "status": "passed",
+      "duration_seconds": 80.92,
+      "error": null
+    },
+    {
+      "name": "delegated_complex_workout_generation",
+      "module": "ai_agent.behavior_suite",
+      "suite": "UnifiedAgentBehaviorSuite",
+      "description": "The delegated complex running workout prompt should complete, return JSON, and validate as a StructuredWorkout. Pass threshold: 1/1.",
+      "status": "passed",
+      "duration_seconds": 20.49,
+      "error": null
+    }
+  ]
+}
