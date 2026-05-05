@@ -90,6 +90,11 @@
 		if (typeof value === 'string') return value;
 		return JSON.stringify(value, null, 2);
 	}
+	function valueSummary(value) {
+		if (value === undefined || value === null) return '';
+		const text = formatValue(value).replace(/\s+/g, ' ').trim();
+		return text.length > 120 ? `${text.slice(0, 120)}...` : text;
+	}
 </script>
 
 <main>
@@ -322,8 +327,18 @@
 																							<div class="message-body">
 																								{#if message.tool}<div class="tool-name">{message.tool}</div>{/if}
 																								{#if message.content}<pre class="transcript-response">{message.content}</pre>{/if}
-																								{#if message.args}<pre class="tool-args">{formatValue(message.args)}</pre>{/if}
-																								{#if message.result}<pre class="tool-args">{formatValue(message.result)}</pre>{/if}
+																								{#if message.args}
+																									<details class="payload-details">
+																										<summary>Tool arguments <span>{valueSummary(message.args)}</span></summary>
+																										<pre class="tool-args">{formatValue(message.args)}</pre>
+																									</details>
+																								{/if}
+																								{#if message.result}
+																									<details class="payload-details">
+																										<summary>Tool result <span>{valueSummary(message.result)}</span></summary>
+																										<pre class="tool-args">{formatValue(message.result)}</pre>
+																									</details>
+																								{/if}
 																							</div>
 																						</div>
 																					{/each}
@@ -464,4 +479,8 @@
 	.role-assistant .message-role { color: #49cc90; }
 	.role-tool_call .message-role, .role-tool_result .message-role { color: #7ec8e3; }
 	.role-error .message-role { color: #f93e3e; }
+	.payload-details { margin-top: 4px; }
+	.payload-details summary { cursor: pointer; color: #c9d1d9; font-size: 11px; font-weight: 700; user-select: none; }
+	.payload-details summary span { color: #888; font-weight: 400; margin-left: 6px; }
+	.payload-details[open] summary { margin-bottom: 4px; }
 </style>
