@@ -1,0 +1,106 @@
+{
+  "vertical": "product",
+  "source": "agent-tests",
+  "timestamp": "2026-05-05T07:21:52Z",
+  "runtime_models": {
+    "chat": {
+      "provider": "tinfoil",
+      "model": "deepseek-v4-pro"
+    },
+    "fast": {
+      "provider": "tinfoil",
+      "model": "gemma4-31b"
+    },
+    "very_fast": {
+      "provider": "tinfoil",
+      "model": "gemma4-31b"
+    },
+    "workout": {
+      "provider": "vertex",
+      "model": "google/gemini-2.5-flash"
+    }
+  },
+  "summary": {
+    "total": 8,
+    "passed": 7,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 0,
+    "coverage_percent": null,
+    "duration_seconds": 369.8
+  },
+  "entries": [
+    {
+      "name": "queries_biometrics_success",
+      "module": "ai_agent.behavior_suite.chat_agent",
+      "suite": "ChatAgentBehaviorSuite",
+      "description": "Ask for heart rate zones through the real chat streaming endpoint and verify the biometrics tool fires with a grounded answer. Pass threshold: 2/2. Runtime models: chat=tinfoil/deepseek-v4-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-flash.",
+      "status": "passed",
+      "duration_seconds": 20.4,
+      "error": null
+    },
+    {
+      "name": "edits_existing_workout_uses_same_workout",
+      "module": "ai_agent.behavior_suite.chat_agent",
+      "suite": "ChatAgentBehaviorSuite",
+      "description": "Create a workout, then modify it in a follow-up turn and verify the same workout is edited rather than a new one created. Pass threshold: 1/1. Runtime models: chat=tinfoil/deepseek-v4-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-flash.",
+      "status": "passed",
+      "duration_seconds": 123.89,
+      "error": null
+    },
+    {
+      "name": "recovers_after_invalid_request_with_tool_recovery",
+      "module": "ai_agent.behavior_suite.chat_agent",
+      "suite": "ChatAgentBehaviorSuite",
+      "description": "After a bad edit request, the next turn should recover and create a new workout without derailing the conversation. Pass threshold: 1/1. Runtime models: chat=tinfoil/deepseek-v4-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-flash.",
+      "status": "passed",
+      "duration_seconds": 90.53,
+      "error": null
+    },
+    {
+      "name": "query_upcoming_schedule_returns_schedule_context",
+      "module": "ai_agent.behavior_suite.chat_agent",
+      "suite": "ChatAgentBehaviorSuite",
+      "description": "Ask what is on the schedule this week through the real chat streaming endpoint and verify the schedule tool is used with a grounded answer. Pass threshold: 1/1. Runtime models: chat=tinfoil/deepseek-v4-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-flash.",
+      "status": "passed",
+      "duration_seconds": 12.55,
+      "error": null
+    },
+    {
+      "name": "create_workout_then_schedule_it_on_specific_day",
+      "module": "ai_agent.behavior_suite.chat_agent",
+      "suite": "ChatAgentBehaviorSuite",
+      "description": "Create a workout for tomorrow morning and verify the agent chains workout creation with scheduling in the same turn. Pass threshold: 1/1. Runtime models: chat=tinfoil/deepseek-v4-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-flash.",
+      "status": "passed",
+      "duration_seconds": 95.69,
+      "error": null
+    },
+    {
+      "name": "query_biodata_returns_grounded_answer",
+      "module": "ai_agent.behavior_suite.chat_agent",
+      "suite": "ChatAgentBehaviorSuite",
+      "description": "Ask how the user slept last night through the real chat streaming endpoint and verify the biodata tool is used with a grounded answer. Pass threshold: 1/1. Runtime models: chat=tinfoil/deepseek-v4-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-flash.",
+      "status": "passed",
+      "duration_seconds": 8.65,
+      "error": null
+    },
+    {
+      "name": "invalid_edit_still_returns_helpful_text",
+      "module": "ai_agent.behavior_suite.chat_agent",
+      "suite": "ChatAgentBehaviorSuite",
+      "description": "Trigger a failed edit on a non-existent workout and verify the agent still responds with helpful text instead of crashing. Pass threshold: 1/1. Runtime models: chat=tinfoil/deepseek-v4-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-flash.",
+      "status": "failed",
+      "duration_seconds": 10.61,
+      "error": "invalid_edit_still_returns_helpful_text: 0/1 attempts passed; required 1\nattempt 1: failed - expected at least one tool call during failed edit flow"
+    },
+    {
+      "name": "generates_complex_workout_returns_valid_structured_workout",
+      "module": "ai_agent.behavior_suite.workout_agent",
+      "suite": "WorkoutAgentBehaviorSuite",
+      "description": "The delegated complex running workout prompt should complete, return JSON, and validate as a StructuredWorkout. Pass threshold: 1/1. Runtime models: chat=tinfoil/deepseek-v4-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-flash.",
+      "status": "passed",
+      "duration_seconds": 7.48,
+      "error": null
+    }
+  ]
+}
