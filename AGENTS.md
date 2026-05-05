@@ -133,6 +133,12 @@ git commit -m "data(<source>): $DATE"
 git push origin main
 ```
 
+Pushing to `main` auto-deploys the observatory dashboard through GitHub Actions. The workflow lives at:
+
+- `.github/workflows/deploy-observatory.yml`
+
+It builds `dashboard/` and deploys the existing Cloudflare Pages project `observatory`. Do not rely on manual `wrangler pages deploy` except as a break-glass fallback when the GitHub Actions path is broken.
+
 ## Uploading Media (Screenshots, Videos)
 
 Media goes to the private R2 bucket (`observatory-media`). The dashboard serves it through `/media/*`, gated by Cloudflare Access.
