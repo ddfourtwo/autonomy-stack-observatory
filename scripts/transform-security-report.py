@@ -41,6 +41,9 @@ def transform(input_path: str, output_path: str):
             "overall_coverage": summary["overall_coverage"],
             "coverage": summary["coverage"],
             "tests_by_type": summary["tests_by_type"],
+            "blank_cells": summary.get("blank_cells"),
+            "fully_uncovered_endpoints": summary.get("fully_uncovered_endpoints"),
+            "top_uncovered_groups": summary.get("top_uncovered_groups", []),
         },
         "test_types": test_types,
         "sections": {
