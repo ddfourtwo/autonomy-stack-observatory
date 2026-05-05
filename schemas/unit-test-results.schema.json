@@ -8,6 +8,10 @@
     "vertical": { "type": "string" },
     "source": { "type": "string" },
     "timestamp": { "type": "string", "format": "date-time" },
+    "runtime_models": {
+      "type": ["object", "null"],
+      "description": "Model/provider routing used by agent behavior tests."
+    },
     "summary": {
       "type": "object",
       "required": ["total", "passed", "failed"],
@@ -33,7 +37,56 @@
           "description": { "type": ["string", "null"], "description": "Human-readable test description from docstring (e.g. 'Expired JWT tokens should be rejected')" },
           "status": { "type": "string", "enum": ["passed", "failed", "error", "skipped"] },
           "duration_seconds": { "type": ["number", "null"] },
-          "error": { "type": ["string", "null"], "description": "Error message from traceback (last line). Only present for failed/error tests." }
+          "error": { "type": ["string", "null"], "description": "Error message from traceback (last line). Only present for failed/error tests." },
+          "criteria": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Human-readable pass/fail criteria for non-deterministic agent tests."
+          },
+          "observations": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Audit notes explaining why the run passed or failed."
+          },
+          "runtime_models": {
+            "type": ["object", "null"],
+            "description": "Model/provider routing used for this test entry."
+          },
+          "tool_calls": {
+            "type": "array",
+            "items": { "type": "object" },
+            "description": "Flattened tool calls for dashboard compatibility."
+          },
+          "response_text": {
+            "type": ["string", "null"],
+            "description": "Flattened assistant text for dashboard compatibility."
+          },
+          "attempts": {
+            "type": "array",
+            "description": "Per-attempt details for non-deterministic agent tests.",
+            "items": {
+              "type": "object",
+              "required": ["status", "detail", "duration_seconds"],
+              "properties": {
+                "status": { "type": "string", "enum": ["passed", "failed", "error", "skipped"] },
+                "detail": { "type": "string" },
+                "duration_seconds": { "type": ["number", "null"] },
+                "criteria": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "observations": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "transcript": {
+                  "type": "array",
+                  "items": { "type": "object" },
+                  "description": "Full conversation and tool transcript captured during this attempt."
+                }
+              }
+            }
+          }
         }
       }
     }
