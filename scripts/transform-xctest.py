@@ -34,12 +34,12 @@ def parse_xcodebuild_output(text: str) -> dict:
 
     # Modern format: Test case 'ClassName.testMethod()' passed on 'device' (N.NNN seconds)
     modern_pattern = re.compile(
-        r"Test case '(\w+)\.(\w+)\(\)' (passed|failed) on '.*?' \((\d+\.\d+) seconds\)"
+        r"Test case '(\w+)\.(\w+)\(\)' (passed|failed|skipped) on '.*?' \((\d+\.\d+) seconds\)"
     )
 
     # Legacy format: Test Case '-[Module.ClassName testMethod]' passed (N.NNN seconds).
     legacy_pattern = re.compile(
-        r"Test Case '-\[(\S+?)\.(\S+?)\s+(\S+?)\]' (passed|failed) \((\d+\.\d+) seconds\)\."
+        r"Test Case '-\[(\S+?)\.(\S+?)\s+(\S+?)\]' (passed|failed|skipped) \((\d+\.\d+) seconds\)\."
     )
 
     # Error lines — modern: ClassName.testMethod() : error message
@@ -72,11 +72,13 @@ def parse_xcodebuild_output(text: str) -> dict:
         result = match.group(3)
         duration = float(match.group(4))
 
-        status = 'passed' if result == 'passed' else 'failed'
+        status = result
         if status == 'passed':
             passed += 1
-        else:
+        elif status == 'failed':
             failed += 1
+        else:
+            skipped += 1
 
         entries.append({
             "name": method,
@@ -97,11 +99,13 @@ def parse_xcodebuild_output(text: str) -> dict:
             result = match.group(4)
             duration = float(match.group(5))
 
-            status = 'passed' if result == 'passed' else 'failed'
+            status = result
             if status == 'passed':
                 passed += 1
-            else:
+            elif status == 'failed':
                 failed += 1
+            else:
+                skipped += 1
 
             entries.append({
                 "name": method,
@@ -115,9 +119,12 @@ def parse_xcodebuild_output(text: str) -> dict:
 
     total = passed + failed + skipped
 
-    # Parse total duration
-    duration_match = re.search(r"Executed (\d+) tests?, with (\d+) failures?.*?in (\d+\.\d+)", text)
-    total_duration = float(duration_match.group(3)) if duration_match else sum(e.get('duration_seconds') or 0 for e in entries)
+    # Parse total duration from the final aggregate summary, not the first suite summary.
+    duration_matches = re.findall(
+        r"Executed \d+ tests?, with (?:\d+ test skipped and )?\d+ failures?.*?in (\d+\.\d+)",
+        text,
+    )
+    total_duration = float(duration_matches[-1]) if duration_matches else sum(e.get('duration_seconds') or 0 for e in entries)
 
     return {
         "total": total,
