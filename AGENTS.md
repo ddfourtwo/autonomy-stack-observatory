@@ -120,6 +120,10 @@ See the `beoflow/.playbooks/` directory for examples:
 - `backend-security-tests/` — fully deterministic, 4 phases
 - `backend-agent-tests/` — gated on code changes, 5 phases
 
+For Beoflow backend security coverage, the rerunnable source of truth is:
+- `beoflow/CLAUDE.md` -> Security Testing
+- `beoflow/.playbooks/backend-security-tests/CLAUDE.md`
+
 ## Pushing Data
 
 ```bash
