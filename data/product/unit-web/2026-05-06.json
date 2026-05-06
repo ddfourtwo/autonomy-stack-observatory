@@ -1,15 +1,15 @@
 {
   "vertical": "product",
   "source": "unit-web",
-  "timestamp": "2026-05-06T01:29:43Z",
+  "timestamp": "2026-05-06T01:42:20Z",
   "summary": {
-    "total": 287,
-    "passed": 255,
-    "failed": 32,
+    "total": 251,
+    "passed": 251,
+    "failed": 0,
     "errors": 0,
     "skipped": 0,
     "coverage_percent": null,
-    "duration_seconds": 0.9
+    "duration_seconds": 0.7
   },
   "entries": [
     {
@@ -18,7 +18,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode rejects code containing eval()",
       "status": "passed",
-      "duration_seconds": 0.008,
+      "duration_seconds": 0.016,
       "error": null
     },
     {
@@ -27,7 +27,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode rejects code containing Function()",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.0,
       "error": null
     },
     {
@@ -45,7 +45,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode rejects setTimeout with string argument",
       "status": "passed",
-      "duration_seconds": 0.0,
+      "duration_seconds": 0.003,
       "error": null
     },
     {
@@ -54,7 +54,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode rejects setInterval with string argument",
       "status": "passed",
-      "duration_seconds": 0.0,
+      "duration_seconds": 0.001,
       "error": null
     },
     {
@@ -63,7 +63,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode allows setTimeout with function argument",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.002,
       "error": null
     },
     {
@@ -72,7 +72,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode rejects code accessing document.cookie",
       "status": "passed",
-      "duration_seconds": 0.0,
+      "duration_seconds": 0.001,
       "error": null
     },
     {
@@ -81,7 +81,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode rejects code accessing window.parent",
       "status": "passed",
-      "duration_seconds": 0.0,
+      "duration_seconds": 0.001,
       "error": null
     },
     {
@@ -90,7 +90,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode rejects code accessing window.top",
       "status": "passed",
-      "duration_seconds": 0.0,
+      "duration_seconds": 0.002,
       "error": null
     },
     {
@@ -135,7 +135,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode rejects new WebSocket()",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.0,
       "error": null
     },
     {
@@ -144,7 +144,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode rejects navigator.sendBeacon()",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.0,
       "error": null
     },
     {
@@ -153,7 +153,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode rejects unauthorized imports",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.0,
       "error": null
     },
     {
@@ -171,7 +171,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode allows react imports",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.0,
       "error": null
     },
     {
@@ -207,7 +207,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode rejects code exceeding 50KB",
       "status": "passed",
-      "duration_seconds": 0.002,
+      "duration_seconds": 0.001,
       "error": null
     },
     {
@@ -216,7 +216,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode rejects code exceeding 500 lines",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.0,
       "error": null
     },
     {
@@ -225,7 +225,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode rejects code with syntax errors",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.0,
       "error": null
     },
     {
@@ -234,7 +234,7 @@
       "suite": "validateWidgetCode",
       "description": "validateWidgetCode accepts valid widget code using MUI + Recharts + beoflow API",
       "status": "passed",
-      "duration_seconds": 0.004,
+      "duration_seconds": 0.003,
       "error": null
     },
     {
@@ -774,7 +774,7 @@
       "suite": "getDefaultTargetTypes",
       "description": "getDefaultTargetTypes returns open for lap_button",
       "status": "passed",
-      "duration_seconds": 0.004,
+      "duration_seconds": 0.0,
       "error": null
     },
     {
@@ -922,514 +922,118 @@
       "error": null
     },
     {
-      "name": "fills duration_type and value for cardio exercise with null duration",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Entry defaults (startEditing)",
-      "description": "Entry defaults (startEditing) fills duration_type and value for cardio exercise with null duration",
-      "status": "passed",
-      "duration_seconds": 0.002,
-      "error": null
-    },
-    {
-      "name": "fills reps duration for strength exercise (has weight_kg target)",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Entry defaults (startEditing)",
-      "description": "Entry defaults (startEditing) fills reps duration for strength exercise (has weight_kg target)",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "fixes repeat_count of 0 to 1",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Entry defaults (startEditing)",
-      "description": "Entry defaults (startEditing) fixes repeat_count of 0 to 1",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "inherits exercise_id from group when inner step is missing it",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Entry defaults (startEditing)",
-      "description": "Entry defaults (startEditing) inherits exercise_id from group when inner step is missing it",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "does NOT change already-filled values",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Entry defaults (startEditing)",
-      "description": "Entry defaults (startEditing) does NOT change already-filled values",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "strips repeat_count from inner steps (template import leak)",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Save sanitization",
-      "description": "Save sanitization strips repeat_count from inner steps (template import leak)",
-      "status": "passed",
-      "duration_seconds": 0.002,
-      "error": null
-    },
-    {
-      "name": "strips frontend-only fields from inner steps",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Save sanitization",
-      "description": "Save sanitization strips frontend-only fields from inner steps",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "uppercases sport",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Save sanitization",
-      "description": "Save sanitization uppercases sport",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "removes specifier when target value is null",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Save sanitization",
-      "description": "Save sanitization removes specifier when target value is null",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "does NOT silently fill duration_type or duration_value",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Save sanitization",
-      "description": "Save sanitization does NOT silently fill duration_type or duration_value",
+      "name": "has allowsSetEditing=false",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > viewing mode",
+      "description": "getModeConfig viewing mode has allowsSetEditing=false",
       "status": "passed",
       "duration_seconds": 0.001,
       "error": null
     },
     {
-      "name": "empty steps array passes (backend auto-fills)",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Full pipeline -> Pydantic compliance",
-      "description": "Full pipeline -> Pydantic compliance empty steps array passes (backend auto-fills)",
-      "status": "passed",
-      "duration_seconds": 0.001,
-      "error": null
-    },
-    {
-      "name": "null duration exercise passes after entry defaults",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Full pipeline -> Pydantic compliance",
-      "description": "Full pipeline -> Pydantic compliance null duration exercise passes after entry defaults",
-      "status": "passed",
-      "duration_seconds": 0.001,
-      "error": null
-    },
-    {
-      "name": "template import with leaked repeat_count passes",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Full pipeline -> Pydantic compliance",
-      "description": "Full pipeline -> Pydantic compliance template import with leaked repeat_count passes",
+      "name": "has showsMenuDropdown=false",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > viewing mode",
+      "description": "getModeConfig viewing mode has showsMenuDropdown=false",
       "status": "passed",
       "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "strength workout with weight targets passes",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Full pipeline -> Pydantic compliance",
-      "description": "Full pipeline -> Pydantic compliance strength workout with weight targets passes",
+      "name": "has showsAddSetButton=false",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > viewing mode",
+      "description": "getModeConfig viewing mode has showsAddSetButton=false",
       "status": "passed",
       "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "cardio with power zone targets passes",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Full pipeline -> Pydantic compliance",
-      "description": "Full pipeline -> Pydantic compliance cardio with power zone targets passes",
+      "name": "has label \"Viewing Template\"",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > viewing mode",
+      "description": "getModeConfig viewing mode has label \"Viewing Template\"",
       "status": "passed",
       "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "cleared rounds (0) passes after fix",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Full pipeline -> Pydantic compliance",
-      "description": "Full pipeline -> Pydantic compliance cleared rounds (0) passes after fix",
+      "name": "has allowsSetEditing=true",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > editing mode",
+      "description": "getModeConfig editing mode has allowsSetEditing=true",
       "status": "passed",
       "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "missing exercise_id on inner step passes after inheritance",
-      "module": "hooks.useEventWorkoutEditor",
-      "suite": "Full pipeline -> Pydantic compliance",
-      "description": "Full pipeline -> Pydantic compliance missing exercise_id on inner step passes after inheritance",
+      "name": "has showsMenuDropdown=true",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > editing mode",
+      "description": "getModeConfig editing mode has showsMenuDropdown=true",
       "status": "passed",
       "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "initializes from steps.completed when no sessionStorage data",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState initializes from steps.completed when no sessionStorage data",
-      "status": "passed",
-      "duration_seconds": 0.009,
-      "error": null
-    },
-    {
-      "name": "initializes from sessionStorage when data exists",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState initializes from sessionStorage when data exists",
-      "status": "passed",
-      "duration_seconds": 0.001,
-      "error": null
-    },
-    {
-      "name": "falls back to step.completed if sessionStorage JSON is invalid",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState falls back to step.completed if sessionStorage JSON is invalid",
-      "status": "passed",
-      "duration_seconds": 0.001,
-      "error": null
-    },
-    {
-      "name": "toggleSet flips completion from false to true",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState toggleSet flips completion from false to true",
-      "status": "passed",
-      "duration_seconds": 0.001,
-      "error": null
-    },
-    {
-      "name": "toggleSet flips completion from true to false",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState toggleSet flips completion from true to false",
-      "status": "passed",
-      "duration_seconds": 0.001,
-      "error": null
-    },
-    {
-      "name": "toggleSet writes updated map to sessionStorage",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState toggleSet writes updated map to sessionStorage",
+      "name": "has showsAddSetButton=true",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > editing mode",
+      "description": "getModeConfig editing mode has showsAddSetButton=true",
       "status": "passed",
       "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "does not affect other sets when toggling one",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState does not affect other sets when toggling one",
+      "name": "has label \"Editing Template\"",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > editing mode",
+      "description": "getModeConfig editing mode has label \"Editing Template\"",
       "status": "passed",
       "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "completedCount reflects initial step.completed values",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState completedCount reflects initial step.completed values",
+      "name": "has label \"Executing Workout\"",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > executing mode",
+      "description": "getModeConfig executing mode has label \"Executing Workout\"",
       "status": "passed",
       "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "totalCount equals total steps across all groups",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState totalCount equals total steps across all groups",
+      "name": "has allowsSetEditing=false",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > completed mode",
+      "description": "getModeConfig completed mode has allowsSetEditing=false",
       "status": "passed",
       "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "completedCount updates after toggleSet",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState completedCount updates after toggleSet",
+      "name": "has showsMenuDropdown=false",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > completed mode",
+      "description": "getModeConfig completed mode has showsMenuDropdown=false",
       "status": "passed",
       "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "isSetCompleted returns true for a completed set",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState isSetCompleted returns true for a completed set",
+      "name": "has showsAddSetButton=false",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > completed mode",
+      "description": "getModeConfig completed mode has showsAddSetButton=false",
       "status": "passed",
       "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "isSetCompleted returns false for an incomplete set",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState isSetCompleted returns false for an incomplete set",
-      "status": "passed",
-      "duration_seconds": 0.002,
-      "error": null
-    },
-    {
-      "name": "isSetCompleted returns false for unknown setId",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState isSetCompleted returns false for unknown setId",
-      "status": "passed",
-      "duration_seconds": 0.001,
-      "error": null
-    },
-    {
-      "name": "clearExecution removes the sessionStorage entry",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState clearExecution removes the sessionStorage entry",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "clearExecution resets completionMap to empty",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState clearExecution resets completionMap to empty",
-      "status": "passed",
-      "duration_seconds": 0.006,
-      "error": null
-    },
-    {
-      "name": "correctly flattens steps across multiple groups",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState correctly flattens steps across multiple groups",
-      "status": "passed",
-      "duration_seconds": 0.002,
-      "error": null
-    },
-    {
-      "name": "re-initializes from sessionStorage when templateId changes",
-      "module": "hooks.useExecutionState",
-      "suite": "useExecutionState",
-      "description": "useExecutionState re-initializes from sessionStorage when templateId changes",
-      "status": "passed",
-      "duration_seconds": 0.001,
-      "error": null
-    },
-    {
-      "name": "initializes completionMap from steps.completed field",
-      "module": "hooks.useSetCompletion",
-      "suite": "useSetCompletion > initialization",
-      "description": "useSetCompletion initialization initializes completionMap from steps.completed field",
-      "status": "passed",
-      "duration_seconds": 0.017,
-      "error": null
-    },
-    {
-      "name": "handles empty steps array",
-      "module": "hooks.useSetCompletion",
-      "suite": "useSetCompletion > initialization",
-      "description": "useSetCompletion initialization handles empty steps array",
-      "status": "passed",
-      "duration_seconds": 0.002,
-      "error": null
-    },
-    {
-      "name": "initializes all sets as incomplete when none are completed",
-      "module": "hooks.useSetCompletion",
-      "suite": "useSetCompletion > initialization",
-      "description": "useSetCompletion initialization initializes all sets as incomplete when none are completed",
-      "status": "passed",
-      "duration_seconds": 0.001,
-      "error": null
-    },
-    {
-      "name": "initializes correctly when all sets are completed",
-      "module": "hooks.useSetCompletion",
-      "suite": "useSetCompletion > initialization",
-      "description": "useSetCompletion initialization initializes correctly when all sets are completed",
-      "status": "passed",
-      "duration_seconds": 0.001,
-      "error": null
-    },
-    {
-      "name": "flips a set from incomplete to complete",
-      "module": "hooks.useSetCompletion",
-      "suite": "useSetCompletion > toggleSet",
-      "description": "useSetCompletion toggleSet flips a set from incomplete to complete",
-      "status": "passed",
-      "duration_seconds": 0.001,
-      "error": null
-    },
-    {
-      "name": "flips a set from complete to incomplete",
-      "module": "hooks.useSetCompletion",
-      "suite": "useSetCompletion > toggleSet",
-      "description": "useSetCompletion toggleSet flips a set from complete to incomplete",
-      "status": "passed",
-      "duration_seconds": 0.001,
-      "error": null
-    },
-    {
-      "name": "only toggles the targeted set, others remain unchanged",
-      "module": "hooks.useSetCompletion",
-      "suite": "useSetCompletion > toggleSet",
-      "description": "useSetCompletion toggleSet only toggles the targeted set, others remain unchanged",
-      "status": "passed",
-      "duration_seconds": 0.002,
-      "error": null
-    },
-    {
-      "name": "reflects current state after toggle",
-      "module": "hooks.useSetCompletion",
-      "suite": "useSetCompletion > completedCount",
-      "description": "useSetCompletion completedCount reflects current state after toggle",
-      "status": "passed",
-      "duration_seconds": 0.001,
-      "error": null
-    },
-    {
-      "name": "decrements when un-toggling a completed set",
-      "module": "hooks.useSetCompletion",
-      "suite": "useSetCompletion > completedCount",
-      "description": "useSetCompletion completedCount decrements when un-toggling a completed set",
-      "status": "passed",
-      "duration_seconds": 0.001,
-      "error": null
-    },
-    {
-      "name": "returns correct boolean for known set ids",
-      "module": "hooks.useSetCompletion",
-      "suite": "useSetCompletion > isCompleted",
-      "description": "useSetCompletion isCompleted returns correct boolean for known set ids",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "returns false for unknown set id",
-      "module": "hooks.useSetCompletion",
-      "suite": "useSetCompletion > isCompleted",
-      "description": "useSetCompletion isCompleted returns false for unknown set id",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "reflects toggled state",
-      "module": "hooks.useSetCompletion",
-      "suite": "useSetCompletion > isCompleted",
-      "description": "useSetCompletion isCompleted reflects toggled state",
-      "status": "passed",
-      "duration_seconds": 0.001,
-      "error": null
-    },
-    {
-      "name": "returns editing mode",
-      "module": "hooks.useWorkoutMode",
-      "suite": "useWorkoutMode > editing mode \u2014 /workouts/builder with no templateId",
-      "description": "useWorkoutMode editing mode \u2014 /workouts/builder with no templateId returns editing mode",
-      "status": "passed",
-      "duration_seconds": 0.002,
-      "error": null
-    },
-    {
-      "name": "returns viewing mode when templateId param is present",
-      "module": "hooks.useWorkoutMode",
-      "suite": "useWorkoutMode > viewing mode \u2014 /workouts/builder/:templateId",
-      "description": "useWorkoutMode viewing mode \u2014 /workouts/builder/:templateId returns viewing mode when templateId param is present",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "returns completed mode",
-      "module": "hooks.useWorkoutMode",
-      "suite": "useWorkoutMode > completed mode \u2014 /workouts/completed/:workoutId",
-      "description": "useWorkoutMode completed mode \u2014 /workouts/completed/:workoutId returns completed mode",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "returns executing mode",
-      "module": "hooks.useWorkoutMode",
-      "suite": "useWorkoutMode > executing mode \u2014 /workouts/execute/:workoutId",
-      "description": "useWorkoutMode executing mode \u2014 /workouts/execute/:workoutId returns executing mode",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "returns editing mode for unrecognized workout routes",
-      "module": "hooks.useWorkoutMode",
-      "suite": "useWorkoutMode > default fallback",
-      "description": "useWorkoutMode default fallback returns editing mode for unrecognized workout routes",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "returns editing mode for empty pathname",
-      "module": "hooks.useWorkoutMode",
-      "suite": "useWorkoutMode > default fallback",
-      "description": "useWorkoutMode default fallback returns editing mode for empty pathname",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "returned config has correct shape for each mode",
-      "module": "hooks.useWorkoutMode",
-      "suite": "useWorkoutMode > config shape",
-      "description": "useWorkoutMode config shape returned config has correct shape for each mode",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "when modeOverride is provided, returns override mode ignoring route",
-      "module": "hooks.useWorkoutMode",
-      "suite": "useWorkoutMode > modeOverride",
-      "description": "useWorkoutMode modeOverride when modeOverride is provided, returns override mode ignoring route",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "when modeOverride is undefined, falls back to route-derived mode",
-      "module": "hooks.useWorkoutMode",
-      "suite": "useWorkoutMode > modeOverride",
-      "description": "useWorkoutMode modeOverride when modeOverride is undefined, falls back to route-derived mode",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "modeOverride=viewing on a new-template route returns viewing config",
-      "module": "hooks.useWorkoutMode",
-      "suite": "useWorkoutMode > modeOverride",
-      "description": "useWorkoutMode modeOverride modeOverride=viewing on a new-template route returns viewing config",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "modeOverride=completed returns completed config regardless of route",
-      "module": "hooks.useWorkoutMode",
-      "suite": "useWorkoutMode > modeOverride",
-      "description": "useWorkoutMode modeOverride modeOverride=completed returns completed config regardless of route",
+      "name": "has label \"Completed Workout\"",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > completed mode",
+      "description": "getModeConfig completed mode has label \"Completed Workout\"",
       "status": "passed",
       "duration_seconds": 0.0,
       "error": null
@@ -1440,7 +1044,7 @@
       "suite": "isAtLeast16",
       "description": "isAtLeast16 accepts someone exactly 16 today",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.002,
       "error": null
     },
     {
@@ -1503,17 +1107,8 @@
       "suite": "BIOLOGICAL_SEX_OPTIONS",
       "description": "BIOLOGICAL_SEX_OPTIONS includes male, female, and prefer-not-to-say options",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.0,
       "error": null
-    },
-    {
-      "name": "sets completed mode color and label on navbar",
-      "module": "pages.CompletedWorkoutDetailPage",
-      "suite": "CompletedWorkoutDetailPage",
-      "description": "CompletedWorkoutDetailPage sets completed mode color and label on navbar",
-      "status": "failed",
-      "duration_seconds": 0.094,
-      "error": "AssertionError: expected \"vi.fn()\" to be called with arguments: [ ObjectContaining{\u2026} ]"
     },
     {
       "name": "renders CompletedWorkoutHeader",
@@ -1521,7 +1116,7 @@
       "suite": "CompletedWorkoutDetailPage",
       "description": "CompletedWorkoutDetailPage renders CompletedWorkoutHeader",
       "status": "passed",
-      "duration_seconds": 0.011,
+      "duration_seconds": 0.063,
       "error": null
     },
     {
@@ -1530,7 +1125,7 @@
       "suite": "CompletedWorkoutDetailPage",
       "description": "CompletedWorkoutDetailPage renders WorkoutSummaryTab and WorkoutExercisesTab tabs",
       "status": "passed",
-      "duration_seconds": 0.012,
+      "duration_seconds": 0.004,
       "error": null
     },
     {
@@ -1539,7 +1134,7 @@
       "suite": "CompletedWorkoutDetailPage",
       "description": "CompletedWorkoutDetailPage shows loading spinner when isLoading=true",
       "status": "passed",
-      "duration_seconds": 0.01,
+      "duration_seconds": 0.03,
       "error": null
     },
     {
@@ -1548,251 +1143,521 @@
       "suite": "CompletedWorkoutDetailPage",
       "description": "CompletedWorkoutDetailPage shows error state when isError=true",
       "status": "passed",
-      "duration_seconds": 0.006,
+      "duration_seconds": 0.002,
       "error": null
     },
     {
-      "name": "sets viewing mode color and label on navbar",
-      "module": "pages.WorkoutBuilderPage",
-      "suite": "WorkoutBuilderPage > Mode indicator in viewing mode (route: /workouts/builder/:templateId)",
-      "description": "WorkoutBuilderPage Mode indicator in viewing mode (route: /workouts/builder/:templateId) sets viewing mode color and label on navbar",
-      "status": "failed",
-      "duration_seconds": 0.01,
-      "error": "Error: [vitest] No \"useSubmitCompletedWorkout\" export is defined on the \"@/services/api/workouts\" mock. Did you forget to return it from \"vi.mock\"?"
-    },
-    {
-      "name": "sets editing mode color and label on navbar",
-      "module": "pages.WorkoutBuilderPage",
-      "suite": "WorkoutBuilderPage > Mode indicator in editing mode (route: /workouts/builder)",
-      "description": "WorkoutBuilderPage Mode indicator in editing mode (route: /workouts/builder) sets editing mode color and label on navbar",
-      "status": "failed",
-      "duration_seconds": 0.001,
-      "error": "Error: [vitest] No \"useSubmitCompletedWorkout\" export is defined on the \"@/services/api/workouts\" mock. Did you forget to return it from \"vi.mock\"?"
-    },
-    {
-      "name": "passes mode=\"viewing\" to WorkoutStepList when viewing",
-      "module": "pages.WorkoutBuilderPage",
-      "suite": "WorkoutBuilderPage > WorkoutStepList receives effectiveMode",
-      "description": "WorkoutBuilderPage WorkoutStepList receives effectiveMode passes mode=\"viewing\" to WorkoutStepList when viewing",
-      "status": "failed",
-      "duration_seconds": 0.001,
-      "error": "Error: [vitest] No \"useSubmitCompletedWorkout\" export is defined on the \"@/services/api/workouts\" mock. Did you forget to return it from \"vi.mock\"?"
-    },
-    {
-      "name": "passes mode=\"editing\" to WorkoutStepList when editing",
-      "module": "pages.WorkoutBuilderPage",
-      "suite": "WorkoutBuilderPage > WorkoutStepList receives effectiveMode",
-      "description": "WorkoutBuilderPage WorkoutStepList receives effectiveMode passes mode=\"editing\" to WorkoutStepList when editing",
-      "status": "failed",
-      "duration_seconds": 0.001,
-      "error": "Error: [vitest] No \"useSubmitCompletedWorkout\" export is defined on the \"@/services/api/workouts\" mock. Did you forget to return it from \"vi.mock\"?"
-    },
-    {
-      "name": "has allowsSetEditing=false",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > viewing mode",
-      "description": "getModeConfig viewing mode has allowsSetEditing=false",
+      "name": "fills duration_type and value for cardio exercise with null duration",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Entry defaults (startEditing)",
+      "description": "Entry defaults (startEditing) fills duration_type and value for cardio exercise with null duration",
       "status": "passed",
       "duration_seconds": 0.001,
       "error": null
     },
     {
-      "name": "has showsMenuDropdown=false",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > viewing mode",
-      "description": "getModeConfig viewing mode has showsMenuDropdown=false",
+      "name": "fills reps duration for strength exercise (has weight_kg target)",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Entry defaults (startEditing)",
+      "description": "Entry defaults (startEditing) fills reps duration for strength exercise (has weight_kg target)",
       "status": "passed",
       "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "has showsAddSetButton=false",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > viewing mode",
-      "description": "getModeConfig viewing mode has showsAddSetButton=false",
+      "name": "fixes repeat_count of 0 to 1",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Entry defaults (startEditing)",
+      "description": "Entry defaults (startEditing) fixes repeat_count of 0 to 1",
       "status": "passed",
       "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "has color #4A9BB8 (meanBlue)",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > viewing mode",
-      "description": "getModeConfig viewing mode has color #4A9BB8 (meanBlue)",
-      "status": "failed",
+      "name": "inherits exercise_id from group when inner step is missing it",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Entry defaults (startEditing)",
+      "description": "Entry defaults (startEditing) inherits exercise_id from group when inner step is missing it",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "does NOT change already-filled values",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Entry defaults (startEditing)",
+      "description": "Entry defaults (startEditing) does NOT change already-filled values",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "strips repeat_count from inner steps (template import leak)",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Save sanitization",
+      "description": "Save sanitization strips repeat_count from inner steps (template import leak)",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "strips frontend-only fields from inner steps",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Save sanitization",
+      "description": "Save sanitization strips frontend-only fields from inner steps",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "uppercases sport",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Save sanitization",
+      "description": "Save sanitization uppercases sport",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "removes specifier when target value is null",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Save sanitization",
+      "description": "Save sanitization removes specifier when target value is null",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "does NOT silently fill duration_type or duration_value",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Save sanitization",
+      "description": "Save sanitization does NOT silently fill duration_type or duration_value",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "empty steps array passes (backend auto-fills)",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Full pipeline -> Pydantic compliance",
+      "description": "Full pipeline -> Pydantic compliance empty steps array passes (backend auto-fills)",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "null duration exercise passes after entry defaults",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Full pipeline -> Pydantic compliance",
+      "description": "Full pipeline -> Pydantic compliance null duration exercise passes after entry defaults",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "template import with leaked repeat_count passes",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Full pipeline -> Pydantic compliance",
+      "description": "Full pipeline -> Pydantic compliance template import with leaked repeat_count passes",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "strength workout with weight targets passes",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Full pipeline -> Pydantic compliance",
+      "description": "Full pipeline -> Pydantic compliance strength workout with weight targets passes",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "cardio with power zone targets passes",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Full pipeline -> Pydantic compliance",
+      "description": "Full pipeline -> Pydantic compliance cardio with power zone targets passes",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "cleared rounds (0) passes after fix",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Full pipeline -> Pydantic compliance",
+      "description": "Full pipeline -> Pydantic compliance cleared rounds (0) passes after fix",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "missing exercise_id on inner step passes after inheritance",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Full pipeline -> Pydantic compliance",
+      "description": "Full pipeline -> Pydantic compliance missing exercise_id on inner step passes after inheritance",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "initializes from steps.completed when no sessionStorage data",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState initializes from steps.completed when no sessionStorage data",
+      "status": "passed",
+      "duration_seconds": 0.026,
+      "error": null
+    },
+    {
+      "name": "initializes from sessionStorage when data exists",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState initializes from sessionStorage when data exists",
+      "status": "passed",
       "duration_seconds": 0.004,
-      "error": "AssertionError: expected '#5BB8D4' to be '#4A9BB8' // Object.is equality"
-    },
-    {
-      "name": "has label \"Viewing Template\"",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > viewing mode",
-      "description": "getModeConfig viewing mode has label \"Viewing Template\"",
-      "status": "passed",
-      "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "has allowsSetEditing=true",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > editing mode",
-      "description": "getModeConfig editing mode has allowsSetEditing=true",
+      "name": "falls back to step.completed if sessionStorage JSON is invalid",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState falls back to step.completed if sessionStorage JSON is invalid",
       "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "has showsMenuDropdown=true",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > editing mode",
-      "description": "getModeConfig editing mode has showsMenuDropdown=true",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "has showsAddSetButton=true",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > editing mode",
-      "description": "getModeConfig editing mode has showsAddSetButton=true",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "has a purple color hex",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > editing mode",
-      "description": "getModeConfig editing mode has a purple color hex",
-      "status": "failed",
       "duration_seconds": 0.002,
-      "error": "AssertionError: expected '#B8447A' to be '#813656' // Object.is equality"
-    },
-    {
-      "name": "has label \"Editing Template\"",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > editing mode",
-      "description": "getModeConfig editing mode has label \"Editing Template\"",
-      "status": "passed",
-      "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "has allowsSetEditing=false",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > executing mode",
-      "description": "getModeConfig executing mode has allowsSetEditing=false",
-      "status": "failed",
+      "name": "toggleSet flips completion from false to true",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState toggleSet flips completion from false to true",
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "toggleSet flips completion from true to false",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState toggleSet flips completion from true to false",
+      "status": "passed",
+      "duration_seconds": 0.004,
+      "error": null
+    },
+    {
+      "name": "toggleSet writes updated map to sessionStorage",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState toggleSet writes updated map to sessionStorage",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "does not affect other sets when toggling one",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState does not affect other sets when toggling one",
+      "status": "passed",
       "duration_seconds": 0.002,
-      "error": "AssertionError: expected true to be false // Object.is equality"
+      "error": null
     },
     {
-      "name": "has showsMenuDropdown=false",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > executing mode",
-      "description": "getModeConfig executing mode has showsMenuDropdown=false",
-      "status": "failed",
+      "name": "completedCount reflects initial step.completed values",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState completedCount reflects initial step.completed values",
+      "status": "passed",
       "duration_seconds": 0.001,
-      "error": "AssertionError: expected true to be false // Object.is equality"
+      "error": null
     },
     {
-      "name": "has showsAddSetButton=false",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > executing mode",
-      "description": "getModeConfig executing mode has showsAddSetButton=false",
-      "status": "failed",
+      "name": "totalCount equals total steps across all groups",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState totalCount equals total steps across all groups",
+      "status": "passed",
       "duration_seconds": 0.001,
-      "error": "AssertionError: expected true to be false // Object.is equality"
-    },
-    {
-      "name": "has a green color hex",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > executing mode",
-      "description": "getModeConfig executing mode has a green color hex",
-      "status": "failed",
-      "duration_seconds": 0.001,
-      "error": "AssertionError: expected '#FF5D29' to be '#07B598' // Object.is equality"
-    },
-    {
-      "name": "has label \"Executing Workout\"",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > executing mode",
-      "description": "getModeConfig executing mode has label \"Executing Workout\"",
-      "status": "passed",
-      "duration_seconds": 0.0,
       "error": null
     },
     {
-      "name": "has allowsSetEditing=false",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > completed mode",
-      "description": "getModeConfig completed mode has allowsSetEditing=false",
+      "name": "completedCount updates after toggleSet",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState completedCount updates after toggleSet",
       "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "has showsMenuDropdown=false",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > completed mode",
-      "description": "getModeConfig completed mode has showsMenuDropdown=false",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "has showsAddSetButton=false",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > completed mode",
-      "description": "getModeConfig completed mode has showsAddSetButton=false",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "has a gray color hex",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > completed mode",
-      "description": "getModeConfig completed mode has a gray color hex",
-      "status": "failed",
-      "duration_seconds": 0.001,
-      "error": "AssertionError: expected '#6B6E70' to be '#434647' // Object.is equality"
-    },
-    {
-      "name": "has label \"Completed Workout\"",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > completed mode",
-      "description": "getModeConfig completed mode has label \"Completed Workout\"",
-      "status": "passed",
-      "duration_seconds": 0.0,
-      "error": null
-    },
-    {
-      "name": "only editing mode has allowsSetEditing=true",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > mode boolean invariants",
-      "description": "getModeConfig mode boolean invariants only editing mode has allowsSetEditing=true",
-      "status": "failed",
       "duration_seconds": 0.002,
-      "error": "AssertionError: expected [ false, true, true, false ] to deeply equal [ false, true, false, false ]"
+      "error": null
     },
     {
-      "name": "only editing mode has showsMenuDropdown=true",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > mode boolean invariants",
-      "description": "getModeConfig mode boolean invariants only editing mode has showsMenuDropdown=true",
-      "status": "failed",
+      "name": "isSetCompleted returns true for a completed set",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState isSetCompleted returns true for a completed set",
+      "status": "passed",
       "duration_seconds": 0.001,
-      "error": "AssertionError: expected [ false, true, true, false ] to deeply equal [ false, true, false, false ]"
+      "error": null
     },
     {
-      "name": "only editing mode has showsAddSetButton=true",
-      "module": "types.workoutModes",
-      "suite": "getModeConfig > mode boolean invariants",
-      "description": "getModeConfig mode boolean invariants only editing mode has showsAddSetButton=true",
-      "status": "failed",
+      "name": "isSetCompleted returns false for an incomplete set",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState isSetCompleted returns false for an incomplete set",
+      "status": "passed",
       "duration_seconds": 0.001,
-      "error": "AssertionError: expected [ false, true, true, false ] to deeply equal [ false, true, false, false ]"
+      "error": null
+    },
+    {
+      "name": "isSetCompleted returns false for unknown setId",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState isSetCompleted returns false for unknown setId",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "clearExecution removes the sessionStorage entry",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState clearExecution removes the sessionStorage entry",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "clearExecution resets completionMap to empty",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState clearExecution resets completionMap to empty",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "correctly flattens steps across multiple groups",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState correctly flattens steps across multiple groups",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "re-initializes from sessionStorage when templateId changes",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState re-initializes from sessionStorage when templateId changes",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "initializes completionMap from steps.completed field",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > initialization",
+      "description": "useSetCompletion initialization initializes completionMap from steps.completed field",
+      "status": "passed",
+      "duration_seconds": 0.021,
+      "error": null
+    },
+    {
+      "name": "handles empty steps array",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > initialization",
+      "description": "useSetCompletion initialization handles empty steps array",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "initializes all sets as incomplete when none are completed",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > initialization",
+      "description": "useSetCompletion initialization initializes all sets as incomplete when none are completed",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "initializes correctly when all sets are completed",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > initialization",
+      "description": "useSetCompletion initialization initializes correctly when all sets are completed",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "flips a set from incomplete to complete",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > toggleSet",
+      "description": "useSetCompletion toggleSet flips a set from incomplete to complete",
+      "status": "passed",
+      "duration_seconds": 0.007,
+      "error": null
+    },
+    {
+      "name": "flips a set from complete to incomplete",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > toggleSet",
+      "description": "useSetCompletion toggleSet flips a set from complete to incomplete",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "only toggles the targeted set, others remain unchanged",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > toggleSet",
+      "description": "useSetCompletion toggleSet only toggles the targeted set, others remain unchanged",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "reflects current state after toggle",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > completedCount",
+      "description": "useSetCompletion completedCount reflects current state after toggle",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "decrements when un-toggling a completed set",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > completedCount",
+      "description": "useSetCompletion completedCount decrements when un-toggling a completed set",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "returns correct boolean for known set ids",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > isCompleted",
+      "description": "useSetCompletion isCompleted returns correct boolean for known set ids",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "returns false for unknown set id",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > isCompleted",
+      "description": "useSetCompletion isCompleted returns false for unknown set id",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "reflects toggled state",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > isCompleted",
+      "description": "useSetCompletion isCompleted reflects toggled state",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "returns editing mode",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > editing mode \u2014 /workouts/builder with no templateId",
+      "description": "useWorkoutMode editing mode \u2014 /workouts/builder with no templateId returns editing mode",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "returns viewing mode when templateId param is present",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > viewing mode \u2014 /workouts/builder/:templateId",
+      "description": "useWorkoutMode viewing mode \u2014 /workouts/builder/:templateId returns viewing mode when templateId param is present",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns completed mode",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > completed mode \u2014 /workouts/completed/:workoutId",
+      "description": "useWorkoutMode completed mode \u2014 /workouts/completed/:workoutId returns completed mode",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns executing mode",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > executing mode \u2014 /workouts/execute/:workoutId",
+      "description": "useWorkoutMode executing mode \u2014 /workouts/execute/:workoutId returns executing mode",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "returns editing mode for unrecognized workout routes",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > default fallback",
+      "description": "useWorkoutMode default fallback returns editing mode for unrecognized workout routes",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns editing mode for empty pathname",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > default fallback",
+      "description": "useWorkoutMode default fallback returns editing mode for empty pathname",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returned config has correct shape for each mode",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > config shape",
+      "description": "useWorkoutMode config shape returned config has correct shape for each mode",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "when modeOverride is provided, returns override mode ignoring route",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > modeOverride",
+      "description": "useWorkoutMode modeOverride when modeOverride is provided, returns override mode ignoring route",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "when modeOverride is undefined, falls back to route-derived mode",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > modeOverride",
+      "description": "useWorkoutMode modeOverride when modeOverride is undefined, falls back to route-derived mode",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "modeOverride=viewing on a new-template route returns viewing config",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > modeOverride",
+      "description": "useWorkoutMode modeOverride modeOverride=viewing on a new-template route returns viewing config",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "modeOverride=completed returns completed config regardless of route",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > modeOverride",
+      "description": "useWorkoutMode modeOverride modeOverride=completed returns completed config regardless of route",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
     },
     {
       "name": "renders the Add Set button text",
@@ -1836,7 +1701,7 @@
       "suite": "ExerciseCard > when mode is 'editing'",
       "description": "ExerciseCard when mode is 'editing' renders drag handle icon when sortable=true",
       "status": "passed",
-      "duration_seconds": 0.006,
+      "duration_seconds": 0.007,
       "error": null
     },
     {
@@ -1845,7 +1710,7 @@
       "suite": "ExerciseCard > when mode is 'viewing'",
       "description": "ExerciseCard when mode is 'viewing' does NOT render the Add Set button",
       "status": "passed",
-      "duration_seconds": 0.004,
+      "duration_seconds": 0.003,
       "error": null
     },
     {
@@ -1854,7 +1719,7 @@
       "suite": "ExerciseCard > when mode is 'viewing'",
       "description": "ExerciseCard when mode is 'viewing' does NOT render any icon buttons (no menu, no set actions)",
       "status": "passed",
-      "duration_seconds": 0.003,
+      "duration_seconds": 0.002,
       "error": null
     },
     {
@@ -1863,7 +1728,7 @@
       "suite": "ExerciseCard > when mode is 'viewing'",
       "description": "ExerciseCard when mode is 'viewing' does NOT render the drag handle even when sortable=true",
       "status": "passed",
-      "duration_seconds": 0.003,
+      "duration_seconds": 0.002,
       "error": null
     },
     {
@@ -1872,7 +1737,7 @@
       "suite": "ExerciseCard > when mode is 'viewing'",
       "description": "ExerciseCard when mode is 'viewing' renders the set duration value as plain text",
       "status": "passed",
-      "duration_seconds": 0.003,
+      "duration_seconds": 0.002,
       "error": null
     },
     {
@@ -1881,7 +1746,7 @@
       "suite": "ExerciseCard > when mode is 'viewing'",
       "description": "ExerciseCard when mode is 'viewing' renders group description as plain text when present",
       "status": "passed",
-      "duration_seconds": 0.005,
+      "duration_seconds": 0.004,
       "error": null
     },
     {
@@ -1908,160 +1773,7 @@
       "suite": "ExerciseCard > InlineCell read-only prop",
       "description": "ExerciseCard InlineCell read-only prop in editing mode: value is visible as text (click-to-edit)",
       "status": "passed",
-      "duration_seconds": 0.012,
-      "error": null
-    },
-    {
-      "name": "renders a SetCompletionCircle (role=checkbox) for each set",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'executing'",
-      "description": "ExerciseCard when mode is 'executing' renders a SetCompletionCircle (role=checkbox) for each set",
-      "status": "failed",
-      "duration_seconds": 0.019,
-      "error": "AssertionError: expected +0 to be 2 // Object.is equality"
-    },
-    {
-      "name": "renders aria-checked=false for incomplete sets",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'executing'",
-      "description": "ExerciseCard when mode is 'executing' renders aria-checked=false for incomplete sets",
-      "status": "failed",
-      "duration_seconds": 0.008,
-      "error": "AssertionError: expected undefined to be 'false' // Object.is equality"
-    },
-    {
-      "name": "renders aria-checked=true for sets initialized as completed",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'executing'",
-      "description": "ExerciseCard when mode is 'executing' renders aria-checked=true for sets initialized as completed",
-      "status": "failed",
-      "duration_seconds": 0.007,
-      "error": "AssertionError: expected undefined to be 'true' // Object.is equality"
-    },
-    {
-      "name": "does NOT render the Add Set button",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'executing'",
-      "description": "ExerciseCard when mode is 'executing' does NOT render the Add Set button",
-      "status": "failed",
-      "duration_seconds": 0.007,
-      "error": "AssertionError: expected <p \u2026(1)></p> to be null"
-    },
-    {
-      "name": "does NOT render the ellipsis menu button",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'executing'",
-      "description": "ExerciseCard when mode is 'executing' does NOT render the ellipsis menu button",
-      "status": "failed",
-      "duration_seconds": 0.011,
-      "error": "AssertionError: expected SVGSVGElement{ \u2026(2), \u2026(2) } to be null"
-    },
-    {
-      "name": "does NOT render a drag handle even when sortable=true",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'executing'",
-      "description": "ExerciseCard when mode is 'executing' does NOT render a drag handle even when sortable=true",
-      "status": "failed",
-      "duration_seconds": 0.009,
-      "error": "AssertionError: expected SVGSVGElement{ \u2026(2), \u2026(2) } to be null"
-    },
-    {
-      "name": "renders set values as plain text (no input elements)",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'executing'",
-      "description": "ExerciseCard when mode is 'executing' renders set values as plain text (no input elements)",
-      "status": "failed",
       "duration_seconds": 0.005,
-      "error": "AssertionError: expected 1 to be +0 // Object.is equality"
-    },
-    {
-      "name": "set value is visible as text",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'executing'",
-      "description": "ExerciseCard when mode is 'executing' set value is visible as text",
-      "status": "passed",
-      "duration_seconds": 0.005,
-      "error": null
-    },
-    {
-      "name": "renders a SetCompletionCircle for each set",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'completed'",
-      "description": "ExerciseCard when mode is 'completed' renders a SetCompletionCircle for each set",
-      "status": "failed",
-      "duration_seconds": 0.005,
-      "error": "AssertionError: expected +0 to be 2 // Object.is equality"
-    },
-    {
-      "name": "renders filled circle (aria-checked=true) for completed sets",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'completed'",
-      "description": "ExerciseCard when mode is 'completed' renders filled circle (aria-checked=true) for completed sets",
-      "status": "failed",
-      "duration_seconds": 0.004,
-      "error": "AssertionError: expected undefined to be 'true' // Object.is equality"
-    },
-    {
-      "name": "renders unfilled circle (aria-checked=false) for incomplete sets",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'completed'",
-      "description": "ExerciseCard when mode is 'completed' renders unfilled circle (aria-checked=false) for incomplete sets",
-      "status": "failed",
-      "duration_seconds": 0.004,
-      "error": "AssertionError: expected undefined to be 'false' // Object.is equality"
-    },
-    {
-      "name": "renders checkmark circles with graphGreyDark (#434647) color",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'completed'",
-      "description": "ExerciseCard when mode is 'completed' renders checkmark circles with graphGreyDark (#434647) color",
-      "status": "failed",
-      "duration_seconds": 0.004,
-      "error": "TypeError: Cannot read properties of null (reading 'style')"
-    },
-    {
-      "name": "checkmark circles are not interactive (clicking does not trigger toggle)",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'completed'",
-      "description": "ExerciseCard when mode is 'completed' checkmark circles are not interactive (clicking does not trigger toggle)",
-      "status": "failed",
-      "duration_seconds": 0.004,
-      "error": "TypeError: Cannot read properties of null (reading 'style')"
-    },
-    {
-      "name": "does NOT render the Add Set button",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'completed'",
-      "description": "ExerciseCard when mode is 'completed' does NOT render the Add Set button",
-      "status": "passed",
-      "duration_seconds": 0.003,
-      "error": null
-    },
-    {
-      "name": "does NOT render the ellipsis menu button",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'completed'",
-      "description": "ExerciseCard when mode is 'completed' does NOT render the ellipsis menu button",
-      "status": "passed",
-      "duration_seconds": 0.003,
-      "error": null
-    },
-    {
-      "name": "renders no input elements (fully read-only)",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'completed'",
-      "description": "ExerciseCard when mode is 'completed' renders no input elements (fully read-only)",
-      "status": "failed",
-      "duration_seconds": 0.004,
-      "error": "AssertionError: expected 1 to be +0 // Object.is equality"
-    },
-    {
-      "name": "renders set values as plain text",
-      "module": "components.workouts.ExerciseCard",
-      "suite": "ExerciseCard > when mode is 'completed'",
-      "description": "ExerciseCard when mode is 'completed' renders set values as plain text",
-      "status": "passed",
-      "duration_seconds": 0.003,
       "error": null
     },
     {
@@ -2070,7 +1782,7 @@
       "suite": "ExerciseCard > onSetCompleted callback",
       "description": "ExerciseCard onSetCompleted callback accepts onSetCompleted prop without error in executing mode",
       "status": "passed",
-      "duration_seconds": 0.011,
+      "duration_seconds": 0.009,
       "error": null
     },
     {
@@ -2079,17 +1791,8 @@
       "suite": "ModeInfoBar > viewing mode",
       "description": "ModeInfoBar viewing mode renders \"Viewing Template\" label",
       "status": "passed",
-      "duration_seconds": 0.05,
+      "duration_seconds": 0.038,
       "error": null
-    },
-    {
-      "name": "applies meanBlue color (#4A9BB8) to text element",
-      "module": "components.workouts.ModeInfoBar",
-      "suite": "ModeInfoBar > viewing mode",
-      "description": "ModeInfoBar viewing mode applies meanBlue color (#4A9BB8) to text element",
-      "status": "failed",
-      "duration_seconds": 0.01,
-      "error": "AssertionError: expected 'rgb(91, 184, 212)' to be 'rgb(74, 155, 184)' // Object.is equality"
     },
     {
       "name": "renders \"Editing Template\" label",
@@ -2097,17 +1800,8 @@
       "suite": "ModeInfoBar > editing mode",
       "description": "ModeInfoBar editing mode renders \"Editing Template\" label",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.008,
       "error": null
-    },
-    {
-      "name": "applies pimpinPurple color (#813656) to text element",
-      "module": "components.workouts.ModeInfoBar",
-      "suite": "ModeInfoBar > editing mode",
-      "description": "ModeInfoBar editing mode applies pimpinPurple color (#813656) to text element",
-      "status": "failed",
-      "duration_seconds": 0.001,
-      "error": "AssertionError: expected 'rgb(184, 68, 122)' to be 'rgb(129, 54, 86)' // Object.is equality"
     },
     {
       "name": "renders \"Executing Workout\" label",
@@ -2115,17 +1809,8 @@
       "suite": "ModeInfoBar > executing mode",
       "description": "ModeInfoBar executing mode renders \"Executing Workout\" label",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.006,
       "error": null
-    },
-    {
-      "name": "applies biancchiTeal color (#07B598) to text element",
-      "module": "components.workouts.ModeInfoBar",
-      "suite": "ModeInfoBar > executing mode",
-      "description": "ModeInfoBar executing mode applies biancchiTeal color (#07B598) to text element",
-      "status": "failed",
-      "duration_seconds": 0.002,
-      "error": "AssertionError: expected 'rgb(255, 93, 41)' to be 'rgb(7, 181, 152)' // Object.is equality"
     },
     {
       "name": "renders \"Completed Workout\" label",
@@ -2133,17 +1818,8 @@
       "suite": "ModeInfoBar > completed mode",
       "description": "ModeInfoBar completed mode renders \"Completed Workout\" label",
       "status": "passed",
-      "duration_seconds": 0.003,
+      "duration_seconds": 0.01,
       "error": null
-    },
-    {
-      "name": "applies graphGreyDark color (#434647) to text element",
-      "module": "components.workouts.ModeInfoBar",
-      "suite": "ModeInfoBar > completed mode",
-      "description": "ModeInfoBar completed mode applies graphGreyDark color (#434647) to text element",
-      "status": "failed",
-      "duration_seconds": 0.002,
-      "error": "AssertionError: expected 'rgb(107, 110, 112)' to be 'rgb(67, 70, 71)' // Object.is equality"
     },
     {
       "name": "renders a container with left border accent",
@@ -2151,7 +1827,7 @@
       "suite": "ModeInfoBar > structure",
       "description": "ModeInfoBar structure renders a container with left border accent",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.004,
       "error": null
     },
     {
@@ -2169,7 +1845,7 @@
       "suite": "SetCompletionCircle > when completed=false",
       "description": "SetCompletionCircle when completed=false renders a circle element",
       "status": "passed",
-      "duration_seconds": 0.031,
+      "duration_seconds": 0.019,
       "error": null
     },
     {
@@ -2214,7 +1890,7 @@
       "suite": "SetCompletionCircle > when completed=true",
       "description": "SetCompletionCircle when completed=true renders a filled circle element",
       "status": "passed",
-      "duration_seconds": 0.022,
+      "duration_seconds": 0.01,
       "error": null
     },
     {
@@ -2223,7 +1899,7 @@
       "suite": "SetCompletionCircle > when completed=true",
       "description": "SetCompletionCircle when completed=true has aria-checked=true",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.002,
       "error": null
     },
     {
@@ -2232,7 +1908,7 @@
       "suite": "SetCompletionCircle > when completed=true",
       "description": "SetCompletionCircle when completed=true renders a CheckIcon when completed",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.003,
       "error": null
     },
     {
@@ -2241,7 +1917,7 @@
       "suite": "SetCompletionCircle > when completed=true",
       "description": "SetCompletionCircle when completed=true renders with biancchiTeal background (filled circle style)",
       "status": "passed",
-      "duration_seconds": 0.003,
+      "duration_seconds": 0.002,
       "error": null
     },
     {
@@ -2250,7 +1926,7 @@
       "suite": "SetCompletionCircle > click handler",
       "description": "SetCompletionCircle click handler calls onToggle when clicked",
       "status": "passed",
-      "duration_seconds": 0.003,
+      "duration_seconds": 0.002,
       "error": null
     },
     {
@@ -2304,7 +1980,7 @@
       "suite": "SetCompletionCircle > color prop",
       "description": "SetCompletionCircle color prop uses supplied color for background when completed=true",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.01,
       "error": null
     },
     {
@@ -2331,7 +2007,7 @@
       "suite": "SetCompletionCircle > readOnly prop",
       "description": "SetCompletionCircle readOnly prop sets cursor to default when readOnly=true",
       "status": "passed",
-      "duration_seconds": 0.0,
+      "duration_seconds": 0.001,
       "error": null
     },
     {
@@ -2340,7 +2016,7 @@
       "suite": "SetCompletionCircle > readOnly prop",
       "description": "SetCompletionCircle readOnly prop sets cursor to pointer when readOnly=false",
       "status": "passed",
-      "duration_seconds": 0.0,
+      "duration_seconds": 0.001,
       "error": null
     },
     {
@@ -2349,7 +2025,7 @@
       "suite": "WorkoutExercisesTab > renders ExerciseCard components (not ExerciseStepCard)",
       "description": "WorkoutExercisesTab renders ExerciseCard components (not ExerciseStepCard) renders an ExerciseCard for each WorkoutRepeatGroup step",
       "status": "passed",
-      "duration_seconds": 0.045,
+      "duration_seconds": 0.033,
       "error": null
     },
     {
@@ -2358,7 +2034,7 @@
       "suite": "WorkoutExercisesTab > renders ExerciseCard components (not ExerciseStepCard)",
       "description": "WorkoutExercisesTab renders ExerciseCard components (not ExerciseStepCard) passes mode=\"completed\" to each ExerciseCard",
       "status": "passed",
-      "duration_seconds": 0.01,
+      "duration_seconds": 0.004,
       "error": null
     },
     {
@@ -2367,7 +2043,7 @@
       "suite": "WorkoutExercisesTab > renders ExerciseCard components (not ExerciseStepCard)",
       "description": "WorkoutExercisesTab renders ExerciseCard components (not ExerciseStepCard) wraps a standalone WorkoutStep into a RepeatGroup for ExerciseCard",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.003,
       "error": null
     },
     {
@@ -2376,7 +2052,7 @@
       "suite": "WorkoutExercisesTab > renders ExerciseCard components (not ExerciseStepCard)",
       "description": "WorkoutExercisesTab renders ExerciseCard components (not ExerciseStepCard) passes RepeatGroups through directly to ExerciseCard",
       "status": "passed",
-      "duration_seconds": 0.002,
+      "duration_seconds": 0.001,
       "error": null
     },
     {
@@ -2385,7 +2061,7 @@
       "suite": "WorkoutExercisesTab > renders ExerciseCard components (not ExerciseStepCard)",
       "description": "WorkoutExercisesTab renders ExerciseCard components (not ExerciseStepCard) does NOT render any BeoflowCard-based ExerciseStepCard elements",
       "status": "passed",
-      "duration_seconds": 0.002,
+      "duration_seconds": 0.001,
       "error": null
     },
     {
@@ -2394,7 +2070,7 @@
       "suite": "WorkoutExercisesTab > shows empty state when no exercises",
       "description": "WorkoutExercisesTab shows empty state when no exercises renders empty state text when steps array is empty",
       "status": "passed",
-      "duration_seconds": 0.022,
+      "duration_seconds": 0.05,
       "error": null
     },
     {
@@ -2403,7 +2079,7 @@
       "suite": "WorkoutExercisesTab > shows planned workout label when planned data exists",
       "description": "WorkoutExercisesTab shows planned workout label when planned data exists renders planned workout name when planned_workout_data is present",
       "status": "passed",
-      "duration_seconds": 0.003,
+      "duration_seconds": 0.006,
       "error": null
     },
     {
@@ -2412,7 +2088,7 @@
       "suite": "WorkoutProgressBar",
       "description": "WorkoutProgressBar renders \"0/3 sets complete\" when completedCount=0, totalCount=3",
       "status": "passed",
-      "duration_seconds": 0.057,
+      "duration_seconds": 0.032,
       "error": null
     },
     {
@@ -2421,7 +2097,7 @@
       "suite": "WorkoutProgressBar",
       "description": "WorkoutProgressBar renders \"2/5 sets complete\" when completedCount=2, totalCount=5",
       "status": "passed",
-      "duration_seconds": 0.002,
+      "duration_seconds": 0.004,
       "error": null
     },
     {
@@ -2430,7 +2106,7 @@
       "suite": "WorkoutProgressBar",
       "description": "WorkoutProgressBar renders \"3/3 sets complete\" when all sets complete",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.002,
       "error": null
     },
     {
@@ -2457,7 +2133,7 @@
       "suite": "WorkoutProgressBar",
       "description": "WorkoutProgressBar renders progress bar with 0% width when no sets completed",
       "status": "passed",
-      "duration_seconds": 0.003,
+      "duration_seconds": 0.001,
       "error": null
     },
     {
@@ -2466,7 +2142,7 @@
       "suite": "WorkoutProgressBar",
       "description": "WorkoutProgressBar renders progress bar with correct percentage width",
       "status": "passed",
-      "duration_seconds": 0.009,
+      "duration_seconds": 0.001,
       "error": null
     },
     {
@@ -2484,7 +2160,7 @@
       "suite": "WorkoutProgressBar",
       "description": "WorkoutProgressBar renders progress bar at 33% width for 1/3 sets",
       "status": "passed",
-      "duration_seconds": 0.001,
+      "duration_seconds": 0.002,
       "error": null
     },
     {
@@ -2493,7 +2169,7 @@
       "suite": "WorkoutProgressBar",
       "description": "WorkoutProgressBar uses biancchiTeal color for the progress bar fill",
       "status": "passed",
-      "duration_seconds": 0.005,
+      "duration_seconds": 0.006,
       "error": null
     },
     {
@@ -2511,7 +2187,7 @@
       "suite": "WorkoutStepList > when mode is undefined (default editing)",
       "description": "WorkoutStepList when mode is undefined (default editing) renders exercise cards",
       "status": "passed",
-      "duration_seconds": 0.052,
+      "duration_seconds": 0.049,
       "error": null
     },
     {
@@ -2538,7 +2214,7 @@
       "suite": "WorkoutStepList > when mode is 'viewing'",
       "description": "WorkoutStepList when mode is 'viewing' does NOT render icon buttons (menu/set-actions hidden in viewing)",
       "status": "passed",
-      "duration_seconds": 0.007,
+      "duration_seconds": 0.004,
       "error": null
     },
     {
@@ -2556,7 +2232,7 @@
       "suite": "WorkoutStepList > when mode is 'viewing'",
       "description": "WorkoutStepList when mode is 'viewing' does not render Add Set in viewing mode (exercise cards receive mode=viewing)",
       "status": "passed",
-      "duration_seconds": 0.004,
+      "duration_seconds": 0.003,
       "error": null
     },
     {
@@ -2565,7 +2241,7 @@
       "suite": "WorkoutStepList > when mode is 'editing'",
       "description": "WorkoutStepList when mode is 'editing' renders the Add Set button inside exercise cards",
       "status": "passed",
-      "duration_seconds": 0.008,
+      "duration_seconds": 0.005,
       "error": null
     },
     {
@@ -2574,7 +2250,7 @@
       "suite": "WorkoutStepList > when mode is 'editing'",
       "description": "WorkoutStepList when mode is 'editing' renders icon buttons (menu controls visible)",
       "status": "passed",
-      "duration_seconds": 0.005,
+      "duration_seconds": 0.004,
       "error": null
     },
     {
@@ -2583,7 +2259,7 @@
       "suite": "toEventDetail",
       "description": "toEventDetail uses ActivityEvent metadata when structured plan response omits metadata",
       "status": "passed",
-      "duration_seconds": 0.002,
+      "duration_seconds": 0.001,
       "error": null
     },
     {
