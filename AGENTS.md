@@ -189,4 +189,6 @@ The deploy workflow posts an observatory summary to Mattermost after each succes
 The post contains:
 1. Product results table using the latest JSON per `data/product/<source>/`.
 2. New test results table for `data/product/*/*.json` files changed in the push.
+3. Previous-run comparison for changed product JSON files.
+4. New failures and fixed failures, comparing `entries` with status `failed` or `error` against the prior JSON file for the same source.
 
