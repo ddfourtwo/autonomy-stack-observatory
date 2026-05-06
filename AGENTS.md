@@ -176,3 +176,17 @@ Reference `/media/` paths in your JSON entries — never direct R2 URLs.
 ## Credential Access
 
 Agents running in causeway sessions should access R2 and GitHub credentials via the credential proxy — never hardcode or read secrets directly.
+
+## Mattermost Update Notifications
+
+The deploy workflow posts an observatory summary to Mattermost after each successful deploy.
+
+- Workflow: `.github/workflows/deploy-observatory.yml`
+- Script: `scripts/post-mattermost-summary.js`
+- Channel: `ssdd3sxizfdt9pd4fons31eb4w`
+- Required GitHub secret: `MATTERMOST_BOT_TOKEN`
+
+The post contains:
+1. Product results table using the latest JSON per `data/product/<source>/`.
+2. New test results table for `data/product/*/*.json` files changed in the push.
+
