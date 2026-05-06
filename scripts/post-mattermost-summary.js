@@ -23,7 +23,23 @@ function latestFile(dir) {
 
 function duration(summary) {
   const seconds = summary?.duration_seconds;
-  return typeof seconds === 'number' ? `${seconds.toFixed(1)}s` : '';
+  return typeof seconds === 'number' ? `${seconds.toFixed(1)}s` : '-';
+}
+
+function passPercent(summary) {
+  if (summary?.overall_coverage != null) return `${summary.overall_coverage}%`;
+  const total = summary?.total;
+  const passed = summary?.passed;
+  if (typeof total !== 'number' || total <= 0 || typeof passed !== 'number') return '';
+  return `${((passed / total) * 100).toFixed(1)}%`;
+}
+
+function failPercent(summary) {
+  if (summary?.overall_coverage != null) return `${(100 - summary.overall_coverage).toFixed(1)}%`;
+  const total = summary?.total;
+  if (typeof total !== 'number' || total <= 0) return '';
+  const failures = (summary?.failed || 0) + (summary?.errors || 0);
+  return `${((failures / total) * 100).toFixed(1)}%`;
 }
 
 function summaryRow(source, file) {
@@ -31,13 +47,14 @@ function summaryRow(source, file) {
   const summary = data.summary || {};
   const date = path.basename(file, '.json');
   if (summary.overall_coverage != null) {
-    return [label(source), date, '', `${summary.overall_coverage}%`, '', '', '', `${summary.total_endpoints || 0} endpoints`, ''];
+    return [label(source), date, passPercent(summary), failPercent(summary), '-', '-', '-', String(summary.total_endpoints || 0), duration(summary)];
   }
   return [
     label(source),
     date,
+    passPercent(summary),
+    failPercent(summary),
     String(summary.passed ?? ''),
-    '',
     String(summary.failed ?? ''),
     String(summary.errors ?? ''),
     String(summary.skipped ?? ''),
@@ -98,10 +115,10 @@ function message() {
     `Commit: ${process.env.GITHUB_SHA || execSync('git rev-parse HEAD', { cwd: repoRoot, encoding: 'utf8' }).trim()}`,
     '',
     '### Product results',
-    product.length ? table(['Source', 'Date', 'Passed', 'Coverage', 'Failed', 'Errors', 'Skipped', 'Total', 'Duration'], product) : '_No product results found._',
+    product.length ? table(['Source', 'Date', 'Pass %', 'Fail %', 'Passed', 'Failed', 'Errors', 'Skipped', 'Total', 'Duration'], product) : '_No product results found._',
     '',
     '### New test results in this push',
-    changed.length ? table(['Source', 'Date', 'Passed', 'Coverage', 'Failed', 'Errors', 'Skipped', 'Total', 'Duration'], changed) : '_No product test result JSON files changed in this push._',
+    changed.length ? table(['Source', 'Date', 'Pass %', 'Fail %', 'Passed', 'Failed', 'Errors', 'Skipped', 'Total', 'Duration'], changed) : '_No product test result JSON files changed in this push._',
   ];
   return lines.join('\n');
 }
