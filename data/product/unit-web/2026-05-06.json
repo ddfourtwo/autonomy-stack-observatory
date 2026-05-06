@@ -1,0 +1,2599 @@
+{
+  "vertical": "product",
+  "source": "unit-web",
+  "timestamp": "2026-05-06T01:29:43Z",
+  "summary": {
+    "total": 287,
+    "passed": 255,
+    "failed": 32,
+    "errors": 0,
+    "skipped": 0,
+    "coverage_percent": null,
+    "duration_seconds": 0.9
+  },
+  "entries": [
+    {
+      "name": "rejects code containing eval()",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects code containing eval()",
+      "status": "passed",
+      "duration_seconds": 0.008,
+      "error": null
+    },
+    {
+      "name": "rejects code containing Function()",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects code containing Function()",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "rejects new Function()",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects new Function()",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "rejects setTimeout with string argument",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects setTimeout with string argument",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "rejects setInterval with string argument",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects setInterval with string argument",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "allows setTimeout with function argument",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode allows setTimeout with function argument",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "rejects code accessing document.cookie",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects code accessing document.cookie",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "rejects code accessing window.parent",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects code accessing window.parent",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "rejects code accessing window.top",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects code accessing window.top",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "rejects postMessage() direct call",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects postMessage() direct call",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "rejects obj.postMessage() member call",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects obj.postMessage() member call",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "rejects code containing fetch()",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects code containing fetch()",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "rejects new XMLHttpRequest()",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects new XMLHttpRequest()",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "rejects new WebSocket()",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects new WebSocket()",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "rejects navigator.sendBeacon()",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects navigator.sendBeacon()",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "rejects unauthorized imports",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects unauthorized imports",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "rejects unauthorized require()",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects unauthorized require()",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "allows react imports",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode allows react imports",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "allows @mui imports",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode allows @mui imports",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "allows recharts imports",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode allows recharts imports",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "allows beoflow API imports",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode allows beoflow API imports",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "rejects code exceeding 50KB",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects code exceeding 50KB",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "rejects code exceeding 500 lines",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects code exceeding 500 lines",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "rejects code with syntax errors",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode rejects code with syntax errors",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "accepts valid widget code using MUI + Recharts + beoflow API",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode accepts valid widget code using MUI + Recharts + beoflow API",
+      "status": "passed",
+      "duration_seconds": 0.004,
+      "error": null
+    },
+    {
+      "name": "returns multiple violation messages for code with several banned patterns",
+      "module": "lib.widget-validator",
+      "suite": "validateWidgetCode",
+      "description": "validateWidgetCode returns multiple violation messages for code with several banned patterns",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats seconds < 60 as Ns",
+      "module": "lib.workout-utils",
+      "suite": "formatDuration",
+      "description": "formatDuration formats seconds < 60 as Ns",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "formats 0 seconds",
+      "module": "lib.workout-utils",
+      "suite": "formatDuration",
+      "description": "formatDuration formats 0 seconds",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats exactly 60 seconds as 1:00",
+      "module": "lib.workout-utils",
+      "suite": "formatDuration",
+      "description": "formatDuration formats exactly 60 seconds as 1:00",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats minutes:seconds with zero-padded seconds",
+      "module": "lib.workout-utils",
+      "suite": "formatDuration",
+      "description": "formatDuration formats minutes:seconds with zero-padded seconds",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats large durations",
+      "module": "lib.workout-utils",
+      "suite": "formatDuration",
+      "description": "formatDuration formats large durations",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns empty string for null value",
+      "module": "lib.workout-utils",
+      "suite": "formatDurationValue",
+      "description": "formatDurationValue returns empty string for null value",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns empty string for null type",
+      "module": "lib.workout-utils",
+      "suite": "formatDurationValue",
+      "description": "formatDurationValue returns empty string for null type",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats time as MM:SS",
+      "module": "lib.workout-utils",
+      "suite": "formatDurationValue",
+      "description": "formatDurationValue formats time as MM:SS",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats distance < 1000 as meters",
+      "module": "lib.workout-utils",
+      "suite": "formatDurationValue",
+      "description": "formatDurationValue formats distance < 1000 as meters",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats distance >= 1000 as km",
+      "module": "lib.workout-utils",
+      "suite": "formatDurationValue",
+      "description": "formatDurationValue formats distance >= 1000 as km",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats distance with fractional km",
+      "module": "lib.workout-utils",
+      "suite": "formatDurationValue",
+      "description": "formatDurationValue formats distance with fractional km",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats reps as integer",
+      "module": "lib.workout-utils",
+      "suite": "formatDurationValue",
+      "description": "formatDurationValue formats reps as integer",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats calories",
+      "module": "lib.workout-utils",
+      "suite": "formatDurationValue",
+      "description": "formatDurationValue formats calories",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats kilojoules",
+      "module": "lib.workout-utils",
+      "suite": "formatDurationValue",
+      "description": "formatDurationValue formats kilojoules",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats lap_button",
+      "module": "lib.workout-utils",
+      "suite": "formatDurationValue",
+      "description": "formatDurationValue formats lap_button",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats whole number tonnage",
+      "module": "lib.workout-utils",
+      "suite": "formatTonnage",
+      "description": "formatTonnage formats whole number tonnage",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats fractional tonnage",
+      "module": "lib.workout-utils",
+      "suite": "formatTonnage",
+      "description": "formatTonnage formats fractional tonnage",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "multiplies by reps when provided",
+      "module": "lib.workout-utils",
+      "suite": "formatTonnage",
+      "description": "formatTonnage multiplies by reps when provided",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "handles fractional result from multiplication",
+      "module": "lib.workout-utils",
+      "suite": "formatTonnage",
+      "description": "formatTonnage handles fractional result from multiplication",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns bpm for heartrate_bpm",
+      "module": "lib.workout-utils",
+      "suite": "getTargetUnit",
+      "description": "getTargetUnit returns bpm for heartrate_bpm",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns W for power_watts",
+      "module": "lib.workout-utils",
+      "suite": "getTargetUnit",
+      "description": "getTargetUnit returns W for power_watts",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns kg for weight_kg",
+      "module": "lib.workout-utils",
+      "suite": "getTargetUnit",
+      "description": "getTargetUnit returns kg for weight_kg",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns /10 for rpe",
+      "module": "lib.workout-utils",
+      "suite": "getTargetUnit",
+      "description": "getTargetUnit returns /10 for rpe",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns empty string for zone types",
+      "module": "lib.workout-utils",
+      "suite": "getTargetUnit",
+      "description": "getTargetUnit returns empty string for zone types",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns % for percentage types",
+      "module": "lib.workout-utils",
+      "suite": "getTargetUnit",
+      "description": "getTargetUnit returns % for percentage types",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns Heart Rate for heartrate_bpm",
+      "module": "lib.workout-utils",
+      "suite": "getTargetDisplayName",
+      "description": "getTargetDisplayName returns Heart Rate for heartrate_bpm",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns Weight for weight_kg",
+      "module": "lib.workout-utils",
+      "suite": "getTargetDisplayName",
+      "description": "getTargetDisplayName returns Weight for weight_kg",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns RPE for rpe",
+      "module": "lib.workout-utils",
+      "suite": "getTargetDisplayName",
+      "description": "getTargetDisplayName returns RPE for rpe",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats weight with kg",
+      "module": "lib.workout-utils",
+      "suite": "formatTarget",
+      "description": "formatTarget formats weight with kg",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats fractional weight",
+      "module": "lib.workout-utils",
+      "suite": "formatTarget",
+      "description": "formatTarget formats fractional weight",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats heart rate zone",
+      "module": "lib.workout-utils",
+      "suite": "formatTarget",
+      "description": "formatTarget formats heart rate zone",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats zone range",
+      "module": "lib.workout-utils",
+      "suite": "formatTarget",
+      "description": "formatTarget formats zone range",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats heart rate bpm",
+      "module": "lib.workout-utils",
+      "suite": "formatTarget",
+      "description": "formatTarget formats heart rate bpm",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats bpm range",
+      "module": "lib.workout-utils",
+      "suite": "formatTarget",
+      "description": "formatTarget formats bpm range",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats power watts",
+      "module": "lib.workout-utils",
+      "suite": "formatTarget",
+      "description": "formatTarget formats power watts",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats RPE",
+      "module": "lib.workout-utils",
+      "suite": "formatTarget",
+      "description": "formatTarget formats RPE",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats percentage targets",
+      "module": "lib.workout-utils",
+      "suite": "formatTarget",
+      "description": "formatTarget formats percentage targets",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats above specifier",
+      "module": "lib.workout-utils",
+      "suite": "formatTarget",
+      "description": "formatTarget formats above specifier",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats below specifier",
+      "module": "lib.workout-utils",
+      "suite": "formatTarget",
+      "description": "formatTarget formats below specifier",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats cadence",
+      "module": "lib.workout-utils",
+      "suite": "formatTarget",
+      "description": "formatTarget formats cadence",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats bar speed with 2 decimals",
+      "module": "lib.workout-utils",
+      "suite": "formatTarget",
+      "description": "formatTarget formats bar speed with 2 decimals",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats open target",
+      "module": "lib.workout-utils",
+      "suite": "formatTarget",
+      "description": "formatTarget formats open target",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns empty for null value non-open target",
+      "module": "lib.workout-utils",
+      "suite": "formatTarget",
+      "description": "formatTarget returns empty for null value non-open target",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns correct color for RUNNING",
+      "module": "lib.workout-utils",
+      "suite": "getSportColor",
+      "description": "getSportColor returns correct color for RUNNING",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns correct color for STRENGTH",
+      "module": "lib.workout-utils",
+      "suite": "getSportColor",
+      "description": "getSportColor returns correct color for STRENGTH",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns Running for RUNNING",
+      "module": "lib.workout-utils",
+      "suite": "getSportDisplayName",
+      "description": "getSportDisplayName returns Running for RUNNING",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns Strength for STRENGTH",
+      "module": "lib.workout-utils",
+      "suite": "getSportDisplayName",
+      "description": "getSportDisplayName returns Strength for STRENGTH",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns DirectionsRun for RUNNING",
+      "module": "lib.workout-utils",
+      "suite": "getSportIcon",
+      "description": "getSportIcon returns DirectionsRun for RUNNING",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns FitnessCenter for STRENGTH",
+      "module": "lib.workout-utils",
+      "suite": "getSportIcon",
+      "description": "getSportIcon returns FitnessCenter for STRENGTH",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns DirectionsBike for BIKING",
+      "module": "lib.workout-utils",
+      "suite": "getSportIcon",
+      "description": "getSportIcon returns DirectionsBike for BIKING",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns Pool for SWIMMING",
+      "module": "lib.workout-utils",
+      "suite": "getSportIcon",
+      "description": "getSportIcon returns Pool for SWIMMING",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns Barbell for barbell",
+      "module": "lib.workout-utils",
+      "suite": "getEquipmentDisplayName",
+      "description": "getEquipmentDisplayName returns Barbell for barbell",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns Bodyweight for bodyweight",
+      "module": "lib.workout-utils",
+      "suite": "getEquipmentDisplayName",
+      "description": "getEquipmentDisplayName returns Bodyweight for bodyweight",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns fitness_center for barbell",
+      "module": "lib.workout-utils",
+      "suite": "getEquipmentIcon",
+      "description": "getEquipmentIcon returns fitness_center for barbell",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns accessibility_new for bodyweight",
+      "module": "lib.workout-utils",
+      "suite": "getEquipmentIcon",
+      "description": "getEquipmentIcon returns accessibility_new for bodyweight",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns weight_kg and rpe for reps",
+      "module": "lib.workout-utils",
+      "suite": "getDefaultTargetTypes",
+      "description": "getDefaultTargetTypes returns weight_kg and rpe for reps",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns heartrate_zone and power_zone for time",
+      "module": "lib.workout-utils",
+      "suite": "getDefaultTargetTypes",
+      "description": "getDefaultTargetTypes returns heartrate_zone and power_zone for time",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns pace_zone and heartrate_zone for distance",
+      "module": "lib.workout-utils",
+      "suite": "getDefaultTargetTypes",
+      "description": "getDefaultTargetTypes returns pace_zone and heartrate_zone for distance",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns open for lap_button",
+      "module": "lib.workout-utils",
+      "suite": "getDefaultTargetTypes",
+      "description": "getDefaultTargetTypes returns open for lap_button",
+      "status": "passed",
+      "duration_seconds": 0.004,
+      "error": null
+    },
+    {
+      "name": "returns reps for STRENGTH",
+      "module": "lib.workout-utils",
+      "suite": "getDefaultDurationType",
+      "description": "getDefaultDurationType returns reps for STRENGTH",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns distance for RUNNING",
+      "module": "lib.workout-utils",
+      "suite": "getDefaultDurationType",
+      "description": "getDefaultDurationType returns distance for RUNNING",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns time for MINDFULNESS",
+      "module": "lib.workout-utils",
+      "suite": "getDefaultDurationType",
+      "description": "getDefaultDurationType returns time for MINDFULNESS",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns time for HYBRID (default)",
+      "module": "lib.workout-utils",
+      "suite": "getDefaultDurationType",
+      "description": "getDefaultDurationType returns time for HYBRID (default)",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats step with reps and weight",
+      "module": "lib.workout-utils",
+      "suite": "formatStepSummary",
+      "description": "formatStepSummary formats step with reps and weight",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats step with distance and zone",
+      "module": "lib.workout-utils",
+      "suite": "formatStepSummary",
+      "description": "formatStepSummary formats step with distance and zone",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats step with no targets",
+      "module": "lib.workout-utils",
+      "suite": "formatStepSummary",
+      "description": "formatStepSummary formats step with no targets",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns empty string for step with no duration and no targets",
+      "module": "lib.workout-utils",
+      "suite": "formatStepSummary",
+      "description": "formatStepSummary returns empty string for step with no duration and no targets",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "filters out open targets",
+      "module": "lib.workout-utils",
+      "suite": "formatStepSummary",
+      "description": "formatStepSummary filters out open targets",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats multiple targets",
+      "module": "lib.workout-utils",
+      "suite": "formatStepSummary",
+      "description": "formatStepSummary formats multiple targets",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "uses group name when available",
+      "module": "lib.workout-utils",
+      "suite": "formatRepeatGroupSummary",
+      "description": "formatRepeatGroupSummary uses group name when available",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "omits count prefix for repeat_count 1",
+      "module": "lib.workout-utils",
+      "suite": "formatRepeatGroupSummary",
+      "description": "formatRepeatGroupSummary omits count prefix for repeat_count 1",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns (empty group) for no steps and no name",
+      "module": "lib.workout-utils",
+      "suite": "formatRepeatGroupSummary",
+      "description": "formatRepeatGroupSummary returns (empty group) for no steps and no name",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "summarizes child step names",
+      "module": "lib.workout-utils",
+      "suite": "formatRepeatGroupSummary",
+      "description": "formatRepeatGroupSummary summarizes child step names",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "formats superset with + separator",
+      "module": "lib.workout-utils",
+      "suite": "formatRepeatGroupSummary",
+      "description": "formatRepeatGroupSummary formats superset with + separator",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "uses Exercise fallback for unnamed steps",
+      "module": "lib.workout-utils",
+      "suite": "formatRepeatGroupSummary",
+      "description": "formatRepeatGroupSummary uses Exercise fallback for unnamed steps",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "fills duration_type and value for cardio exercise with null duration",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Entry defaults (startEditing)",
+      "description": "Entry defaults (startEditing) fills duration_type and value for cardio exercise with null duration",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "fills reps duration for strength exercise (has weight_kg target)",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Entry defaults (startEditing)",
+      "description": "Entry defaults (startEditing) fills reps duration for strength exercise (has weight_kg target)",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "fixes repeat_count of 0 to 1",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Entry defaults (startEditing)",
+      "description": "Entry defaults (startEditing) fixes repeat_count of 0 to 1",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "inherits exercise_id from group when inner step is missing it",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Entry defaults (startEditing)",
+      "description": "Entry defaults (startEditing) inherits exercise_id from group when inner step is missing it",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "does NOT change already-filled values",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Entry defaults (startEditing)",
+      "description": "Entry defaults (startEditing) does NOT change already-filled values",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "strips repeat_count from inner steps (template import leak)",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Save sanitization",
+      "description": "Save sanitization strips repeat_count from inner steps (template import leak)",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "strips frontend-only fields from inner steps",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Save sanitization",
+      "description": "Save sanitization strips frontend-only fields from inner steps",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "uppercases sport",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Save sanitization",
+      "description": "Save sanitization uppercases sport",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "removes specifier when target value is null",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Save sanitization",
+      "description": "Save sanitization removes specifier when target value is null",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "does NOT silently fill duration_type or duration_value",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Save sanitization",
+      "description": "Save sanitization does NOT silently fill duration_type or duration_value",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "empty steps array passes (backend auto-fills)",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Full pipeline -> Pydantic compliance",
+      "description": "Full pipeline -> Pydantic compliance empty steps array passes (backend auto-fills)",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "null duration exercise passes after entry defaults",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Full pipeline -> Pydantic compliance",
+      "description": "Full pipeline -> Pydantic compliance null duration exercise passes after entry defaults",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "template import with leaked repeat_count passes",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Full pipeline -> Pydantic compliance",
+      "description": "Full pipeline -> Pydantic compliance template import with leaked repeat_count passes",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "strength workout with weight targets passes",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Full pipeline -> Pydantic compliance",
+      "description": "Full pipeline -> Pydantic compliance strength workout with weight targets passes",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "cardio with power zone targets passes",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Full pipeline -> Pydantic compliance",
+      "description": "Full pipeline -> Pydantic compliance cardio with power zone targets passes",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "cleared rounds (0) passes after fix",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Full pipeline -> Pydantic compliance",
+      "description": "Full pipeline -> Pydantic compliance cleared rounds (0) passes after fix",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "missing exercise_id on inner step passes after inheritance",
+      "module": "hooks.useEventWorkoutEditor",
+      "suite": "Full pipeline -> Pydantic compliance",
+      "description": "Full pipeline -> Pydantic compliance missing exercise_id on inner step passes after inheritance",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "initializes from steps.completed when no sessionStorage data",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState initializes from steps.completed when no sessionStorage data",
+      "status": "passed",
+      "duration_seconds": 0.009,
+      "error": null
+    },
+    {
+      "name": "initializes from sessionStorage when data exists",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState initializes from sessionStorage when data exists",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "falls back to step.completed if sessionStorage JSON is invalid",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState falls back to step.completed if sessionStorage JSON is invalid",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "toggleSet flips completion from false to true",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState toggleSet flips completion from false to true",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "toggleSet flips completion from true to false",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState toggleSet flips completion from true to false",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "toggleSet writes updated map to sessionStorage",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState toggleSet writes updated map to sessionStorage",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "does not affect other sets when toggling one",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState does not affect other sets when toggling one",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "completedCount reflects initial step.completed values",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState completedCount reflects initial step.completed values",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "totalCount equals total steps across all groups",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState totalCount equals total steps across all groups",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "completedCount updates after toggleSet",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState completedCount updates after toggleSet",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "isSetCompleted returns true for a completed set",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState isSetCompleted returns true for a completed set",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "isSetCompleted returns false for an incomplete set",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState isSetCompleted returns false for an incomplete set",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "isSetCompleted returns false for unknown setId",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState isSetCompleted returns false for unknown setId",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "clearExecution removes the sessionStorage entry",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState clearExecution removes the sessionStorage entry",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "clearExecution resets completionMap to empty",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState clearExecution resets completionMap to empty",
+      "status": "passed",
+      "duration_seconds": 0.006,
+      "error": null
+    },
+    {
+      "name": "correctly flattens steps across multiple groups",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState correctly flattens steps across multiple groups",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "re-initializes from sessionStorage when templateId changes",
+      "module": "hooks.useExecutionState",
+      "suite": "useExecutionState",
+      "description": "useExecutionState re-initializes from sessionStorage when templateId changes",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "initializes completionMap from steps.completed field",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > initialization",
+      "description": "useSetCompletion initialization initializes completionMap from steps.completed field",
+      "status": "passed",
+      "duration_seconds": 0.017,
+      "error": null
+    },
+    {
+      "name": "handles empty steps array",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > initialization",
+      "description": "useSetCompletion initialization handles empty steps array",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "initializes all sets as incomplete when none are completed",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > initialization",
+      "description": "useSetCompletion initialization initializes all sets as incomplete when none are completed",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "initializes correctly when all sets are completed",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > initialization",
+      "description": "useSetCompletion initialization initializes correctly when all sets are completed",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "flips a set from incomplete to complete",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > toggleSet",
+      "description": "useSetCompletion toggleSet flips a set from incomplete to complete",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "flips a set from complete to incomplete",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > toggleSet",
+      "description": "useSetCompletion toggleSet flips a set from complete to incomplete",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "only toggles the targeted set, others remain unchanged",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > toggleSet",
+      "description": "useSetCompletion toggleSet only toggles the targeted set, others remain unchanged",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "reflects current state after toggle",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > completedCount",
+      "description": "useSetCompletion completedCount reflects current state after toggle",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "decrements when un-toggling a completed set",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > completedCount",
+      "description": "useSetCompletion completedCount decrements when un-toggling a completed set",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "returns correct boolean for known set ids",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > isCompleted",
+      "description": "useSetCompletion isCompleted returns correct boolean for known set ids",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns false for unknown set id",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > isCompleted",
+      "description": "useSetCompletion isCompleted returns false for unknown set id",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "reflects toggled state",
+      "module": "hooks.useSetCompletion",
+      "suite": "useSetCompletion > isCompleted",
+      "description": "useSetCompletion isCompleted reflects toggled state",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "returns editing mode",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > editing mode \u2014 /workouts/builder with no templateId",
+      "description": "useWorkoutMode editing mode \u2014 /workouts/builder with no templateId returns editing mode",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "returns viewing mode when templateId param is present",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > viewing mode \u2014 /workouts/builder/:templateId",
+      "description": "useWorkoutMode viewing mode \u2014 /workouts/builder/:templateId returns viewing mode when templateId param is present",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns completed mode",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > completed mode \u2014 /workouts/completed/:workoutId",
+      "description": "useWorkoutMode completed mode \u2014 /workouts/completed/:workoutId returns completed mode",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns executing mode",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > executing mode \u2014 /workouts/execute/:workoutId",
+      "description": "useWorkoutMode executing mode \u2014 /workouts/execute/:workoutId returns executing mode",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns editing mode for unrecognized workout routes",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > default fallback",
+      "description": "useWorkoutMode default fallback returns editing mode for unrecognized workout routes",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returns editing mode for empty pathname",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > default fallback",
+      "description": "useWorkoutMode default fallback returns editing mode for empty pathname",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "returned config has correct shape for each mode",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > config shape",
+      "description": "useWorkoutMode config shape returned config has correct shape for each mode",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "when modeOverride is provided, returns override mode ignoring route",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > modeOverride",
+      "description": "useWorkoutMode modeOverride when modeOverride is provided, returns override mode ignoring route",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "when modeOverride is undefined, falls back to route-derived mode",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > modeOverride",
+      "description": "useWorkoutMode modeOverride when modeOverride is undefined, falls back to route-derived mode",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "modeOverride=viewing on a new-template route returns viewing config",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > modeOverride",
+      "description": "useWorkoutMode modeOverride modeOverride=viewing on a new-template route returns viewing config",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "modeOverride=completed returns completed config regardless of route",
+      "module": "hooks.useWorkoutMode",
+      "suite": "useWorkoutMode > modeOverride",
+      "description": "useWorkoutMode modeOverride modeOverride=completed returns completed config regardless of route",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "accepts someone exactly 16 today",
+      "module": "pages.CompleteProfilePage",
+      "suite": "isAtLeast16",
+      "description": "isAtLeast16 accepts someone exactly 16 today",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "rejects someone turning 16 tomorrow",
+      "module": "pages.CompleteProfilePage",
+      "suite": "isAtLeast16",
+      "description": "isAtLeast16 rejects someone turning 16 tomorrow",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "accepts someone well over 16",
+      "module": "pages.CompleteProfilePage",
+      "suite": "isAtLeast16",
+      "description": "isAtLeast16 accepts someone well over 16",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "rejects a 15-year-old",
+      "module": "pages.CompleteProfilePage",
+      "suite": "isAtLeast16",
+      "description": "isAtLeast16 rejects a 15-year-old",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "handles birthday earlier in the year (already had birthday)",
+      "module": "pages.CompleteProfilePage",
+      "suite": "isAtLeast16",
+      "description": "isAtLeast16 handles birthday earlier in the year (already had birthday)",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "handles birthday later in the year (not yet had birthday)",
+      "module": "pages.CompleteProfilePage",
+      "suite": "isAtLeast16",
+      "description": "isAtLeast16 handles birthday later in the year (not yet had birthday)",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "all option values are valid Django biological_gender choices",
+      "module": "pages.CompleteProfilePage",
+      "suite": "BIOLOGICAL_SEX_OPTIONS",
+      "description": "BIOLOGICAL_SEX_OPTIONS all option values are valid Django biological_gender choices",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "includes male, female, and prefer-not-to-say options",
+      "module": "pages.CompleteProfilePage",
+      "suite": "BIOLOGICAL_SEX_OPTIONS",
+      "description": "BIOLOGICAL_SEX_OPTIONS includes male, female, and prefer-not-to-say options",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "sets completed mode color and label on navbar",
+      "module": "pages.CompletedWorkoutDetailPage",
+      "suite": "CompletedWorkoutDetailPage",
+      "description": "CompletedWorkoutDetailPage sets completed mode color and label on navbar",
+      "status": "failed",
+      "duration_seconds": 0.094,
+      "error": "AssertionError: expected \"vi.fn()\" to be called with arguments: [ ObjectContaining{\u2026} ]"
+    },
+    {
+      "name": "renders CompletedWorkoutHeader",
+      "module": "pages.CompletedWorkoutDetailPage",
+      "suite": "CompletedWorkoutDetailPage",
+      "description": "CompletedWorkoutDetailPage renders CompletedWorkoutHeader",
+      "status": "passed",
+      "duration_seconds": 0.011,
+      "error": null
+    },
+    {
+      "name": "renders WorkoutSummaryTab and WorkoutExercisesTab tabs",
+      "module": "pages.CompletedWorkoutDetailPage",
+      "suite": "CompletedWorkoutDetailPage",
+      "description": "CompletedWorkoutDetailPage renders WorkoutSummaryTab and WorkoutExercisesTab tabs",
+      "status": "passed",
+      "duration_seconds": 0.012,
+      "error": null
+    },
+    {
+      "name": "shows loading spinner when isLoading=true",
+      "module": "pages.CompletedWorkoutDetailPage",
+      "suite": "CompletedWorkoutDetailPage",
+      "description": "CompletedWorkoutDetailPage shows loading spinner when isLoading=true",
+      "status": "passed",
+      "duration_seconds": 0.01,
+      "error": null
+    },
+    {
+      "name": "shows error state when isError=true",
+      "module": "pages.CompletedWorkoutDetailPage",
+      "suite": "CompletedWorkoutDetailPage",
+      "description": "CompletedWorkoutDetailPage shows error state when isError=true",
+      "status": "passed",
+      "duration_seconds": 0.006,
+      "error": null
+    },
+    {
+      "name": "sets viewing mode color and label on navbar",
+      "module": "pages.WorkoutBuilderPage",
+      "suite": "WorkoutBuilderPage > Mode indicator in viewing mode (route: /workouts/builder/:templateId)",
+      "description": "WorkoutBuilderPage Mode indicator in viewing mode (route: /workouts/builder/:templateId) sets viewing mode color and label on navbar",
+      "status": "failed",
+      "duration_seconds": 0.01,
+      "error": "Error: [vitest] No \"useSubmitCompletedWorkout\" export is defined on the \"@/services/api/workouts\" mock. Did you forget to return it from \"vi.mock\"?"
+    },
+    {
+      "name": "sets editing mode color and label on navbar",
+      "module": "pages.WorkoutBuilderPage",
+      "suite": "WorkoutBuilderPage > Mode indicator in editing mode (route: /workouts/builder)",
+      "description": "WorkoutBuilderPage Mode indicator in editing mode (route: /workouts/builder) sets editing mode color and label on navbar",
+      "status": "failed",
+      "duration_seconds": 0.001,
+      "error": "Error: [vitest] No \"useSubmitCompletedWorkout\" export is defined on the \"@/services/api/workouts\" mock. Did you forget to return it from \"vi.mock\"?"
+    },
+    {
+      "name": "passes mode=\"viewing\" to WorkoutStepList when viewing",
+      "module": "pages.WorkoutBuilderPage",
+      "suite": "WorkoutBuilderPage > WorkoutStepList receives effectiveMode",
+      "description": "WorkoutBuilderPage WorkoutStepList receives effectiveMode passes mode=\"viewing\" to WorkoutStepList when viewing",
+      "status": "failed",
+      "duration_seconds": 0.001,
+      "error": "Error: [vitest] No \"useSubmitCompletedWorkout\" export is defined on the \"@/services/api/workouts\" mock. Did you forget to return it from \"vi.mock\"?"
+    },
+    {
+      "name": "passes mode=\"editing\" to WorkoutStepList when editing",
+      "module": "pages.WorkoutBuilderPage",
+      "suite": "WorkoutBuilderPage > WorkoutStepList receives effectiveMode",
+      "description": "WorkoutBuilderPage WorkoutStepList receives effectiveMode passes mode=\"editing\" to WorkoutStepList when editing",
+      "status": "failed",
+      "duration_seconds": 0.001,
+      "error": "Error: [vitest] No \"useSubmitCompletedWorkout\" export is defined on the \"@/services/api/workouts\" mock. Did you forget to return it from \"vi.mock\"?"
+    },
+    {
+      "name": "has allowsSetEditing=false",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > viewing mode",
+      "description": "getModeConfig viewing mode has allowsSetEditing=false",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "has showsMenuDropdown=false",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > viewing mode",
+      "description": "getModeConfig viewing mode has showsMenuDropdown=false",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "has showsAddSetButton=false",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > viewing mode",
+      "description": "getModeConfig viewing mode has showsAddSetButton=false",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "has color #4A9BB8 (meanBlue)",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > viewing mode",
+      "description": "getModeConfig viewing mode has color #4A9BB8 (meanBlue)",
+      "status": "failed",
+      "duration_seconds": 0.004,
+      "error": "AssertionError: expected '#5BB8D4' to be '#4A9BB8' // Object.is equality"
+    },
+    {
+      "name": "has label \"Viewing Template\"",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > viewing mode",
+      "description": "getModeConfig viewing mode has label \"Viewing Template\"",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "has allowsSetEditing=true",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > editing mode",
+      "description": "getModeConfig editing mode has allowsSetEditing=true",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "has showsMenuDropdown=true",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > editing mode",
+      "description": "getModeConfig editing mode has showsMenuDropdown=true",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "has showsAddSetButton=true",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > editing mode",
+      "description": "getModeConfig editing mode has showsAddSetButton=true",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "has a purple color hex",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > editing mode",
+      "description": "getModeConfig editing mode has a purple color hex",
+      "status": "failed",
+      "duration_seconds": 0.002,
+      "error": "AssertionError: expected '#B8447A' to be '#813656' // Object.is equality"
+    },
+    {
+      "name": "has label \"Editing Template\"",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > editing mode",
+      "description": "getModeConfig editing mode has label \"Editing Template\"",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "has allowsSetEditing=false",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > executing mode",
+      "description": "getModeConfig executing mode has allowsSetEditing=false",
+      "status": "failed",
+      "duration_seconds": 0.002,
+      "error": "AssertionError: expected true to be false // Object.is equality"
+    },
+    {
+      "name": "has showsMenuDropdown=false",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > executing mode",
+      "description": "getModeConfig executing mode has showsMenuDropdown=false",
+      "status": "failed",
+      "duration_seconds": 0.001,
+      "error": "AssertionError: expected true to be false // Object.is equality"
+    },
+    {
+      "name": "has showsAddSetButton=false",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > executing mode",
+      "description": "getModeConfig executing mode has showsAddSetButton=false",
+      "status": "failed",
+      "duration_seconds": 0.001,
+      "error": "AssertionError: expected true to be false // Object.is equality"
+    },
+    {
+      "name": "has a green color hex",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > executing mode",
+      "description": "getModeConfig executing mode has a green color hex",
+      "status": "failed",
+      "duration_seconds": 0.001,
+      "error": "AssertionError: expected '#FF5D29' to be '#07B598' // Object.is equality"
+    },
+    {
+      "name": "has label \"Executing Workout\"",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > executing mode",
+      "description": "getModeConfig executing mode has label \"Executing Workout\"",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "has allowsSetEditing=false",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > completed mode",
+      "description": "getModeConfig completed mode has allowsSetEditing=false",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "has showsMenuDropdown=false",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > completed mode",
+      "description": "getModeConfig completed mode has showsMenuDropdown=false",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "has showsAddSetButton=false",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > completed mode",
+      "description": "getModeConfig completed mode has showsAddSetButton=false",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "has a gray color hex",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > completed mode",
+      "description": "getModeConfig completed mode has a gray color hex",
+      "status": "failed",
+      "duration_seconds": 0.001,
+      "error": "AssertionError: expected '#6B6E70' to be '#434647' // Object.is equality"
+    },
+    {
+      "name": "has label \"Completed Workout\"",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > completed mode",
+      "description": "getModeConfig completed mode has label \"Completed Workout\"",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "only editing mode has allowsSetEditing=true",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > mode boolean invariants",
+      "description": "getModeConfig mode boolean invariants only editing mode has allowsSetEditing=true",
+      "status": "failed",
+      "duration_seconds": 0.002,
+      "error": "AssertionError: expected [ false, true, true, false ] to deeply equal [ false, true, false, false ]"
+    },
+    {
+      "name": "only editing mode has showsMenuDropdown=true",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > mode boolean invariants",
+      "description": "getModeConfig mode boolean invariants only editing mode has showsMenuDropdown=true",
+      "status": "failed",
+      "duration_seconds": 0.001,
+      "error": "AssertionError: expected [ false, true, true, false ] to deeply equal [ false, true, false, false ]"
+    },
+    {
+      "name": "only editing mode has showsAddSetButton=true",
+      "module": "types.workoutModes",
+      "suite": "getModeConfig > mode boolean invariants",
+      "description": "getModeConfig mode boolean invariants only editing mode has showsAddSetButton=true",
+      "status": "failed",
+      "duration_seconds": 0.001,
+      "error": "AssertionError: expected [ false, true, true, false ] to deeply equal [ false, true, false, false ]"
+    },
+    {
+      "name": "renders the Add Set button text",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is undefined (default)",
+      "description": "ExerciseCard when mode is undefined (default) renders the Add Set button text",
+      "status": "passed",
+      "duration_seconds": 0.049,
+      "error": null
+    },
+    {
+      "name": "renders at least one icon button (ellipsis menu)",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is undefined (default)",
+      "description": "ExerciseCard when mode is undefined (default) renders at least one icon button (ellipsis menu)",
+      "status": "passed",
+      "duration_seconds": 0.006,
+      "error": null
+    },
+    {
+      "name": "renders the Add Set button",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'editing'",
+      "description": "ExerciseCard when mode is 'editing' renders the Add Set button",
+      "status": "passed",
+      "duration_seconds": 0.005,
+      "error": null
+    },
+    {
+      "name": "renders at least one icon button (ellipsis menu)",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'editing'",
+      "description": "ExerciseCard when mode is 'editing' renders at least one icon button (ellipsis menu)",
+      "status": "passed",
+      "duration_seconds": 0.005,
+      "error": null
+    },
+    {
+      "name": "renders drag handle icon when sortable=true",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'editing'",
+      "description": "ExerciseCard when mode is 'editing' renders drag handle icon when sortable=true",
+      "status": "passed",
+      "duration_seconds": 0.006,
+      "error": null
+    },
+    {
+      "name": "does NOT render the Add Set button",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'viewing'",
+      "description": "ExerciseCard when mode is 'viewing' does NOT render the Add Set button",
+      "status": "passed",
+      "duration_seconds": 0.004,
+      "error": null
+    },
+    {
+      "name": "does NOT render any icon buttons (no menu, no set actions)",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'viewing'",
+      "description": "ExerciseCard when mode is 'viewing' does NOT render any icon buttons (no menu, no set actions)",
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "does NOT render the drag handle even when sortable=true",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'viewing'",
+      "description": "ExerciseCard when mode is 'viewing' does NOT render the drag handle even when sortable=true",
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "renders the set duration value as plain text",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'viewing'",
+      "description": "ExerciseCard when mode is 'viewing' renders the set duration value as plain text",
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "renders group description as plain text when present",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'viewing'",
+      "description": "ExerciseCard when mode is 'viewing' renders group description as plain text when present",
+      "status": "passed",
+      "duration_seconds": 0.005,
+      "error": null
+    },
+    {
+      "name": "does not render any inputs (cells are read-only)",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'viewing'",
+      "description": "ExerciseCard when mode is 'viewing' does not render any inputs (cells are read-only)",
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "in viewing mode: value is visible as text",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > InlineCell read-only prop",
+      "description": "ExerciseCard InlineCell read-only prop in viewing mode: value is visible as text",
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "in editing mode: value is visible as text (click-to-edit)",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > InlineCell read-only prop",
+      "description": "ExerciseCard InlineCell read-only prop in editing mode: value is visible as text (click-to-edit)",
+      "status": "passed",
+      "duration_seconds": 0.012,
+      "error": null
+    },
+    {
+      "name": "renders a SetCompletionCircle (role=checkbox) for each set",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'executing'",
+      "description": "ExerciseCard when mode is 'executing' renders a SetCompletionCircle (role=checkbox) for each set",
+      "status": "failed",
+      "duration_seconds": 0.019,
+      "error": "AssertionError: expected +0 to be 2 // Object.is equality"
+    },
+    {
+      "name": "renders aria-checked=false for incomplete sets",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'executing'",
+      "description": "ExerciseCard when mode is 'executing' renders aria-checked=false for incomplete sets",
+      "status": "failed",
+      "duration_seconds": 0.008,
+      "error": "AssertionError: expected undefined to be 'false' // Object.is equality"
+    },
+    {
+      "name": "renders aria-checked=true for sets initialized as completed",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'executing'",
+      "description": "ExerciseCard when mode is 'executing' renders aria-checked=true for sets initialized as completed",
+      "status": "failed",
+      "duration_seconds": 0.007,
+      "error": "AssertionError: expected undefined to be 'true' // Object.is equality"
+    },
+    {
+      "name": "does NOT render the Add Set button",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'executing'",
+      "description": "ExerciseCard when mode is 'executing' does NOT render the Add Set button",
+      "status": "failed",
+      "duration_seconds": 0.007,
+      "error": "AssertionError: expected <p \u2026(1)></p> to be null"
+    },
+    {
+      "name": "does NOT render the ellipsis menu button",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'executing'",
+      "description": "ExerciseCard when mode is 'executing' does NOT render the ellipsis menu button",
+      "status": "failed",
+      "duration_seconds": 0.011,
+      "error": "AssertionError: expected SVGSVGElement{ \u2026(2), \u2026(2) } to be null"
+    },
+    {
+      "name": "does NOT render a drag handle even when sortable=true",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'executing'",
+      "description": "ExerciseCard when mode is 'executing' does NOT render a drag handle even when sortable=true",
+      "status": "failed",
+      "duration_seconds": 0.009,
+      "error": "AssertionError: expected SVGSVGElement{ \u2026(2), \u2026(2) } to be null"
+    },
+    {
+      "name": "renders set values as plain text (no input elements)",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'executing'",
+      "description": "ExerciseCard when mode is 'executing' renders set values as plain text (no input elements)",
+      "status": "failed",
+      "duration_seconds": 0.005,
+      "error": "AssertionError: expected 1 to be +0 // Object.is equality"
+    },
+    {
+      "name": "set value is visible as text",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'executing'",
+      "description": "ExerciseCard when mode is 'executing' set value is visible as text",
+      "status": "passed",
+      "duration_seconds": 0.005,
+      "error": null
+    },
+    {
+      "name": "renders a SetCompletionCircle for each set",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'completed'",
+      "description": "ExerciseCard when mode is 'completed' renders a SetCompletionCircle for each set",
+      "status": "failed",
+      "duration_seconds": 0.005,
+      "error": "AssertionError: expected +0 to be 2 // Object.is equality"
+    },
+    {
+      "name": "renders filled circle (aria-checked=true) for completed sets",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'completed'",
+      "description": "ExerciseCard when mode is 'completed' renders filled circle (aria-checked=true) for completed sets",
+      "status": "failed",
+      "duration_seconds": 0.004,
+      "error": "AssertionError: expected undefined to be 'true' // Object.is equality"
+    },
+    {
+      "name": "renders unfilled circle (aria-checked=false) for incomplete sets",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'completed'",
+      "description": "ExerciseCard when mode is 'completed' renders unfilled circle (aria-checked=false) for incomplete sets",
+      "status": "failed",
+      "duration_seconds": 0.004,
+      "error": "AssertionError: expected undefined to be 'false' // Object.is equality"
+    },
+    {
+      "name": "renders checkmark circles with graphGreyDark (#434647) color",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'completed'",
+      "description": "ExerciseCard when mode is 'completed' renders checkmark circles with graphGreyDark (#434647) color",
+      "status": "failed",
+      "duration_seconds": 0.004,
+      "error": "TypeError: Cannot read properties of null (reading 'style')"
+    },
+    {
+      "name": "checkmark circles are not interactive (clicking does not trigger toggle)",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'completed'",
+      "description": "ExerciseCard when mode is 'completed' checkmark circles are not interactive (clicking does not trigger toggle)",
+      "status": "failed",
+      "duration_seconds": 0.004,
+      "error": "TypeError: Cannot read properties of null (reading 'style')"
+    },
+    {
+      "name": "does NOT render the Add Set button",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'completed'",
+      "description": "ExerciseCard when mode is 'completed' does NOT render the Add Set button",
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "does NOT render the ellipsis menu button",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'completed'",
+      "description": "ExerciseCard when mode is 'completed' does NOT render the ellipsis menu button",
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "renders no input elements (fully read-only)",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'completed'",
+      "description": "ExerciseCard when mode is 'completed' renders no input elements (fully read-only)",
+      "status": "failed",
+      "duration_seconds": 0.004,
+      "error": "AssertionError: expected 1 to be +0 // Object.is equality"
+    },
+    {
+      "name": "renders set values as plain text",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > when mode is 'completed'",
+      "description": "ExerciseCard when mode is 'completed' renders set values as plain text",
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "accepts onSetCompleted prop without error in executing mode",
+      "module": "components.workouts.ExerciseCard",
+      "suite": "ExerciseCard > onSetCompleted callback",
+      "description": "ExerciseCard onSetCompleted callback accepts onSetCompleted prop without error in executing mode",
+      "status": "passed",
+      "duration_seconds": 0.011,
+      "error": null
+    },
+    {
+      "name": "renders \"Viewing Template\" label",
+      "module": "components.workouts.ModeInfoBar",
+      "suite": "ModeInfoBar > viewing mode",
+      "description": "ModeInfoBar viewing mode renders \"Viewing Template\" label",
+      "status": "passed",
+      "duration_seconds": 0.05,
+      "error": null
+    },
+    {
+      "name": "applies meanBlue color (#4A9BB8) to text element",
+      "module": "components.workouts.ModeInfoBar",
+      "suite": "ModeInfoBar > viewing mode",
+      "description": "ModeInfoBar viewing mode applies meanBlue color (#4A9BB8) to text element",
+      "status": "failed",
+      "duration_seconds": 0.01,
+      "error": "AssertionError: expected 'rgb(91, 184, 212)' to be 'rgb(74, 155, 184)' // Object.is equality"
+    },
+    {
+      "name": "renders \"Editing Template\" label",
+      "module": "components.workouts.ModeInfoBar",
+      "suite": "ModeInfoBar > editing mode",
+      "description": "ModeInfoBar editing mode renders \"Editing Template\" label",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "applies pimpinPurple color (#813656) to text element",
+      "module": "components.workouts.ModeInfoBar",
+      "suite": "ModeInfoBar > editing mode",
+      "description": "ModeInfoBar editing mode applies pimpinPurple color (#813656) to text element",
+      "status": "failed",
+      "duration_seconds": 0.001,
+      "error": "AssertionError: expected 'rgb(184, 68, 122)' to be 'rgb(129, 54, 86)' // Object.is equality"
+    },
+    {
+      "name": "renders \"Executing Workout\" label",
+      "module": "components.workouts.ModeInfoBar",
+      "suite": "ModeInfoBar > executing mode",
+      "description": "ModeInfoBar executing mode renders \"Executing Workout\" label",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "applies biancchiTeal color (#07B598) to text element",
+      "module": "components.workouts.ModeInfoBar",
+      "suite": "ModeInfoBar > executing mode",
+      "description": "ModeInfoBar executing mode applies biancchiTeal color (#07B598) to text element",
+      "status": "failed",
+      "duration_seconds": 0.002,
+      "error": "AssertionError: expected 'rgb(255, 93, 41)' to be 'rgb(7, 181, 152)' // Object.is equality"
+    },
+    {
+      "name": "renders \"Completed Workout\" label",
+      "module": "components.workouts.ModeInfoBar",
+      "suite": "ModeInfoBar > completed mode",
+      "description": "ModeInfoBar completed mode renders \"Completed Workout\" label",
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "applies graphGreyDark color (#434647) to text element",
+      "module": "components.workouts.ModeInfoBar",
+      "suite": "ModeInfoBar > completed mode",
+      "description": "ModeInfoBar completed mode applies graphGreyDark color (#434647) to text element",
+      "status": "failed",
+      "duration_seconds": 0.002,
+      "error": "AssertionError: expected 'rgb(107, 110, 112)' to be 'rgb(67, 70, 71)' // Object.is equality"
+    },
+    {
+      "name": "renders a container with left border accent",
+      "module": "components.workouts.ModeInfoBar",
+      "suite": "ModeInfoBar > structure",
+      "description": "ModeInfoBar structure renders a container with left border accent",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "renders with role or accessible text",
+      "module": "components.workouts.ModeInfoBar",
+      "suite": "ModeInfoBar > structure",
+      "description": "ModeInfoBar structure renders with role or accessible text",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "renders a circle element",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > when completed=false",
+      "description": "SetCompletionCircle when completed=false renders a circle element",
+      "status": "passed",
+      "duration_seconds": 0.031,
+      "error": null
+    },
+    {
+      "name": "has aria-checked=false",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > when completed=false",
+      "description": "SetCompletionCircle when completed=false has aria-checked=false",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "has correct aria-label",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > when completed=false",
+      "description": "SetCompletionCircle when completed=false has correct aria-label",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "does NOT render a CheckIcon when incomplete",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > when completed=false",
+      "description": "SetCompletionCircle when completed=false does NOT render a CheckIcon when incomplete",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "renders with biancchiTeal border (circle outline style)",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > when completed=false",
+      "description": "SetCompletionCircle when completed=false renders with biancchiTeal border (circle outline style)",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "renders a filled circle element",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > when completed=true",
+      "description": "SetCompletionCircle when completed=true renders a filled circle element",
+      "status": "passed",
+      "duration_seconds": 0.022,
+      "error": null
+    },
+    {
+      "name": "has aria-checked=true",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > when completed=true",
+      "description": "SetCompletionCircle when completed=true has aria-checked=true",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "renders a CheckIcon when completed",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > when completed=true",
+      "description": "SetCompletionCircle when completed=true renders a CheckIcon when completed",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "renders with biancchiTeal background (filled circle style)",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > when completed=true",
+      "description": "SetCompletionCircle when completed=true renders with biancchiTeal background (filled circle style)",
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "calls onToggle when clicked",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > click handler",
+      "description": "SetCompletionCircle click handler calls onToggle when clicked",
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "calls onToggle when clicking a completed circle",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > click handler",
+      "description": "SetCompletionCircle click handler calls onToggle when clicking a completed circle",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "has 24px width and height",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > dimensions",
+      "description": "SetCompletionCircle dimensions has 24px width and height",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "defaults to biancchiTeal border when completed=false and no color prop",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > color prop",
+      "description": "SetCompletionCircle color prop defaults to biancchiTeal border when completed=false and no color prop",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "uses supplied color for border when completed=false",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > color prop",
+      "description": "SetCompletionCircle color prop uses supplied color for border when completed=false",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "defaults to biancchiTeal background when completed=true and no color prop",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > color prop",
+      "description": "SetCompletionCircle color prop defaults to biancchiTeal background when completed=true and no color prop",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "uses supplied color for background when completed=true",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > color prop",
+      "description": "SetCompletionCircle color prop uses supplied color for background when completed=true",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "does not call onToggle when readOnly=true and circle is clicked",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > readOnly prop",
+      "description": "SetCompletionCircle readOnly prop does not call onToggle when readOnly=true and circle is clicked",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "calls onToggle when readOnly=false (default) and circle is clicked",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > readOnly prop",
+      "description": "SetCompletionCircle readOnly prop calls onToggle when readOnly=false (default) and circle is clicked",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "sets cursor to default when readOnly=true",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > readOnly prop",
+      "description": "SetCompletionCircle readOnly prop sets cursor to default when readOnly=true",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "sets cursor to pointer when readOnly=false",
+      "module": "components.workouts.SetCompletionCircle",
+      "suite": "SetCompletionCircle > readOnly prop",
+      "description": "SetCompletionCircle readOnly prop sets cursor to pointer when readOnly=false",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    },
+    {
+      "name": "renders an ExerciseCard for each WorkoutRepeatGroup step",
+      "module": "components.workouts.WorkoutExercisesTab",
+      "suite": "WorkoutExercisesTab > renders ExerciseCard components (not ExerciseStepCard)",
+      "description": "WorkoutExercisesTab renders ExerciseCard components (not ExerciseStepCard) renders an ExerciseCard for each WorkoutRepeatGroup step",
+      "status": "passed",
+      "duration_seconds": 0.045,
+      "error": null
+    },
+    {
+      "name": "passes mode=\"completed\" to each ExerciseCard",
+      "module": "components.workouts.WorkoutExercisesTab",
+      "suite": "WorkoutExercisesTab > renders ExerciseCard components (not ExerciseStepCard)",
+      "description": "WorkoutExercisesTab renders ExerciseCard components (not ExerciseStepCard) passes mode=\"completed\" to each ExerciseCard",
+      "status": "passed",
+      "duration_seconds": 0.01,
+      "error": null
+    },
+    {
+      "name": "wraps a standalone WorkoutStep into a RepeatGroup for ExerciseCard",
+      "module": "components.workouts.WorkoutExercisesTab",
+      "suite": "WorkoutExercisesTab > renders ExerciseCard components (not ExerciseStepCard)",
+      "description": "WorkoutExercisesTab renders ExerciseCard components (not ExerciseStepCard) wraps a standalone WorkoutStep into a RepeatGroup for ExerciseCard",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "passes RepeatGroups through directly to ExerciseCard",
+      "module": "components.workouts.WorkoutExercisesTab",
+      "suite": "WorkoutExercisesTab > renders ExerciseCard components (not ExerciseStepCard)",
+      "description": "WorkoutExercisesTab renders ExerciseCard components (not ExerciseStepCard) passes RepeatGroups through directly to ExerciseCard",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "does NOT render any BeoflowCard-based ExerciseStepCard elements",
+      "module": "components.workouts.WorkoutExercisesTab",
+      "suite": "WorkoutExercisesTab > renders ExerciseCard components (not ExerciseStepCard)",
+      "description": "WorkoutExercisesTab renders ExerciseCard components (not ExerciseStepCard) does NOT render any BeoflowCard-based ExerciseStepCard elements",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "renders empty state text when steps array is empty",
+      "module": "components.workouts.WorkoutExercisesTab",
+      "suite": "WorkoutExercisesTab > shows empty state when no exercises",
+      "description": "WorkoutExercisesTab shows empty state when no exercises renders empty state text when steps array is empty",
+      "status": "passed",
+      "duration_seconds": 0.022,
+      "error": null
+    },
+    {
+      "name": "renders planned workout name when planned_workout_data is present",
+      "module": "components.workouts.WorkoutExercisesTab",
+      "suite": "WorkoutExercisesTab > shows planned workout label when planned data exists",
+      "description": "WorkoutExercisesTab shows planned workout label when planned data exists renders planned workout name when planned_workout_data is present",
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "renders \"0/3 sets complete\" when completedCount=0, totalCount=3",
+      "module": "components.workouts.WorkoutProgressBar",
+      "suite": "WorkoutProgressBar",
+      "description": "WorkoutProgressBar renders \"0/3 sets complete\" when completedCount=0, totalCount=3",
+      "status": "passed",
+      "duration_seconds": 0.057,
+      "error": null
+    },
+    {
+      "name": "renders \"2/5 sets complete\" when completedCount=2, totalCount=5",
+      "module": "components.workouts.WorkoutProgressBar",
+      "suite": "WorkoutProgressBar",
+      "description": "WorkoutProgressBar renders \"2/5 sets complete\" when completedCount=2, totalCount=5",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "renders \"3/3 sets complete\" when all sets complete",
+      "module": "components.workouts.WorkoutProgressBar",
+      "suite": "WorkoutProgressBar",
+      "description": "WorkoutProgressBar renders \"3/3 sets complete\" when all sets complete",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "renders \"1/1 sets complete\" for a single set workout",
+      "module": "components.workouts.WorkoutProgressBar",
+      "suite": "WorkoutProgressBar",
+      "description": "WorkoutProgressBar renders \"1/1 sets complete\" for a single set workout",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "renders empty state text when totalCount is 0",
+      "module": "components.workouts.WorkoutProgressBar",
+      "suite": "WorkoutProgressBar",
+      "description": "WorkoutProgressBar renders empty state text when totalCount is 0",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "renders progress bar with 0% width when no sets completed",
+      "module": "components.workouts.WorkoutProgressBar",
+      "suite": "WorkoutProgressBar",
+      "description": "WorkoutProgressBar renders progress bar with 0% width when no sets completed",
+      "status": "passed",
+      "duration_seconds": 0.003,
+      "error": null
+    },
+    {
+      "name": "renders progress bar with correct percentage width",
+      "module": "components.workouts.WorkoutProgressBar",
+      "suite": "WorkoutProgressBar",
+      "description": "WorkoutProgressBar renders progress bar with correct percentage width",
+      "status": "passed",
+      "duration_seconds": 0.009,
+      "error": null
+    },
+    {
+      "name": "renders progress bar at 100% width when all sets complete",
+      "module": "components.workouts.WorkoutProgressBar",
+      "suite": "WorkoutProgressBar",
+      "description": "WorkoutProgressBar renders progress bar at 100% width when all sets complete",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "renders progress bar at 33% width for 1/3 sets",
+      "module": "components.workouts.WorkoutProgressBar",
+      "suite": "WorkoutProgressBar",
+      "description": "WorkoutProgressBar renders progress bar at 33% width for 1/3 sets",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "uses biancchiTeal color for the progress bar fill",
+      "module": "components.workouts.WorkoutProgressBar",
+      "suite": "WorkoutProgressBar",
+      "description": "WorkoutProgressBar uses biancchiTeal color for the progress bar fill",
+      "status": "passed",
+      "duration_seconds": 0.005,
+      "error": null
+    },
+    {
+      "name": "does not render progress bar fill in empty state",
+      "module": "components.workouts.WorkoutProgressBar",
+      "suite": "WorkoutProgressBar",
+      "description": "WorkoutProgressBar does not render progress bar fill in empty state",
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "error": null
+    },
+    {
+      "name": "renders exercise cards",
+      "module": "components.workouts.WorkoutStepList",
+      "suite": "WorkoutStepList > when mode is undefined (default editing)",
+      "description": "WorkoutStepList when mode is undefined (default editing) renders exercise cards",
+      "status": "passed",
+      "duration_seconds": 0.052,
+      "error": null
+    },
+    {
+      "name": "renders the list container without crashing",
+      "module": "components.workouts.WorkoutStepList",
+      "suite": "WorkoutStepList > when mode is undefined (default editing)",
+      "description": "WorkoutStepList when mode is undefined (default editing) renders the list container without crashing",
+      "status": "passed",
+      "duration_seconds": 0.006,
+      "error": null
+    },
+    {
+      "name": "does NOT render the Add Set button inside exercise cards",
+      "module": "components.workouts.WorkoutStepList",
+      "suite": "WorkoutStepList > when mode is 'viewing'",
+      "description": "WorkoutStepList when mode is 'viewing' does NOT render the Add Set button inside exercise cards",
+      "status": "passed",
+      "duration_seconds": 0.004,
+      "error": null
+    },
+    {
+      "name": "does NOT render icon buttons (menu/set-actions hidden in viewing)",
+      "module": "components.workouts.WorkoutStepList",
+      "suite": "WorkoutStepList > when mode is 'viewing'",
+      "description": "WorkoutStepList when mode is 'viewing' does NOT render icon buttons (menu/set-actions hidden in viewing)",
+      "status": "passed",
+      "duration_seconds": 0.007,
+      "error": null
+    },
+    {
+      "name": "still renders the exercise name (content is visible)",
+      "module": "components.workouts.WorkoutStepList",
+      "suite": "WorkoutStepList > when mode is 'viewing'",
+      "description": "WorkoutStepList when mode is 'viewing' still renders the exercise name (content is visible)",
+      "status": "passed",
+      "duration_seconds": 0.004,
+      "error": null
+    },
+    {
+      "name": "does not render Add Set in viewing mode (exercise cards receive mode=viewing)",
+      "module": "components.workouts.WorkoutStepList",
+      "suite": "WorkoutStepList > when mode is 'viewing'",
+      "description": "WorkoutStepList when mode is 'viewing' does not render Add Set in viewing mode (exercise cards receive mode=viewing)",
+      "status": "passed",
+      "duration_seconds": 0.004,
+      "error": null
+    },
+    {
+      "name": "renders the Add Set button inside exercise cards",
+      "module": "components.workouts.WorkoutStepList",
+      "suite": "WorkoutStepList > when mode is 'editing'",
+      "description": "WorkoutStepList when mode is 'editing' renders the Add Set button inside exercise cards",
+      "status": "passed",
+      "duration_seconds": 0.008,
+      "error": null
+    },
+    {
+      "name": "renders icon buttons (menu controls visible)",
+      "module": "components.workouts.WorkoutStepList",
+      "suite": "WorkoutStepList > when mode is 'editing'",
+      "description": "WorkoutStepList when mode is 'editing' renders icon buttons (menu controls visible)",
+      "status": "passed",
+      "duration_seconds": 0.005,
+      "error": null
+    },
+    {
+      "name": "uses ActivityEvent metadata when structured plan response omits metadata",
+      "module": "services.api.__tests__.eventDetail",
+      "suite": "toEventDetail",
+      "description": "toEventDetail uses ActivityEvent metadata when structured plan response omits metadata",
+      "status": "passed",
+      "duration_seconds": 0.002,
+      "error": null
+    },
+    {
+      "name": "does not let stale structured plan metadata override ActivityEvent metadata",
+      "module": "services.api.__tests__.eventDetail",
+      "suite": "toEventDetail",
+      "description": "toEventDetail does not let stale structured plan metadata override ActivityEvent metadata",
+      "status": "passed",
+      "duration_seconds": 0.0,
+      "error": null
+    }
+  ]
+}

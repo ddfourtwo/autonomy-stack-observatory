@@ -87,6 +87,8 @@ Use the provided scripts to convert test runner output to observatory format. Th
 |--------|-------|-------|
 | `transform-django-tests.py` | Django `manage.py test -v 2` stdout | `python3 scripts/transform-django-tests.py output.txt result.json --source unit-backend` |
 | `transform-pytest.py` | pytest-json-report JSON | `python3 scripts/transform-pytest.py output.json result.json` |
+| `transform-vitest.py` | Vitest JSON reporter output | `python3 scripts/transform-vitest.py output.json result.json --source unit-web` |
+| `transform-playwright.py` | Playwright JSON reporter output | `python3 scripts/transform-playwright.py output.json result.json --source e2e-web` |
 | `transform-security-report.py` | Django security `report.json` | `python3 scripts/transform-security-report.py report.json result.json` |
 
 The Django transformer automatically extracts:

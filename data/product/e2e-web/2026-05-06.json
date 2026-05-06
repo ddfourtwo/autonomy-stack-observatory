@@ -1,0 +1,25 @@
+{
+  "vertical": "product",
+  "source": "e2e-web",
+  "timestamp": "2026-05-06T01:29:44Z",
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 1,
+    "duration_seconds": 0.4
+  },
+  "entries": [
+    {
+      "name": "coach can open athlete activity and see valid detail metadata",
+      "suite": "calendar-event-detail",
+      "description": "coach can open athlete activity and see valid detail metadata",
+      "status": "skipped",
+      "duration_seconds": 0.0,
+      "screenshot_url": null,
+      "video_url": null,
+      "error": null
+    }
+  ]
+}
