@@ -2,7 +2,7 @@
 	let { data } = $props();
 
 	function formatSource(source) {
-		return source.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+		return source.replace(/-/g, ' ').toUpperCase();
 	}
 
 	const isSecurityCoverage = $derived(data.source === 'security-coverage');

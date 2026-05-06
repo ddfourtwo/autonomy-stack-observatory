@@ -28,7 +28,7 @@
 	}
 
 	function formatSource(source) {
-		return source.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+		return source.replace(/-/g, ' ').toUpperCase();
 	}
 </script>
 
