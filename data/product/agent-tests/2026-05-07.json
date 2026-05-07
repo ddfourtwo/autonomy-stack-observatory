@@ -1,0 +1,3029 @@
+{
+  "vertical": "product",
+  "source": "agent-tests",
+  "timestamp": "2026-05-07T09:28:50Z",
+  "runtime_models": {
+    "chat": {
+      "provider": "vertex",
+      "model": "google/gemini-2.5-pro"
+    },
+    "fast": {
+      "provider": "tinfoil",
+      "model": "gemma4-31b"
+    },
+    "very_fast": {
+      "provider": "tinfoil",
+      "model": "gemma4-31b"
+    },
+    "workout": {
+      "provider": "vertex",
+      "model": "google/gemini-2.5-pro"
+    }
+  },
+  "summary": {
+    "total": 9,
+    "passed": 9,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "coverage_percent": null,
+    "duration_seconds": 311.0
+  },
+  "entries": [
+    {
+      "name": "queries_biometrics_success",
+      "module": "ai_agent.behavior_suite.chat_agent",
+      "suite": "ChatAgentBehaviorSuite",
+      "description": "Ask for heart rate zones through the real chat streaming endpoint and verify the biometrics tool fires with a grounded answer. Pass threshold: 2/2. Runtime models: chat=vertex/google/gemini-2.5-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-pro.",
+      "status": "passed",
+      "duration_seconds": 13.86,
+      "error": null,
+      "criteria": [
+        "Chat streaming endpoint returns no error.",
+        "Agent calls biometrics(get).",
+        "Assistant returns non-empty grounded text."
+      ],
+      "observations": [
+        "attempt 1: passed - conversation=2266",
+        "biometrics(get) fired",
+        "conversation=2266",
+        "attempt 2: passed - conversation=2267",
+        "biometrics(get) fired",
+        "conversation=2267"
+      ],
+      "attempts": [
+        {
+          "status": "passed",
+          "detail": "conversation=2266",
+          "duration_seconds": 7.23,
+          "criteria": [
+            "Chat streaming endpoint returns no error.",
+            "Agent calls biometrics(get).",
+            "Assistant returns non-empty grounded text."
+          ],
+          "observations": [
+            "biometrics(get) fired",
+            "conversation=2266"
+          ],
+          "transcript": [
+            {
+              "role": "user",
+              "content": "What are my heart rate zones?"
+            },
+            {
+              "role": "tool_call",
+              "tool": "biometrics",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "biometrics",
+              "result": {
+                "success": true,
+                "action": "get",
+                "biometrics": {
+                  "weight_kg": 67.5,
+                  "height_cm": 170.0,
+                  "age": 29,
+                  "biological_gender": "undefined"
+                },
+                "zones": {
+                  "resting_hr": 50,
+                  "maximum_hr": 190,
+                  "functional_threshold_hr": 176,
+                  "functional_threshold_power": 225,
+                  "functional_threshold_pace_min_per_km": "5:00",
+                  "hr_zones": [
+                    142.56,
+                    156.64,
+                    163.68,
+                    174.24,
+                    179.52,
+                    186.56,
+                    null
+                  ],
+                  "hr_zones_unit": "bpm",
+                  "power_zones": [
+                    123.75,
+                    168.75,
+                    202.5,
+                    236.25,
+                    270.0,
+                    337.5,
+                    null
+                  ],
+                  "power_zones_unit": "watts",
+                  "pace_zones_min_per_km": [
+                    "6:27",
+                    "5:39",
+                    "5:17",
+                    "4:57",
+                    "4:51",
+                    "4:30",
+                    null
+                  ],
+                  "zones_format": "6 ceilings + null; zone 7 / zone 5c has no upper cap",
+                  "zones_note": "These are the user's zones as they appear in the app. Cite them directly when the user asks 'what are my zones'. The 7th element is null \u2014 zone 7 (Coggan) / zone 5c (Friel) has no upper cap; present it as 'above <Z6 ceiling>'. Only call calculate() when the user explicitly asks for a different zone model (e.g. 'what would Karvonen give'), or when a threshold has just been updated and zones need fresh computation for comparison."
+                }
+              }
+            },
+            {
+              "role": "assistant",
+              "content": "Here are your current heart rate zones based on your threshold heart rate of 176 bpm:\n\n*   **Zone 1:** Below 143 bpm\n*   **Zone 2:** 143-156 bpm\n*   **Zone 3:** 157-163 bpm\n*   **Zone 4:** 164-174 bpm\n*   **Zone 5:** 175-186 bpm\n*   **Zone 6:** Above 186 bpm"
+            }
+          ]
+        },
+        {
+          "status": "passed",
+          "detail": "conversation=2267",
+          "duration_seconds": 6.63,
+          "criteria": [
+            "Chat streaming endpoint returns no error.",
+            "Agent calls biometrics(get).",
+            "Assistant returns non-empty grounded text."
+          ],
+          "observations": [
+            "biometrics(get) fired",
+            "conversation=2267"
+          ],
+          "transcript": [
+            {
+              "role": "user",
+              "content": "What are my heart rate zones?"
+            },
+            {
+              "role": "tool_call",
+              "tool": "biometrics",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "biometrics",
+              "result": {
+                "success": true,
+                "action": "get",
+                "biometrics": {
+                  "weight_kg": 67.5,
+                  "height_cm": 170.0,
+                  "age": 29,
+                  "biological_gender": "undefined"
+                },
+                "zones": {
+                  "resting_hr": 50,
+                  "maximum_hr": 190,
+                  "functional_threshold_hr": 176,
+                  "functional_threshold_power": 225,
+                  "functional_threshold_pace_min_per_km": "5:00",
+                  "hr_zones": [
+                    142.56,
+                    156.64,
+                    163.68,
+                    174.24,
+                    179.52,
+                    186.56,
+                    null
+                  ],
+                  "hr_zones_unit": "bpm",
+                  "power_zones": [
+                    123.75,
+                    168.75,
+                    202.5,
+                    236.25,
+                    270.0,
+                    337.5,
+                    null
+                  ],
+                  "power_zones_unit": "watts",
+                  "pace_zones_min_per_km": [
+                    "6:27",
+                    "5:39",
+                    "5:17",
+                    "4:57",
+                    "4:51",
+                    "4:30",
+                    null
+                  ],
+                  "zones_format": "6 ceilings + null; zone 7 / zone 5c has no upper cap",
+                  "zones_note": "These are the user's zones as they appear in the app. Cite them directly when the user asks 'what are my zones'. The 7th element is null \u2014 zone 7 (Coggan) / zone 5c (Friel) has no upper cap; present it as 'above <Z6 ceiling>'. Only call calculate() when the user explicitly asks for a different zone model (e.g. 'what would Karvonen give'), or when a threshold has just been updated and zones need fresh computation for comparison."
+                }
+              }
+            },
+            {
+              "role": "assistant",
+              "content": "Here are your current heart rate zones:\n\n*   **Zone 1:** Below 143 bpm\n*   **Zone 2:** 143-157 bpm\n*   **Zone 3:** 157-164 bpm\n*   **Zone 4:** 164-174 bpm\n*   **Zone 5:** 174-180 bpm\n*   **Zone 6:** 180-187 bpm\n*   **Zone 7:** Above 187 bpm"
+            }
+          ]
+        }
+      ],
+      "runtime_models": {
+        "chat": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        },
+        "fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "very_fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "workout": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "biometrics",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "biometrics",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        }
+      ],
+      "response_text": "attempt 1: Here are your current heart rate zones based on your threshold heart rate of 176 bpm:\n\n*   **Zone 1:** Below 143 bpm\n*   **Zone 2:** 143-156 bpm\n*   **Zone 3:** 157-163 bpm\n*   **Zone 4:** 164-174 bpm\n*   **Zone 5:** 175-186 bpm\n*   **Zone 6:** Above 186 bpm\n\nattempt 2: Here are your current heart rate zones:\n\n*   **Zone 1:** Below 143 bpm\n*   **Zone 2:** 143-157 bpm\n*   **Zone 3:** 157-164 bpm\n*   **Zone 4:** 164-174 bpm\n*   **Zone 5:** 174-180 bpm\n*   **Zone 6:** 180-187 bpm\n*   **Zone 7:** Above 187 bpm"
+    },
+    {
+      "name": "edits_existing_workout_uses_same_workout",
+      "module": "ai_agent.behavior_suite.chat_agent",
+      "suite": "ChatAgentBehaviorSuite",
+      "description": "Create a workout, then modify it in a follow-up turn and verify the same workout is edited rather than a new one created. Pass threshold: 1/1. Runtime models: chat=vertex/google/gemini-2.5-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-pro.",
+      "status": "passed",
+      "duration_seconds": 149.52,
+      "error": null,
+      "criteria": [
+        "Turn 1 calls coaching_memory(get) and periodization(get).",
+        "Turn 1 calls workouts(create).",
+        "Turn 1 tool result returns workout_id.",
+        "Turn 2 calls coaching_memory(get) and periodization(get).",
+        "Turn 2 calls workouts(edit).",
+        "Turn 2 edit targets the same workout_id from turn 1."
+      ],
+      "observations": [
+        "attempt 1: passed - workout_id=5159",
+        "turn 1 called coaching_memory(get)",
+        "turn 1 called periodization(get)",
+        "turn 1 called workouts(create)",
+        "turn 1 returned workout_id=5159",
+        "turn 2 called coaching_memory(get)",
+        "turn 2 called periodization(get)",
+        "turn 2 called workouts(edit)",
+        "turn 2 edited workout_id=5159"
+      ],
+      "attempts": [
+        {
+          "status": "passed",
+          "detail": "workout_id=5159",
+          "duration_seconds": 149.52,
+          "criteria": [
+            "Turn 1 calls coaching_memory(get) and periodization(get).",
+            "Turn 1 calls workouts(create).",
+            "Turn 1 tool result returns workout_id.",
+            "Turn 2 calls coaching_memory(get) and periodization(get).",
+            "Turn 2 calls workouts(edit).",
+            "Turn 2 edit targets the same workout_id from turn 1."
+          ],
+          "observations": [
+            "turn 1 called coaching_memory(get)",
+            "turn 1 called periodization(get)",
+            "turn 1 called workouts(create)",
+            "turn 1 returned workout_id=5159",
+            "turn 2 called coaching_memory(get)",
+            "turn 2 called periodization(get)",
+            "turn 2 called workouts(edit)",
+            "turn 2 edited workout_id=5159"
+          ],
+          "transcript": [
+            {
+              "role": "user",
+              "content": "Create a simple bodyweight workout with squats, push-ups, and plank."
+            },
+            {
+              "role": "tool_call",
+              "tool": "coaching_memory",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "periodization",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "exercises",
+              "args": {
+                "query": "squat, push-up, plank"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "exercises",
+              "args": {
+                "query": "push-up, chest"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "exercises",
+              "args": {
+                "query": "push up"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "workouts",
+              "args": {
+                "action": "create",
+                "workout_json": "\n{\n  \"title\": \"Simple Bodyweight Circuit\",\n  \"description\": \"A simple bodyweight workout with squats, push-ups, and a plank.\",\n  \"activity_type\": \"strength\",\n  \"workout_structure\": [\n    {\n      \"block_name\": \"Bodyweight Circuit\",\n      \"reps\": 3,\n      \"block_type\": \"round\",\n      \"steps\": [\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1228,\n          \"target\": {\n            \"type\": \"reps\",\n            \"value\": 15\n          }\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 931,\n          \"target\": {\n            \"type\": \"reps_to_failure\"\n          }\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1343,\n          \"target\": {\n            \"type\": \"duration\",\n            \"value\": 45\n          }\n        }\n      ]\n    }\n  ]\n}\n"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "workouts",
+              "args": {
+                "action": "create",
+                "workout_json": "\n{\n  \"title\": \"Simple Bodyweight Circuit\",\n  \"description\": \"A simple bodyweight workout with squats, push-ups, and a plank.\",\n  \"activity_type\": \"strength\",\n  \"steps\": [\n    {\n      \"block_name\": \"Bodyweight Circuit\",\n      \"reps\": 3,\n      \"block_type\": \"round\",\n      \"steps\": [\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1228,\n          \"target\": {\n            \"type\": \"reps\",\n            \"value\": 15\n          }\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 931,\n          \"target\": {\n            \"type\": \"reps_to_failure\"\n          }\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1343,\n          \"target\": {\n            \"type\": \"duration\",\n            \"value\": 45\n          }\n        }\n      ]\n    }\n  ]\n}\n"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "workouts",
+              "args": {
+                "workout_json": "\n{\n  \"title\": \"Simple Bodyweight Circuit\",\n  \"description\": \"A simple bodyweight workout with squats, push-ups, and a plank.\",\n  \"activity_type\": \"strength\",\n  \"steps\": [\n    {\n      \"block_name\": \"Bodyweight Circuit\",\n      \"repeat_count\": 3,\n      \"block_type\": \"round\",\n      \"steps\": [\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1228,\n          \"target\": {\n            \"type\": \"reps\",\n            \"value\": 15\n          }\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 931,\n          \"target\": {\n            \"type\": \"reps_to_failure\"\n          }\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1343,\n          \"target\": {\n            \"type\": \"duration\",\n            \"value\": 45\n          }\n        }\n      ]\n    }\n  ]\n}\n",
+                "action": "create"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "workouts",
+              "args": {
+                "action": "create",
+                "workout_json": "\n{\n  \"title\": \"Simple Bodyweight Circuit\",\n  \"description\": \"A simple bodyweight workout with squats, push-ups, and a plank.\",\n  \"activity_type\": \"strength\",\n  \"steps\": [\n    {\n      \"step_type\": \"repeat\",\n      \"repeat_count\": 3,\n      \"steps\": [\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1228,\n          \"duration_type\": \"reps\",\n          \"duration_value\": 15\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 931,\n          \"duration_type\": \"lap_button\"\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1343,\n          \"duration_type\": \"time\",\n          \"duration_value\": 45\n        }\n      ]\n    }\n  ]\n}\n"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "workouts",
+              "args": {
+                "workout_json": "\n{\n  \"title\": \"Simple Bodyweight Circuit\",\n  \"description\": \"A simple bodyweight workout with squats, push-ups, and a plank.\",\n  \"activity_type\": \"strength\",\n  \"steps\": [\n    {\n      \"step_type\": \"repeat\",\n      \"block_name\": \"Bodyweight Circuit\",\n      \"repeat_count\": 3,\n      \"steps\": [\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1228,\n          \"duration_type\": \"reps\",\n          \"duration_value\": 15\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 931,\n          \"duration_type\": \"lap_button\",\n          \"duration_value\": 1\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1343,\n          \"duration_type\": \"time\",\n          \"duration_value\": 45\n        }\n      ]\n    }\n  ]\n}\n",
+                "action": "create"
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "coaching_memory",
+              "result": {
+                "success": true,
+                "action": "get",
+                "coaching_memory": {}
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "periodization",
+              "result": {
+                "success": true,
+                "action": "get",
+                "periodization": null,
+                "message": "No active periodization found"
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "exercises",
+              "result": {
+                "success": true,
+                "query": "squat, push-up, plank",
+                "terms_searched": [
+                  "squat",
+                  "push-up",
+                  "plank"
+                ],
+                "count": 9,
+                "exercises": [
+                  {
+                    "id": 1228,
+                    "name": "Air Squat",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "squat"
+                  },
+                  {
+                    "id": 847,
+                    "name": "Jump Squat",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "squat"
+                  },
+                  {
+                    "id": 1077,
+                    "name": "Back Squat",
+                    "type": "barbell",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "squat"
+                  },
+                  {
+                    "id": 52,
+                    "name": "Clap Push-Up",
+                    "type": "plyometric",
+                    "muscle_groups": [
+                      "chest",
+                      "triceps"
+                    ],
+                    "matched_term": "push-up"
+                  },
+                  {
+                    "id": 956,
+                    "name": "Pike Push-Up",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "shoulders",
+                      "triceps"
+                    ],
+                    "matched_term": "push-up"
+                  },
+                  {
+                    "id": 945,
+                    "name": "Hindu Push-Up",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "chest",
+                      "shoulders",
+                      "triceps"
+                    ],
+                    "matched_term": "push-up"
+                  },
+                  {
+                    "id": 1343,
+                    "name": "Plank",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "abs"
+                    ],
+                    "matched_term": "plank"
+                  },
+                  {
+                    "id": 747,
+                    "name": "Side Plank",
+                    "type": "plyometric",
+                    "muscle_groups": [
+                      "obliques",
+                      "abs"
+                    ],
+                    "matched_term": "plank"
+                  },
+                  {
+                    "id": 1348,
+                    "name": "Reverse Plank",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "abs",
+                      "glutes"
+                    ],
+                    "matched_term": "plank"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "exercises",
+              "result": {
+                "success": true,
+                "query": "push-up, chest",
+                "terms_searched": [
+                  "push-up",
+                  "chest"
+                ],
+                "count": 9,
+                "exercises": [
+                  {
+                    "id": 52,
+                    "name": "Clap Push-Up",
+                    "type": "plyometric",
+                    "muscle_groups": [
+                      "chest",
+                      "triceps"
+                    ],
+                    "matched_term": "push-up"
+                  },
+                  {
+                    "id": 956,
+                    "name": "Pike Push-Up",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "shoulders",
+                      "triceps"
+                    ],
+                    "matched_term": "push-up"
+                  },
+                  {
+                    "id": 945,
+                    "name": "Hindu Push-Up",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "chest",
+                      "shoulders",
+                      "triceps"
+                    ],
+                    "matched_term": "push-up"
+                  },
+                  {
+                    "id": 1331,
+                    "name": "Dip",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "triceps",
+                      "chest",
+                      "shoulders"
+                    ],
+                    "matched_term": "chest"
+                  },
+                  {
+                    "id": 1362,
+                    "name": "Burpee",
+                    "type": "plyometric",
+                    "muscle_groups": [
+                      "chest",
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "chest"
+                  },
+                  {
+                    "id": 554,
+                    "name": "Wall Walk",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "shoulders",
+                      "chest",
+                      "triceps"
+                    ],
+                    "matched_term": "chest"
+                  },
+                  {
+                    "id": 1380,
+                    "name": "Bench Dip",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "triceps",
+                      "chest"
+                    ],
+                    "matched_term": "chest"
+                  },
+                  {
+                    "id": 75,
+                    "name": "Bench Press",
+                    "type": "barbell",
+                    "muscle_groups": [
+                      "chest",
+                      "triceps"
+                    ],
+                    "matched_term": "chest"
+                  },
+                  {
+                    "id": 77,
+                    "name": "Floor Press",
+                    "type": "barbell",
+                    "muscle_groups": [
+                      "chest",
+                      "triceps"
+                    ],
+                    "matched_term": "chest"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "exercises",
+              "result": {
+                "success": true,
+                "query": "push up",
+                "terms_searched": [
+                  "push up"
+                ],
+                "count": 3,
+                "exercises": [
+                  {
+                    "id": 944,
+                    "name": "Handstand Push Up",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "shoulders",
+                      "triceps"
+                    ],
+                    "matched_term": "push up"
+                  },
+                  {
+                    "id": 931,
+                    "name": "Close-Grip Push Up",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "triceps",
+                      "chest"
+                    ],
+                    "matched_term": "push up"
+                  },
+                  {
+                    "id": 1203,
+                    "name": "V Up",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "abs",
+                      "hip_flexors"
+                    ],
+                    "matched_term": "push up"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "workouts",
+              "result": {
+                "success": false,
+                "error": {
+                  "code": "VALIDATION_ERROR",
+                  "message": "1 validation error for StructuredWorkout\nsteps\n  Field required [type=missing, input_value={'description': 'A simple...t', 'sport': 'STRENGTH'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing"
+                },
+                "fallback_disabled": true
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "workouts",
+              "result": {
+                "success": false,
+                "error": {
+                  "code": "VALIDATION_ERROR",
+                  "message": "1 validation error for StructuredWorkout\nsteps\n  Value error, Failed to parse step as WorkoutRepeatGroup: 1 validation error for WorkoutRepeatGroup\nsteps\n  Value error, Failed to parse nested step: 1 validation error for WorkoutRepeatGroup\nrepeat_count\n  Field required [type=missing, input_value={'step_type': 'strength',...: 'reps', 'value': 15}]}, input_type=dict]\n    For further information visi"
+                },
+                "fallback_disabled": true
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "workouts",
+              "result": {
+                "success": false,
+                "error": {
+                  "code": "SAVE_FAILED",
+                  "message": "Could not save StructuredWorkoutTemplate: [\"Invalid workout data: 1 validation error for StructuredWorkout\\nsteps\\n  Value error, Failed to parse step as WorkoutRepeatGroup: 1 validation error for WorkoutRepeatGroup\\nsteps\\n  Value error, Failed to parse nested step: 2 validation errors for WorkoutStep\\nduration_type\\n  Value error, duration_type is required and cannot be null. Must be one of: time, distance, kilojoules, lap_button, reps, calories [type=value_error, input_value=None, input_type=NoneType]\\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\\nduration_value\\n  Value error, duration_value is required and cannot be null. Must be a positive number [type=value_error, input_value=None, input_type=NoneType]\\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error, 1 validation error for WorkoutRepeatGroup\\nrepeat_count\\n  Field required [type=missing, input_value={'id': 'c05fdb81-7d44-472...completion_notes': None}, input_type=dict]\\n    For further information visit https://errors.pydantic.dev/2.13/v/missing [type=value_error, input_value=[{'id': 'c05fdb81-7d44-47...ompletion_notes': None}], input_type=list]\\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error [type=value_error, input_value=[{'id': '645d9e60-62de-4a...repeats_visible': True}], input_type=list]\\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\"]"
+                }
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "workouts",
+              "result": {
+                "success": false,
+                "error": {
+                  "code": "SAVE_FAILED",
+                  "message": "Could not save StructuredWorkoutTemplate: [\"Invalid workout data: 1 validation error for StructuredWorkout\\nsteps\\n  Value error, Failed to parse step as WorkoutRepeatGroup: 1 validation error for WorkoutRepeatGroup\\nsteps\\n  Value error, Failed to parse nested step: 1 validation error for WorkoutStep\\nduration_value\\n  Value error, duration_value is required and cannot be null. Must be a positive number [type=value_error, input_value=None, input_type=NoneType]\\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error, 1 validation error for WorkoutRepeatGroup\\nrepeat_count\\n  Field required [type=missing, input_value={'id': '3dc2427f-2720-44b...completion_notes': None}, input_type=dict]\\n    For further information visit https://errors.pydantic.dev/2.13/v/missing [type=value_error, input_value=[{'id': 'cf63e61a-9fc8-47...ompletion_notes': None}], input_type=list]\\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error [type=value_error, input_value=[{'id': 'e87306d2-d1cc-4a...repeats_visible': True}], input_type=list]\\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\"]"
+                }
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "workouts",
+              "result": {
+                "success": true,
+                "action": "create",
+                "workout_id": 5159,
+                "workout_name": "Simple Bodyweight Circuit",
+                "workout_data": {
+                  "name": "Simple Bodyweight Circuit",
+                  "description": "A simple bodyweight workout with squats, push-ups, and a plank.",
+                  "sport": "STRENGTH",
+                  "steps": [
+                    {
+                      "id": "177cd06b-bb9b-4959-b8a2-3811f69a212b",
+                      "name": null,
+                      "description": null,
+                      "repeat_count": 3,
+                      "steps": [
+                        {
+                          "id": "dbc55dbd-7197-46e2-b658-36189ae89c51",
+                          "name": null,
+                          "description": null,
+                          "intensity": null,
+                          "duration_type": "reps",
+                          "duration_value": 15,
+                          "duration_unit": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 0,
+                              "value_low": null,
+                              "value_high": null,
+                              "specifier": null
+                            }
+                          ],
+                          "exercise_id": 1228,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "completed": false,
+                          "completion_notes": null
+                        },
+                        {
+                          "id": "024797bd-ae66-437a-9a1c-744ca53d68c1",
+                          "name": null,
+                          "description": null,
+                          "intensity": null,
+                          "duration_type": "lap_button",
+                          "duration_value": 1,
+                          "duration_unit": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 0,
+                              "value_low": null,
+                              "value_high": null,
+                              "specifier": null
+                            }
+                          ],
+                          "exercise_id": 931,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "completed": false,
+                          "completion_notes": null
+                        },
+                        {
+                          "id": "7e87f1cf-d07e-44c8-8da8-632206f12ca0",
+                          "name": null,
+                          "description": null,
+                          "intensity": null,
+                          "duration_type": "time",
+                          "duration_value": 45,
+                          "duration_unit": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 0,
+                              "value_low": null,
+                              "value_high": null,
+                              "specifier": null
+                            }
+                          ],
+                          "exercise_id": 1343,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "completed": false,
+                          "completion_notes": null
+                        }
+                      ],
+                      "superset_number": null,
+                      "exercise_id": 1228,
+                      "repeats_visible": true
+                    }
+                  ],
+                  "is_multisport": false,
+                  "estimated_time": null,
+                  "estimated_distance": null,
+                  "estimated_work": null,
+                  "difficulty_level": null,
+                  "workout_type": null,
+                  "created_by": null,
+                  "source": "beoflow",
+                  "external_id": null,
+                  "id": 5159
+                },
+                "status": "pending_review",
+                "summary": {
+                  "duration_minutes": 2,
+                  "exercise_count": 3,
+                  "sport": "STRENGTH"
+                },
+                "message": "Created Simple Bodyweight Circuit with 3 exercises"
+              }
+            },
+            {
+              "role": "assistant",
+              "content": "I've created a bodyweight workout for you called \"Simple Bodyweight Circuit.\" It consists of three rounds of:\n\n*   15 Air Squats\n*   Close-Grip Push-ups to failure\n*   45-second Plank\n\nIt is saved in your workout library. Let me know if you would like to schedule it."
+            },
+            {
+              "role": "user",
+              "content": "Make it harder and add one more set to each exercise."
+            },
+            {
+              "role": "tool_call",
+              "tool": "workouts",
+              "args": {
+                "workout_id": 5159,
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "workouts",
+              "args": {
+                "workout_id": 5159,
+                "workout_json": "\n{\n  \"title\": \"Simple Bodyweight Circuit\",\n  \"description\": \"A harder bodyweight workout with 4 rounds of squats, push-ups, and planks.\",\n  \"activity_type\": \"strength\",\n  \"steps\": [\n    {\n      \"step_type\": \"repeat\",\n      \"block_name\": \"Bodyweight Circuit\",\n      \"repeat_count\": 4,\n      \"steps\": [\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1228,\n          \"duration_type\": \"reps\",\n          \"duration_value\": 20\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 931,\n          \"duration_type\": \"lap_button\",\n          \"duration_value\": 1\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1343,\n          \"duration_type\": \"time\",\n          \"duration_value\": 60\n        }\n      ]\n    }\n  ]\n}\n",
+                "action": "edit"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "coaching_memory",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "periodization",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "workouts",
+              "args": {
+                "action": "edit",
+                "workout_json": "\n{\n  \"title\": \"Simple Bodyweight Circuit\",\n  \"description\": \"A harder bodyweight workout with 4 rounds of squats, push-ups, and planks.\",\n  \"activity_type\": \"strength\",\n  \"steps\": [\n    {\n      \"step_type\": \"repeat\",\n      \"block_name\": \"Bodyweight Circuit\",\n      \"repeat_count\": 4,\n      \"steps\": [\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1228,\n          \"duration_type\": \"reps\",\n          \"duration_value\": 20\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 931,\n          \"duration_type\": \"lap_button\",\n          \"duration_value\": 1\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1343,\n          \"duration_type\": \"time\",\n          \"duration_value\": 60\n        }\n      ]\n    }\n  ]\n}\n",
+                "workout_id": 5159
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "workouts",
+              "result": {
+                "success": true,
+                "action": "get",
+                "workout_id": 5159,
+                "workout_name": "Simple Bodyweight Circuit",
+                "sport": "STRENGTH",
+                "folder_name": "AI Generated",
+                "folder_id": 4919,
+                "workout_data": {
+                  "name": "Simple Bodyweight Circuit",
+                  "sport": "STRENGTH",
+                  "steps": [
+                    {
+                      "id": "177cd06b-bb9b-4959-b8a2-3811f69a212b",
+                      "name": null,
+                      "steps": [
+                        {
+                          "id": "dbc55dbd-7197-46e2-b658-36189ae89c51",
+                          "name": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 0,
+                              "specifier": null,
+                              "value_low": null,
+                              "value_high": null
+                            }
+                          ],
+                          "completed": false,
+                          "intensity": null,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "description": null,
+                          "exercise_id": 1228,
+                          "duration_type": "reps",
+                          "duration_unit": null,
+                          "duration_value": 15,
+                          "completion_notes": null
+                        },
+                        {
+                          "id": "024797bd-ae66-437a-9a1c-744ca53d68c1",
+                          "name": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 0,
+                              "specifier": null,
+                              "value_low": null,
+                              "value_high": null
+                            }
+                          ],
+                          "completed": false,
+                          "intensity": null,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "description": null,
+                          "exercise_id": 931,
+                          "duration_type": "lap_button",
+                          "duration_unit": null,
+                          "duration_value": 1,
+                          "completion_notes": null
+                        },
+                        {
+                          "id": "7e87f1cf-d07e-44c8-8da8-632206f12ca0",
+                          "name": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 0,
+                              "specifier": null,
+                              "value_low": null,
+                              "value_high": null
+                            }
+                          ],
+                          "completed": false,
+                          "intensity": null,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "description": null,
+                          "exercise_id": 1343,
+                          "duration_type": "time",
+                          "duration_unit": null,
+                          "duration_value": 45,
+                          "completion_notes": null
+                        }
+                      ],
+                      "description": null,
+                      "exercise_id": 1228,
+                      "repeat_count": 3,
+                      "repeats_visible": true,
+                      "superset_number": null
+                    }
+                  ],
+                  "source": "beoflow",
+                  "created_by": null,
+                  "description": "A simple bodyweight workout with squats, push-ups, and a plank.",
+                  "external_id": null,
+                  "workout_type": null,
+                  "is_multisport": false,
+                  "estimated_time": null,
+                  "estimated_work": null,
+                  "difficulty_level": null,
+                  "estimated_distance": null
+                },
+                "summary": "A simple bodyweight workout with squats, push-ups, and a plank."
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "workouts",
+              "result": {
+                "success": false,
+                "error": {
+                  "code": "MISSING_WORKOUT_CONTEXT",
+                  "message": "Before workouts(action=\"edit\"), call coaching_memory(action=\"get\") and periodization(action=\"get\") in this same turn, then retry.",
+                  "missing_tools": [
+                    "coaching_memory",
+                    "periodization"
+                  ]
+                }
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "coaching_memory",
+              "result": {
+                "success": true,
+                "action": "get",
+                "coaching_memory": {}
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "periodization",
+              "result": {
+                "success": true,
+                "action": "get",
+                "periodization": null,
+                "message": "No active periodization found"
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "workouts",
+              "result": {
+                "success": true,
+                "action": "edit",
+                "workout_id": 5159,
+                "workout_name": "Simple Bodyweight Circuit",
+                "workout_data": {
+                  "name": "Simple Bodyweight Circuit",
+                  "description": "A harder bodyweight workout with 4 rounds of squats, push-ups, and planks.",
+                  "sport": "STRENGTH",
+                  "steps": [
+                    {
+                      "id": "1119e741-dc35-4306-8739-48f112b95803",
+                      "name": null,
+                      "description": null,
+                      "repeat_count": 4,
+                      "steps": [
+                        {
+                          "id": "ae1eb9dc-a48f-4866-aa53-4df5899d7600",
+                          "name": null,
+                          "description": null,
+                          "intensity": null,
+                          "duration_type": "reps",
+                          "duration_value": 20,
+                          "duration_unit": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 0,
+                              "value_low": null,
+                              "value_high": null,
+                              "specifier": null
+                            }
+                          ],
+                          "exercise_id": 1228,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "completed": false,
+                          "completion_notes": null
+                        },
+                        {
+                          "id": "9dcd3306-7553-4b85-8989-f0578a2ecf54",
+                          "name": null,
+                          "description": null,
+                          "intensity": null,
+                          "duration_type": "lap_button",
+                          "duration_value": 1,
+                          "duration_unit": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 0,
+                              "value_low": null,
+                              "value_high": null,
+                              "specifier": null
+                            }
+                          ],
+                          "exercise_id": 931,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "completed": false,
+                          "completion_notes": null
+                        },
+                        {
+                          "id": "0c195c8b-e3a0-419a-a1c8-635325fafeb4",
+                          "name": null,
+                          "description": null,
+                          "intensity": null,
+                          "duration_type": "time",
+                          "duration_value": 60,
+                          "duration_unit": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 0,
+                              "value_low": null,
+                              "value_high": null,
+                              "specifier": null
+                            }
+                          ],
+                          "exercise_id": 1343,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "completed": false,
+                          "completion_notes": null
+                        }
+                      ],
+                      "superset_number": null,
+                      "exercise_id": 1228,
+                      "repeats_visible": true
+                    }
+                  ],
+                  "is_multisport": false,
+                  "estimated_time": null,
+                  "estimated_distance": null,
+                  "estimated_work": null,
+                  "difficulty_level": null,
+                  "workout_type": null,
+                  "created_by": null,
+                  "source": "beoflow",
+                  "external_id": null,
+                  "id": 5159
+                },
+                "summary": {
+                  "exercise_count": 3,
+                  "sport": "STRENGTH"
+                },
+                "message": "Updated Simple Bodyweight Circuit"
+              }
+            },
+            {
+              "role": "assistant",
+              "content": "OK, I've updated the workout to make it harder. It is now 4 rounds, with the squats increased to 20 reps and the plank increased to 60 seconds."
+            }
+          ]
+        }
+      ],
+      "runtime_models": {
+        "chat": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        },
+        "fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "very_fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "workout": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "coaching_memory",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "periodization",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "exercises",
+          "args": {
+            "query": "squat, push-up, plank"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "exercises",
+          "args": {
+            "query": "push-up, chest"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "exercises",
+          "args": {
+            "query": "push up"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "workouts",
+          "args": {
+            "action": "create",
+            "workout_json": "\n{\n  \"title\": \"Simple Bodyweight Circuit\",\n  \"description\": \"A simple bodyweight workout with squats, push-ups, and a plank.\",\n  \"activity_type\": \"strength\",\n  \"workout_structure\": [\n    {\n      \"block_name\": \"Bodyweight Circuit\",\n      \"reps\": 3,\n      \"block_type\": \"round\",\n      \"steps\": [\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1228,\n          \"target\": {\n            \"type\": \"reps\",\n            \"value\": 15\n          }\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 931,\n          \"target\": {\n            \"type\": \"reps_to_failure\"\n          }\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1343,\n          \"target\": {\n            \"type\": \"duration\",\n            \"value\": 45\n          }\n        }\n      ]\n    }\n  ]\n}\n"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "workouts",
+          "args": {
+            "action": "create",
+            "workout_json": "\n{\n  \"title\": \"Simple Bodyweight Circuit\",\n  \"description\": \"A simple bodyweight workout with squats, push-ups, and a plank.\",\n  \"activity_type\": \"strength\",\n  \"steps\": [\n    {\n      \"block_name\": \"Bodyweight Circuit\",\n      \"reps\": 3,\n      \"block_type\": \"round\",\n      \"steps\": [\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1228,\n          \"target\": {\n            \"type\": \"reps\",\n            \"value\": 15\n          }\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 931,\n          \"target\": {\n            \"type\": \"reps_to_failure\"\n          }\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1343,\n          \"target\": {\n            \"type\": \"duration\",\n            \"value\": 45\n          }\n        }\n      ]\n    }\n  ]\n}\n"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "workouts",
+          "args": {
+            "workout_json": "\n{\n  \"title\": \"Simple Bodyweight Circuit\",\n  \"description\": \"A simple bodyweight workout with squats, push-ups, and a plank.\",\n  \"activity_type\": \"strength\",\n  \"steps\": [\n    {\n      \"block_name\": \"Bodyweight Circuit\",\n      \"repeat_count\": 3,\n      \"block_type\": \"round\",\n      \"steps\": [\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1228,\n          \"target\": {\n            \"type\": \"reps\",\n            \"value\": 15\n          }\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 931,\n          \"target\": {\n            \"type\": \"reps_to_failure\"\n          }\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1343,\n          \"target\": {\n            \"type\": \"duration\",\n            \"value\": 45\n          }\n        }\n      ]\n    }\n  ]\n}\n",
+            "action": "create"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "workouts",
+          "args": {
+            "action": "create",
+            "workout_json": "\n{\n  \"title\": \"Simple Bodyweight Circuit\",\n  \"description\": \"A simple bodyweight workout with squats, push-ups, and a plank.\",\n  \"activity_type\": \"strength\",\n  \"steps\": [\n    {\n      \"step_type\": \"repeat\",\n      \"repeat_count\": 3,\n      \"steps\": [\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1228,\n          \"duration_type\": \"reps\",\n          \"duration_value\": 15\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 931,\n          \"duration_type\": \"lap_button\"\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1343,\n          \"duration_type\": \"time\",\n          \"duration_value\": 45\n        }\n      ]\n    }\n  ]\n}\n"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "workouts",
+          "args": {
+            "workout_json": "\n{\n  \"title\": \"Simple Bodyweight Circuit\",\n  \"description\": \"A simple bodyweight workout with squats, push-ups, and a plank.\",\n  \"activity_type\": \"strength\",\n  \"steps\": [\n    {\n      \"step_type\": \"repeat\",\n      \"block_name\": \"Bodyweight Circuit\",\n      \"repeat_count\": 3,\n      \"steps\": [\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1228,\n          \"duration_type\": \"reps\",\n          \"duration_value\": 15\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 931,\n          \"duration_type\": \"lap_button\",\n          \"duration_value\": 1\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1343,\n          \"duration_type\": \"time\",\n          \"duration_value\": 45\n        }\n      ]\n    }\n  ]\n}\n",
+            "action": "create"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "workouts",
+          "args": {
+            "workout_id": 5159,
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "workouts",
+          "args": {
+            "workout_id": 5159,
+            "workout_json": "\n{\n  \"title\": \"Simple Bodyweight Circuit\",\n  \"description\": \"A harder bodyweight workout with 4 rounds of squats, push-ups, and planks.\",\n  \"activity_type\": \"strength\",\n  \"steps\": [\n    {\n      \"step_type\": \"repeat\",\n      \"block_name\": \"Bodyweight Circuit\",\n      \"repeat_count\": 4,\n      \"steps\": [\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1228,\n          \"duration_type\": \"reps\",\n          \"duration_value\": 20\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 931,\n          \"duration_type\": \"lap_button\",\n          \"duration_value\": 1\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1343,\n          \"duration_type\": \"time\",\n          \"duration_value\": 60\n        }\n      ]\n    }\n  ]\n}\n",
+            "action": "edit"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "coaching_memory",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "periodization",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "workouts",
+          "args": {
+            "action": "edit",
+            "workout_json": "\n{\n  \"title\": \"Simple Bodyweight Circuit\",\n  \"description\": \"A harder bodyweight workout with 4 rounds of squats, push-ups, and planks.\",\n  \"activity_type\": \"strength\",\n  \"steps\": [\n    {\n      \"step_type\": \"repeat\",\n      \"block_name\": \"Bodyweight Circuit\",\n      \"repeat_count\": 4,\n      \"steps\": [\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1228,\n          \"duration_type\": \"reps\",\n          \"duration_value\": 20\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 931,\n          \"duration_type\": \"lap_button\",\n          \"duration_value\": 1\n        },\n        {\n          \"step_type\": \"strength\",\n          \"exercise_id\": 1343,\n          \"duration_type\": \"time\",\n          \"duration_value\": 60\n        }\n      ]\n    }\n  ]\n}\n",
+            "workout_id": 5159
+          },
+          "attempt_status": "passed"
+        }
+      ],
+      "response_text": "attempt 1: I've created a bodyweight workout for you called \"Simple Bodyweight Circuit.\" It consists of three rounds of:\n\n*   15 Air Squats\n*   Close-Grip Push-ups to failure\n*   45-second Plank\n\nIt is saved in your workout library. Let me know if you would like to schedule it.\n\nattempt 1: OK, I've updated the workout to make it harder. It is now 4 rounds, with the squats increased to 20 reps and the plank increased to 60 seconds."
+    },
+    {
+      "name": "recovers_after_invalid_request_with_tool_recovery",
+      "module": "ai_agent.behavior_suite.chat_agent",
+      "suite": "ChatAgentBehaviorSuite",
+      "description": "After a bad edit request, the next turn should recover and create a new workout without derailing the conversation. Pass threshold: 1/1. Runtime models: chat=vertex/google/gemini-2.5-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-pro.",
+      "status": "passed",
+      "duration_seconds": 40.51,
+      "error": null,
+      "criteria": [
+        "Conversation starts with an invalid edit request.",
+        "Follow-up asks for a new leg workout.",
+        "Follow-up turn calls workouts(create)."
+      ],
+      "observations": [
+        "attempt 1: passed - followup_created",
+        "invalid edit turn completed",
+        "follow-up called workouts(create)"
+      ],
+      "attempts": [
+        {
+          "status": "passed",
+          "detail": "followup_created",
+          "duration_seconds": 40.51,
+          "criteria": [
+            "Conversation starts with an invalid edit request.",
+            "Follow-up asks for a new leg workout.",
+            "Follow-up turn calls workouts(create)."
+          ],
+          "observations": [
+            "invalid edit turn completed",
+            "follow-up called workouts(create)"
+          ],
+          "transcript": [
+            {
+              "role": "user",
+              "content": "Edit workout 99999 to add lunges"
+            },
+            {
+              "role": "tool_call",
+              "tool": "coaching_memory",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "periodization",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "workouts",
+              "args": {
+                "workout_id": 99999,
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "coaching_memory",
+              "result": {
+                "success": true,
+                "action": "get",
+                "coaching_memory": {}
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "periodization",
+              "result": {
+                "success": true,
+                "action": "get",
+                "periodization": null,
+                "message": "No active periodization found"
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "workouts",
+              "result": {
+                "success": false,
+                "error": {
+                  "code": "NOT_FOUND",
+                  "message": "Workout not found: 99999"
+                }
+              }
+            },
+            {
+              "role": "assistant",
+              "content": "I could not find a workout with the ID 99999.\n\n1.  I can search for the workout by name.\n2.  I can create a new workout for you.\n\nWhat would you like to do?"
+            },
+            {
+              "role": "user",
+              "content": "Actually, just create me a simple leg workout."
+            },
+            {
+              "role": "tool_call",
+              "tool": "coaching_memory",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "periodization",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "exercises",
+              "args": {
+                "query": "squat, lunge, calf raise"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "workouts",
+              "args": {
+                "action": "create",
+                "workout_json": "\n{\n  \"title\": \"Simple Leg Workout\",\n  \"description\": \"A straightforward leg workout with fundamental bodyweight movements.\",\n  \"steps\": [\n    {\n      \"type\": \"warmup\",\n      \"duration\": {\n        \"value\": 5,\n        \"units\": \"minutes\"\n      },\n      \"target\": {\n        \"type\": \"hr.zone\",\n        \"zone\": 1\n      },\n      \"description\": \"Light cardio to prepare for the workout.\"\n    },\n    {\n      \"type\": \"repeat\",\n      \"reps\": 3,\n      \"steps\": [\n        {\n          \"type\": \"work\",\n          \"exercise_id\": 1077,\n          \"target\": {\n            \"type\": \"reps\",\n            \"value\": 10\n          },\n          \"description\": \"Back Squat\"\n        },\n        {\n          \"type\": \"rest\",\n          \"duration\": {\n            \"value\": 60,\n            \"units\": \"seconds\"\n          }\n        }\n      ]\n    },\n    {\n      \"type\": \"repeat\",\n      \"reps\": 3,\n      \"steps\": [\n        {\n          \"type\": \"work\",\n          \"exercise_id\": 1339,\n          \"target\": {\n            \"type\": \"reps.each-side\",\n            \"value\": 12\n          },\n          \"description\": \"Lunge\"\n        },\n        {\n          \"type\": \"rest\",\n          \"duration\": {\n            \"value\": 60,\n            \"units\": \"seconds\"\n          }\n        }\n      ]\n    },\n    {\n      \"type\": \"repeat\",\n      \"reps\": 3,\n      \"steps\": [\n        {\n          \"type\": \"work\",\n          \"exercise_id\": 114,\n          \"target\": {\n            \"type\": \"reps\",\n            \"value\": 15\n          },\n          \"description\": \"Standing Calf Raise\"\n        },\n        {\n          \"type\": \"rest\",\n          \"duration\": {\n            \"value\": 60,\n            \"units\": \"seconds\"\n          }\n        }\n      ]\n    },\n    {\n      \"type\": \"cooldown\",\n      \"duration\": {\n        \"value\": 5,\n        \"units\": \"minutes\"\n      },\n      \"target\": {\n        \"type\": \"hr.zone\",\n        \"zone\": 1\n      },\n      \"description\": \"Light stretching to cool down.\"\n    }\n  ]\n}\n"
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "coaching_memory",
+              "result": {
+                "success": true,
+                "action": "get",
+                "coaching_memory": {}
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "periodization",
+              "result": {
+                "success": true,
+                "action": "get",
+                "periodization": null,
+                "message": "No active periodization found"
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "exercises",
+              "result": {
+                "success": true,
+                "query": "squat, lunge, calf raise",
+                "terms_searched": [
+                  "squat",
+                  "lunge",
+                  "calf raise"
+                ],
+                "count": 9,
+                "exercises": [
+                  {
+                    "id": 1228,
+                    "name": "Air Squat",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "squat"
+                  },
+                  {
+                    "id": 847,
+                    "name": "Jump Squat",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "squat"
+                  },
+                  {
+                    "id": 1077,
+                    "name": "Back Squat",
+                    "type": "barbell",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "squat"
+                  },
+                  {
+                    "id": 1339,
+                    "name": "Lunge",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "lunge"
+                  },
+                  {
+                    "id": 604,
+                    "name": "Reverse Lunge",
+                    "type": "barbell",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "lunge"
+                  },
+                  {
+                    "id": 492,
+                    "name": "Overhead Lunge",
+                    "type": "medball",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes",
+                      "shoulders"
+                    ],
+                    "matched_term": "lunge"
+                  },
+                  {
+                    "id": 106,
+                    "name": "Seated Calf Raise",
+                    "type": "machine",
+                    "muscle_groups": [
+                      "calves"
+                    ],
+                    "matched_term": "calf raise"
+                  },
+                  {
+                    "id": 114,
+                    "name": "Standing Calf Raise",
+                    "type": "barbell",
+                    "muscle_groups": [
+                      "calves"
+                    ],
+                    "matched_term": "calf raise"
+                  },
+                  {
+                    "id": 112,
+                    "name": "Single-Leg Standing Calf Raise",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "calves"
+                    ],
+                    "matched_term": "calf raise"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "workouts",
+              "result": {
+                "success": false,
+                "error": {
+                  "code": "VALIDATION_ERROR",
+                  "message": "1 validation error for StructuredWorkout\nsteps\n  Value error, Failed to parse step as either WorkoutStep or WorkoutRepeatGroup. Data: {'duration': {'value': 5, 'units': 'minutes'}, 'description': 'Light cardio to prepare for the workout.', 'name': 'warmup', 'exercise_id': 'custom.other', 'targets': [{'type': 'hr.zone', 'value': 1}]}, Error: 1 validation error for WorkoutRepeatGroup\nrepeat_count\n  "
+                },
+                "fallback_disabled": true
+              }
+            },
+            {
+              "role": "assistant",
+              "content": "I ran into an error creating that workout. It looks like there was a problem with the warm-up step in the workout's structure.\n\nWould you like me to try creating it again?"
+            }
+          ]
+        }
+      ],
+      "runtime_models": {
+        "chat": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        },
+        "fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "very_fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "workout": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "coaching_memory",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "periodization",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "workouts",
+          "args": {
+            "workout_id": 99999,
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "coaching_memory",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "periodization",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "exercises",
+          "args": {
+            "query": "squat, lunge, calf raise"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "workouts",
+          "args": {
+            "action": "create",
+            "workout_json": "\n{\n  \"title\": \"Simple Leg Workout\",\n  \"description\": \"A straightforward leg workout with fundamental bodyweight movements.\",\n  \"steps\": [\n    {\n      \"type\": \"warmup\",\n      \"duration\": {\n        \"value\": 5,\n        \"units\": \"minutes\"\n      },\n      \"target\": {\n        \"type\": \"hr.zone\",\n        \"zone\": 1\n      },\n      \"description\": \"Light cardio to prepare for the workout.\"\n    },\n    {\n      \"type\": \"repeat\",\n      \"reps\": 3,\n      \"steps\": [\n        {\n          \"type\": \"work\",\n          \"exercise_id\": 1077,\n          \"target\": {\n            \"type\": \"reps\",\n            \"value\": 10\n          },\n          \"description\": \"Back Squat\"\n        },\n        {\n          \"type\": \"rest\",\n          \"duration\": {\n            \"value\": 60,\n            \"units\": \"seconds\"\n          }\n        }\n      ]\n    },\n    {\n      \"type\": \"repeat\",\n      \"reps\": 3,\n      \"steps\": [\n        {\n          \"type\": \"work\",\n          \"exercise_id\": 1339,\n          \"target\": {\n            \"type\": \"reps.each-side\",\n            \"value\": 12\n          },\n          \"description\": \"Lunge\"\n        },\n        {\n          \"type\": \"rest\",\n          \"duration\": {\n            \"value\": 60,\n            \"units\": \"seconds\"\n          }\n        }\n      ]\n    },\n    {\n      \"type\": \"repeat\",\n      \"reps\": 3,\n      \"steps\": [\n        {\n          \"type\": \"work\",\n          \"exercise_id\": 114,\n          \"target\": {\n            \"type\": \"reps\",\n            \"value\": 15\n          },\n          \"description\": \"Standing Calf Raise\"\n        },\n        {\n          \"type\": \"rest\",\n          \"duration\": {\n            \"value\": 60,\n            \"units\": \"seconds\"\n          }\n        }\n      ]\n    },\n    {\n      \"type\": \"cooldown\",\n      \"duration\": {\n        \"value\": 5,\n        \"units\": \"minutes\"\n      },\n      \"target\": {\n        \"type\": \"hr.zone\",\n        \"zone\": 1\n      },\n      \"description\": \"Light stretching to cool down.\"\n    }\n  ]\n}\n"
+          },
+          "attempt_status": "passed"
+        }
+      ],
+      "response_text": "attempt 1: I could not find a workout with the ID 99999.\n\n1.  I can search for the workout by name.\n2.  I can create a new workout for you.\n\nWhat would you like to do?\n\nattempt 1: I ran into an error creating that workout. It looks like there was a problem with the warm-up step in the workout's structure.\n\nWould you like me to try creating it again?"
+    },
+    {
+      "name": "query_upcoming_schedule_returns_schedule_context",
+      "module": "ai_agent.behavior_suite.chat_agent",
+      "suite": "ChatAgentBehaviorSuite",
+      "description": "Ask what is on the schedule this week through the real chat streaming endpoint and verify the schedule tool is used with a grounded answer. Pass threshold: 1/1. Runtime models: chat=vertex/google/gemini-2.5-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-pro.",
+      "status": "passed",
+      "duration_seconds": 38.57,
+      "error": null,
+      "criteria": [
+        "Chat streaming endpoint returns no error.",
+        "Agent calls coaching_memory(get).",
+        "Agent calls periodization(get).",
+        "Agent calls schedule(get).",
+        "Assistant returns non-empty grounded text."
+      ],
+      "observations": [
+        "attempt 1: passed - conversation=2270",
+        "schedule query called coaching_memory(get)",
+        "schedule query called periodization(get)",
+        "schedule(get) fired",
+        "conversation=2270"
+      ],
+      "attempts": [
+        {
+          "status": "passed",
+          "detail": "conversation=2270",
+          "duration_seconds": 38.57,
+          "criteria": [
+            "Chat streaming endpoint returns no error.",
+            "Agent calls coaching_memory(get).",
+            "Agent calls periodization(get).",
+            "Agent calls schedule(get).",
+            "Assistant returns non-empty grounded text."
+          ],
+          "observations": [
+            "schedule query called coaching_memory(get)",
+            "schedule query called periodization(get)",
+            "schedule(get) fired",
+            "conversation=2270"
+          ],
+          "transcript": [
+            {
+              "role": "user",
+              "content": "What's on my schedule this week?"
+            },
+            {
+              "role": "tool_call",
+              "tool": "coaching_memory",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "periodization",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "schedule",
+              "args": {
+                "action": "get",
+                "days_back": 0,
+                "days_forward": 7
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "coaching_memory",
+              "result": {
+                "success": true,
+                "action": "get",
+                "coaching_memory": {}
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "periodization",
+              "result": {
+                "success": true,
+                "action": "get",
+                "periodization": null,
+                "message": "No active periodization found"
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "schedule",
+              "result": {
+                "success": true,
+                "today": "Thursday 2026-05-07",
+                "events": [],
+                "completed_activities": [],
+                "count": 0,
+                "date_range": {
+                  "start": "Thursday 2026-05-07",
+                  "end": "Thursday 2026-05-14"
+                }
+              }
+            },
+            {
+              "role": "assistant",
+              "content": "Your schedule is clear for the next 7 days.\n\nWould you like me to help you add some workouts to your plan?"
+            }
+          ]
+        }
+      ],
+      "runtime_models": {
+        "chat": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        },
+        "fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "very_fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "workout": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "coaching_memory",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "periodization",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "schedule",
+          "args": {
+            "action": "get",
+            "days_back": 0,
+            "days_forward": 7
+          },
+          "attempt_status": "passed"
+        }
+      ],
+      "response_text": "attempt 1: Your schedule is clear for the next 7 days.\n\nWould you like me to help you add some workouts to your plan?"
+    },
+    {
+      "name": "suggest_workout_reads_memory_and_plan",
+      "module": "ai_agent.behavior_suite.chat_agent",
+      "suite": "ChatAgentBehaviorSuite",
+      "description": "Ask for a workout suggestion and verify coaching memory plus the performance plan are read before advice. Pass threshold: 1/1. Runtime models: chat=vertex/google/gemini-2.5-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-pro.",
+      "status": "passed",
+      "duration_seconds": 8.8,
+      "error": null,
+      "criteria": [
+        "Workout suggestion calls coaching_memory(get).",
+        "Workout suggestion calls periodization(get).",
+        "Workout suggestion checks today's schedule.",
+        "Assistant returns non-empty text."
+      ],
+      "observations": [
+        "attempt 1: passed - suggestion_context_loaded",
+        "workout suggestion called coaching_memory(get)",
+        "workout suggestion called periodization(get)",
+        "schedule(get) fired",
+        "assistant returned text"
+      ],
+      "attempts": [
+        {
+          "status": "passed",
+          "detail": "suggestion_context_loaded",
+          "duration_seconds": 8.8,
+          "criteria": [
+            "Workout suggestion calls coaching_memory(get).",
+            "Workout suggestion calls periodization(get).",
+            "Workout suggestion checks today's schedule.",
+            "Assistant returns non-empty text."
+          ],
+          "observations": [
+            "workout suggestion called coaching_memory(get)",
+            "workout suggestion called periodization(get)",
+            "schedule(get) fired",
+            "assistant returned text"
+          ],
+          "transcript": [
+            {
+              "role": "user",
+              "content": "What workout would you recommend I do today? Do not create or schedule it yet."
+            },
+            {
+              "role": "tool_call",
+              "tool": "coaching_memory",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "periodization",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "schedule",
+              "args": {
+                "days_back": 0,
+                "action": "get",
+                "days_forward": 0
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "biodata",
+              "args": {
+                "action": "get",
+                "days": 7
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "periodization",
+              "result": {
+                "success": true,
+                "action": "get",
+                "periodization": null,
+                "message": "No active periodization found"
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "coaching_memory",
+              "result": {
+                "success": true,
+                "action": "get",
+                "coaching_memory": {}
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "biodata",
+              "result": {
+                "success": true,
+                "action": "get",
+                "days": 7,
+                "start_date": "2026-04-30",
+                "end_date": "2026-05-07",
+                "processed_sleeps": [],
+                "processed_days": [],
+                "processed_activities": []
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "schedule",
+              "result": {
+                "success": true,
+                "today": "Thursday 2026-05-07",
+                "events": [],
+                "completed_activities": [],
+                "count": 0,
+                "date_range": {
+                  "start": "Thursday 2026-05-07",
+                  "end": "Thursday 2026-05-07"
+                }
+              }
+            },
+            {
+              "role": "assistant",
+              "content": "I don't have enough data to make a specific recommendation. There is no training plan, recent activity, or biodata for me to analyze.\n\nIf you are feeling fresh and ready to train, here are a few options:\n1.  **Endurance:** A steady run or bike ride for 45-60 minutes in Zone 2.\n2.  **Strength:** A full-body strength session focusing on major compound movements like squats, hinges, pushes, and pulls.\n3.  **Intensity:** A short, high-intensity interval session like 6 repeats of 2 minutes on, 2 minutes off.\n\nWhich of these sounds best for you today?"
+            }
+          ]
+        }
+      ],
+      "runtime_models": {
+        "chat": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        },
+        "fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "very_fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "workout": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "coaching_memory",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "periodization",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "schedule",
+          "args": {
+            "days_back": 0,
+            "action": "get",
+            "days_forward": 0
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "biodata",
+          "args": {
+            "action": "get",
+            "days": 7
+          },
+          "attempt_status": "passed"
+        }
+      ],
+      "response_text": "attempt 1: I don't have enough data to make a specific recommendation. There is no training plan, recent activity, or biodata for me to analyze.\n\nIf you are feeling fresh and ready to train, here are a few options:\n1.  **Endurance:** A steady run or bike ride for 45-60 minutes in Zone 2.\n2.  **Strength:** A full-body strength session focusing on major compound movements like squats, hinges, pushes, and pulls.\n3.  **Intensity:** A short, high-intensity interval session like 6 repeats of 2 minutes on, 2 minutes off.\n\nWhich of these sounds best for you today?"
+    },
+    {
+      "name": "create_workout_then_schedule_it_on_specific_day",
+      "module": "ai_agent.behavior_suite.chat_agent",
+      "suite": "ChatAgentBehaviorSuite",
+      "description": "Create a workout for tomorrow morning and verify the agent chains workout creation with scheduling in the same turn. Pass threshold: 1/1. Runtime models: chat=vertex/google/gemini-2.5-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-pro.",
+      "status": "passed",
+      "duration_seconds": 22.76,
+      "error": null,
+      "criteria": [
+        "Single turn calls coaching_memory(get).",
+        "Single turn calls periodization(get).",
+        "Single turn calls workouts(create).",
+        "Single turn calls schedule(schedule).",
+        "Schedule payload sets time_of_day to morning.",
+        "Schedule payload sets date to tomorrow in the user timezone."
+      ],
+      "observations": [
+        "attempt 1: passed - scheduled_for_morning",
+        "single turn called coaching_memory(get)",
+        "single turn called periodization(get)",
+        "workouts(create) fired",
+        "schedule(schedule) fired",
+        "time_of_day=morning",
+        "date=2026-05-08"
+      ],
+      "attempts": [
+        {
+          "status": "passed",
+          "detail": "scheduled_for_morning",
+          "duration_seconds": 22.76,
+          "criteria": [
+            "Single turn calls coaching_memory(get).",
+            "Single turn calls periodization(get).",
+            "Single turn calls workouts(create).",
+            "Single turn calls schedule(schedule).",
+            "Schedule payload sets time_of_day to morning.",
+            "Schedule payload sets date to tomorrow in the user timezone."
+          ],
+          "observations": [
+            "single turn called coaching_memory(get)",
+            "single turn called periodization(get)",
+            "workouts(create) fired",
+            "schedule(schedule) fired",
+            "time_of_day=morning",
+            "date=2026-05-08"
+          ],
+          "transcript": [
+            {
+              "role": "user",
+              "content": "Create a leg workout for tomorrow morning"
+            },
+            {
+              "role": "tool_call",
+              "tool": "coaching_memory",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "periodization",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "exercises",
+              "args": {
+                "query": "squat, lunge, leg press"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "workouts",
+              "args": {
+                "action": "create",
+                "workout_json": "{\n  \"title\": \"Leg Day\",\n  \"description\": \"A fundamental leg workout with squats, lunges, and leg press.\",\n  \"sport\": \"strength\",\n  \"structure\": [\n    {\n      \"type\": \"exercise\",\n      \"exercise_id\": 1077,\n      \"name\": \"Back Squat\",\n      \"sets\": [\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 7},\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 8},\n        {\"reps\": 10, \"weight_selection\": \"rpe\", \"rpe\": 8}\n      ]\n    },\n    {\n      \"type\": \"exercise\",\n      \"exercise_id\": 1339,\n      \"name\": \"Lunge\",\n      \"sets\": [\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 7},\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 7},\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 7}\n      ]\n    },\n    {\n      \"type\": \"exercise\",\n      \"exercise_id\": 1267,\n      \"name\": \"Leg Press\",\n      \"sets\": [\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 8},\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 8},\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 9}\n      ]\n    }\n  ]\n}"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "schedule",
+              "args": {
+                "action": "schedule",
+                "date": "2026-05-08",
+                "time_of_day": "morning",
+                "workout_id": 5160
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "coaching_memory",
+              "result": {
+                "success": true,
+                "action": "get",
+                "coaching_memory": {}
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "periodization",
+              "result": {
+                "success": true,
+                "action": "get",
+                "periodization": null,
+                "message": "No active periodization found"
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "exercises",
+              "result": {
+                "success": true,
+                "query": "squat, lunge, leg press",
+                "terms_searched": [
+                  "squat",
+                  "lunge",
+                  "leg press"
+                ],
+                "count": 9,
+                "exercises": [
+                  {
+                    "id": 1228,
+                    "name": "Air Squat",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "squat"
+                  },
+                  {
+                    "id": 847,
+                    "name": "Jump Squat",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "squat"
+                  },
+                  {
+                    "id": 1077,
+                    "name": "Back Squat",
+                    "type": "barbell",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "squat"
+                  },
+                  {
+                    "id": 1339,
+                    "name": "Lunge",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "lunge"
+                  },
+                  {
+                    "id": 604,
+                    "name": "Reverse Lunge",
+                    "type": "barbell",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "lunge"
+                  },
+                  {
+                    "id": 492,
+                    "name": "Overhead Lunge",
+                    "type": "medball",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes",
+                      "shoulders"
+                    ],
+                    "matched_term": "lunge"
+                  },
+                  {
+                    "id": 1267,
+                    "name": "Leg Press",
+                    "type": "machine",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "leg press"
+                  },
+                  {
+                    "id": 562,
+                    "name": "Leg Curl",
+                    "type": "machine",
+                    "muscle_groups": [
+                      "hamstrings"
+                    ],
+                    "matched_term": "leg press"
+                  },
+                  {
+                    "id": 579,
+                    "name": "Leg Raise",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "hip_flexors",
+                      "abs"
+                    ],
+                    "matched_term": "leg press"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "workouts",
+              "result": {
+                "success": true,
+                "action": "create",
+                "workout_id": 5160,
+                "workout_name": "Leg Day",
+                "workout_data": {
+                  "name": "Leg Day",
+                  "description": "A fundamental leg workout with squats, lunges, and leg press.",
+                  "sport": "STRENGTH",
+                  "steps": [
+                    {
+                      "id": "181bc531-138d-427d-a22a-32a7dd3f35a3",
+                      "name": "Back Squat",
+                      "description": null,
+                      "repeat_count": 1,
+                      "steps": [
+                        {
+                          "id": "d1e6e012-e023-4fb0-9191-62f6393e1d30",
+                          "name": "Back Squat",
+                          "description": null,
+                          "intensity": null,
+                          "duration_type": "reps",
+                          "duration_value": 12,
+                          "duration_unit": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 7,
+                              "value_low": null,
+                              "value_high": null,
+                              "specifier": null
+                            }
+                          ],
+                          "exercise_id": 1077,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "completed": false,
+                          "completion_notes": null
+                        },
+                        {
+                          "id": "92fab1aa-3c51-44f9-b3b3-931edb7e1b34",
+                          "name": "Back Squat",
+                          "description": null,
+                          "intensity": null,
+                          "duration_type": "reps",
+                          "duration_value": 12,
+                          "duration_unit": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 8,
+                              "value_low": null,
+                              "value_high": null,
+                              "specifier": null
+                            }
+                          ],
+                          "exercise_id": 1077,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "completed": false,
+                          "completion_notes": null
+                        },
+                        {
+                          "id": "77502ecc-e07a-4cca-96a3-ab2fafeb0e9a",
+                          "name": "Back Squat",
+                          "description": null,
+                          "intensity": null,
+                          "duration_type": "reps",
+                          "duration_value": 10,
+                          "duration_unit": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 8,
+                              "value_low": null,
+                              "value_high": null,
+                              "specifier": null
+                            }
+                          ],
+                          "exercise_id": 1077,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "completed": false,
+                          "completion_notes": null
+                        }
+                      ],
+                      "superset_number": null,
+                      "exercise_id": 1077,
+                      "repeats_visible": true
+                    },
+                    {
+                      "id": "f65e6271-8d6e-4d33-a4b9-99274810003f",
+                      "name": "Lunge",
+                      "description": null,
+                      "repeat_count": 1,
+                      "steps": [
+                        {
+                          "id": "d2dd76f7-8d5e-4d77-abc1-589599c0d090",
+                          "name": "Lunge",
+                          "description": null,
+                          "intensity": null,
+                          "duration_type": "reps",
+                          "duration_value": 12,
+                          "duration_unit": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 7,
+                              "value_low": null,
+                              "value_high": null,
+                              "specifier": null
+                            }
+                          ],
+                          "exercise_id": 1339,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "completed": false,
+                          "completion_notes": null
+                        },
+                        {
+                          "id": "5088d44e-3e0b-4ed2-932a-94c1f7815ea8",
+                          "name": "Lunge",
+                          "description": null,
+                          "intensity": null,
+                          "duration_type": "reps",
+                          "duration_value": 12,
+                          "duration_unit": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 7,
+                              "value_low": null,
+                              "value_high": null,
+                              "specifier": null
+                            }
+                          ],
+                          "exercise_id": 1339,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "completed": false,
+                          "completion_notes": null
+                        },
+                        {
+                          "id": "08333694-8951-4fdf-baf0-8550128d96d5",
+                          "name": "Lunge",
+                          "description": null,
+                          "intensity": null,
+                          "duration_type": "reps",
+                          "duration_value": 12,
+                          "duration_unit": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 7,
+                              "value_low": null,
+                              "value_high": null,
+                              "specifier": null
+                            }
+                          ],
+                          "exercise_id": 1339,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "completed": false,
+                          "completion_notes": null
+                        }
+                      ],
+                      "superset_number": null,
+                      "exercise_id": 1339,
+                      "repeats_visible": true
+                    },
+                    {
+                      "id": "0c62013e-39ff-4e50-8f54-dc3b0d57d713",
+                      "name": "Leg Press",
+                      "description": null,
+                      "repeat_count": 1,
+                      "steps": [
+                        {
+                          "id": "278a0125-f4a1-4ad4-a6a9-31472b157948",
+                          "name": "Leg Press",
+                          "description": null,
+                          "intensity": null,
+                          "duration_type": "reps",
+                          "duration_value": 12,
+                          "duration_unit": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 8,
+                              "value_low": null,
+                              "value_high": null,
+                              "specifier": null
+                            }
+                          ],
+                          "exercise_id": 1267,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "completed": false,
+                          "completion_notes": null
+                        },
+                        {
+                          "id": "cf9c4901-2171-4393-8161-d01c1208dba6",
+                          "name": "Leg Press",
+                          "description": null,
+                          "intensity": null,
+                          "duration_type": "reps",
+                          "duration_value": 12,
+                          "duration_unit": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 8,
+                              "value_low": null,
+                              "value_high": null,
+                              "specifier": null
+                            }
+                          ],
+                          "exercise_id": 1267,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "completed": false,
+                          "completion_notes": null
+                        },
+                        {
+                          "id": "d67aee62-0e7f-4d99-8fd5-f705f8e779a4",
+                          "name": "Leg Press",
+                          "description": null,
+                          "intensity": null,
+                          "duration_type": "reps",
+                          "duration_value": 12,
+                          "duration_unit": null,
+                          "targets": [
+                            {
+                              "type": "rpe",
+                              "value": 9,
+                              "value_low": null,
+                              "value_high": null,
+                              "specifier": null
+                            }
+                          ],
+                          "exercise_id": 1267,
+                          "rest_time": null,
+                          "rest_type": "open",
+                          "actual_reps": null,
+                          "completed": false,
+                          "completion_notes": null
+                        }
+                      ],
+                      "superset_number": null,
+                      "exercise_id": 1267,
+                      "repeats_visible": true
+                    }
+                  ],
+                  "is_multisport": false,
+                  "estimated_time": null,
+                  "estimated_distance": null,
+                  "estimated_work": null,
+                  "difficulty_level": null,
+                  "workout_type": null,
+                  "created_by": null,
+                  "source": "beoflow",
+                  "external_id": null,
+                  "id": 5160
+                },
+                "status": "pending_review",
+                "summary": {
+                  "duration_minutes": null,
+                  "exercise_count": 9,
+                  "sport": "STRENGTH"
+                },
+                "message": "Created Leg Day with 9 exercises"
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "schedule",
+              "result": {
+                "success": true,
+                "results": [
+                  {
+                    "success": true,
+                    "action": "schedule",
+                    "event_id": 3284,
+                    "workout_id": 5160,
+                    "workout_name": "Leg Day",
+                    "date": "Friday 2026-05-08",
+                    "time_of_day": "morning"
+                  }
+                ],
+                "summary": {
+                  "total": 1,
+                  "succeeded": 1,
+                  "failed": 0
+                }
+              }
+            },
+            {
+              "role": "assistant",
+              "content": "I have scheduled a leg workout for you tomorrow morning. It's called \"Leg Day\" and includes Back Squats, Lunges, and Leg Press."
+            }
+          ]
+        }
+      ],
+      "runtime_models": {
+        "chat": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        },
+        "fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "very_fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "workout": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "coaching_memory",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "periodization",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "exercises",
+          "args": {
+            "query": "squat, lunge, leg press"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "workouts",
+          "args": {
+            "action": "create",
+            "workout_json": "{\n  \"title\": \"Leg Day\",\n  \"description\": \"A fundamental leg workout with squats, lunges, and leg press.\",\n  \"sport\": \"strength\",\n  \"structure\": [\n    {\n      \"type\": \"exercise\",\n      \"exercise_id\": 1077,\n      \"name\": \"Back Squat\",\n      \"sets\": [\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 7},\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 8},\n        {\"reps\": 10, \"weight_selection\": \"rpe\", \"rpe\": 8}\n      ]\n    },\n    {\n      \"type\": \"exercise\",\n      \"exercise_id\": 1339,\n      \"name\": \"Lunge\",\n      \"sets\": [\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 7},\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 7},\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 7}\n      ]\n    },\n    {\n      \"type\": \"exercise\",\n      \"exercise_id\": 1267,\n      \"name\": \"Leg Press\",\n      \"sets\": [\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 8},\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 8},\n        {\"reps\": 12, \"weight_selection\": \"rpe\", \"rpe\": 9}\n      ]\n    }\n  ]\n}"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "schedule",
+          "args": {
+            "action": "schedule",
+            "date": "2026-05-08",
+            "time_of_day": "morning",
+            "workout_id": 5160
+          },
+          "attempt_status": "passed"
+        }
+      ],
+      "response_text": "attempt 1: I have scheduled a leg workout for you tomorrow morning. It's called \"Leg Day\" and includes Back Squats, Lunges, and Leg Press."
+    },
+    {
+      "name": "query_biodata_returns_grounded_answer",
+      "module": "ai_agent.behavior_suite.chat_agent",
+      "suite": "ChatAgentBehaviorSuite",
+      "description": "Ask how the user slept last night through the real chat streaming endpoint and verify the biodata tool is used with a grounded answer. Pass threshold: 1/1. Runtime models: chat=vertex/google/gemini-2.5-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-pro.",
+      "status": "passed",
+      "duration_seconds": 8.42,
+      "error": null,
+      "criteria": [
+        "Chat streaming endpoint returns no error.",
+        "Agent calls biodata(get).",
+        "Assistant returns non-empty grounded text."
+      ],
+      "observations": [
+        "attempt 1: passed - conversation=2273",
+        "biodata(get) fired",
+        "conversation=2273"
+      ],
+      "attempts": [
+        {
+          "status": "passed",
+          "detail": "conversation=2273",
+          "duration_seconds": 8.42,
+          "criteria": [
+            "Chat streaming endpoint returns no error.",
+            "Agent calls biodata(get).",
+            "Assistant returns non-empty grounded text."
+          ],
+          "observations": [
+            "biodata(get) fired",
+            "conversation=2273"
+          ],
+          "transcript": [
+            {
+              "role": "user",
+              "content": "How did I sleep last night?"
+            },
+            {
+              "role": "tool_call",
+              "tool": "biodata",
+              "args": {
+                "action": "get",
+                "days": 1
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "biodata",
+              "result": {
+                "success": true,
+                "action": "get",
+                "days": 1,
+                "start_date": "2026-05-06",
+                "end_date": "2026-05-07",
+                "processed_sleeps": [],
+                "processed_days": [],
+                "processed_activities": []
+              }
+            },
+            {
+              "role": "assistant",
+              "content": "I don't have any sleep data for you from last night. Do you track your sleep with a wearable or app that is connected to the platform?"
+            }
+          ]
+        }
+      ],
+      "runtime_models": {
+        "chat": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        },
+        "fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "very_fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "workout": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "biodata",
+          "args": {
+            "action": "get",
+            "days": 1
+          },
+          "attempt_status": "passed"
+        }
+      ],
+      "response_text": "attempt 1: I don't have any sleep data for you from last night. Do you track your sleep with a wearable or app that is connected to the platform?"
+    },
+    {
+      "name": "invalid_edit_still_returns_helpful_text",
+      "module": "ai_agent.behavior_suite.chat_agent",
+      "suite": "ChatAgentBehaviorSuite",
+      "description": "Trigger a failed edit on a non-existent workout and verify the agent still responds with helpful text instead of crashing. Pass threshold: 1/1. Runtime models: chat=vertex/google/gemini-2.5-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-pro.",
+      "status": "passed",
+      "duration_seconds": 21.08,
+      "error": null,
+      "criteria": [
+        "Agent returns non-empty text after a failed edit.",
+        "Agent makes at least one tool call in the failed edit flow.",
+        "Agent receives at least one tool result in the failed edit flow."
+      ],
+      "observations": [
+        "attempt 1: passed - error_replied_with_text",
+        "assistant returned non-empty text",
+        "tool_calls=4",
+        "tool_results=4"
+      ],
+      "attempts": [
+        {
+          "status": "passed",
+          "detail": "error_replied_with_text",
+          "duration_seconds": 21.08,
+          "criteria": [
+            "Agent returns non-empty text after a failed edit.",
+            "Agent makes at least one tool call in the failed edit flow.",
+            "Agent receives at least one tool result in the failed edit flow."
+          ],
+          "observations": [
+            "assistant returned non-empty text",
+            "tool_calls=4",
+            "tool_results=4"
+          ],
+          "transcript": [
+            {
+              "role": "user",
+              "content": "Edit workout 99999 to add lunges"
+            },
+            {
+              "role": "tool_call",
+              "tool": "coaching_memory",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "periodization",
+              "args": {
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "workouts",
+              "args": {
+                "workout_id": 99999,
+                "source": "template",
+                "action": "get"
+              }
+            },
+            {
+              "role": "tool_call",
+              "tool": "exercises",
+              "args": {
+                "query": "lunge"
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "coaching_memory",
+              "result": {
+                "success": true,
+                "action": "get",
+                "coaching_memory": {}
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "workouts",
+              "result": {
+                "success": false,
+                "error": {
+                  "code": "NOT_FOUND",
+                  "message": "Workout not found: 99999"
+                }
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "periodization",
+              "result": {
+                "success": true,
+                "action": "get",
+                "periodization": null,
+                "message": "No active periodization found"
+              }
+            },
+            {
+              "role": "tool_result",
+              "tool": "exercises",
+              "result": {
+                "success": true,
+                "query": "lunge",
+                "terms_searched": [
+                  "lunge"
+                ],
+                "count": 3,
+                "exercises": [
+                  {
+                    "id": 1339,
+                    "name": "Lunge",
+                    "type": "bodyweight",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "lunge"
+                  },
+                  {
+                    "id": 604,
+                    "name": "Reverse Lunge",
+                    "type": "barbell",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes"
+                    ],
+                    "matched_term": "lunge"
+                  },
+                  {
+                    "id": 492,
+                    "name": "Overhead Lunge",
+                    "type": "medball",
+                    "muscle_groups": [
+                      "quads",
+                      "glutes",
+                      "shoulders"
+                    ],
+                    "matched_term": "lunge"
+                  }
+                ]
+              }
+            },
+            {
+              "role": "assistant",
+              "content": "I can't find a workout with ID 99999.\n\nI can create a new workout with lunges, if you would like."
+            }
+          ]
+        }
+      ],
+      "runtime_models": {
+        "chat": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        },
+        "fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "very_fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "workout": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "coaching_memory",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "periodization",
+          "args": {
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "workouts",
+          "args": {
+            "workout_id": 99999,
+            "source": "template",
+            "action": "get"
+          },
+          "attempt_status": "passed"
+        },
+        {
+          "tool": "exercises",
+          "args": {
+            "query": "lunge"
+          },
+          "attempt_status": "passed"
+        }
+      ],
+      "response_text": "attempt 1: I can't find a workout with ID 99999.\n\nI can create a new workout with lunges, if you would like."
+    },
+    {
+      "name": "generates_complex_workout_returns_valid_structured_workout",
+      "module": "ai_agent.behavior_suite.workout_agent",
+      "suite": "WorkoutAgentBehaviorSuite",
+      "description": "The delegated complex running workout prompt should complete, return JSON, and validate as a StructuredWorkout. Pass threshold: 1/1. Runtime models: chat=vertex/google/gemini-2.5-pro; fast=tinfoil/gemma4-31b; very_fast=tinfoil/gemma4-31b; workout=vertex/google/gemini-2.5-pro.",
+      "status": "passed",
+      "duration_seconds": 7.43,
+      "error": null,
+      "criteria": [
+        "Delegated workout agent returns data that validates as StructuredWorkout.",
+        "Validated workout sport is RUNNING.",
+        "Validated workout has at least 3 steps."
+      ],
+      "observations": [
+        "attempt 1: passed - steps=5",
+        "StructuredWorkout validation succeeded",
+        "sport=RUNNING",
+        "steps=5"
+      ],
+      "attempts": [
+        {
+          "status": "passed",
+          "detail": "steps=5",
+          "duration_seconds": 7.43,
+          "criteria": [
+            "Delegated workout agent returns data that validates as StructuredWorkout.",
+            "Validated workout sport is RUNNING.",
+            "Validated workout has at least 3 steps."
+          ],
+          "observations": [
+            "StructuredWorkout validation succeeded",
+            "sport=RUNNING",
+            "steps=5"
+          ],
+          "transcript": [
+            {
+              "role": "user",
+              "content": "Create a running workout with a 15 minute warm-up at RPE 3, then 3 repeats of 8 minutes at RPE 7 with 3 minutes recovery, then a 10 minute cool-down at RPE 2. Use the Running exercise only."
+            },
+            {
+              "role": "context",
+              "content": "current_workout",
+              "workout": {
+                "name": "New Workout",
+                "description": null,
+                "sport": "OTHER",
+                "steps": [],
+                "is_multisport": false,
+                "estimated_time": null,
+                "estimated_distance": null,
+                "estimated_work": null,
+                "difficulty_level": null,
+                "workout_type": null,
+                "created_by": null,
+                "source": "beoflow",
+                "external_id": null
+              }
+            },
+            {
+              "role": "context",
+              "content": "available_exercises",
+              "exercises": [
+                {
+                  "id": 1070,
+                  "name": "Running",
+                  "type": "cardio"
+                }
+              ]
+            },
+            {
+              "role": "assistant",
+              "content": "delegated workout agent returned structured data",
+              "result": {
+                "name": "Running Interval Workout",
+                "description": "A running workout with a warm-up, intervals, and a cool-down.",
+                "sport": "RUNNING",
+                "steps": [
+                  {
+                    "name": "Running",
+                    "description": "Warm-up. A very easy jog to prepare your body for the main workout.",
+                    "exercise_id": 1070,
+                    "duration_type": "time",
+                    "duration_value": 900,
+                    "targets": [
+                      {
+                        "type": "rpe",
+                        "value": 3
+                      }
+                    ],
+                    "completed": false
+                  },
+                  {
+                    "name": "Running",
+                    "description": "Interval 1. Find a strong, sustainable pace.",
+                    "exercise_id": 1070,
+                    "duration_type": "time",
+                    "duration_value": 480,
+                    "targets": [
+                      {
+                        "type": "rpe",
+                        "value": 7
+                      }
+                    ],
+                    "rest_time": 180,
+                    "rest_type": "time",
+                    "completed": false
+                  },
+                  {
+                    "name": "Running",
+                    "description": "Interval 2. Match the effort of the first interval.",
+                    "exercise_id": 1070,
+                    "duration_type": "time",
+                    "duration_value": 480,
+                    "targets": [
+                      {
+                        "type": "rpe",
+                        "value": 7
+                      }
+                    ],
+                    "rest_time": 180,
+                    "rest_type": "time",
+                    "completed": false
+                  },
+                  {
+                    "name": "Running",
+                    "description": "Interval 3. Last hard effort. Hold the pace.",
+                    "exercise_id": 1070,
+                    "duration_type": "time",
+                    "duration_value": 480,
+                    "targets": [
+                      {
+                        "type": "rpe",
+                        "value": 7
+                      }
+                    ],
+                    "completed": false
+                  },
+                  {
+                    "name": "Running",
+                    "description": "Cool-down. Easy jog to lower your heart rate and begin recovery.",
+                    "exercise_id": 1070,
+                    "duration_type": "time",
+                    "duration_value": 600,
+                    "targets": [
+                      {
+                        "type": "rpe",
+                        "value": 2
+                      }
+                    ],
+                    "completed": false
+                  }
+                ],
+                "estimated_time": 3540,
+                "difficulty_level": 3
+              }
+            }
+          ]
+        }
+      ],
+      "runtime_models": {
+        "chat": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        },
+        "fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "very_fast": {
+          "provider": "tinfoil",
+          "model": "gemma4-31b"
+        },
+        "workout": {
+          "provider": "vertex",
+          "model": "google/gemini-2.5-pro"
+        }
+      },
+      "tool_calls": [],
+      "response_text": "attempt 1: delegated workout agent returned structured data"
+    }
+  ]
+}
