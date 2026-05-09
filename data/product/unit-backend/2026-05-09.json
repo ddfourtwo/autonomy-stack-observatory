@@ -1,11 +1,11 @@
 {
   "vertical": "product",
   "source": "unit-backend",
-  "timestamp": "2026-05-09T11:08:48Z",
+  "timestamp": "2026-05-09T11:55:00Z",
   "summary": {
     "total": 1001,
-    "passed": 994,
-    "failed": 1,
+    "passed": 995,
+    "failed": 0,
     "errors": 0,
     "skipped": 6,
     "coverage_percent": null,
@@ -8243,9 +8243,9 @@
       "module": "ai_agent.tests.test_async_tool_path",
       "suite": "AsyncInvocationTests",
       "description": "manage_workout_create must invoke process_command_async, not",
-      "status": "failed",
-      "duration_seconds": null,
-      "error": "AssertionError: False is not true"
+      "status": "passed",
+      "duration_seconds": 0.673,
+      "error": null
     },
     {
       "name": "test_create_delegates_to_workout_agent",

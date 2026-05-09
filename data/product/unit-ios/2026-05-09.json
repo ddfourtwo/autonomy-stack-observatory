@@ -1,11 +1,11 @@
 {
   "vertical": "product",
   "source": "unit-ios",
-  "timestamp": "2026-05-09T11:04:16Z",
+  "timestamp": "2026-05-09T11:55:00Z",
   "summary": {
     "total": 408,
-    "passed": 407,
-    "failed": 1,
+    "passed": 408,
+    "failed": 0,
     "errors": 0,
     "skipped": 0,
     "coverage_percent": null,
@@ -3311,9 +3311,9 @@
       "module": "BeoflowTests",
       "suite": "WorkoutTextConverterTests",
       "description": null,
-      "status": "failed",
-      "duration_seconds": 0.007,
-      "error": "XCTAssertEqual failed: (\"Squat 10 reps\") is not equal to (\"Squat 10 reps"
+      "status": "passed",
+      "duration_seconds": 0.005,
+      "error": null
     },
     {
       "name": "test_convert_stepWithTarget_showsTargetAfterDuration",
