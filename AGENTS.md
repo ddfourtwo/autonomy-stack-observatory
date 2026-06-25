@@ -192,3 +192,14 @@ The post contains:
 3. Previous-run comparison for changed product JSON files.
 4. New failures and fixed failures, comparing `entries` with status `failed` or `error` against the prior JSON file for the same source.
 
+
+## Producing visual / UI artifacts — read the design system FIRST (hard rule)
+
+Before producing ANY visual or UI artifact — app UI, web UI, **or internal/agent-made assets** (Drafted frames, decks, comparison cards, diagrams, mockups, HTML one-pagers) — you MUST:
+
+1. **Read `AGENT-DESIGN-QUICKREF.md`** (this repo's root; generated from the Drafted "Beoflow Design System" — canonical). It carries the exact color hex + semantic roles, typography, the card pattern, spacing, and the anti-pattern NEVER list.
+2. **Use canonical tokens only** — pull values from the quickref / generated token modules, never from `muiTheme.ts`, another consumer, or memory.
+3. **Peak Orange is the ALERT color only** — never decoration, a category color, or a brand-fill. Interactive accent and neutral categories use Mean Blue.
+4. **Self-check against the anti-patterns.** No side-stripes (a >1px colored side border — use a full 1px accent border), no em dashes, no hero-metric template, identical card grids, gradient text, decorative glass, per-section eyebrows, or buzzwords. For HTML/web assets run the impeccable detector (`beoflow-design/.claude/skills/impeccable/scripts/detect.mjs <file.html>`, from the monorepo root) and fix every hit before shipping.
+
+Authoring brand visuals from memory, or shipping an asset that fails the anti-pattern list, is a hard failure — even for throwaway internal assets. Source of truth: the Drafted *Beoflow Design System* project (anti-patterns live in `/foundations/09-anti-patterns`); `AGENT-DESIGN-QUICKREF.md` is the generated mirror, never hand-edited.
