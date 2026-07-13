@@ -70,6 +70,7 @@ App UI, web UI, **or internal agent-made assets** (Drafted frames, decks, compar
 | **Numbered section markers** — 01 / 02 / 03 scaffolding above sections by reflex. | absolute | Numbers only when the section genuinely is an ordered sequence the reader needs. |
 | **Marketing buzzwords** — streamline / empower / supercharge / leverage / unleash / seamless / world-class / next-generation / game-changer. | absolute | A specific noun and a verb that says what the product literally does. |
 | **Raw hex / font literals** — A hardcoded hex value or a raw .font(.custom("…")) / font-family string in product or showcase surfaces. | beoflow | Canonical tokens: Color.* / BeoflowTypography.* / BeoflowFontName.* (iOS), generated theme modules (web). ds:check enforces it. |
+| **Generated raster for a UI graphic** — Using an image generator (fal, Imagen, Midjourney, Recraft, DALL-E) to make a chart, arrow, icon, logo, or data widget. They return clip-art or photographic slop (neon glow, bloom, atmospheric haze, off-token invented colors, fake or garbled data) and hot-link to a URL that rots. | beoflow | These are semantic: hand-author inline SVG/HTML with canonical tokens (open-design frame-data-chart-nyt method for editorial charts). Reserve image generation for genuine photographic atmosphere only, and re-host it, never hot-link a generator URL. |
 
 ## Verify before shipping
 
